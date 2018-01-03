@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Page</title>
+</head>
+
+{% block body %}
+{% if session['logged_in'] %}
+<h2><p>You're logged in already!</p><a href="/logout">Logout</a></h2>
+{% else %}
+
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+<div>
+    <a href="/signup">Sign Up</a><br>
+    <a href="/login">Login</a>
+</div>
+<div>
+    <form action="/loginsubmit" method='POST' noalert="true">
+        <h2>Login </h2>
+        <div>
+            <label><h3>Username:</h3></label>
+            <div>
+                <input type="text" name="username" placeholder="Enter Username">
+            </div>
+        </div>
+        <div>
+            <label><h3>Password:</h3></label>
+            <div>
+                <input type="password" name="password" placeholder="Enter password">
+            </div>
+        </div>
+        <br>
+        <div>
+            <div>
+                <button type="submit" style="font-size : 15px; loginButton>
+                    <img style="filter: invert(100%);">Login
+                </button>
+            </div>
+        </div>
+        <div><br>
+        <a href="/signup">Not enrolled? Sign up now</a>
+        </div>
+    </form>
+</div>
+
+{% endif %}
+{% endblock %}
+
+</html>

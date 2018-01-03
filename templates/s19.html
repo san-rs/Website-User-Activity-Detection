@@ -1,0 +1,3071 @@
+
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/QAPage">
+
+<head>
+
+<title>Should I avoid the use of set(Preferred|Maximum|Minimum)Size methods in Java Swing? - Stack Overflow</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="/opensearch.xml">
+    <meta property="og:type" content="website"/>
+    <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:domain" content="stackoverflow.com"/>
+
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded" />
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Should I avoid the use of set(Preferred|Maximum|Minimum)Size methods in Java Swing?" />
+    <meta name="twitter:description" property="og:description" itemprop="description" content="Several times I&#39;ve been criticized for having suggested the use of the following methods:
+setPreferredSize
+setMinimumSize
+setMaximumSize
+on Swing components. I don&#39;t see any alternative to their ..." />
+    <meta property="og:url" content="https://stackoverflow.com/questions/7229226/should-i-avoid-the-use-of-setpreferredmaximumminimumsize-methods-in-java-swi"/>
+    <link rel="canonical" href="https://stackoverflow.com/questions/7229226/should-i-avoid-the-use-of-setpreferredmaximumminimumsize-methods-in-java-swi" />
+
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.sstatic.net/Js/stub.en.js?v=ef1cf9144f35"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.sstatic.net/Sites/stackoverflow/all.css?v=5df92b6be7e1">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Should I avoid the use of set(Preferred|Maximum|Minimum)Size methods in Java Swing?&#39;" href="/feeds/question/7229226">
+            <meta name="twitter:app:country" content="US" />
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS" />
+            <meta name="twitter:app:id:iphone" content="871299723" />
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/7229226/should-i-avoid-the-use-of-setpreferredmaximumminimumsize-methods-in-java-swi" />
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS" />
+            <meta name="twitter:app:id:ipad" content="871299723" />
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/7229226/should-i-avoid-the-use-of-setpreferredmaximumminimumsize-methods-in-java-swi" />
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/7229226/should-i-avoid-the-use-of-setpreferredmaximumminimumsize-methods-in-java-swi">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:7229226});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '7229226');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text', true); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1504666294,"routeName":"Questions/Show","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableInsertDocLinkDialog":false,"childUrl":"https://meta.stackoverflow.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"d431d2751f1d1bd16873fe8d68016c0e","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"canSeeNewHeaderDesign":true},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"comments":{},"userProfile":{"openGraphAPIKey":"58740831ad23540e00c58987"},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"813cfe48dc5b","js/moderator.en.js":"9f2375df98d8","js/full-anon.en.js":"68371529faad","js/full.en.js":"3454aa67c8ba","js/wmd.en.js":"b4467a90e4e0","js/third-party/jquery.autocomplete.min.js":"d3b8fa7fdf74","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"3f082f5eb27a","js/help.en.js":"dbd4f489eff2","js/tageditor.en.js":"4f83add90c55","js/tageditornew.en.js":"a5a8b197f53c","js/inline-tag-editing.en.js":"7581a98341e4","js/revisions.en.js":"8f22ba768cac","js/review.en.js":"198183565669","js/tagsuggestions.en.js":"b278f9a0b23b","js/post-validation.en.js":"fcc6f225a77f","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"627d846d8038","js/keyboard-shortcuts.en.js":"96e82e714e10","js/external-editor.en.js":"3e5baf662544","js/adops.en.js":"9a6a7812a212","js/external-editor.en.js":"3e5baf662544","js/snippet-javascript.en.js":"6396a6cc51fa","js/snippet-javascript-codemirror.en.js":"ddc7c6f5f088"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    <noscript id="noscript-css"><style type="text/css">body,.so-header{margin-top:1.9em}</style></noscript>
+</head>
+<body class="question-page new-topbar">
+            <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        <iframe id="adzerk-user-match" width="0" height="0" frameborder="0" scrolling="no" onload="window.AUMIframeDone=true"
+                src="https://ssum-sec.casalemedia.com/usermatch?s=183712&amp;cb=https%3A%2F%2Fengine.adzerk.net%2Fudb%2F22%2Fsync%2Fi.gif%3FpartnerId%3D1%26userId%3D"
+                style="display: none;" marginheight="0" marginwidth="0"></iframe>
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+<header class="so-header js-so-header _fixed">
+    <div class="-container">
+        <div class="-main">            
+            <a href="https://stackoverflow.com" class="-logo js-gps-track "
+               data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+
+                <span class="-img">Stack Overflow</span>
+            </a>
+
+            <nav class="navigation" role="navigation" aria-label="site navigation">
+                <ol class="-list">
+                        <li class="-item _current">
+        <a id="nav-questions" href="/questions" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">Questions</a>
+    </li>
+
+    <li class="-item">
+        <a id="nav-jobs" href="/jobs?med=site-ui&amp;ref=jobs-tab" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:6})">Developer Jobs</a>
+    </li>
+                        <li class="-item">
+        <a id="nav-docs" href="/documentation" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:7})">Documentation <small class='beta-badge'>beta</small></a>
+    </li>
+                        <li class="-item">
+        <a id="nav-tags" href="/tags" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">Tags</a>
+    </li>
+
+                        <li class="-item">
+        <a id="nav-users" href="/users" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">Users</a>
+    </li>
+
+                </ol>
+            </nav>
+
+                <form id="search" action="/search" method="get" class="searchbar" autocomplete="off" role="search">
+                    <svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"/></svg>
+                    <input name="q" type="text" placeholder="Search..." value="" tabindex="1" autocomplete="off" maxlength="240" class="f-input js-search-field" />
+                    <button type="submit" class="btn js-search-submit">
+                        <svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"/></svg>
+                    </button>
+                </form>
+
+        </div>
+        
+
+
+    
+
+<div class="-actions">
+    <nav class="secondary-nav">
+        <div class="-dialog-container js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://stackoverflow.com">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+            <a href="https://stackoverflow.com/help" class="js-gps-track"     data-gps-track="site_switcher.click({ item_type:14 })"
+>help</a>
+                    <a href="https://chat.stackoverflow.com" class="js-gps-track"     data-gps-track="site_switcher.click({ item_type:6 })"
+>chat</a>
+            </div>
+
+    <a href="https://stackoverflow.com"
+       class="current-site-link site-link js-gps-track"
+       data-id="1"
+       data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                        
+    <a href="https://meta.stackoverflow.com"
+       class="site-link js-gps-track"
+       data-id="552"
+       data-gps-track="site.switch({ target_site:552, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;amp;utm_source=stackoverflow.com&amp;amp;utm_medium=dev-story&amp;amp;utm_campaign=signup-redirect" class="login-link js-gps-track"     data-gps-track="site_switcher.click({ item_type:10 })"
+>Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f7229226%2fshould-i-avoid-the-use-of-setpreferredmaximumminimumsize-methods-in-java-swi" class="login-link js-gps-track"     data-gps-track="site_switcher.click({ item_type:11 })"
+>log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+                <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://meta.stackoverflow.com" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+
+        </div>
+        <ol class="-list">
+
+
+    <li class="-item"><a href="#" class="-link js-help-button" title="Help Center and other resources">
+        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"/></svg>
+    </a></li>
+                <li class="-item">
+        <a href="https://stackexchange.com" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 171 Stack Exchange sites">
+            <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"/></svg>
+        </a>
+    </li>
+
+
+        </ol>
+    </nav>
+        <div class="-ctas">
+                <a href="https://stackoverflow.com/users/login?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f7229226%2fshould-i-avoid-the-use-of-setpreferredmaximumminimumsize-methods-in-java-swi" class="login-link btn-clear" rel="nofollow">Log In</a>
+                    <a href="https://stackoverflow.com/users/signup?ssrc=head&returnurl=%2fusers%2fstory%2fcurrent&amp;utm_source=stackoverflow.com&amp;utm_medium=dev-story&amp;utm_campaign=signup-redirect" class="login-link btn" rel="nofollow">Sign Up</a>
+
+        </div>
+</div>
+    </div>
+</header>
+
+    <script>
+        StackExchange.ready(function () { StackExchange.topbar.init(); });
+            StackExchange.scrollPadding.setPaddingTop(60, 10);     </script>
+
+    <div class="container  ">
+        
+
+
+        <div id="content" class="snippet-hidden">
+
+
+
+
+
+            
+
+<div itemscope itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+
+<div id="herobox" class="alternate hero-container">
+    <div class="test"></div>
+        <div id="close">
+            <a title="click to minimize"><span>x</span> Dismiss</a>
+        </div>
+    <div class="content">
+        <b>Join the Stack Overflow Community</b>
+        <div class="separator"></div>
+        <div class="blurb">
+            Stack Overflow is a community of 7.7 million programmers, just like you, helping each other.
+                <br/>
+Join them; it only takes a minute:                <br/>
+        </div>
+        <a href="/users/signup?ssrc=hero&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;amp;utm_source=stackoverflow.com&amp;amp;utm_medium=dev-story&amp;amp;utm_campaign=signup-redirect" id="tell-me-more" class="button">Sign up</a>
+    </div>
+</div>
+<script>
+    StackExchange.ready(function () {
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;
+        }
+        
+        $('#tell-me-more').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+        
+        $('.hero-container #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+            });
+            
+            $.cookie("hero", "mini", { path: "/", expires: 365 });
+            $.ajax({
+                url: "/hero-mini",
+                success: function (data) {
+                    $(".hero-container").fadeOut("fast", function () {
+                        $(".hero-container").replaceWith(data);
+                        $("#herobox-mini").fadeIn("fast");
+                    });
+                }
+            });
+            return false;
+        });
+    });
+
+</script>    <div class="inner-content">
+        <div id="question-header">
+                <h1 itemprop="name"><a href="/questions/7229226/should-i-avoid-the-use-of-setpreferredmaximumminimumsize-methods-in-java-swi" class="question-hyperlink">Should I avoid the use of set(Preferred|Maximum|Minimum)Size methods in Java Swing?</a></h1>
+
+            
+<div class="aside-cta" role="navigation" aria-label="ask new question">
+    <a href="/questions/ask" class="btn-outlined">Ask Question</a>
+</div>
+        </div>
+            <div id="mainbar" role="main" aria-label="question and answers">
+
+            
+
+<div class="question" data-questionid="7229226"  id="question">
+
+    <script>
+                    var ados = ados || {}; ados.run = ados.run || [];
+                    ados.run.push(function () { ados_add_placement(22,8277,"adzerk1846307394",4).setZone(43); });
+                </script>
+                <div class="everyonelovesstackoverflow" id="adzerk1846307394"></div>
+            <div id="dfp-tlb" class="dfpad"></div>    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="7229226">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">384</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="#">favorite</a>
+        <div class="favoritecount"><b>108</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>Several times I've been criticized for having suggested the use of the following methods:</p>
+
+<ol>
+<li><strong>setPreferredSize</strong></li>
+<li><strong>setMinimumSize</strong></li>
+<li><strong>setMaximumSize</strong></li>
+</ol>
+
+<p>on <code>Swing</code> components. I don't see any alternative to their use when I want to define proportions between displayed components. I have been told this:</p>
+
+<blockquote>
+  <p>With layouts the answer is always the same: use a suitable
+  LayoutManager</p>
+</blockquote>
+
+<p>I have searched the web a little bit, but I haven't found any comprehensive analysis of the subject. So I have the following questions:</p>
+
+<ol>
+<li>Should I completely avoid the use of those methods?</li>
+<li>The methods have been defined for a reason. So when should I use them? In which context? For what purposes? </li>
+<li>What exactly are the negative consequences of using those methods? (I can only think adding portability between systems with different screen resolution).</li>
+<li>I don't think any LayoutManager can exactly satisfy all desired layout needs. Do I really need to implement a new LayoutManager for every little variation on my layout ? </li>
+<li>If the answer to 4 is "yes", won't this lead to a proliferation of LayoutManager classes which will become difficult to maintain?</li>
+<li>In a situation where I need to define proportions between children of a Component (eg, child1 should use 10% of space, child2 40% ,child3 50%), is it possible to achieve that without implementing a custom LayoutManager?</li>
+</ol>
+
+<p>I hope to have been clear.</p>
+    </div>
+    <div class="post-taglist">
+        <a href="/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="/questions/tagged/swing" class="post-tag" title="show questions tagged &#39;swing&#39;" rel="tag">swing</a> <a href="/questions/tagged/layout-manager" class="post-tag" title="show questions tagged &#39;layout-manager&#39;" rel="tag">layout-manager</a> 
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/q/7229226" title="short permalink to this question" class="short-link" id="link-post-7229226">share</a><span class="lsep">|</span><a href="/posts/7229226/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="/posts/7229226/revisions" title="show all edits to this post">edited <span title="2014-06-29 19:32:47Z" class="relativetime">Jun 29 '14 at 19:32</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/541136/aaron-hall"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/wftMn.jpg?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/541136/aaron-hall">Aaron Hall</a><span class="mod-flair" title="moderator">&#9830;</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 96,289" dir="ltr">96.3k</span><span title="28 gold badges"><span class="badge1"></span><span class="badgecount">28</span></span><span title="208 silver badges"><span class="badge2"></span><span class="badgecount">208</span></span><span title="192 bronze badges"><span class="badge3"></span><span class="badgecount">192</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2011-08-29 11:02:31Z" class="relativetime">Aug 29 '11 at 11:02</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/587884/heisenbug"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/11a0d222c5e2951d47f69a462fc14402?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/587884/heisenbug">Heisenbug</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 27,684" dir="ltr">27.7k</span><span title="20 gold badges"><span class="badge1"></span><span class="badgecount">20</span></span><span title="93 silver badges"><span class="badge2"></span><span class="badgecount">93</span></span><span title="162 bronze badges"><span class="badge3"></span><span class="badgecount">162</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</div>
+</td>
+        </tr>
+                    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-7229226" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-7229226" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>        </table>
+</div>
+
+            <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2>
+                                8 Answers
+                                <span style="display:none;" itemprop="answerCount">8</span>
+                        </h2>
+                        <div>
+                            <div id="tabs">
+        <a href="/questions/7229226/should-i-avoid-the-use-of-setpreferredmaximumminimumsize-methods-in-java-swi?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="/questions/7229226/should-i-avoid-the-use-of-setpreferredmaximumminimumsize-methods-in-java-swi?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="/questions/7229226/should-i-avoid-the-use-of-setpreferredmaximumminimumsize-methods-in-java-swi?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+                        </div>
+                    </div>    
+                </div>    
+
+
+
+
+  
+<a name="7229519"></a>
+<div id="answer-7229519" class="answer accepted-answer" data-answerid="7229519"  itemscope itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="7229519">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">202</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<ol>
+<li><blockquote>
+  <p>Should I completely avoid the use of those methods?</p>
+</blockquote>
+
+<p>Yes for application code.</p></li>
+<li><blockquote>
+  <p>The methods have been defined for a reason. So when should I use them? In which context? For what purposes?</p>
+</blockquote>
+
+<p>I don't know, personally I think of it as an API design accident. Slightly forced by compound components having special ideas about child sizes. "Slightly", because they should have implemented their needs with a custom LayoutManager.</p></li>
+<li><blockquote>
+  <p>What exactly are the negative consequences of using those methods? (I can only think adding portability between systems with different screen resolution.)</p>
+</blockquote>
+
+<p>Some (incomplete, and unfortunately the links are broken due to migration of SwingLabs to java.net) technical reasons are for instance mentioned in the <a href="http://web.archive.org/web/20110614145256/http://wiki.java.net/twiki/bin/view/Javadesktop/SwingLabsImperialRules?TWIKISID=e1a6667476691b56753dc9b0744828c6#Do_not_use_component_setXXSize" rel="noreferrer">Rules (hehe)</a> or in the <a href="http://web.archive.org/web/20100207211337/http://www.jguru.com/faq/view.jsp?EID=237070" rel="noreferrer">link</a> @bendicott found in his/her comment to <a href="https://stackoverflow.com/questions/7074514/images-in-jtable-cells-off-by-one-pixel">my answer</a>. Socially, posing tons of work onto your unfortunate fellow who has to maintain the code and has to track down a broken layout.</p></li>
+<li><blockquote>
+  <p>I don't think any LayoutManager can exactly satisfy all desired layout needs. Do I really need to implement a new LayoutManager for every little variation on my layout?</p>
+</blockquote>
+
+<p>Yes, there are LayoutManagers powerful enough to satisfy a very good approximation to "all layout needs". The big three are JGoodies FormLayout, MigLayout, DesignGridLayout. So no, in practice, you rarely write LayoutManagers except for simple highly specialized environments.</p></li>
+<li><blockquote>
+  <p>If the answer to 4 is "yes", won't this lead to a proliferation of LayoutManager classes which will become difficult to maintain? </p>
+</blockquote>
+
+<p>(The answer to 4 is "no".)</p></li>
+<li><blockquote>
+  <p>In a situation where I need to define proportions between children of a Component (for example, child 1 should use 10% of space, child 2 40%, child 3 50%), is it possible to achieve that without implementing a custom LayoutManager?</p>
+</blockquote>
+
+<p>Any of the Big-Three can, can't even GridBag (never bothered to really master, too much trouble for too little power).</p></li>
+</ol>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/7229519" title="short permalink to this answer" class="short-link" id="link-post-7229519">share</a><span class="lsep">|</span><a href="/posts/7229519/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="/posts/7229519/revisions" title="show all edits to this post">edited <span title="2017-05-23 11:33:24Z" class="relativetime">May 23 at 11:33</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/-1/community"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/a007be5a61f6aa8f3e85ae2fc18dd66e?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/-1/community">Community</a><span class="mod-flair" title="moderator">&#9830;</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-08-29 11:33:38Z" class="relativetime">Aug 29 '11 at 11:33</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/203657/kleopatra"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/ayujB.jpg?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/203657/kleopatra">kleopatra</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 41,207" dir="ltr">41.2k</span><span title="15 gold badges"><span class="badge1"></span><span class="badgecount">15</span></span><span title="65 silver badges"><span class="badge2"></span><span class="badgecount">65</span></span><span title="133 bronze badges"><span class="badge3"></span><span class="badgecount">133</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-7229519" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="7"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-8703698" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I&#39;m not entirely sure I agree with this advice in at least two situations.  1) Custom rendered components 2) Using a <code>JEditorPane</code> with HTML that does not itself suggest a width.  OTOH I am not sure if I&#39;ve missed something.  I&#39;ll carefully review the replies on the thread, but was interested if you had any comments, particularly on the latter case.</span>
+                    &ndash;&nbsp;<a href="/users/418556/andrew-thompson"
+                       title="145,141 reputation"
+                       class="comment-user">Andrew Thompson</a>
+                <span class="comment-date" dir="ltr"><span title="2011-08-30 00:18:34Z" class="relativetime-clean">Aug 30 '11 at 0:18</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-8707467" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Andrew Thompson 1) custom comps: it&#39;s the comp itself that&#39;s responsible for returning useful layout hints, if they dont the impl is buggy 2) even core comps are buggy ;-) 3) I dont mind white space (though it wasn&#39;t intentional this time, thanks :-)</span>
+                    &ndash;&nbsp;<a href="/users/203657/kleopatra"
+                       title="41,207 reputation"
+                       class="comment-user">kleopatra</a>
+                <span class="comment-date" dir="ltr"><span title="2011-08-30 08:02:06Z" class="relativetime-clean">Aug 30 '11 at 8:02</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-25527968" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="warm">7</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I can&#39;t believe the accepted answer is the one that says to avoid using the setXXX() methods. Sometimes you simply need them to provide a hint to the layout manager. If you are laying out a panel then you should absolutely feel free to use these methods when necessary. Saying that I think if you use the appropriate layout manager you will find yourself not needing these methods very often, but on occasion you simply need them. Try putting a JComboBox or JSpinner in a X_AXIS BoxLayout and not use them, believe you will find you need setMaximumSize() there.</span>
+                    &ndash;&nbsp;<a href="/users/188626/michael"
+                       title="1,568 reputation"
+                       class="comment-user">Michael</a>
+                <span class="comment-date" dir="ltr"><span title="2013-07-09 14:07:00Z" class="relativetime-clean">Jul 9 '13 at 14:07</span></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-25528312" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">4</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Michael no, I absolutely don&#39;t need it - the answer is always to use a decent LayoutManager and do any fine-tweaking on the <i>manager</i> level (vs. the component-level)</span>
+                    &ndash;&nbsp;<a href="/users/203657/kleopatra"
+                       title="41,207 reputation"
+                       class="comment-user">kleopatra</a>
+                <span class="comment-date" dir="ltr"><span title="2013-07-09 14:14:30Z" class="relativetime-clean">Jul 9 '13 at 14:14</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-33808337" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">4</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">You keep saying &quot;use a decent LayoutManager and tell it what sizes you want&quot; all over stackoverflow, but you never give any specific examples of a &quot;decent&quot; LayoutManager.  And none of the standard managers permit controlling the sizes directly.</span>
+                    &ndash;&nbsp;<a href="/users/1824182/ti-strga"
+                       title="698 reputation"
+                       class="comment-user">Ti Strga</a>
+                <span class="comment-date" dir="ltr"><span title="2014-03-07 19:36:09Z" class="relativetime-clean">Mar 7 '14 at 19:36</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-7229519" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link  dno"
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   ></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href=# onclick="">show <b>7</b> more comments</a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+<script>
+                    var ados = ados || {}; ados.run = ados.run || [];
+                    ados.run.push(function () { ados_add_placement(22,8277,"adzerk153509873",4).setZone(44); });
+                </script>
+                <div class="everyonelovesstackoverflow" id="adzerk153509873"></div>
+            <div id="dfp-mlb" class="dfpad"></div>
+  
+<a name="7229662"></a>
+<div id="answer-7229662" class="answer" data-answerid="7229662"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="7229662">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">85</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+<div class="bounty-award-container"><span class="bounty-award" title="This answer has been awarded bounties worth 100 reputation by David Kroukamp">+100</span></div>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>A few heuristics:</p>
+
+<ul>
+<li><p>Don't use <code>set[Preferred|Maximum|Minimum]Size()</code> when you really mean to override <code>get[Preferred|Maximum|Minimum]Size()</code>, as might be done in creating your own component, shown <a href="https://stackoverflow.com/a/10110232/230513">here</a>.</p></li>
+<li><p>Don't use <code>set[Preferred|Maximum|Minimum]Size()</code> when you could rely on a component's carefully overridden <code>getPreferred|Maximum|Minimum]Size</code>, as shown <a href="https://stackoverflow.com/questions/3174765/variable-layout-in-swing/3175280#3175280">here</a> and below.</p></li>
+<li><p>Do use <code>set[Preferred|Maximum|Minimum]Size()</code> to derive post-<code>validate()</code> geometry, as shown below and <a href="https://stackoverflow.com/questions/3174765/variable-layout-in-swing/3175280#3175280">here</a>.</p></li>
+<li><p>If a component has no preferred size, e.g. <code>JDesktopPane</code>, you may have to size the container, but any such choice is arbitrary. A comment may help clarify the intent.</p></li>
+<li><p>Consider alternate or custom layouts when you find that you would have to loop through many components to obtain derived sizes, as mentioned in these <a href="https://stackoverflow.com/questions/3174765/variable-layout-in-swing/3175280#3175280">comments</a>.</p></li>
+</ul>
+
+<p><img src="https://i.stack.imgur.com/hYh36.png" alt="enter image description here"></p>
+
+<pre><code>import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.GridLayout;
+import java.awt.KeyboardFocusManager;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JComponent;
+import javax.swing.JDesktopPane;
+import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+
+/**
+ * @see https://stackoverflow.com/questions/7229226
+ * @see https://stackoverflow.com/questions/7228843
+ */
+public class DesignTest {
+
+    private List&lt;JTextField&gt; list = new ArrayList&lt;JTextField&gt;();
+    private JPanel panel = new JPanel();
+    private JScrollPane sp = new JScrollPane(panel);
+
+    public static void main(String args[]) {
+        EventQueue.invokeLater(new Runnable() {
+
+            @Override
+            public void run() {
+                DesignTest id = new DesignTest();
+                id.create("My Project");
+            }
+        });
+    }
+
+    private void addField(String name) {
+        JTextField jtf = new JTextField(16);
+        panel.add(new JLabel(name, JLabel.LEFT));
+        panel.add(jtf);
+        list.add(jtf);
+    }
+
+    private void create(String strProjectName) {
+        panel.setLayout(new GridLayout(0, 1));
+        addField("First Name:");
+        addField("Last Name:");
+        addField("Address:");
+        addField("City:");
+        addField("Zip Code:");
+        addField("Phone:");
+        addField("Email Id:");
+        KeyboardFocusManager.getCurrentKeyboardFocusManager()
+            .addPropertyChangeListener("permanentFocusOwner",
+            new FocusDrivenScroller(panel));
+        // Show half the fields
+        sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        sp.validate();
+        Dimension d = sp.getPreferredSize();
+        d.setSize(d.width, d.height / 2);
+        sp.setPreferredSize(d);
+
+        JInternalFrame internaFrame = new JInternalFrame();
+        internaFrame.add(sp);
+        internaFrame.pack();
+        internaFrame.setVisible(true);
+
+        JDesktopPane desktopPane = new JDesktopPane();
+        desktopPane.add(internaFrame);
+
+        JFrame frmtest = new JFrame();
+        frmtest.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frmtest.add(desktopPane);
+        frmtest.pack();
+        // User's preference should be read from java.util.prefs.Preferences
+        frmtest.setSize(400, 300);
+        frmtest.setLocationRelativeTo(null);
+        frmtest.setVisible(true);
+        list.get(0).requestFocusInWindow();
+    }
+
+    private static class FocusDrivenScroller implements PropertyChangeListener {
+
+        private JComponent parent;
+
+        public FocusDrivenScroller(JComponent parent) {
+            this.parent = parent;
+        }
+
+        @Override
+        public void propertyChange(PropertyChangeEvent evt) {
+            Component focused = (Component) evt.getNewValue();
+            if (focused != null
+                &amp;&amp; SwingUtilities.isDescendingFrom(focused, parent)) {
+                parent.scrollRectToVisible(focused.getBounds());
+            }
+        }
+    }
+}
+</code></pre>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/7229662" title="short permalink to this answer" class="short-link" id="link-post-7229662">share</a><span class="lsep">|</span><a href="/posts/7229662/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="/posts/7229662/revisions" title="show all edits to this post">edited <span title="2017-05-23 12:34:59Z" class="relativetime">May 23 at 12:34</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/-1/community"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/a007be5a61f6aa8f3e85ae2fc18dd66e?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/-1/community">Community</a><span class="mod-flair" title="moderator">&#9830;</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-08-29 11:48:52Z" class="relativetime">Aug 29 '11 at 11:48</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/230513/trashgod"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/632732029bf05854c17d0dea6c82dcb4?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/230513/trashgod">trashgod</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 179,055" dir="ltr">179k</span><span title="15 gold badges"><span class="badge1"></span><span class="badgecount">15</span></span><span title="124 silver badges"><span class="badge2"></span><span class="badgecount">124</span></span><span title="527 bronze badges"><span class="badge3"></span><span class="badgecount">527</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-7229662" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="4"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-8692679" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">disagree (as you might have guessed :-) with reasoning by &quot;external factors&quot;: the XXSize properties is meant to express <i>internal only</i> needs. Tweaking those from the outside is mis-using, aka hacking. If you want a (Internal- or J-) frame with a a specifc size relative to it&#39;s preferred ... size the frame, not the content</span>
+                    &ndash;&nbsp;<a href="/users/203657/kleopatra"
+                       title="41,207 reputation"
+                       class="comment-user">kleopatra</a>
+                <span class="comment-date" dir="ltr"><span title="2011-08-29 12:07:28Z" class="relativetime-clean">Aug 29 '11 at 12:07</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-8692768" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@kleopatra: just to be a little bit insistent: if setXXSize methods should never been used from outside, why haven&#39;t been declared private or protected? Isn&#39;t this a lack of design? Doesn&#39;t the public modifier implicitly tell the user that can use those methods?</span>
+                    &ndash;&nbsp;<a href="/users/587884/heisenbug"
+                       title="27,684 reputation"
+                       class="comment-user owner">Heisenbug</a>
+                <span class="comment-date" dir="ltr"><span title="2011-08-29 12:12:13Z" class="relativetime-clean">Aug 29 '11 at 12:12</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-8696188" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I have to agree with @kleopatra: <code>setPreferredSize()</code> always replaces the component&#39;s calculation with an arbitrary choice.</span>
+                    &ndash;&nbsp;<a href="/users/230513/trashgod"
+                       title="179,055 reputation"
+                       class="comment-user">trashgod</a>
+                <span class="comment-date" dir="ltr"><span title="2011-08-29 15:29:56Z" class="relativetime-clean">Aug 29 '11 at 15:29</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-17189458" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@trashgod +100 to you I think there is no problem with overriding these methods, even calling them (but of course this would mean you have a custom component thus overriding would be better)</span>
+                    &ndash;&nbsp;<a href="/users/1133011/david-kroukamp"
+                       title="28,445 reputation"
+                       class="comment-user">David Kroukamp</a>
+                <span class="comment-date" dir="ltr"><span title="2012-10-04 12:43:19Z" class="relativetime-clean">Oct 4 '12 at 12:43</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-17195102" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="warm">5</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@DavidKroukamp: Thank you. I defer to kleopatra&#39;s greater experience, but I see the value in examining the contrary view critically.</span>
+                    &ndash;&nbsp;<a href="/users/230513/trashgod"
+                       title="179,055 reputation"
+                       class="comment-user">trashgod</a>
+                <span class="comment-date" dir="ltr"><span title="2012-10-04 15:42:02Z" class="relativetime-clean">Oct 4 '12 at 15:42</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-7229662" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link  dno"
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   ></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href=# onclick="">show <b>4</b> more comments</a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="12665828"></a>
+<div id="answer-12665828" class="answer" data-answerid="12665828"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="12665828">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">39</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<blockquote>
+  <p>Should I completely avoid the use of those methods?</p>
+</blockquote>
+
+<p>No, there is no formal evidence to suggest calling or overriding these methods is not allowed. In fact Oracle says these methods are used for giving size hints: <a href="http://docs.oracle.com/javase/tutorial/uiswing/layout/using.html#sizealignment">http://docs.oracle.com/javase/tutorial/uiswing/layout/using.html#sizealignment</a>.</p>
+
+<p>They may also be overriden (which is the best practice for Swing) when <em>extending</em> a Swing component (rather then calling the method on the custom component instance)</p>
+
+<p>Most importatly no matter how you specify your component's size, be sure that your component's container uses a layout manager that respects the requested size of the component. </p>
+
+<blockquote>
+  <p>The methods have been defined for a reason. So when should I use them?
+  In which context? For what purposes?</p>
+</blockquote>
+
+<p>When you need to provide customized size hints to the containers Layout manager, so that the component will be laid out well</p>
+
+<blockquote>
+  <p>What exactly are the negative consequences of using those methods? (I
+  can only think adding portability between systems with different
+  screen resolution).</p>
+</blockquote>
+
+<ul>
+<li><p>Many layout managers do not pay attention to a component's requested maximum size. However, <code>BoxLayout</code> and <code>SpringLayout</code> do. Furthermore, <code>GroupLayout</code> provides the ability to set the minimum, preferred or maximum size explicitly, without touching the component.</p></li>
+<li><p>Make sure that you really need to set the component's exact size. Each Swing component has a different preferred size, depending on the font it uses and the look and feel. Thus having a set size might produce varied <em>looks</em> of the UI on different Systems</p></li>
+<li><p>sometimes problems can be encountered with <code>GridBagLayout</code> and text fields, wherein if the size of the container is smaller than the preferred size, the minimum size gets used, which can cause text fields to shrink quite substantially.</p></li>
+<li><p><code>JFrame</code> does not enforce overriden <code>getMinimumSize()</code> only calling <code>setMinimumSize(..)</code> on its works</p></li>
+</ul>
+
+<blockquote>
+  <p>I don't think any LayoutManager can exactly satisfy all desired layout
+  needs. Do I really need to implement a new LayoutManager for every
+  little variation on my layout ?</p>
+</blockquote>
+
+<p>If by implementing you mean using then yes. Not one <code>LayoutManger</code> can handle everything, each <code>LayoutManager</code> has its pros and cons thus each can be used together to produce the final layout.</p>
+
+<p><strong>Reference:</strong></p>
+
+<ul>
+<li><a href="http://docs.oracle.com/javase/tutorial/uiswing/layout/problems.html">http://docs.oracle.com/javase/tutorial/uiswing/layout/problems.html</a></li>
+</ul>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/12665828" title="short permalink to this answer" class="short-link" id="link-post-12665828">share</a><span class="lsep">|</span><a href="/posts/12665828/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/12665828/revisions" title="show all edits to this post">edited <span title="2013-04-29 22:07:52Z" class="relativetime">Apr 29 '13 at 22:07</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/93343/cajunluke"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/35bf1fe76274ab0980edd881a3378573?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/93343/cajunluke">CajunLuke</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,930</span><span title="21 silver badges"><span class="badge2"></span><span class="badgecount">21</span></span><span title="26 bronze badges"><span class="badge3"></span><span class="badgecount">26</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2012-09-30 22:50:52Z" class="relativetime">Sep 30 '12 at 22:50</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/1133011/david-kroukamp"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/bu8D4.jpg?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/1133011/david-kroukamp">David Kroukamp</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 28,445" dir="ltr">28.4k</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="53 silver badges"><span class="badge2"></span><span class="badgecount">53</span></span><span title="108 bronze badges"><span class="badge3"></span><span class="badgecount">108</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-12665828" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-17096026" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy"><i>provide customized size hints</i> that&#39;s a contradiction in itself: providing sizing hints (in px!) is the <i>exclusive</i> task of the component. It calculates them based on internal state details that no other party except itself can know (nor can keep track of). From client perspective, the means of customization can be a suitable LayoutManager and/or specialize api on the component that allows configuring size requirements in terms of &quot;semantic&quot; size-relevant properties, f.i. number of rows/columns in a text component</span>
+                    &ndash;&nbsp;<a href="/users/203657/kleopatra"
+                       title="41,207 reputation"
+                       class="comment-user">kleopatra</a>
+                <span class="comment-date" dir="ltr"><span title="2012-10-01 08:00:00Z" class="relativetime-clean">Oct 1 '12 at 8:00</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-17096137" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@kleopatra I would still love to know why Oracle then tells us how to use these methods and the correct way to use them. We might have our own preferences but we cant say the designers ment it to not be used when there is no evidence to suggest this. But thats why I put up the bounty see maybe if it would attract others that could give a information from a credible source where oracle states to not use these methods at all (thus making it bad practice if you do, for example setMinimumSize has to be called on things like JSplitPane etc this can be seen in the Oracle tutorial of split panes.</span>
+                    &ndash;&nbsp;<a href="/users/1133011/david-kroukamp"
+                       title="28,445 reputation"
+                       class="comment-user">David Kroukamp</a>
+                <span class="comment-date" dir="ltr"><span title="2012-10-01 08:06:27Z" class="relativetime-clean">Oct 1 '12 at 8:06</span></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-17114984" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">4</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@David: I&#39;ve come to see the <code>setXxxSize</code> methods as a red flag that I&#39;m may wind up <a href="http://stackoverflow.com/a/6785121/230513">here</a>, even when the docs suggest it. I <i>almost always</i> should have overridden <code>getXxxSize</code>, where one has access to the required geometry; and even short examples get recycled more  than I want to think about. +1 for mentioning variation among layout managers and citing the tutorial.</span>
+                    &ndash;&nbsp;<a href="/users/230513/trashgod"
+                       title="179,055 reputation"
+                       class="comment-user">trashgod</a>
+                <span class="comment-date" dir="ltr"><span title="2012-10-01 20:58:03Z" class="relativetime-clean">Oct 1 '12 at 20:58</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-17194672" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">D&#39;oh, in my comment above, I meant to cite the answer <a href="http://stackoverflow.com/a/12532237/230513">here</a>.</span>
+                    &ndash;&nbsp;<a href="/users/230513/trashgod"
+                       title="179,055 reputation"
+                       class="comment-user">trashgod</a>
+                <span class="comment-date" dir="ltr"><span title="2012-10-04 15:28:09Z" class="relativetime-clean">Oct 4 '12 at 15:28</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-24495829" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="warm">13</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">+1 &quot;No, there is no formal evidence to suggest calling or overriding these methods is not allowed.&quot; Spot on. The post tagged as answer is plain BS.</span>
+                    &ndash;&nbsp;<a href="/users/243373/tt"
+                       title="10,330 reputation"
+                       class="comment-user">TT.</a>
+                <span class="comment-date" dir="ltr"><span title="2013-06-06 12:31:43Z" class="relativetime-clean">Jun 6 '13 at 12:31</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-12665828" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="22306554"></a>
+<div id="answer-22306554" class="answer" data-answerid="22306554"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="22306554">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">21</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>There are a lot of good answers here but I want to add a little more about the reasons <em>why</em> you should normally avoid these (the question just came up again in a duplicate topic):</p>
+
+<p>With few exceptions, if you are using these methods you are probably fine-tuning your GUI to look good on a specific look-and-feel (and with your system-specific settings, e.g. your preferred desktop font, etc.). The methods themselves aren't inherently evil, but the typical reasons for using them <em>are</em>. As soon as you start tuning pixel positions and sizes in a layout you run the risk of your GUI breaking (or at minimum, looking bad), on other platforms.</p>
+
+<p>As an example of this, try changing your application's default look-and-feel. Even just with the options available on your platform, you may be surprised at how poorly the results can be rendered.</p>
+
+<p>So, in the name of keeping your GUI functional and nice-looking on all platforms (remember, one of the major benefits of Java is its cross-platformness), you should rely on layout managers, etc., to automatically adjust the sizes of your components so that it renders correctly outside of your specific development environment.</p>
+
+<p>All that said, you can certainly conceive of situations where these methods are justified. Again, they aren't inherently evil, but their usage is normally a <strong>big</strong> red flag indicating potential GUI issues. Just make sure you are aware of the high potential for complications if/when you use them, and always try and think if there is another look-and-feel-independent solution to your problems -- more often than not you will find that these methods are not necessary.</p>
+
+<p>By the way, if you find yourself getting frustrated with standard layout managers, there are a lot of good free, open-source third-party ones, for example <a href="http://www.jgoodies.com/freeware/libraries/forms/">JGoodies' <code>FormLayout</code></a>, or <a href="http://www.miglayout.com/"><code>MigLayout</code></a>. Some GUI builders even have built-in support for third-party layout managers -- Eclipse's WindowBuilder GUI editor, for example, ships with support for <code>FormLayout</code> and <code>MigLayout</code>.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/22306554" title="short permalink to this answer" class="short-link" id="link-post-22306554">share</a><span class="lsep">|</span><a href="/posts/22306554/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/22306554/revisions" title="show all edits to this post">edited <span title="2014-03-10 22:26:01Z" class="relativetime">Mar 10 '14 at 22:26</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2014-03-10 17:02:58Z" class="relativetime">Mar 10 '14 at 17:02</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/616460/jason-c"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/Yiloe.png?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/616460/jason-c">Jason C</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 25,820" dir="ltr">25.8k</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="56 silver badges"><span class="badge2"></span><span class="badgecount">56</span></span><span title="101 bronze badges"><span class="badge3"></span><span class="badgecount">101</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-22306554" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="2"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-33904857" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">+1 a considerate answer - just disagree with <i>they aren&#39;t inherently evil</i> simply because they are :-) Typically, outside clients have no chance whatsoever to guess - and mere assumptions are as close as outsiders can get - halfway correct layout hints: only the components themselves do have all the info at all times to return anything useful. And since the moment outsiders interfere it&#39;s their responsiblity to keep those hints up-to-date which they can&#39;t.</span>
+                    &ndash;&nbsp;<a href="/users/203657/kleopatra"
+                       title="41,207 reputation"
+                       class="comment-user">kleopatra</a>
+                <span class="comment-date" dir="ltr"><span title="2014-03-10 22:15:21Z" class="relativetime-clean">Mar 10 '14 at 22:15</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-33905071" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Well, you know, I have a more &quot;guns don&#39;t kill people, people kill people&quot; kind of view of these sorts of things. :) <i>If</i> somebody uses these methods, they <i>need</i> to be aware of things like the good points you raise about unpredictable usage of layout hints (which is why situations where these methods are appropriate are rare indeed).</span>
+                    &ndash;&nbsp;<a href="/users/616460/jason-c"
+                       title="25,820 reputation"
+                       class="comment-user">Jason C</a>
+                <span class="comment-date" dir="ltr"><span title="2014-03-10 22:22:32Z" class="relativetime-clean">Mar 10 '14 at 22:22</span></span>
+                        <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-72618235" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I think setting preferred size is not a big red flag at all. Not setting it <i>is</i> a big red flag instead. Let me elaborate. The layout manager - no matter how smart it is - has no idea about the logical function of a gui widget. For example, the layout manager can not distinguish between a JTextField for entering ZIP code, and a JTextField for entering a name. Similarly it can not distinguish between a tool button next to a JTextField or a big OK button at the bottom of a form. Therefore either a better widget set, or some sizing hints are needed, no?</span>
+                    &ndash;&nbsp;<a href="/users/5903395/gee-bee"
+                       title="1,416 reputation"
+                       class="comment-user">Gee Bee</a>
+                <span class="comment-date" dir="ltr"><span title="2017-03-12 17:52:50Z" class="relativetime-clean">Mar 12 at 17:52</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-72618592" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@GeeBee Nope, that&#39;s a prime example of a red flag, in fact. What you <i>should</i> do is use <a href="https://docs.oracle.com/javase/7/docs/api/javax/swing/JTextField.html#setColumns(int)" rel="nofollow noreferrer"><code>JTextField.setColumns</code></a> to set the column count, which adjusts the preferred size accordingly. If you do <code>setPreferredSize</code> then you&#39;re hard-coding a size, which will break your layouts depending on the platform font size. <a href="http://i.imgur.com/p0i5nST.png" rel="nofollow noreferrer">Here are some text fields in a grid bag layout with <code>setColumns</code> called appropriately</a>. For your buttons, use appropriate layouts/grid weights to control the sizes.</span>
+                    &ndash;&nbsp;<a href="/users/616460/jason-c"
+                       title="25,820 reputation"
+                       class="comment-user">Jason C</a>
+                <span class="comment-date" dir="ltr"><span title="2017-03-12 18:08:07Z" class="relativetime-clean">Mar 12 at 18:08</span></span>
+                        <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-72618683" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@GeeBee And now, with that done correctly, notice how the text field widths are decreased when I decrease the font size: <a href="https://i.snag.gy/ZULulh.jpg" rel="nofollow noreferrer">i.snag.gy/ZULulh.jpg</a>. Even changing the font size on the fly now works automatically, rather than you, say, having to recalculate all text field widths and explicitly call setPreferredSize again for each, all you have to do is invalidate the layout and their sizes will adjust.</span>
+                    &ndash;&nbsp;<a href="/users/616460/jason-c"
+                       title="25,820 reputation"
+                       class="comment-user">Jason C</a>
+                <span class="comment-date" dir="ltr"><span title="2017-03-12 18:12:11Z" class="relativetime-clean">Mar 12 at 18:12</span></span>
+                        <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-22306554" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link  dno"
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   ></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href=# onclick="">show <b>2</b> more comments</a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="7229416"></a>
+<div id="answer-7229416" class="answer" data-answerid="7229416"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="7229416">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">17</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>If you are having trouble with layouts in Java Swing, then I can highly recommend the JGoodies <code>FormLayout</code> provided freely as part of the Forms freeware library by Karsten Lentzsch <a href="http://www.jgoodies.com/freeware/forms/" rel="noreferrer">here</a>.</p>
+
+<p>This very popular layout manager is extremely flexible, allowing for very polished Java UIs to be developed.</p>
+
+<p>You'll find Karsten's documentation in this <a href="http://www.jgoodies.com/articles/forms.pdf" rel="noreferrer">pdf</a>, and some rather good documentation from google <a href="http://code.google.com/javadevtools/wbpro/layoutmanagers/swing/jgoodies_formlayout.html" rel="noreferrer">here</a>.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/7229416" title="short permalink to this answer" class="short-link" id="link-post-7229416">share</a><span class="lsep">|</span><a href="/posts/7229416/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-08-29 11:22:58Z" class="relativetime">Aug 29 '11 at 11:22</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/211070/tom"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/c1d7ee7585985b05997400136075aacd?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/211070/tom">Tom</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">3,807</span><span title="18 silver badges"><span class="badge2"></span><span class="badgecount">18</span></span><span title="30 bronze badges"><span class="badge3"></span><span class="badgecount">30</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-7229416" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-7229416" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="7229274"></a>
+<div id="answer-7229274" class="answer" data-answerid="7229274"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="7229274">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">14</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<blockquote>
+  <p>In a situation where I need to define proportions between children of a Component (child 1 should use 10% of space, child2 40% ,child3 50%), is it possible to achieve that without implementing a custom layout manager?</p>
+</blockquote>
+
+<p>Maybe <code>GridBagLayout</code> would satisfy your needs. Besides that, there's a ton of layout managers on the web, and I bet there's one that fits your requirements.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/7229274" title="short permalink to this answer" class="short-link" id="link-post-7229274">share</a><span class="lsep">|</span><a href="/posts/7229274/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-08-29 11:08:23Z" class="relativetime">Aug 29 '11 at 11:08</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/637853/thomas"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/72baa38005eb8de126b2dd2e6fa1d660?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/637853/thomas">Thomas</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 61,013" dir="ltr">61k</span><span title="7 gold badges"><span class="badge1"></span><span class="badgecount">7</span></span><span title="75 silver badges"><span class="badge2"></span><span class="badgecount">75</span></span><span title="117 bronze badges"><span class="badge3"></span><span class="badgecount">117</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-7229274" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-8691837" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">thanks for the answer. I have to assume that you meant also: &quot;do not use setPreferredSize at all&quot;, right?</span>
+                    &ndash;&nbsp;<a href="/users/587884/heisenbug"
+                       title="27,684 reputation"
+                       class="comment-user owner">Heisenbug</a>
+                <span class="comment-date" dir="ltr"><span title="2011-08-29 11:11:23Z" class="relativetime-clean">Aug 29 '11 at 11:11</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-24184210" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">GridBagLayout uses constraints, where you can specify the &quot;weight&quot; both in X and Y for a given component, so the LayoutManager can decide what to do with the extra space on a resize. <b>BUT</b> you still need/can use setPreferredSize to determine the <i>preferred size</i> of each component, note that &quot;preferred&quot; doesn&#39;t mean it&#39;s going to be honored always. For special cases you may also need setMinimumSize and setMaximumSize anyway. They are not <i>evil</i>, don&#39;t buy into that. <a href="http://docs.oracle.com/javase/tutorial/uiswing/layout/gridbag.html" rel="nofollow noreferrer">docs.oracle.com/javase/tutorial/uiswing/layout/gridbag.html</a></span>
+                    &ndash;&nbsp;<a href="/users/1447087/%e3%83%9e%e3%83%ab%e3%81%a1%e3%82%83%e3%82%93-%e3%81%a0%e3%82%88"
+                       title="899 reputation"
+                       class="comment-user">マルちゃん だよ</a>
+                <span class="comment-date" dir="ltr"><span title="2013-05-28 03:41:42Z" class="relativetime-clean">May 28 '13 at 3:41</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-7229274" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="15622005"></a>
+<div id="answer-15622005" class="answer" data-answerid="15622005"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="15622005">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">13</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>These methods are poorly understood by most people. You should absolutely not ignore these methods. It is up to the layout manager if they honor these methods. This page has a table that shows which layout managers honor which of those methods:</p>
+
+<p><a href="http://thebadprogrammer.com/swing-layout-manager-sizing/">http://thebadprogrammer.com/swing-layout-manager-sizing/</a></p>
+
+<p>I have been writing Swing code for 8+ years and the layout managers included in the JDK have always served my needs. I have never needed a 3rd party layout manager to achieve my layouts.</p>
+
+<p>I will say that you shouldn't try to give the layout manager hints with these methods until you are sure you need them. Do your layout without giving any sizing hints (i.e. let the layout manager do its job) and then you can make minor corrections if you need to.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/15622005" title="short permalink to this answer" class="short-link" id="link-post-15622005">share</a><span class="lsep">|</span><a href="/posts/15622005/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/15622005/revisions" title="show all edits to this post">edited <span title="2013-03-25 18:29:39Z" class="relativetime">Mar 25 '13 at 18:29</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-03-25 18:23:45Z" class="relativetime">Mar 25 '13 at 18:23</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/188626/michael"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/1bab1bd6a94d4aac738afc059ccd4816?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/188626/michael">Michael</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,568</span><span title="12 silver badges"><span class="badge2"></span><span class="badgecount">12</span></span><span title="21 bronze badges"><span class="badge3"></span><span class="badgecount">21</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-15622005" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-25534304" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">either there&#39;s a slight misconception (on your part) or misunderstanding (on my part), take your choice :-) You keep repeating (here, in your blog, in your answer related to BoxLayout) the <i>set</i> XXSize as being important - actually the LayoutManager is (or not) interested in the XXSize, that is the <i>sizing hint</i> independent on how it came about (internal calculation by the component or manually forced by application code)</span>
+                    &ndash;&nbsp;<a href="/users/203657/kleopatra"
+                       title="41,207 reputation"
+                       class="comment-user">kleopatra</a>
+                <span class="comment-date" dir="ltr"><span title="2013-07-09 16:48:57Z" class="relativetime-clean">Jul 9 '13 at 16:48</span></span>
+                        <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-25544127" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I am not sure I understand what you are getting at here. I mention above that the XXSize() methods are just hints. I really see nothing wrong with giving a layout manager a little hint, if needed. In my swing code, you will find an occasional setXXSize() method. Not many, but every once in a while I find they are needed. JComboBox and JSpinner frequently need hints. Especially a JComboBox that is populated after it is realized. You seem to be against any and all usage of these methods and I don&#39;t know why. (maybe I am the one missing the boat on this I guess).</span>
+                    &ndash;&nbsp;<a href="/users/188626/michael"
+                       title="1,568 reputation"
+                       class="comment-user">Michael</a>
+                <span class="comment-date" dir="ltr"><span title="2013-07-09 22:07:15Z" class="relativetime-clean">Jul 9 '13 at 22:07</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-25554577" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="warm">5</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">not the <i>methods</i> are the hints, the <i>properties</i> are: the components should report something reasonable for all hints, some (as f.i. JComboBox) don&#39;t - in returning maxInteger or so. That&#39;s a bug and should be fixed by the combo. As to your habit: be sure to be far away when the maintainer collegue has to clean that up :) Hard-coded hints tend to wreck the layout at the slightest change and are hard to detect as the reason for a broken layout.</span>
+                    &ndash;&nbsp;<a href="/users/203657/kleopatra"
+                       title="41,207 reputation"
+                       class="comment-user">kleopatra</a>
+                <span class="comment-date" dir="ltr"><span title="2013-07-10 08:02:43Z" class="relativetime-clean">Jul 10 '13 at 8:02</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-15622005" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="35442048"></a>
+<div id="answer-35442048" class="answer" data-answerid="35442048"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="35442048">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I am seeing it differenty than the accepted answer.</p>
+
+<h3>1) Should I completely avoid the use of those methods?</h3>
+
+<p>Never avoid! They're there to express the size constraints of your components to the layout manager. You can avoid using them if you're not using any layout manager and try to manage the visual layout on your own.</p>
+
+<p>Unfortunately, Swing is not coming with reasonable default dimensions. However, instead of setting the dimensions of a component, it is better OOP to descend your own component with reasonable defaults. (In that case you call setXXX in your descendant class.) Alternatively, you can override the getXXX methods for the same effect.</p>
+
+<h3>2) The methods have been defined for a reason. So when should I use them? In which context? For what purposes?</h3>
+
+<p>Always. When you create a component, set its realistic min/preferred/max size according to the use of that component. For example, if you have a JTextField for entering country symbols such as UK, its preferred size shall be as wide to fit two chars (with the current font, etc.) but probably it is meaningless to let it grow any bigger. After all, country symbols are two chars. 
+As opposite, if you have a JTextField for entering e.g. a customer name, it can have a preferred size for like the pixel size for 20 chars, but can grow to bigger if the layout is resized, so set the maximum size to more. At the same time, having a 0px wide JTextField is pointless, so set a realistic minimum size (I would say the pixel size of 2 chars).</p>
+
+<h3>3) What exactly are the negative consequences of using those methods?</h3>
+
+<p>(I can only think adding portability between systems with different screen resolution).</p>
+
+<p>No negative consequences. These are hints for the layout manager.</p>
+
+<h3>4) I don't think any LayoutManager can exactly satisfy all desired layout needs.</h3>
+
+<p>Do I really need to implement a new LayoutManager for every little variation on my layout ?</p>
+
+<p>No, definitely not. The usual approach is to cascade different basic layoutmanagers such as horizontal and vertical layout.</p>
+
+<p>For example, the layout below:</p>
+
+<pre><code>&lt;pre&gt;
++--------------+--------+
+| ###JTABLE### | [Add]  | 
+| ...data...   |[Remove]|
+| ...data...   |        |
+| ...data...   |        |
++--------------+--------+
+&lt;/pre&gt;
+</code></pre>
+
+<p>is having two parts. The left and right parts are a horizontal layout. The right part is a JPanel added to the horizontal layout, and this JPanel is having a vertical layout which lays out the buttons vertically.</p>
+
+<p>Of course, this can grow tricky with a real life layout. Therefore grid-based layout managers such as MigLayout are much better if you're about to develop anything serious.</p>
+
+<h3>5) If the answer to 4 is "yes", won't this lead to a proliferation of LayoutManager classes which will become difficult to maintain?</h3>
+
+<p>No, you definitely shall not develop layout managers, unless you need something very special.</p>
+
+<h3>6) In a situation where I need to define proportions...</h3>
+
+<p>between children of a Component (eg, child1 should use 10% of space, child2 40% ,child3 50%), is it possible to achieve that without implementing a custom LayoutManager?</p>
+
+<p>Basically, once the preferred sizes are set right, you may not want to do anything in percentage. Simply, because percentages are pointless (e.g. it is pointless to have a JTextField 10% of the window size - since one can shrink the window so that JTextField becomes 0px wide, or can expand the window so that the JTextField is across two displays on a multi-display setup).</p>
+
+<p>But, may times you may use the percentages to control sizes of bigger building blocks of your gui (panels, for example).</p>
+
+<p>You can use JSplitPane where you can pre-set the ratio of the two sides. Or, you can use MigLayout which allows you to set such constraints in percentage, pixels, and other units.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/35442048" title="short permalink to this answer" class="short-link" id="link-post-35442048">share</a><span class="lsep">|</span><a href="/posts/35442048/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/35442048/revisions" title="show all edits to this post">edited <span title="2016-03-07 18:01:23Z" class="relativetime">Mar 7 '16 at 18:01</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2016-02-16 20:08:15Z" class="relativetime">Feb 16 '16 at 20:08</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/5903395/gee-bee"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/sIL9v.jpg?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/5903395/gee-bee">Gee Bee</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,416</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="14 bronze badges"><span class="badge3"></span><span class="badgecount">14</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-35442048" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-72520972" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Really? This was at 0? This is better than the accepted answer that has 100+ ups. That basically says &quot;Thou shalt nevar use setPreferredSize!&quot; which is TERRIBLE. In my line of work, there are a LOT of specific size requirements, such as &quot;Buttons on touch screens must be [X] by [Y] with [M]x[N] spacing between&quot; safety requirement. <code>btnBar.setPreferredSize( dimTouchBtn );</code> is the best way to do that. Straightforward, no need for custom layout manager. I use mostly <code>GridBagLayout</code> with some <code>BorderLayout</code> and <code>BoxLayout</code>, nesting when convenient. This is a strong combination and easy to use.</span>
+                    &ndash;&nbsp;<a href="/users/6327519/aaron"
+                       title="739 reputation"
+                       class="comment-user">Aaron</a>
+                <span class="comment-date" dir="ltr"><span title="2017-03-09 15:43:03Z" class="relativetime-clean">Mar 9 at 15:43</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-72521413" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I was hasty in my above comment. This was the first answer I saw after accepted answer. Why does SO not sort by vote count anymore? I thought that was one of the core reasons for vote count originally. I still stand by original comment nonetheless; this is one of the better answers. Except for its point #6 - that one not as great. There are plenty (minority can still be a large number) of reasons to resize, and GridBagLayout supports that well in most cases I&#39;ve had.</span>
+                    &ndash;&nbsp;<a href="/users/6327519/aaron"
+                       title="739 reputation"
+                       class="comment-user">Aaron</a>
+                <span class="comment-date" dir="ltr"><span title="2017-03-09 15:52:34Z" class="relativetime-clean">Mar 9 at 15:52</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-72618091" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I think resize vs. not resize shall not be treaten as a religious decision. There are use cases when nobody ever wants to resize anything, e.g. if you develop a GUI for a kiosk, with a pre-set fixed resolution. If you have different targets, such as industrial HMI displays and the case of &quot;buttons&quot;, then yeah, you have to have at least 1cm by 1cm for a button on a touch screen. In this case, DPI of the screen sets how you resize. Other inputs such as text fields may not be resized vertically at all, and sometimes (such as a zipcode) horizontal resize is pointless as well.</span>
+                    &ndash;&nbsp;<a href="/users/5903395/gee-bee"
+                       title="1,416 reputation"
+                       class="comment-user">Gee Bee</a>
+                <span class="comment-date" dir="ltr"><span title="2017-03-12 17:46:43Z" class="relativetime-clean">Mar 12 at 17:46</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-35442048" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+                    <div class="question-status">
+        <h2>                    <b>protected</b> by <a href="/users/587884/heisenbug">Heisenbug</a> <span dir="ltr"><span title="2015-02-23 15:43:43Z" class="relativetime">Feb 23 '15 at 15:43</span></span>
+</h2>
+        <p>
+Thank you for your interest in this question. 
+Because it has attracted low-quality or spam answers that had to be removed, posting an answer now requires 10 <a href="/help/whats-reputation">reputation</a> on this site (the <a href="/help/privileges/new-user">association bonus does not count</a>).
+<br /><br />
+Would you like to answer one of these <a href="/unanswered?fromProtectedNotice=true">unanswered questions</a> instead?
+</p>
+    </div>
+
+
+
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Not the answer you&#39;re looking for?                            Browse other questions tagged <a href="/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="/questions/tagged/swing" class="post-tag" title="show questions tagged &#39;swing&#39;" rel="tag">swing</a> <a href="/questions/tagged/layout-manager" class="post-tag" title="show questions tagged &#39;layout-manager&#39;" rel="tag">layout-manager</a>  or <a href="/questions/ask">ask your own question</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tr>
+                            <td>
+                                <p class="label-key">asked</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2011-08-29 11:02:31Z"><b>6 years ago</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">viewed</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>39,349 times</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">active</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="?lastactivity" class="lastactivity-link" title="2016-03-07 18:01:23Z">1 year, 6 months ago</a></b></p>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+                        
+            <script>
+                    var ados = ados || {}; ados.run = ados.run || [];
+                    ados.run.push(function () { ados_add_placement(22,8277,"adzerk1311311228",[5,17,2221,1129,43]).setZone(45); });
+                </script>
+                <div class="everyonelovesstackoverflow" id="adzerk1311311228"></div>
+            <script>try{;window.clc=window.clc||{},window.clc.init=window.clc.init||function(a){var b=window,c=b.document;try{if('function'!=typeof[].indexOf||!window.addEventListener||!a.allowed)return;var d=new RegExp(a.allowed);if(!d.test(location.hostname))return;if(b.clc.options)for(var e in b.clc.options)a[e]=b.clc.options[e];b.clc.cmd='undefined'==typeof b.clc.cmd?[]:b.clc.cmd,b.clc.autoload=b.clc.autoload||function(){'function'==typeof b.clc.load?b.clc.load():b.clc.cmd.push(function(a){a.load()})};var f=a.wv;if(c.hidden&&f)return void c.addEventListener('visibilitychange',function b(){c.hidden||(window.clc.init(a),c.removeEventListener('visibilitychange',b))});b.clc.options=a,a.al&&b.clc.autoload();var g=c.createElement('script');g.async=!0,g.src=a.lib,c.body.appendChild(g)}catch(a){}},window.clc.loadDisplayAds=window.clc.loadDisplayAds||function(){function a(a){b.googletag=b.googletag||{},b.googletag.cmd=b.googletag.cmd||[],b.googletag.cmd.push(a)}var b=window,c={slots:{lb:[[728,90]],mlb:[[728,90]],sb:[[300,250],[300,600]]},ids:{"dfp-tlb":'lb',"dfp-mlb":'mlb',"dfp-tsb":'sb',"clc-tlb":'lb',"clc-mlb":'mlb',"clc-tsb":'sb'}},d=/^\/tags\//.test(location.pathname)||/^\/questions\/tagged\//.test(location.pathname)?'tag-pages':'question-pages',e=/^dev\./.test(location.hostname)?'test/'+location.hostname:location.hostname;return function(f){var g=(f&&0<f.length?f:Object.keys(c.ids)).map(function(a){return document.getElementById(a)}).filter(function(a){return!!a&&/^\s*$/.test(a.innerHTML)}).map(function(a){return a.id});if(0!==g.length){a(function(){var a=b.googletag;a.pubads().enableSingleRequest();var f=b.dfp_targeting||{};f&&Object.keys(f).forEach(function(b){a.pubads().setTargeting(b,f[b])});for(var h=0,i=g;h<i.length;h++){var j=i[h],k=c.ids[j],l=c.slots[k];a.defineSlot('/'+'248424177'+'/'+e+'/'+k+'/'+d,l,j).addService(a.pubads())}a.enableServices();for(var j,m=0,n=g;m<n.length;m++)j=n[m],a.display(j)});var h=document.createElement('script');h.async=!0,h.src='https://www.googletagservices.com/tag/js/gpt.js',document.body.appendChild(h)}}}(),window.clc.loadDfp=window.clc.loadDisplayAds,window.clc.init.call(null, {"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=8eb17d1d4f2b","u":"https://clc.stackoverflow.com/markup.js","wa":true,"kt":2000,"tto":true,"h":"clc.stackoverflow.com","allowed":"^(((talent\\.)?stackoverflow)|(blog\\.codinghorror)|(serverfault|askubuntu)|([^\\.]+\\.stackexchange))\\.com$","wv":true,"al":false,"fb":null});}catch(e){typeof console!=='undefined'&&typeof console.error==='function'&&console.error(e);}</script>
+            <script>
+                var dfp_targeting={Registered:['false'],'so-tag':['java','swing','layout-manager'],Industry:['Academic']};
+            </script>
+            <div id="hireme"></div>
+            <script>try{window.clc_request='Ai3xdi_S9NQIAAAAACpPbgACAAAAAgAAAAAvAAAAfGphdmF8c3dpbmd8bGF5b3V0LW1hbmFnZXJ8eC1pbmR1c3RyeS1hY2FkZW1pY3wAhSDXh_Hbp63RQg';typeof clc!=='undefined'&&typeof clc.autoload==='function'&&clc.autoload();}catch(e){typeof console!=='undefined'&&typeof console.error==='function'&&console.error(e);}</script>
+            <div id="dfp-tsb" class="dfpad"></div>
+                <style>.dfpad{position:absolute;height:1px;width:1px;opacity:0;top:0;left:0;pointer-events:none;}</style>
+<script>try{typeof clc!=='undefined'&&typeof clc.loadDfp==='function'&&clc.loadDfp();}catch(e){typeof console!=='undefined'&&typeof console.error==='function'&&console.error(e);}</script>
+            <div style="margin-bottom: 10px;">
+        
+
+<script>
+    StackExchange.ready(function () {
+        StackExchange.newsletterAd.init();
+    });
+</script>
+
+<div id="newsletter-ad">
+        <p id="newsletter-ad-header">Get the <b>weekly newsletter!</b> In it, you&#39;ll get:</p>
+        <ul>
+            <li>The week&#39;s top questions and answers</li>
+            <li>Important community announcements</li>
+            <li>Questions that need answers</li>
+        </ul>
+    <div id="newsletter-signup-container"><input id="newsletter-signup" type="button" value="Sign up for the newsletter" /></div>
+    <p id="newsletter-preview-container">see an <a href="https://stackexchange.com/newsletters/newsletter?site=stackoverflow.com" id="newsletter-preview">example newsletter</a></p>
+    <div class="dno">
+        
+<p class="privacy-policy-agreement">
+By subscribing, you agree to the <a href='https://stackexchange.com/legal/privacy-policy' name='privacy' target='_blank'>privacy policy</a> and <a href='https://stackexchange.com/legal/terms-of-service' name='tos' target='_blank'>terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1" />
+    </div>
+</div>
+
+    </div>
+
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="/q/22306192" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="/questions/22306192/why-should-you-not-use-setxxxsize?noredirect=1" class="question-hyperlink">Why should you not use setXXXSize()?</a>
+</div>
+<div class="spacer">
+	<a href="/q/29451863" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="/questions/29451863/jpanel-image-is-very-small?noredirect=1" class="question-hyperlink">JPanel image is very small</a>
+</div>
+<div class="spacer">
+	<a href="/q/3692987" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">16</div>
+	</a>
+	<a href="/questions/3692987/why-will-boxlayout-not-allow-me-to-change-the-width-of-a-jbutton-but-let-me-chan?noredirect=1" class="question-hyperlink">Why will BoxLayout not allow me to change the width of a JButton but let me change the height?</a>
+</div>
+<div class="spacer">
+	<a href="/q/2536873" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">18</div>
+	</a>
+	<a href="/questions/2536873/how-can-i-set-size-of-a-button?noredirect=1" class="question-hyperlink">How can I set size of a button?</a>
+</div>
+<div class="spacer">
+	<a href="/q/11686535" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">15</div>
+	</a>
+	<a href="/questions/11686535/how-to-change-jtable-header-height?noredirect=1" class="question-hyperlink">How to change JTable header height?</a>
+</div>
+<div class="spacer">
+	<a href="/q/22982295" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">24</div>
+	</a>
+	<a href="/questions/22982295/what-does-pack-do?noredirect=1" class="question-hyperlink">What does .pack() do?</a>
+</div>
+<div class="spacer">
+	<a href="/q/14805124" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">6</div>
+	</a>
+	<a href="/questions/14805124/how-to-set-the-height-and-the-width-of-a-textfield-in-java?noredirect=1" class="question-hyperlink">How to set the height and the width of a textfield in Java?</a>
+</div>
+<div class="spacer">
+	<a href="/q/7971178" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">14</div>
+	</a>
+	<a href="/questions/7971178/find-out-if-text-of-jlabel-exceeds-label-size?noredirect=1" class="question-hyperlink">find out if text of JLabel exceeds label size</a>
+</div>
+<div class="spacer">
+	<a href="/q/7625762" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">11</div>
+	</a>
+	<a href="/questions/7625762/setting-divider-location-on-a-jsplitpane-doesnt-work?noredirect=1" class="question-hyperlink">Setting divider location on a JSplitPane doesn&#39;t work</a>
+</div>
+<div class="spacer">
+	<a href="/q/7412982" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">11</div>
+	</a>
+	<a href="/questions/7412982/auto-resize-swing-elements-to-fit-to-the-containers-size?noredirect=1" class="question-hyperlink">Auto resize swing elements to fit to the container&#39;s size</a>
+</div>					<div class="spacer more">
+				<a href="/questions/linked/7229226">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer"><a href="/q/8978104" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="/questions/8978104/java-swing-panel-size" class="question-hyperlink">Java Swing Panel Size</a></div><div class="spacer"><a href="/q/9194015" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">2</div></a><a href="/questions/9194015/layouts-in-java-swing-specifying-size" class="question-hyperlink">Layouts in java Swing specifying size</a></div><div class="spacer"><a href="/q/12769656" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">3</div></a><a href="/questions/12769656/how-can-i-support-scaling-a-view-displayed-in-a-jscrollpane-to-avoid-displaying" class="question-hyperlink">How can I support scaling a view displayed in a JScrollPane to avoid displaying JScrollBars up to a minimum size?</a></div><div class="spacer"><a href="/q/13168822" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="/questions/13168822/java-swing-setting-jpanel-size" class="question-hyperlink">Java Swing setting JPanel Size</a></div><div class="spacer"><a href="/q/14565501" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="/questions/14565501/java-swing-jlist-cant-set-minimum-width" class="question-hyperlink">Java Swing JList, can&#39;t set minimum width</a></div><div class="spacer"><a href="/q/15422871" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">2</div></a><a href="/questions/15422871/which-java-swing-layout-should-i-use" class="question-hyperlink">Which java swing layout should I use</a></div><div class="spacer"><a href="/q/24870206" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="/questions/24870206/java-swing-jbutton-order-and-size" class="question-hyperlink">Java swing JButton order and size</a></div><div class="spacer"><a href="/q/26551910" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">3</div></a><a href="/questions/26551910/java-swing-jtextfield-sizing-height" class="question-hyperlink">Java Swing JTextfield Sizing (Height)</a></div><div class="spacer"><a href="/q/30516202" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="/questions/30516202/in-java-swing-null-layout-set-position-relative-to-bottom-of-container" class="question-hyperlink">In Java Swing Null Layout, set position relative to bottom of container</a></div><div class="spacer"><a href="/q/40577930" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="/questions/40577930/java-set-maximum-size-of-jframe" class="question-hyperlink">JAVA Set Maximum Size of JFrame</a></div>
+                    </div>
+                </div>
+
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot"
+           class="js-gps-track" 
+           data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li >
+                <div class="favicon favicon-blender" title="Blender Stack Exchange"></div><a href="https://blender.stackexchange.com/questions/89653/how-to-make-small-objects-emit-a-ton-of-light" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:502 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    how to make small objects emit a ton of light
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/90957/is-the-pike-square-formation-truly-invincible" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is the Pike Square formation truly invincible?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/106376/what-do-devils-eat-and-how-do-they-get-it" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What do Devils eat, and how do they get it?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-history" title="History Stack Exchange"></div><a href="https://history.stackexchange.com/questions/40036/did-henry-viii-have-his-bedroom-bricked-up-every-night" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:324 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Did Henry VIII have his bedroom bricked up every night?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/168959/why-is-the-wall-still-manned" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is The Wall still manned?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-chemistry" title="Chemistry Stack Exchange"></div><a href="https://chemistry.stackexchange.com/questions/82219/can-a-solution-of-fecl2-go-bad-over-time" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:431 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can a solution of FeCl2 go bad over time?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/168964/what-happened-to-all-the-wildlings" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What happened to all the wildlings?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-freelancing" title="Freelancing Stack Exchange"></div><a href="https://freelancing.stackexchange.com/questions/7178/is-it-unprofessional-to-approach-a-business-unsolicited-based-upon-technical-p" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:500 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it unprofessional to approach a business, unsolicited, based upon technical problems you see on their website?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="https://travel.stackexchange.com/questions/101574/should-i-just-not-bother-to-reserve-rental-cars-anymore" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should I just not bother to &quot;reserve&quot; rental cars anymore?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="https://tex.stackexchange.com/questions/389935/how-to-split-a-really-long-matrix" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to split a really long matrix
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-movies" title="Movies &amp; TV Stack Exchange"></div><a href="https://movies.stackexchange.com/questions/79966/why-is-the-number-4-so-prominent-in-the-death-note" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is the number &#39;4&#39; so prominent in the Death Note?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/90998/being-reborn-with-your-memories-knowledge-is-power-but-how-much" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Being reborn with your memories - Knowledge is power, but how much?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="https://security.stackexchange.com/questions/168807/why-doesnt-tornado-have-session" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why doesn&#39;t Tornado have session
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="https://unix.stackexchange.com/questions/390135/can-i-create-a-super-super-user-so-that-i-can-actually-have-a-user-that-can-de" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can I create a *super* super-user so that I can actually have a user that can deny permission to root?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="https://mathematica.stackexchange.com/questions/155093/how-to-connect-two-images" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to connect two images
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="https://money.stackexchange.com/questions/84764/available-credit-more-than-credit-line" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Available credit more than credit line
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/3322/asking-someone-whats-the-worst-thing-thats-ever-happened-to-you" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Asking someone &quot;What&#39;s the worst thing that&#39;s ever happened to you&quot;?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="https://workplace.stackexchange.com/questions/98404/how-do-i-stop-getting-all-of-this-work-placed-on-me" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do I stop getting all of this work placed on me?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/90984/how-plausible-is-a-system-of-clans-of-pure-blood-wizards" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How plausible is a system of clans of pure-blood wizards?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-politics" title="Politics Stack Exchange"></div><a href="https://politics.stackexchange.com/questions/24304/why-does-the-us-not-just-accept-north-koreas-nuclear-ambitions-and-attempt-to-m" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:475 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does the US not just accept North Korea&#39;s nuclear ambitions and attempt to mend relationships?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="https://puzzling.stackexchange.com/questions/54851/what-makes-an-interesting-puzzle" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What makes an Interesting Puzzle™?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/168839/why-is-sonic-so-fast" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is Sonic so fast?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/141675/when-do-i-get-my-sandwich" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    When do I get my sandwich?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/3294/is-it-rude-to-offer-my-seat-up-on-public-transit-to-someone-who-is-much-older-th" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it rude to offer my seat up on public transit to someone who is much older than me but not yet a senior?
+                </a>
+
+            </li>
+    </ul>
+
+        <a href="#" 
+           class="show-more js-show-more js-gps-track" 
+           data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+            more hot questions
+        </a>
+</div>
+        </div>
+    
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="/feeds/question/7229226" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>    </div>
+<script>
+StackExchange.ready(function(){$.get('/posts/7229226/ivc/1c84');});
+</script>
+<noscript>
+    <div><img src="/posts/7229226/ivc/1c84" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-java</div></div>
+
+
+        </div>
+    </div>
+
+    <footer id="footer" class="s-footer js-footer" role="contentinfo">
+        <div class="-container">
+            <div class="g-row js-sp-between">
+                    <div class="-logo">
+                        <a href="https://stackoverflow.com"><svg aria-hidden="true" class="svg-icon iconLogo" width="150" height="30" viewBox="0 0 150 30"><g><path d="M33.9 18.6l-1.7-.2c-1.3-.1-1.9-.6-1.9-1.6 0-1.1.8-1.8 2.4-1.8 1.1 0 2.1.3 2.8.8l1-1c-1-.8-2.3-1.1-3.8-1.1-2.3 0-3.9 1.2-3.9 3.1 0 1.8 1.1 2.7 3.2 2.9l1.8.2c1.2.1 1.8.6 1.8 1.6 0 1.3-1.1 1.9-2.8 1.9-1.3 0-2.5-.3-3.3-1.2l-1 1c1.2 1.1 2.6 1.5 4.4 1.5 2.6 0 4.3-1.2 4.3-3.2-.2-2-1.5-2.7-3.3-2.9zm13.3-4.8c-1.7 0-2.8.3-3.7 1.5l1 1c.6-.9 1.3-1.2 2.7-1.2 1.9 0 2.7.8 2.7 2.3v1h-3.2c-2.4 0-3.7 1.2-3.7 3.1 0 .8.3 1.6.8 2.2.7.7 1.5 1 3 1 1.4 0 2.2-.3 3.1-1.1v1h1.6v-7.2c-.1-2.4-1.5-3.6-4.3-3.6zm2.7 7c0 .9-.2 1.5-.5 1.8-.7.6-1.5.7-2.4.7-1.7 0-2.4-.6-2.4-1.8 0-1.2.8-1.9 2.4-1.9h3l-.1 1.2zm7.6-5.6c1 0 1.6.3 2.4 1.2l1-1c-1.1-1.2-2-1.6-3.5-1.6-2.7 0-4.7 1.8-4.7 5.5 0 3.6 2 5.5 4.7 5.5 1.5 0 2.4-.4 3.5-1.6l-1.1-1c-.8.9-1.4 1.2-2.4 1.2s-1.9-.4-2.5-1.2c-.5-.7-.7-1.5-.7-2.9 0-1.3.2-2.2.7-2.9.7-.8 1.6-1.2 2.6-1.2zm13.4-1.3H69l-4.8 4.7V9.1h-1.6v15.4h1.6v-3.9l1.9-1.9 3.6 5.8h1.9l-4.4-6.9 3.7-3.7zm7.3-.33c-1.6 0-2.7.6-3.4 1.4-1 1-1.3 2.3-1.3 4.3s.3 3.3 1.3 4.3c.7.7 1.8 1.4 3.4 1.4 1.6 0 2.8-.6 3.4-1.4 1-1 1.3-2.3 1.3-4.3s-.3-3.3-1.3-4.3c-.6-.8-1.7-1.4-3.4-1.4zm1.3 8.3c-.3.3-.7.5-1.3.5-.6 0-1-.2-1.3-.5-.6-.6-.6-1.6-.6-2.7 0-1.2.1-2.1.6-2.7.3-.3.7-.5 1.3-.5.6 0 1 .2 1.3.5.6.6.6 1.5.6 2.7.1 1.2 0 2.2-.6 2.7zm10.8-8.2l-2.2 6.9-2.3-6.9h-2.9l4.1 11.1h2.2l4.1-11.1h-3zm7.6-.1c-2.9 0-4.8 2-4.8 5.7 0 4.5 2.5 5.7 5.1 5.7 2 0 3.1-.6 4.2-1.7l-1.7-1.6c-.7.7-1.3 1-2.5 1-1.6 0-2.4-1-2.4-2.5h6.9v-1.2c0-3.2-1.7-5.4-4.8-5.4zm-2.1 4.6c0-.5.1-.8.3-1.2.3-.7.9-1.2 1.9-1.2.9 0 1.6.5 1.9 1.2.2.4.2.7.3 1.2h-4.4zm11-3.4v-1.1h-2.7v11.1h2.8v-6.7c0-1.4.9-2 1.8-2 .7 0 1 .2 1.5.7l2.1-2.1c-.8-.8-1.5-1-2.6-1-1.3-.1-2.3.4-2.9 1.1zm6.3-2.3v12.3h2.8v-8.8h2v-2.1h-2v-1.2c0-.6.3-1 1-1h1.1v-2.3h-1.6c-2.3 0-3.3 1.6-3.3 3.1zm16.2 1.1c-1.6 0-2.7.6-3.4 1.4-1 1-1.3 2.3-1.3 4.3s.3 3.3 1.3 4.3c.7.7 1.8 1.4 3.4 1.4 1.6 0 2.8-.6 3.4-1.4 1-1 1.3-2.3 1.3-4.3s-.3-3.3-1.3-4.3c-.6-.8-1.8-1.4-3.4-1.4zm1.3 8.3c-.3.3-.7.5-1.3.5-.6 0-1-.2-1.3-.5-.6-.6-.6-1.6-.6-2.7 0-1.2.1-2.1.6-2.7.3-.3.7-.5 1.3-.5.6 0 1 .2 1.3.5.6.6.6 1.5.6 2.7 0 1.2 0 2.2-.6 2.7zm16.5-8.2l-1.8 6.9-2.3-6.9h-2l-2.3 6.9-1.8-6.9H134l3.4 11.1h2.3l2.3-7 2.3 7h2.3l3.4-11.1h-2.9zm-25.1 7.7V9.27h-2.8v12.3c0 1.6 1 3.2 3.2 3.2h1.6v-2.3h-1c-.7 0-1-.4-1-1.1zM41.3 15.6l1.4-1.4h-3v-3.5h-1.6v11.1c0 1.6.9 2.9 2.7 2.9h1.1v-1.3h-.8c-1 0-1.5-.6-1.5-1.6v-6.1h1.7v-.1z" fill="#222426"/><path fill="#BCBBBB" d="M21 27v-8h3v11H0V19h3v8z"/><path d="M5.4 19.1l13.56 1.96.17-2.38-13.26-2.55-.47 2.97zm1.8-6.8l12 5.6 1.1-2.4-12-5.6-1.1 2.4zm3.4-5.9l10.2 8.5 1.7-2-10.2-8.5-1.7 2zM17.1.2L15 1.8l7.9 10.6 2.1-1.6L17.1.2zM5 25h14v-3H5v3z" fill="#F48024"/></g></svg></a>
+                    </div>
+                
+                    <nav class="-nav js-category _visible" data-name="default">
+                        <h5 class="-title"><a href="https://stackoverflow.com" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="/questions" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 16})">Questions</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Jobs</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs/directory/developer-jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 11})">Developer Jobs Directory</a></li>
+                                                            <li class="-item"><a href="https://stackoverflow.com/documentation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 18})">Documentation</a></li>
+                                                            <li class="-item"><a href="/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Help</a></li>
+                                <li class="-item"><a onclick='StackExchange.switchMobile("on")' class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Mobile</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="-nav js-category _visible" data-name="default">
+                        <h5 class="-title"><a href="https://www.stackoverflowbusiness.com/?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 19 })">Stack Overflow<br /> Business</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/talent?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 20 })">Talent</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/advertise?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 21 })">Ads</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/enterprise?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 22 })">Enterprise</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/insights?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 23 })">Insights</a></li>
+                        </ul>
+                    </nav>
+                <nav class="-nav js-category _visible" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Company</a></h5>
+                    <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">About</a></li>
+                                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Press</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 9 })" href="https://stackoverflow.com/company/work-here">Work Here</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackexchange.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackexchange.com/legal/privacy-policy">Privacy Policy</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://stackoverflow.com/company/contact">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="-network g-row">
+                    <a href="#" class="-back-trigger js-back"><svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"/></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <nav class="-nav js-category" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="//stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="//serverfault.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="//superuser.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="//webapps.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="//askubuntu.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="//webmasters.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="//gamedev.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//tex.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="//softwareengineering.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="//unix.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="//apple.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="//wordpress.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="//gis.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="//electronics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//android.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="//security.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="//dba.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="//drupal.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="//sharepoint.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="//ux.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="//mathematica.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//salesforce.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="//expressionengine.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine&#174; CMS">ExpressionEngine&#174; Answers</a></li>
+                <li class="-item"><a href="//blender.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="//networkengineering.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="//crypto.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="//codereview.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                <li class="-item"><a href="//magento.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//softwarerecs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="//dsp.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="//emacs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="//raspberrypi.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="//codegolf.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                <li class="-item"><a href="//ethereum.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="//datascience.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//arduino.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (27)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="//photo.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="//scifi.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="//graphicdesign.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="//movies.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="//music.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="//worldbuilding.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="//cooking.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="//diy.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="//money.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="//academia.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="//law.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (17)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="//english.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="//skeptics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="//judaism.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="//travel.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="//christianity.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="//ell.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="//japanese.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="//gaming.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="//bicycles.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="//rpg.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="//anime.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="//puzzling.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                <li class="-item"><a href="//mechanics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (32)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="//mathoverflow.net" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="//math.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="//stats.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="//cstheory.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="//physics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="//chemistry.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientists, academics, teachers and students">Chemistry</a></li>
+                <li class="-item"><a href="//biology.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="//cs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="//philosophy.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="//meta.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="//stackapps.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+                <li class="-item"><a href="//area51.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                    </ul>
+    </nav>
+                <div class="-copyright text-right">
+                    <div class="g-column jc-sp-between">
+                        <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog?blb=1">Blog</a></li>
+                            <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link">Facebook</a></li>
+                            <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link">Twitter</a></li>
+                            <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link">LinkedIn</a></li>
+                        </ul>
+
+                        <div>
+                            <p>
+                                site design / logo &#169; 2017 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license" class="-link">cc by-sa 3.0</a>
+                                with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license" class="-link">attribution required</a>.
+                                <span id="svnrev">rev 2017.9.5.26948</span>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    </div>
+    </footer>
+
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled
+            <img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno">
+        </div>
+    </noscript>
+<script>var z=document.createElement("script");z.type="text/javascript",z.async=!0,z.src="https://static.adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+<script>
+var ados = ados || {};
+ados.run = ados.run || [];
+
+
+ados.run.push(function () {
+    setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+    ados_setKeywords('java,swing,layout-manager,x-industry-academic');; ados_load();
+});   
+
+</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-5620270-1');
+                ga('create', 'UA-5620270-59', {name: 'pageData', sampleRate: 5 });
+                ga('set', 'dimension2', '|java|swing|layout-manager|');
+                ga('pageData.set', 'dimension2', '|java|swing|layout-manager|');
+                ga('send', 'pageview');
+                ga('pageData.send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+                <script>
+        var x1=0,x2=0;
+        $('body').on('mousewheel', function(e){ x1=x2; x2=e.originalEvent.wheelDelta; });
+        setInterval(function() { 
+            if(x1!=x2){ 
+                if(x2 > 0) {
+                    console.log('Scroll Up');
+                    //var data = "Scrolling Up";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Scroll Up"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                } 
+                else { 
+                    console.log('Scroll Down');
+                    //var data = "Scrolling Down";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Scroll Down"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                }
+            }
+        },500);
+    </script>
+    <script>
+        var y1=0,y2=0;
+        window.onmousemove = function(e) { y1=y2; y2=e.pageY; }
+        setInterval(function() { 
+            if(y1!=y2){ 
+                if(y2<y1){
+                    console.log('Mouse Up');
+                    //var data = "Mouse movement upward";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Mouse Up"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                } 
+                else { 
+                    console.log('Mouse Down');
+                    //var data = "Mouse movement downward";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Mouse Down"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                }
+            } 
+        },500);
+    </script>
+    <script>
+        $("button").mousedown( function(e) {
+        if(e.which) {
+            console.log(this.value+" Button Click");
+            //var data = this.value+" Button clicked";
+            $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Button Click"}',
+                success: function(data) { console.log(data); },
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        }
+        });
+        $("input").mousedown( function(e) {
+        if(e.which) {
+            console.log(this.value+" Button Click");
+            //var data = "Button";
+            /*$.ajax({
+                url:'/jspost',
+                type:'POST',
+                data:{dat,dat},
+                success: function(data) 
+                {console.log(data);
+                }
+            });*/
+            $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Button Click"}',
+                success: function(data) { console.log(data); },
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        }   
+        });
+        $("a").mousedown( function(e) {
+        if(e.which) {
+            console.log("Link Click");
+            //var data = "Link clicked";
+            $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Link Click"}',
+                success: function(data) { console.log(data); },
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        }
+        });
+        $("button").trigger("mousedown");
+    </script>
+    <script>
+        $('body').mouseup(function() {
+        console.log('Text Select');
+        //var data = "Text is selected";
+        $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Text Select"}',
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        console.log(getSelectedText());
+        });
+        function getSelectedText() {
+        if (window.getSelection) {
+            return window.getSelection().toString();
+        } else if (document.selection) {
+            return document.selection.createRange().text;
+        }
+        return '';
+        }
+    </script>
+    </body>
+</html>

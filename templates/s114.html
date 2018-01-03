@@ -1,0 +1,3331 @@
+
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/QAPage">
+
+<head>
+
+<title>java - How to upload files to server using JSP/Servlet? - Stack Overflow</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="/opensearch.xml">
+    <meta property="og:type" content="website"/>
+    <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:domain" content="stackoverflow.com"/>
+
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded" />
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="How to upload files to server using JSP/Servlet?" />
+    <meta name="twitter:description" property="og:description" itemprop="description" content="How can I upload files to server using JSP/Servlet? I tried this:
+
+&amp;lt;form action=&quot;upload&quot; method=&quot;post&quot;&amp;gt;
+    &amp;lt;input type=&quot;text&quot; name=&quot;description&quot; /&amp;gt;
+    &amp;lt;input type=&quot;file&quot; name=&quot;file..." />
+    <meta property="og:url" content="https://stackoverflow.com/questions/2422468/how-to-upload-files-to-server-using-jsp-servlet"/>
+    <link rel="canonical" href="https://stackoverflow.com/questions/2422468/how-to-upload-files-to-server-using-jsp-servlet" />
+
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.sstatic.net/Js/stub.en.js?v=ef1cf9144f35"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.sstatic.net/Sites/stackoverflow/all.css?v=5df92b6be7e1">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;How to upload files to server using JSP/Servlet?&#39;" href="/feeds/question/2422468">
+            <meta name="twitter:app:country" content="US" />
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS" />
+            <meta name="twitter:app:id:iphone" content="871299723" />
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/2422468/how-to-upload-files-to-server-using-jsp-servlet" />
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS" />
+            <meta name="twitter:app:id:ipad" content="871299723" />
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/2422468/how-to-upload-files-to-server-using-jsp-servlet" />
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/2422468/how-to-upload-files-to-server-using-jsp-servlet">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:2422468});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '2422468');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text', true); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1504666450,"routeName":"Questions/Show","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableInsertDocLinkDialog":false,"childUrl":"https://meta.stackoverflow.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"d431d2751f1d1bd16873fe8d68016c0e","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"canSeeNewHeaderDesign":true},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"comments":{},"userProfile":{"openGraphAPIKey":"58740831ad23540e00c58987"},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"813cfe48dc5b","js/moderator.en.js":"9f2375df98d8","js/full-anon.en.js":"68371529faad","js/full.en.js":"3454aa67c8ba","js/wmd.en.js":"b4467a90e4e0","js/third-party/jquery.autocomplete.min.js":"d3b8fa7fdf74","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"3f082f5eb27a","js/help.en.js":"dbd4f489eff2","js/tageditor.en.js":"4f83add90c55","js/tageditornew.en.js":"a5a8b197f53c","js/inline-tag-editing.en.js":"7581a98341e4","js/revisions.en.js":"8f22ba768cac","js/review.en.js":"198183565669","js/tagsuggestions.en.js":"b278f9a0b23b","js/post-validation.en.js":"fcc6f225a77f","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"627d846d8038","js/keyboard-shortcuts.en.js":"96e82e714e10","js/external-editor.en.js":"3e5baf662544","js/adops.en.js":"9a6a7812a212","js/external-editor.en.js":"3e5baf662544","js/snippet-javascript.en.js":"6396a6cc51fa","js/snippet-javascript-codemirror.en.js":"ddc7c6f5f088"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    <noscript id="noscript-css"><style type="text/css">body,.so-header{margin-top:1.9em}</style></noscript>
+</head>
+<body class="question-page new-topbar">
+            <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        <iframe id="adzerk-user-match" width="0" height="0" frameborder="0" scrolling="no" onload="window.AUMIframeDone=true"
+                src="https://ssum-sec.casalemedia.com/usermatch?s=183712&amp;cb=https%3A%2F%2Fengine.adzerk.net%2Fudb%2F22%2Fsync%2Fi.gif%3FpartnerId%3D1%26userId%3D"
+                style="display: none;" marginheight="0" marginwidth="0"></iframe>
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+<header class="so-header js-so-header _fixed">
+    <div class="-container">
+        <div class="-main">            
+            <a href="https://stackoverflow.com" class="-logo js-gps-track "
+               data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+
+                <span class="-img">Stack Overflow</span>
+            </a>
+
+            <nav class="navigation" role="navigation" aria-label="site navigation">
+                <ol class="-list">
+                        <li class="-item _current">
+        <a id="nav-questions" href="/questions" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">Questions</a>
+    </li>
+
+    <li class="-item">
+        <a id="nav-jobs" href="/jobs?med=site-ui&amp;ref=jobs-tab" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:6})">Developer Jobs</a>
+    </li>
+                        <li class="-item">
+        <a id="nav-docs" href="/documentation" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:7})">Documentation <small class='beta-badge'>beta</small></a>
+    </li>
+                        <li class="-item">
+        <a id="nav-tags" href="/tags" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">Tags</a>
+    </li>
+
+                        <li class="-item">
+        <a id="nav-users" href="/users" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">Users</a>
+    </li>
+
+                </ol>
+            </nav>
+
+                <form id="search" action="/search" method="get" class="searchbar" autocomplete="off" role="search">
+                    <svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"/></svg>
+                    <input name="q" type="text" placeholder="Search..." value="" tabindex="1" autocomplete="off" maxlength="240" class="f-input js-search-field" />
+                    <button type="submit" class="btn js-search-submit">
+                        <svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"/></svg>
+                    </button>
+                </form>
+
+        </div>
+        
+
+
+    
+
+<div class="-actions">
+    <nav class="secondary-nav">
+        <div class="-dialog-container js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://stackoverflow.com">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+            <a href="https://stackoverflow.com/help" class="js-gps-track"     data-gps-track="site_switcher.click({ item_type:14 })"
+>help</a>
+                    <a href="https://chat.stackoverflow.com" class="js-gps-track"     data-gps-track="site_switcher.click({ item_type:6 })"
+>chat</a>
+            </div>
+
+    <a href="https://stackoverflow.com"
+       class="current-site-link site-link js-gps-track"
+       data-id="1"
+       data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                        
+    <a href="https://meta.stackoverflow.com"
+       class="site-link js-gps-track"
+       data-id="552"
+       data-gps-track="site.switch({ target_site:552, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;amp;utm_source=stackoverflow.com&amp;amp;utm_medium=dev-story&amp;amp;utm_campaign=signup-redirect" class="login-link js-gps-track"     data-gps-track="site_switcher.click({ item_type:10 })"
+>Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f2422468%2fhow-to-upload-files-to-server-using-jsp-servlet" class="login-link js-gps-track"     data-gps-track="site_switcher.click({ item_type:11 })"
+>log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+                <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://meta.stackoverflow.com" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+
+        </div>
+        <ol class="-list">
+
+
+    <li class="-item"><a href="#" class="-link js-help-button" title="Help Center and other resources">
+        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"/></svg>
+    </a></li>
+                <li class="-item">
+        <a href="https://stackexchange.com" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 171 Stack Exchange sites">
+            <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"/></svg>
+        </a>
+    </li>
+
+
+        </ol>
+    </nav>
+        <div class="-ctas">
+                <a href="https://stackoverflow.com/users/login?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f2422468%2fhow-to-upload-files-to-server-using-jsp-servlet" class="login-link btn-clear" rel="nofollow">Log In</a>
+                    <a href="https://stackoverflow.com/users/signup?ssrc=head&returnurl=%2fusers%2fstory%2fcurrent&amp;utm_source=stackoverflow.com&amp;utm_medium=dev-story&amp;utm_campaign=signup-redirect" class="login-link btn" rel="nofollow">Sign Up</a>
+
+        </div>
+</div>
+    </div>
+</header>
+
+    <script>
+        StackExchange.ready(function () { StackExchange.topbar.init(); });
+            StackExchange.scrollPadding.setPaddingTop(60, 10);     </script>
+
+    <div class="container  ">
+        
+
+
+        <div id="content" class="snippet-hidden">
+
+
+
+
+
+            
+
+<div itemscope itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+
+<div id="herobox" class="alternate hero-container">
+    <div class="test"></div>
+        <div id="close">
+            <a title="click to minimize"><span>x</span> Dismiss</a>
+        </div>
+    <div class="content">
+        <b>Join the Stack Overflow Community</b>
+        <div class="separator"></div>
+        <div class="blurb">
+            Stack Overflow is a community of 7.7 million programmers, just like you, helping each other.
+                <br/>
+Join them; it only takes a minute:                <br/>
+        </div>
+        <a href="/users/signup?ssrc=hero&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;amp;utm_source=stackoverflow.com&amp;amp;utm_medium=dev-story&amp;amp;utm_campaign=signup-redirect" id="tell-me-more" class="button">Sign up</a>
+    </div>
+</div>
+<script>
+    StackExchange.ready(function () {
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;
+        }
+        
+        $('#tell-me-more').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+        
+        $('.hero-container #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+            });
+            
+            $.cookie("hero", "mini", { path: "/", expires: 365 });
+            $.ajax({
+                url: "/hero-mini",
+                success: function (data) {
+                    $(".hero-container").fadeOut("fast", function () {
+                        $(".hero-container").replaceWith(data);
+                        $("#herobox-mini").fadeIn("fast");
+                    });
+                }
+            });
+            return false;
+        });
+    });
+
+</script>    <div class="inner-content">
+        <div id="question-header">
+                <h1 itemprop="name"><a href="/questions/2422468/how-to-upload-files-to-server-using-jsp-servlet" class="question-hyperlink">How to upload files to server using JSP/Servlet?</a></h1>
+
+            
+<div class="aside-cta" role="navigation" aria-label="ask new question">
+    <a href="/questions/ask" class="btn-outlined">Ask Question</a>
+</div>
+        </div>
+            <div id="mainbar" role="main" aria-label="question and answers">
+
+            
+
+<div class="question" data-questionid="2422468"  id="question">
+
+    <script>
+                    var ados = ados || {}; ados.run = ados.run || [];
+                    ados.run.push(function () { ados_add_placement(22,8277,"adzerk550867138",4).setZone(43); });
+                </script>
+                <div class="everyonelovesstackoverflow" id="adzerk550867138"></div>
+            <div id="dfp-tlb" class="dfpad"></div>    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="2422468">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">539</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="#">favorite</a>
+        <div class="favoritecount"><b>362</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>How can I upload files to server using JSP/Servlet? I tried this:</p>
+
+<pre class="lang-html prettyprint-override"><code>&lt;form action="upload" method="post"&gt;
+    &lt;input type="text" name="description" /&gt;
+    &lt;input type="file" name="file" /&gt;
+    &lt;input type="submit" /&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>However, I only get the file name, not the file content. When I add  <code>enctype="multipart/form-data"</code> to the <code>&lt;form&gt;</code>, then <code>request.getParameter()</code> returns <code>null</code>. </p>
+
+<p>During research I stumbled upon <a href="http://commons.apache.org/fileupload" rel="noreferrer">Apache Common FileUpload</a>. I tried this:</p>
+
+<pre><code>FileItemFactory factory = new DiskFileItemFactory();
+ServletFileUpload upload = new ServletFileUpload(factory);
+List items = upload.parseRequest(request); // This line is where it died.
+</code></pre>
+
+<p>Unfortunately, the servlet threw an exception without a clear message and cause. Here is the stacktrace:</p>
+
+<pre><code>SEVERE: Servlet.service() for servlet UploadServlet threw exception
+javax.servlet.ServletException: Servlet execution threw an exception
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:313)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+    at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+    at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+    at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+    at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+    at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+    at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+    at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+    at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+    at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+    at java.lang.Thread.run(Thread.java:637)
+</code></pre>
+    </div>
+    <div class="post-taglist">
+        <a href="/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="/questions/tagged/jsp" class="post-tag" title="show questions tagged &#39;jsp&#39;" rel="tag">jsp</a> <a href="/questions/tagged/java-ee" class="post-tag" title="show questions tagged &#39;java-ee&#39;" rel="tag">java-ee</a> <a href="/questions/tagged/servlets" class="post-tag" title="show questions tagged &#39;servlets&#39;" rel="tag">servlets</a> <a href="/questions/tagged/file-upload" class="post-tag" title="show questions tagged &#39;file-upload&#39;" rel="tag">file-upload</a> 
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/q/2422468" title="short permalink to this question" class="short-link" id="link-post-2422468">share</a><span class="lsep">|</span><a href="/posts/2422468/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="/posts/2422468/revisions" title="show all edits to this post">edited <span title="2017-03-22 16:13:46Z" class="relativetime">Mar 22 at 16:13</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/426671/bluefeet"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/32d2ee92e99e287861b25f508416a787?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/426671/bluefeet">bluefeet</a><span class="mod-flair" title="moderator">&#9830;</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 165,143" dir="ltr">165k</span><span title="40 gold badges"><span class="badge1"></span><span class="badgecount">40</span></span><span title="247 silver badges"><span class="badge2"></span><span class="badgecount">247</span></span><span title="320 bronze badges"><span class="badge3"></span><span class="badgecount">320</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2010-03-11 04:07:32Z" class="relativetime">Mar 11 '10 at 4:07</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/240337/thang-pham"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/10c3b52f94486dc6c12f68a6642f1f1a?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/240337/thang-pham">Thang Pham</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 12,117" dir="ltr">12.1k</span><span title="64 gold badges"><span class="badge1"></span><span class="badgecount">64</span></span><span title="168 silver badges"><span class="badge2"></span><span class="badgecount">168</span></span><span title="259 bronze badges"><span class="badge3"></span><span class="badgecount">259</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</div>
+</td>
+        </tr>
+                    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-2422468" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-2422468" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>        </table>
+</div>
+
+            <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2>
+                                12 Answers
+                                <span style="display:none;" itemprop="answerCount">12</span>
+                        </h2>
+                        <div>
+                            <div id="tabs">
+        <a href="/questions/2422468/how-to-upload-files-to-server-using-jsp-servlet?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="/questions/2422468/how-to-upload-files-to-server-using-jsp-servlet?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="/questions/2422468/how-to-upload-files-to-server-using-jsp-servlet?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+                        </div>
+                    </div>    
+                </div>    
+
+
+
+
+  
+<a name="2424824"></a>
+<div id="answer-2424824" class="answer accepted-answer" data-answerid="2424824"  itemscope itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="2424824">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">967</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+<div class="bounty-award-container"><span class="bounty-award" title="This answer has been awarded bounties worth 200 reputation by Click Upvote and SarathChandra">+200</span></div>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<h2>Introduction</h2>
+
+<p>To browse and select a file for upload you need a HTML <code>&lt;input type="file"&gt;</code> field in the form. As stated in the <a href="http://www.w3.org/TR/html4/interact/forms.html" rel="noreferrer">HTML specification</a> you have to use the <code>POST</code> method and the <code>enctype</code> attribute of the form has to be set to <code>"multipart/form-data"</code>.</p>
+
+<pre class="lang-html prettyprint-override"><code>&lt;form action="upload" method="post" enctype="multipart/form-data"&gt;
+    &lt;input type="text" name="description" /&gt;
+    &lt;input type="file" name="file" /&gt;
+    &lt;input type="submit" /&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>After submitting such a form, the binary multipart form data is available in the request body in <a href="https://stackoverflow.com/questions/13372775/servlet-handling-file-upload-why-bigger-than-the-original/13399437#13399437">a different format</a> than when the <code>enctype</code> isn't set.</p>
+
+<p>Before Servlet 3.0, the Servlet API didn't natively support <code>multipart/form-data</code>. It supports only the default form enctype of <code>application/x-www-form-urlencoded</code>. The <code>request.getParameter()</code> and consorts would all return <code>null</code> when using multipart form data. This is where the well known <a href="http://commons.apache.org/fileupload" rel="noreferrer">Apache Commons FileUpload</a> came into the picture.</p>
+
+<h2>Don't manually parse it!</h2>
+
+<p>You can in theory parse the request body yourself based on <a href="http://docs.oracle.com/javaee/6/api/javax/servlet/ServletRequest.html#getInputStream%28%29" rel="noreferrer"><code>ServletRequest#getInputStream()</code></a>. However, this is a precise and tedious work which requires precise knowledge of <a href="http://www.faqs.org/rfcs/rfc2388.html" rel="noreferrer">RFC2388</a>. You shouldn't try to do this on your own or copypaste some homegrown library-less code found elsewhere on the Internet. Many online sources have failed hard in this, such as roseindia.net. See also <a href="https://stackoverflow.com/questions/5038798/uploading-of-pdf-file">uploading of pdf file</a>. You should rather use a real library which is used (and implicitly tested!) by millions of users for years. Such a library has proven its robustness.</p>
+
+<h2>When you're already on Servlet 3.0 or newer, use native API</h2>
+
+<p>If you're using at least Servlet 3.0 (Tomcat 7, Jetty 9, JBoss AS 6, GlassFish 3, etc), then you can just use standard API provided <a href="http://docs.oracle.com/javaee/6/api/javax/servlet/http/HttpServletRequest.html#getParts()" rel="noreferrer"><code>HttpServletRequest#getPart()</code></a> to collect the individual multipart form data items (most Servlet 3.0 implementations actually use Apache Commons FileUpload under the covers for this!). Also, normal form fields are available by <code>getParameter()</code> the usual way.</p>
+
+<p>First annotate your servlet with <a href="http://docs.oracle.com/javaee/6/api/javax/servlet/annotation/MultipartConfig.html" rel="noreferrer"><code>@MultipartConfig</code></a> in order to let it recognize and support <code>multipart/form-data</code> requests and thus get <code>getPart()</code> to work:</p>
+
+<pre><code>@WebServlet("/upload")
+@MultipartConfig
+public class UploadServlet extends HttpServlet {
+    // ...
+}
+</code></pre>
+
+<p>Then, implement its <code>doPost()</code> as follows:</p>
+
+<pre class="lang-java prettyprint-override"><code>protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String description = request.getParameter("description"); // Retrieves &lt;input type="text" name="description"&gt;
+    Part filePart = request.getPart("file"); // Retrieves &lt;input type="file" name="file"&gt;
+    String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
+    InputStream fileContent = filePart.getInputStream();
+    // ... (do your job here)
+}
+</code></pre>
+
+<p>Note the <code>Path#getFileName()</code>. This is a MSIE fix as to obtaining the file name. This browser incorrectly sends the full file path along the name instead of only the file name.</p>
+
+<p>In case you have a <code>&lt;input type="file" name="file" multiple="true" /&gt;</code> for multi-file upload, collect them as below (unfortunately there is no such method as <code>request.getParts("file")</code>):</p>
+
+<pre><code>protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    // ...
+    List&lt;Part&gt; fileParts = request.getParts().stream().filter(part -&gt; "file".equals(part.getName())).collect(Collectors.toList()); // Retrieves &lt;input type="file" name="file" multiple="true"&gt;
+
+    for (Part filePart : fileParts) {
+        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
+        InputStream fileContent = filePart.getInputStream();
+        // ... (do your job here)
+    }
+}
+</code></pre>
+
+<h2>When you're not on Servlet 3.1 yet, manually get submitted file name</h2>
+
+<p>Note that <a href="https://docs.oracle.com/javaee/7/api/javax/servlet/http/Part.html#getSubmittedFileName()" rel="noreferrer"><code>Part#getSubmittedFileName()</code></a> was introduced in Servlet 3.1 (Tomcat 8, Jetty 9, WildFly 8, GlassFish 4, etc). If you're not on Servlet 3.1 yet, then you need an additional utility method to obtain the submitted file name.</p>
+
+<pre><code>private static String getSubmittedFileName(Part part) {
+    for (String cd : part.getHeader("content-disposition").split(";")) {
+        if (cd.trim().startsWith("filename")) {
+            String fileName = cd.substring(cd.indexOf('=') + 1).trim().replace("\"", "");
+            return fileName.substring(fileName.lastIndexOf('/') + 1).substring(fileName.lastIndexOf('\\') + 1); // MSIE fix.
+        }
+    }
+    return null;
+}
+</code></pre>
+
+
+
+<pre><code>String fileName = getSubmittedFileName(filePart);
+</code></pre>
+
+<p>Note the MSIE fix as to obtaining the file name. This browser incorrectly sends the full file path along the name instead of only the file name.</p>
+
+<h2>When you're not on Servlet 3.0 yet, use Apache Commons FileUpload</h2>
+
+<p>If you're not on Servlet 3.0 yet (isn't it about time to upgrade?), the common practice is to make use of <a href="http://commons.apache.org/fileupload" rel="noreferrer">Apache Commons FileUpload</a> to parse the multpart form data requests. It has an excellent <a href="http://commons.apache.org/fileupload/using.html" rel="noreferrer">User Guide</a> and <a href="http://commons.apache.org/fileupload/faq.html" rel="noreferrer">FAQ</a> (carefully go through both). There's also the O'Reilly ("<a href="http://www.servlets.com/cos/" rel="noreferrer">cos</a>") <code>MultipartRequest</code>, but it has some (minor) bugs and isn't actively maintained anymore for years. I wouldn't recommend using it. Apache Commons FileUpload is still actively maintained and currently very mature.</p>
+
+<p>In order to use Apache Commons FileUpload, you need to have at least the following files in your webapp's <code>/WEB-INF/lib</code>: </p>
+
+<ul>
+<li><a href="http://commons.apache.org/proper/commons-fileupload/download_fileupload.cgi" rel="noreferrer"><code>commons-fileupload.jar</code></a> </li>
+<li><a href="http://commons.apache.org/proper/commons-io/download_io.cgi" rel="noreferrer"><code>commons-io.jar</code></a> </li>
+</ul>
+
+<p>Your initial attempt failed most likely because you forgot the commons IO. </p>
+
+<p>Here's a kickoff example how the <code>doPost()</code> of your <code>UploadServlet</code> may look like when using Apache Commons FileUpload:</p>
+
+<pre class="lang-java prettyprint-override"><code>protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    try {
+        List&lt;FileItem&gt; items = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
+        for (FileItem item : items) {
+            if (item.isFormField()) {
+                // Process regular form field (input type="text|radio|checkbox|etc", select, etc).
+                String fieldName = item.getFieldName();
+                String fieldValue = item.getString();
+                // ... (do your job here)
+            } else {
+                // Process form file field (input type="file").
+                String fieldName = item.getFieldName();
+                String fileName = FilenameUtils.getName(item.getName());
+                InputStream fileContent = item.getInputStream();
+                // ... (do your job here)
+            }
+        }
+    } catch (FileUploadException e) {
+        throw new ServletException("Cannot parse multipart request.", e);
+    }
+
+    // ...
+}
+</code></pre>
+
+<p>It's very important that you don't call <code>getParameter()</code>, <code>getParameterMap()</code>, <code>getParameterValues()</code>, <code>getInputStream()</code>, <code>getReader()</code>, etc on the same request beforehand. Otherwise the servlet container will read and parse the request body and thus Apache Commons FileUpload will get an empty request body. See also a.o. <a href="https://stackoverflow.com/questions/13881272/servletfileuploadparserequestrequest-returns-an-empty-list">ServletFileUpload#parseRequest(request) returns an empty list</a>.</p>
+
+<p>Note the <code>FilenameUtils#getName()</code>. This is a MSIE fix as to obtaining the file name. This browser incorrectly sends the full file path along the name instead of only the file name.</p>
+
+<p>Alternatively you can also wrap this all in a <code>Filter</code> which parses it all automagically and put the stuff back in the parametermap of the request so that you can continue using <code>request.getParameter()</code> the usual way and retrieve the uploaded file by <code>request.getAttribute()</code>. <a href="http://balusc.blogspot.com/2007/11/multipartfilter.html" rel="noreferrer">You can find an example in this blog article</a>.</p>
+
+<h2>Workaround for GlassFish3 bug of <code>getParameter()</code> still returning <code>null</code></h2>
+
+<p>Note that Glassfish versions older than 3.1.2 had <a href="http://java.net/jira/browse/GLASSFISH-16740" rel="noreferrer">a bug</a> wherein the <code>getParameter()</code> still returns <code>null</code>. If you are targeting such a container and can't upgrade it, then you need to extract the value from <code>getPart()</code> with help of this utility method:</p>
+
+<pre><code>private static String getValue(Part part) throws IOException {
+    BufferedReader reader = new BufferedReader(new InputStreamReader(part.getInputStream(), "UTF-8"));
+    StringBuilder value = new StringBuilder();
+    char[] buffer = new char[1024];
+    for (int length = 0; (length = reader.read(buffer)) &gt; 0;) {
+        value.append(buffer, 0, length);
+    }
+    return value.toString();
+}
+</code></pre>
+
+
+
+<pre><code>String description = getValue(request.getPart("description")); // Retrieves &lt;input type="text" name="description"&gt;
+</code></pre>
+
+<h2>Saving uploaded file (don't use <code>getRealPath()</code> nor <code>part.write()</code>!)</h2>
+
+<p>Head to the following answers for detail on properly saving the obtained <code>InputStream</code> (the <code>fileContent</code> variable as shown in the above code snippets) to disk or database:</p>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/18664579/recommended-way-to-save-files-uploaded-to-a-tomcat-servlet/18664715#18664715">Recommended way to save uploaded files in a servlet application</a></li>
+<li><a href="https://stackoverflow.com/questions/7033676/how-to-upload-an-image-and-save-it-in-database/7033945#7033945">How to upload an image and save it in database?</a></li>
+<li><a href="https://stackoverflow.com/questions/19138706/how-to-convert-part-to-blob-so-i-can-store-it-in-mysql/19139125#19139125">How to convert Part to Blob, so I can store it in MySQL?</a></li>
+</ul>
+
+<h2>Serving uploaded file</h2>
+
+<p>Head to the following answers for detail on properly serving the saved file from disk or database back to the client:</p>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/4543936/load-images-from-outside-of-webapps-webcontext-deploy-folder-using-hgraphi/4543951#4543951">Load images from outside of webapps / webcontext / deploy folder using &lt;h:graphicImage&gt; or &lt;img&gt; tag</a></li>
+<li><a href="https://stackoverflow.com/questions/2340406/how-to-retrieve-and-display-images-from-a-database-in-a-jsp-page/2341322#2341322">How to retrieve and display images from a database in a JSP page?</a></li>
+<li><a href="https://stackoverflow.com/questions/1812244/simplest-way-to-serve-static-data-from-outside-the-application-server-in-a-java/1812356#1812356">Simplest way to serve static data from outside the application server in a Java web application</a></li>
+<li><a href="https://stackoverflow.com/questions/132052/servlet-for-serving-static-content/29991447#29991447">Abstract template for static resource servlet supporting HTTP caching</a></li>
+</ul>
+
+<h2>Ajaxifying the form</h2>
+
+<p>Head to the following answers how to upload using Ajax (and jQuery). Do note that the servlet code to collect the form data does not need to be changed for this! Only the way how you respond may be changed, but this is rather trivial (i.e. instead of forwarding to JSP, just print some JSON or XML or even plain text depending on whatever the script responsible for the Ajax call is expecting).</p>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/6914152/how-to-upload-files-to-server-using-jsp-servlet-and-ajax">How to upload files to server using JSP/Servlet and Ajax?</a></li>
+<li><a href="https://stackoverflow.com/questions/9395911/sending-a-file-as-multipart-through-xmlhttprequest">sending a file as multipart through xmlHttpRequest</a></li>
+<li><a href="https://stackoverflow.com/questions/7114087/html5-file-upload-to-java-servlet">HTML5 File Upload to Java Servlet</a></li>
+</ul>
+
+<hr>
+
+<p>Hope this all helps :)</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/2424824" title="short permalink to this answer" class="short-link" id="link-post-2424824">share</a><span class="lsep">|</span><a href="/posts/2424824/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="/posts/2424824/revisions" title="show all edits to this post">edited <span title="2017-08-11 18:09:08Z" class="relativetime">Aug 11 at 18:09</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/775715/joakim-erdfelt"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/47eb8dce628ace7898cfbbf656823118?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/775715/joakim-erdfelt">Joakim Erdfelt</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 26,075" dir="ltr">26.1k</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="47 silver badges"><span class="badge2"></span><span class="badgecount">47</span></span><span title="82 bronze badges"><span class="badge3"></span><span class="badgecount">82</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2010-03-11 12:27:05Z" class="relativetime">Mar 11 '10 at 12:27</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/157882/balusc"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/89927e2f4bde24991649b353a37678b9?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/157882/balusc">BalusC</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 749,167" dir="ltr">749k</span><span title="251 gold badges"><span class="badge1"></span><span class="badgecount">251</span></span><span title="2777 silver badges"><span class="badge2"></span><span class="badgecount">2777</span></span><span title="2938 bronze badges"><span class="badge3"></span><span class="badgecount">2938</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-2424824" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-68133933" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Ah sorry, I was seeing <code>request.getParts(&quot;file&quot;)</code> and was confused x_x</span>
+                    &ndash;&nbsp;<a href="/users/2460034/kagami-sascha-rosylight"
+                       title="446 reputation"
+                       class="comment-user">Kagami Sascha Rosylight</a>
+                <span class="comment-date" dir="ltr"><span title="2016-11-05 22:02:14Z" class="relativetime-clean">Nov 5 '16 at 22:02</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-68638255" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">With Servlet 3.0, if a <code>MultipartConfig</code> condition is violated (eg: <code>maxFileSize</code>), calling <code>request.getParameter()</code> returns null. Is this on purpose? What if I get some regular (text) parameters before calling <code>getPart</code> (and checking for an <code>IllegalStateException</code>)? This causes a <code>NullPointerException</code> to be thrown before I have a chance to check for the <code>IllegalStateException</code>.</span>
+                    &ndash;&nbsp;<a href="/users/3684479/theyuv"
+                       title="336 reputation"
+                       class="comment-user">theyuv</a>
+                <span class="comment-date" dir="ltr"><span title="2016-11-20 14:34:19Z" class="relativetime-clean">Nov 20 '16 at 14:34</span></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-68642082" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Please let me know if my question is unclear. Thanks.</span>
+                    &ndash;&nbsp;<a href="/users/3684479/theyuv"
+                       title="336 reputation"
+                       class="comment-user">theyuv</a>
+                <span class="comment-date" dir="ltr"><span title="2016-11-20 17:30:02Z" class="relativetime-clean">Nov 20 '16 at 17:30</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-77815126" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@BalusC I created a post related to this, do you have an idea how I could retrieve extra infos from File API webKitDirectory. More details here <a href="https://stackoverflow.com/questions/45419598/retrieve-uploaded-relativepath-file-on-server-side" title="retrieve uploaded relativepath file on server side">stackoverflow.com/questions/45419598/&hellip;</a></span>
+                    &ndash;&nbsp;<a href="/users/4605161/rapster"
+                       title="60 reputation"
+                       class="comment-user">Rapster</a>
+                <span class="comment-date" dir="ltr"><span title="2017-07-31 23:52:34Z" class="relativetime-clean">Jul 31 at 23:52</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-2424824" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+<div class="newsletter-anon">
+    <img src="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a" class="newsletter-logo" />
+    <div class="newsletter-container">
+        <h2>Did you find this question interesting? Try our newsletter</h2>
+        <p class="newsletter-description">
+            Sign up for our newsletter and get our top new questions delivered to your inbox (<a href="https://stackexchange.com/newsletters/newsletter?site=stackoverflow.com" id="newsletter-preview">see an example</a>).
+        </p>
+        <form id="anon-newsletter-form" data-error="There was a problem signing up for the newsletter. Please try again later.">
+            <input type="email" id="newsletter-email-input" placeholder="email address" title="your email address" />
+            <input type="submit" value="Subscribe" id="newsletter-email-submit"/>
+        </form>
+        <div style="margin-top: 10px; float:right;" class="dno cbt newsletter-status-confirmed">
+            <b>Subscribed!</b>
+        </div>
+        <div style="margin-top: 10px; float:right;" class="dno cbt newsletter-status-unconfirmed">
+            <b>Success!</b> Please click the link in the confirmation email to activate your subscription.
+        </div>
+    </div>
+</div>
+
+<script>
+    StackExchange.ready(function () {
+        StackExchange.newsletterAd.init();
+    });
+
+    $('#anon-newsletter-form').submit(function () {
+        var $form = $(this);
+        var $input = $form.find('#newsletter-email-input');
+        var $submit = $form.find('#newsletter-email-submit');
+        var $container = $form.closest('.newsletter-container');
+
+        var email = $.trim($input.val());
+        if (email.length == 0) {
+            return false;
+        }
+        StackExchange.helpers.addSpinner($form);
+
+        $.ajax({
+            url: '/newsletter/signup/anon',
+            type: 'POST',
+            dataType: 'json',
+            data: { fkey: StackExchange.options.user.fkey, email: email, viaAnonNewsletterAd: true },
+            success: function (data) {
+                if (!data.error && (data.status == 'confirmed' || data.status == 'unconfirmed')) {
+                    $input.attr('disabled', true);
+                    $submit.remove();
+                    $container.find('.newsletter-status-' + data.status).show();
+                }
+                else {
+                    $container.showErrorMessage(data.error || $form.data('error'));
+                }
+            },
+            error: function () {
+                $container.showErrorMessage($form.data('error'));
+            },
+            complete: function () {
+                StackExchange.helpers.removeSpinner($form);
+            }
+        });
+
+        return false;
+    });
+</script>
+
+  
+<a name="32226944"></a>
+<div id="answer-32226944" class="answer" data-answerid="32226944"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="32226944">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">19</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>If you happen to use Spring MVC, this is how to: 
+(I'm leaving this here in case someone find it useful).</p>
+
+<p>Use a form with <code>enctype</code> attribute set to "<code>multipart/form-data</code>" (Same as BalusC's Answer)</p>
+
+<pre><code>&lt;form action="upload" method="post" enctype="multipart/form-data"&gt;
+    &lt;input type="file" name="file" /&gt;
+    &lt;input type="submit" value="Upload"/&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>In your controller, map the request parameter <code>file</code> to <code>MultipartFile</code> type as follows:</p>
+
+<pre><code>@RequestMapping(value = "/upload", method = RequestMethod.POST)
+public void handleUpload(@RequestParam("file") MultipartFile file) throws IOException {
+    if (!file.isEmpty()) {
+            byte[] bytes = file.getBytes(); // alternatively, file.getInputStream();
+            // application logic
+    }
+}
+</code></pre>
+
+<p>You can get the filename and size using <code>MultipartFile</code>'s <code>getOriginalFilename()</code> and <code>getSize()</code>.</p>
+
+<p>I've tested this with Spring version <code>4.1.1.RELEASE</code>.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/32226944" title="short permalink to this answer" class="short-link" id="link-post-32226944">share</a><span class="lsep">|</span><a href="/posts/32226944/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2015-08-26 12:39:53Z" class="relativetime">Aug 26 '15 at 12:39</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/187343/amila"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/f55192e8e9dc799e5828b2af7ea3ca5f?s=32&amp;d=identicon&amp;r=PG&amp;f=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/187343/amila">Amila</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">3,746</span><span title="17 silver badges"><span class="badge2"></span><span class="badgecount">17</span></span><span title="38 bronze badges"><span class="badge3"></span><span class="badgecount">38</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-32226944" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-32226944" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="10634616"></a>
+<div id="answer-10634616" class="answer" data-answerid="10634616"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="10634616">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">11</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You need the <code>common-io.1.4.jar</code> file to be included in your <code>lib</code> directory, or if you're working in any editor, like NetBeans, then you need to go to project properties and just add the JAR file and you will be done. </p>
+
+<p>To get the <code>common.io.jar</code> file just google it or just go to the Apache <a href="http://en.wikipedia.org/wiki/Apache_Tomcat">Tomcat</a> website where you get the option for a free download of this file. But remember one thing: download the binary ZIP file if you're a Windows user.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/10634616" title="short permalink to this answer" class="short-link" id="link-post-10634616">share</a><span class="lsep">|</span><a href="/posts/10634616/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="/posts/10634616/revisions" title="show all edits to this post">edited <span title="2012-11-03 12:25:19Z" class="relativetime">Nov 3 '12 at 12:25</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/63550/peter-mortensen"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/RIZKi.png?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/63550/peter-mortensen">Peter Mortensen</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 11,196" dir="ltr">11.2k</span><span title="16 gold badges"><span class="badge1"></span><span class="badgecount">16</span></span><span title="78 silver badges"><span class="badge2"></span><span class="badgecount">78</span></span><span title="110 bronze badges"><span class="badge3"></span><span class="badgecount">110</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-05-17 11:11:17Z" class="relativetime">May 17 '12 at 11:11</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/1194370/pranav"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/bf8ef354f8b464198e48ba1e04891e76?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/1194370/pranav">Pranav</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">198</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="7 bronze badges"><span class="badge3"></span><span class="badgecount">7</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-10634616" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-41227185" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Can&#39;t find <code>.jar</code> but <code>.zip</code>. Do you mean <code>.zip</code>?</span>
+                    &ndash;&nbsp;<a href="/users/2021812/malwinder-singh"
+                       title="1,811 reputation"
+                       class="comment-user">Malwinder Singh</a>
+                <span class="comment-date" dir="ltr"><span title="2014-10-09 11:42:26Z" class="relativetime-clean">Oct 9 '14 at 11:42</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-10634616" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="14208957"></a>
+<div id="answer-14208957" class="answer" data-answerid="14208957"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="14208957">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">8</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I am Using common Servlet for <strong>every</strong> Html Form whether it has attachments or not.
+This Servlet returns a <code>TreeMap</code> where the keys are jsp name Parameters and values are User Inputs and saves all attachments in fixed directory and later you rename the directory of your choice.Here Connections is our custom interface having connection object. I think this will help you</p>
+
+<pre><code>public class ServletCommonfunctions extends HttpServlet implements
+        Connections {
+
+    private static final long serialVersionUID = 1L;
+
+    public ServletCommonfunctions() {}
+
+    protected void doPost(HttpServletRequest request,
+            HttpServletResponse response) throws ServletException,
+            IOException {}
+
+    public SortedMap&lt;String, String&gt; savefilesindirectory(
+            HttpServletRequest request, HttpServletResponse response)
+            throws IOException {
+        // Map&lt;String, String&gt; key_values = Collections.synchronizedMap( new
+        // TreeMap&lt;String, String&gt;());
+        SortedMap&lt;String, String&gt; key_values = new TreeMap&lt;String, String&gt;();
+        String dist = null, fact = null;
+        PrintWriter out = response.getWriter();
+        File file;
+        String filePath = "E:\\FSPATH1\\2KL06CS048\\";
+        System.out.println("Directory Created   ????????????"
+            + new File(filePath).mkdir());
+        int maxFileSize = 5000 * 1024;
+        int maxMemSize = 5000 * 1024;
+        // Verify the content type
+        String contentType = request.getContentType();
+        if ((contentType.indexOf("multipart/form-data") &gt;= 0)) {
+            DiskFileItemFactory factory = new DiskFileItemFactory();
+            // maximum size that will be stored in memory
+            factory.setSizeThreshold(maxMemSize);
+            // Location to save data that is larger than maxMemSize.
+            factory.setRepository(new File(filePath));
+            // Create a new file upload handler
+            ServletFileUpload upload = new ServletFileUpload(factory);
+            // maximum file size to be uploaded.
+            upload.setSizeMax(maxFileSize);
+            try {
+                // Parse the request to get file items.
+                @SuppressWarnings("unchecked")
+                List&lt;FileItem&gt; fileItems = upload.parseRequest(request);
+                // Process the uploaded file items
+                Iterator&lt;FileItem&gt; i = fileItems.iterator();
+                while (i.hasNext()) {
+                    FileItem fi = (FileItem) i.next();
+                    if (!fi.isFormField()) {
+                        // Get the uploaded file parameters
+                        String fileName = fi.getName();
+                        // Write the file
+                        if (fileName.lastIndexOf("\\") &gt;= 0) {
+                            file = new File(filePath
+                                + fileName.substring(fileName
+                                        .lastIndexOf("\\")));
+                        } else {
+                            file = new File(filePath
+                                + fileName.substring(fileName
+                                        .lastIndexOf("\\") + 1));
+                        }
+                        fi.write(file);
+                    } else {
+                        key_values.put(fi.getFieldName(), fi.getString());
+                    }
+                }
+            } catch (Exception ex) {
+                System.out.println(ex);
+            }
+        }
+        return key_values;
+    }
+}
+</code></pre>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/14208957" title="short permalink to this answer" class="short-link" id="link-post-14208957">share</a><span class="lsep">|</span><a href="/posts/14208957/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="/posts/14208957/revisions" title="show all edits to this post">edited <span title="2013-07-09 22:39:41Z" class="relativetime">Jul 9 '13 at 22:39</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/251173/buhake-sindi"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/23de335ea2208b179ece18bec0b2597f?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/251173/buhake-sindi">Buhake Sindi</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 62,855" dir="ltr">62.9k</span><span title="20 gold badges"><span class="badge1"></span><span class="badgecount">20</span></span><span title="133 silver badges"><span class="badge2"></span><span class="badgecount">133</span></span><span title="190 bronze badges"><span class="badge3"></span><span class="badgecount">190</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-01-08 05:50:51Z" class="relativetime">Jan 8 '13 at 5:50</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/1523263/feel-good-and-programming"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/92abf97c455390dacf1cd696e63767b9?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/1523263/feel-good-and-programming">feel good and programming</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">552</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="7 silver badges"><span class="badge2"></span><span class="badgecount">7</span></span><span title="22 bronze badges"><span class="badge3"></span><span class="badgecount">22</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-14208957" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-28880156" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@buhake sindi hey what should be the filepath if i m using live server or i live my project by uploading files to the server</span>
+                    &ndash;&nbsp;<a href="/users/2621309/amans"
+                       title="465 reputation"
+                       class="comment-user">AmanS</a>
+                <span class="comment-date" dir="ltr"><span title="2013-10-20 04:00:11Z" class="relativetime-clean">Oct 20 '13 at 4:00</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-28883445" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Any directory in live server.if you write a code to create a directory in servlet then directory will be created in live srver</span>
+                    &ndash;&nbsp;<a href="/users/1523263/feel-good-and-programming"
+                       title="552 reputation"
+                       class="comment-user">feel good and programming</a>
+                <span class="comment-date" dir="ltr"><span title="2013-10-20 09:27:23Z" class="relativetime-clean">Oct 20 '13 at 9:27</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-14208957" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="21347168"></a>
+<div id="answer-21347168" class="answer" data-answerid="21347168"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="21347168">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">6</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p><strong>Without component or external Library in Tomcat 6 o 7</strong></p>
+
+<p>Enabling Upload in the <strong>web.xml</strong> file:</p>
+
+<p><a href="http://joseluisbz.wordpress.com/2014/01/17/manually-installing-php-tomcat-and-httpd-lounge/#Enabling%20File%20Uploads" rel="noreferrer">http://joseluisbz.wordpress.com/2014/01/17/manually-installing-php-tomcat-and-httpd-lounge/#Enabling%20File%20Uploads</a>.</p>
+
+<pre><code>&lt;servlet&gt;
+    &lt;servlet-name&gt;jsp&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;org.apache.jasper.servlet.JspServlet&lt;/servlet-class&gt;
+    &lt;multipart-config&gt;
+      &lt;max-file-size&gt;3145728&lt;/max-file-size&gt;
+      &lt;max-request-size&gt;5242880&lt;/max-request-size&gt;
+    &lt;/multipart-config&gt;
+    &lt;init-param&gt;
+        &lt;param-name&gt;fork&lt;/param-name&gt;
+        &lt;param-value&gt;false&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;init-param&gt;
+        &lt;param-name&gt;xpoweredBy&lt;/param-name&gt;
+        &lt;param-value&gt;false&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;load-on-startup&gt;3&lt;/load-on-startup&gt;
+&lt;/servlet&gt;
+</code></pre>
+
+<p><em>AS YOU CAN SEE</em>:</p>
+
+<pre><code>    &lt;multipart-config&gt;
+      &lt;max-file-size&gt;3145728&lt;/max-file-size&gt;
+      &lt;max-request-size&gt;5242880&lt;/max-request-size&gt;
+    &lt;/multipart-config&gt;
+</code></pre>
+
+<p><strong>Uploading Files using JSP. Files:</strong></p>
+
+<p><em>In the html file</em></p>
+
+<pre><code>&lt;form method="post" enctype="multipart/form-data" name="Form" &gt;
+
+  &lt;input type="file" name="fFoto" id="fFoto" value="" /&gt;&lt;/td&gt;
+  &lt;input type="file" name="fResumen" id="fResumen" value=""/&gt;
+</code></pre>
+
+<p><em>In the JSP File</em> or <em>Servlet</em></p>
+
+<pre><code>    InputStream isFoto = request.getPart("fFoto").getInputStream();
+    InputStream isResu = request.getPart("fResumen").getInputStream();
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    byte buf[] = new byte[8192];
+    int qt = 0;
+    while ((qt = isResu.read(buf)) != -1) {
+      baos.write(buf, 0, qt);
+    }
+    String sResumen = baos.toString();
+</code></pre>
+
+<p>Edit your code to servlet requirements, like <em>max-file-size</em>, <em>max-request-size</em>  and other options that you can to set...</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/21347168" title="short permalink to this answer" class="short-link" id="link-post-21347168">share</a><span class="lsep">|</span><a href="/posts/21347168/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-01-25 05:44:54Z" class="relativetime">Jan 25 '14 at 5:44</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/811293/chepe-lucho"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/8ce65dae68b7c4cc4e5782efc77c7d69?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/811293/chepe-lucho">chepe lucho</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,211</span><span title="12 silver badges"><span class="badge2"></span><span class="badgecount">12</span></span><span title="26 bronze badges"><span class="badge3"></span><span class="badgecount">26</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-21347168" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-21347168" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="18722734"></a>
+<div id="answer-18722734" class="answer" data-answerid="18722734"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="18722734">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">5</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Another source of this problem occurs if you are using Geronimo with its embedded Tomcat. In this case, after many iterations of testing commons-io and commons-fileupload, the problem arises from a parent classloader handling the commons-xxx jars. This has to be prevented. The crash always occurred at: </p>
+
+<pre><code>fileItems = uploader.parseRequest(request);
+</code></pre>
+
+<p>Note that the List type of fileItems has changed with the current version of commons-fileupload to be specifically <code>List&lt;FileItem&gt;</code> as opposed to prior versions where it was generic <code>List</code>. </p>
+
+<p>I added the source code for commons-fileupload and commons-io into my Eclipse project to trace the actual error and finally got some insight. First, the exception thrown is of type Throwable not the stated FileIOException nor even Exception (these will not be trapped). Second, the error message is obfuscatory in that it stated class not found because axis2 could not find commons-io.  Axis2 is not used in my project at all but exists as a folder in the Geronimo repository subdirectory as part of standard installation.</p>
+
+<p>Finally, I found 1 place that posed a working solution which successfully solved my problem. You must hide the jars from parent loader in the deployment plan. This was put into geronimo-web.xml with my full file shown below.</p>
+
+<pre><code>Pasted from &lt;http://osdir.com/ml/user-geronimo-apache/2011-03/msg00026.html&gt; 
+
+
+
+&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+&lt;web:web-app xmlns:app="http://geronimo.apache.org/xml/ns/j2ee/application-2.0" xmlns:client="http://geronimo.apache.org/xml/ns/j2ee/application-client-2.0" xmlns:conn="http://geronimo.apache.org/xml/ns/j2ee/connector-1.2" xmlns:dep="http://geronimo.apache.org/xml/ns/deployment-1.2" xmlns:ejb="http://openejb.apache.org/xml/ns/openejb-jar-2.2" xmlns:log="http://geronimo.apache.org/xml/ns/loginconfig-2.0" xmlns:name="http://geronimo.apache.org/xml/ns/naming-1.2" xmlns:pers="http://java.sun.com/xml/ns/persistence" xmlns:pkgen="http://openejb.apache.org/xml/ns/pkgen-2.1" xmlns:sec="http://geronimo.apache.org/xml/ns/security-2.0" xmlns:web="http://geronimo.apache.org/xml/ns/j2ee/web-2.0.1"&gt;
+    &lt;dep:environment&gt;
+        &lt;dep:moduleId&gt;
+            &lt;dep:groupId&gt;DataStar&lt;/dep:groupId&gt;
+            &lt;dep:artifactId&gt;DataStar&lt;/dep:artifactId&gt;
+            &lt;dep:version&gt;1.0&lt;/dep:version&gt;
+            &lt;dep:type&gt;car&lt;/dep:type&gt;
+        &lt;/dep:moduleId&gt;
+
+&lt;!--Don't load commons-io or fileupload from parent classloaders--&gt;
+        &lt;dep:hidden-classes&gt;
+            &lt;dep:filter&gt;org.apache.commons.io&lt;/dep:filter&gt;
+            &lt;dep:filter&gt;org.apache.commons.fileupload&lt;/dep:filter&gt;
+        &lt;/dep:hidden-classes&gt;
+        &lt;dep:inverse-classloading/&gt;        
+
+
+    &lt;/dep:environment&gt;
+    &lt;web:context-root&gt;/DataStar&lt;/web:context-root&gt;
+&lt;/web:web-app&gt;
+</code></pre>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/18722734" title="short permalink to this answer" class="short-link" id="link-post-18722734">share</a><span class="lsep">|</span><a href="/posts/18722734/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-09-10 15:15:52Z" class="relativetime">Sep 10 '13 at 15:15</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/1309286/geoffrey-malafsky"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/987459c89d7dc663c59ccd168ddb23bc?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/1309286/geoffrey-malafsky">Geoffrey Malafsky</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">144</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="5 bronze badges"><span class="badge3"></span><span class="badgecount">5</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-18722734" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-18722734" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="45122123"></a>
+<div id="answer-45122123" class="answer" data-answerid="45122123"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="45122123">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p><strong>For Spring MVC</strong>
+I have been trying for hours to do this
+and managed to have a simpler version that worked for taking form input both data and image.</p>
+
+<pre><code>&lt;form action="/handleform" method="post" enctype="multipart/form-data"&gt;
+  &lt;input type="text" name="name" /&gt;
+  &lt;input type="text" name="age" /&gt;
+  &lt;input type="file" name="file" /&gt;
+  &lt;input type="submit" /&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>Controller to handle </p>
+
+<pre><code>@Controller
+public class FormController {
+    @RequestMapping(value="/handleform",method= RequestMethod.POST)
+    ModelAndView register(@RequestParam String name, @RequestParam int age, @RequestParam MultipartFile file)
+            throws ServletException, IOException {
+
+        System.out.println(name);
+        System.out.println(age);
+        if(!file.isEmpty()){
+            byte[] bytes = file.getBytes();
+            String filename = file.getOriginalFilename();
+            BufferedOutputStream stream =new BufferedOutputStream(new FileOutputStream(new File("D:/" + filename)));
+            stream.write(bytes);
+            stream.flush();
+            stream.close();
+        }
+        return new ModelAndView("index");
+    }
+}
+</code></pre>
+
+<p>Hope it helps :)</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/45122123" title="short permalink to this answer" class="short-link" id="link-post-45122123">share</a><span class="lsep">|</span><a href="/posts/45122123/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2017-07-15 19:42:10Z" class="relativetime">Jul 15 at 19:42</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/6062587/shivangi-gupta"><div class="gravatar-wrapper-32"><img src="https://graph.facebook.com/1033728569983206/picture?type=large" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/6062587/shivangi-gupta">Shivangi Gupta</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">156</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="9 bronze badges"><span class="badge3"></span><span class="badgecount">9</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-45122123" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-45122123" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="30379797"></a>
+<div id="answer-30379797" class="answer" data-answerid="30379797"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="30379797">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Here's an example using apache commons-fileupload:</p>
+
+<pre><code>// apache commons-fileupload to handle file upload
+DiskFileItemFactory factory = new DiskFileItemFactory();
+factory.setRepository(new File(DataSources.TORRENTS_DIR()));
+ServletFileUpload fileUpload = new ServletFileUpload(factory);
+
+List&lt;FileItem&gt; items = fileUpload.parseRequest(req.raw());
+FileItem item = items.stream()
+  .filter(e -&gt;
+  "the_upload_name".equals(e.getFieldName()))
+  .findFirst().get();
+String fileName = item.getName();
+
+item.write(new File(dir, fileName));
+log.info(fileName);
+</code></pre>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/30379797" title="short permalink to this answer" class="short-link" id="link-post-30379797">share</a><span class="lsep">|</span><a href="/posts/30379797/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-05-21 16:49:16Z" class="relativetime">May 21 '15 at 16:49</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/1655478/thouliha"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/5424ecc7236cd16441fafd0d584eb7c5?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/1655478/thouliha">thouliha</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,981</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="13 silver badges"><span class="badge2"></span><span class="badgecount">13</span></span><span title="20 bronze badges"><span class="badge3"></span><span class="badgecount">20</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-30379797" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-30379797" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="21549187"></a>
+<div id="answer-21549187" class="answer" data-answerid="21549187"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="21549187">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">-1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>you can upload file using jsp /servlet.</p>
+
+<pre><code>&lt;form action="UploadFileServlet" method="post"&gt;
+  &lt;input type="text" name="description" /&gt;
+  &lt;input type="file" name="file" /&gt;
+  &lt;input type="submit" /&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>on the other hand server side.
+use following code.</p>
+
+<pre><code>     package com.abc..servlet;
+
+import java.io.File;
+---------
+--------
+
+
+/**
+ * Servlet implementation class UploadFileServlet
+ */
+public class UploadFileServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    public UploadFileServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        response.sendRedirect("../jsp/ErrorPage.jsp");
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+
+            PrintWriter out = response.getWriter();
+            HttpSession httpSession = request.getSession();
+            String filePathUpload = (String) httpSession.getAttribute("path")!=null ? httpSession.getAttribute("path").toString() : "" ;
+
+            String path1 =  filePathUpload;
+            String filename = null;
+            File path = null;
+            FileItem item=null;
+
+
+            boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+
+            if (isMultipart) {
+                FileItemFactory factory = new DiskFileItemFactory();
+                ServletFileUpload upload = new ServletFileUpload(factory);
+                String FieldName = "";
+                try {
+                    List items = upload.parseRequest(request);
+                    Iterator iterator = items.iterator();
+                    while (iterator.hasNext()) {
+                         item = (FileItem) iterator.next();
+
+                            if (fieldname.equals("description")) {
+                                description = item.getString();
+                            }
+                        }
+                        if (!item.isFormField()) {
+                            filename = item.getName();
+                            path = new File(path1 + File.separator);
+                            if (!path.exists()) {
+                                boolean status = path.mkdirs();
+                            }
+                            /* START OF CODE FRO PRIVILEDGE*/
+
+                            File uploadedFile = new File(path + Filename);  // for copy file
+                            item.write(uploadedFile);
+                            }
+                        } else {
+                            f1 = item.getName();
+                        }
+
+                    } // END OF WHILE 
+                    response.sendRedirect("welcome.jsp");
+                } catch (FileUploadException e) {
+                    e.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } 
+            }   
+    }
+
+}
+</code></pre>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/21549187" title="short permalink to this answer" class="short-link" id="link-post-21549187">share</a><span class="lsep">|</span><a href="/posts/21549187/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2014-02-04 10:00:31Z" class="relativetime">Feb 4 '14 at 10:00</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/3184740/mitul-maheshwari"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/gVWUu.jpg?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/3184740/mitul-maheshwari">Mitul Maheshwari</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,790</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="10 silver badges"><span class="badge2"></span><span class="badgecount">10</span></span><span title="34 bronze badges"><span class="badge3"></span><span class="badgecount">34</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-21549187" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-21549187" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="29210393"></a>
+<div id="answer-29210393" class="answer" data-answerid="29210393"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="29210393">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">-1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<pre><code>DiskFileUpload upload=new DiskFileUpload();
+</code></pre>
+
+<p>from this object you have to get file items and fields then yo can store into server like followed</p>
+
+<pre><code>  String loc="./webapps/prjct name/server folder/"+contentid+extension;
+
+
+                            File uploadFile=new File(loc);
+                            item.write(uploadFile);
+</code></pre>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/29210393" title="short permalink to this answer" class="short-link" id="link-post-29210393">share</a><span class="lsep">|</span><a href="/posts/29210393/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-03-23 12:37:19Z" class="relativetime">Mar 23 '15 at 12:37</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/2636808/mahender-y"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/79555981e9c8619baa4c57b48fe5dc4d?s=32&amp;d=identicon&amp;r=PG&amp;f=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/2636808/mahender-y">Mahender Y</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">152</span><span title="5 silver badges"><span class="badge2"></span><span class="badgecount">5</span></span><span title="17 bronze badges"><span class="badge3"></span><span class="badgecount">17</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-29210393" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-29210393" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="19562216"></a>
+<div id="answer-19562216" class="answer" data-answerid="19562216"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="19562216">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">-2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Sending multiple file for file we have to use <code>enctype="multipart/form-data"</code><br>
+and to send multiple file use  <code>multiple="multiple"</code> in input tag  </p>
+
+<pre><code>&lt;form action="upload" method="post" enctype="multipart/form-data"&gt;
+ &lt;input type="file" name="fileattachments"  multiple="multiple"/&gt;
+ &lt;input type="submit" /&gt;
+&lt;/form&gt;
+</code></pre>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/19562216" title="short permalink to this answer" class="short-link" id="link-post-19562216">share</a><span class="lsep">|</span><a href="/posts/19562216/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="/posts/19562216/revisions" title="show all edits to this post">edited <span title="2014-01-27 04:33:38Z" class="relativetime">Jan 27 '14 at 4:33</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/1031945/aniket-kulkarni"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/e0c973dc2f4b186c8beaf5b96533d85c?s=32&amp;d=identicon&amp;r=PG&amp;f=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/1031945/aniket-kulkarni">Aniket Kulkarni</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">8,878</span><span title="7 gold badges"><span class="badge1"></span><span class="badgecount">7</span></span><span title="42 silver badges"><span class="badge2"></span><span class="badgecount">42</span></span><span title="58 bronze badges"><span class="badge3"></span><span class="badgecount">58</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-10-24 09:35:06Z" class="relativetime">Oct 24 '13 at 9:35</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/2335562/rohan-kamat"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/4TMIW.jpg?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/2335562/rohan-kamat">rohan kamat</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">477</span><span title="5 silver badges"><span class="badge2"></span><span class="badgecount">5</span></span><span title="12 bronze badges"><span class="badge3"></span><span class="badgecount">12</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-19562216" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-53509677" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">How would we go about doing getPart(&quot;fileattachments&quot;) so we get an array of Parts instead? I don&#39;t think getPart for multiple files will work?</span>
+                    &ndash;&nbsp;<a href="/users/321629/cybermew"
+                       title="312 reputation"
+                       class="comment-user">CyberMew</a>
+                <span class="comment-date" dir="ltr"><span title="2015-09-29 06:38:41Z" class="relativetime-clean">Sep 29 '15 at 6:38</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-19562216" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="38390008"></a>
+<div id="answer-38390008" class="answer" data-answerid="38390008"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="38390008">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">-2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>HTML PAGE</p>
+
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;File Uploading Form&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h3&gt;File Upload:&lt;/h3&gt;
+Select a file to upload: &lt;br /&gt;
+&lt;form action="UploadServlet" method="post"
+                        enctype="multipart/form-data"&gt;
+&lt;input type="file" name="file" size="50" /&gt;
+&lt;br /&gt;
+&lt;input type="submit" value="Upload File" /&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt; 
+</code></pre>
+
+<p>SERVLET FILE</p>
+
+<pre><code>// Import required java libraries
+import java.io.*;
+import java.util.*;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.io.output.*;
+
+public class UploadServlet extends HttpServlet {
+
+   private boolean isMultipart;
+   private String filePath;
+   private int maxFileSize = 50 * 1024;
+   private int maxMemSize = 4 * 1024;
+   private File file ;
+
+   public void init( ){
+      // Get the file location where it would be stored.
+      filePath = 
+             getServletContext().getInitParameter("file-upload"); 
+   }
+   public void doPost(HttpServletRequest request, 
+               HttpServletResponse response)
+              throws ServletException, java.io.IOException {
+      // Check that we have a file upload request
+      isMultipart = ServletFileUpload.isMultipartContent(request);
+      response.setContentType("text/html");
+      java.io.PrintWriter out = response.getWriter( );
+      if( !isMultipart ){
+         out.println("&lt;html&gt;");
+         out.println("&lt;head&gt;");
+         out.println("&lt;title&gt;Servlet upload&lt;/title&gt;");  
+         out.println("&lt;/head&gt;");
+         out.println("&lt;body&gt;");
+         out.println("&lt;p&gt;No file uploaded&lt;/p&gt;"); 
+         out.println("&lt;/body&gt;");
+         out.println("&lt;/html&gt;");
+         return;
+      }
+      DiskFileItemFactory factory = new DiskFileItemFactory();
+      // maximum size that will be stored in memory
+      factory.setSizeThreshold(maxMemSize);
+      // Location to save data that is larger than maxMemSize.
+      factory.setRepository(new File("c:\\temp"));
+
+      // Create a new file upload handler
+      ServletFileUpload upload = new ServletFileUpload(factory);
+      // maximum file size to be uploaded.
+      upload.setSizeMax( maxFileSize );
+
+      try{ 
+      // Parse the request to get file items.
+      List fileItems = upload.parseRequest(request);
+
+      // Process the uploaded file items
+      Iterator i = fileItems.iterator();
+
+      out.println("&lt;html&gt;");
+      out.println("&lt;head&gt;");
+      out.println("&lt;title&gt;Servlet upload&lt;/title&gt;");  
+      out.println("&lt;/head&gt;");
+      out.println("&lt;body&gt;");
+      while ( i.hasNext () ) 
+      {
+         FileItem fi = (FileItem)i.next();
+         if ( !fi.isFormField () )  
+         {
+            // Get the uploaded file parameters
+            String fieldName = fi.getFieldName();
+            String fileName = fi.getName();
+            String contentType = fi.getContentType();
+            boolean isInMemory = fi.isInMemory();
+            long sizeInBytes = fi.getSize();
+            // Write the file
+            if( fileName.lastIndexOf("\\") &gt;= 0 ){
+               file = new File( filePath + 
+               fileName.substring( fileName.lastIndexOf("\\"))) ;
+            }else{
+               file = new File( filePath + 
+               fileName.substring(fileName.lastIndexOf("\\")+1)) ;
+            }
+            fi.write( file ) ;
+            out.println("Uploaded Filename: " + fileName + "&lt;br&gt;");
+         }
+      }
+      out.println("&lt;/body&gt;");
+      out.println("&lt;/html&gt;");
+   }catch(Exception ex) {
+       System.out.println(ex);
+   }
+   }
+   public void doGet(HttpServletRequest request, 
+                       HttpServletResponse response)
+        throws ServletException, java.io.IOException {
+
+        throw new ServletException("GET method used with " +
+                getClass( ).getName( )+": POST method required.");
+   } 
+}
+</code></pre>
+
+<p>web.xml</p>
+
+<p>Compile above servlet UploadServlet and create required entry in web.xml file as follows.</p>
+
+<pre><code>&lt;servlet&gt;
+   &lt;servlet-name&gt;UploadServlet&lt;/servlet-name&gt;
+   &lt;servlet-class&gt;UploadServlet&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+
+&lt;servlet-mapping&gt;
+   &lt;servlet-name&gt;UploadServlet&lt;/servlet-name&gt;
+   &lt;url-pattern&gt;/UploadServlet&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+</code></pre>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/38390008" title="short permalink to this answer" class="short-link" id="link-post-38390008">share</a><span class="lsep">|</span><a href="/posts/38390008/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/38390008/revisions" title="show all edits to this post">edited <span title="2016-07-15 13:28:57Z" class="relativetime">Jul 15 '16 at 13:28</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2016-07-15 07:14:09Z" class="relativetime">Jul 15 '16 at 7:14</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/6559030/himanshu-patel"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/68f6eab1b953b7fdf0b9a1224d5de0e4?s=32&amp;d=identicon&amp;r=PG&amp;f=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/6559030/himanshu-patel">Himanshu Patel</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">82</span><span title="6 bronze badges"><span class="badge3"></span><span class="badgecount">6</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-38390008" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-38390008" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+                    <div class="question-status">
+        <h2>                    <b>protected</b> by <a href="/users/157882/balusc">BalusC</a> <span dir="ltr"><span title="2012-05-20 12:44:42Z" class="relativetime">May 20 '12 at 12:44</span></span>
+</h2>
+        <p>
+Thank you for your interest in this question. 
+Because it has attracted low-quality or spam answers that had to be removed, posting an answer now requires 10 <a href="/help/whats-reputation">reputation</a> on this site (the <a href="/help/privileges/new-user">association bonus does not count</a>).
+<br /><br />
+Would you like to answer one of these <a href="/unanswered?fromProtectedNotice=true">unanswered questions</a> instead?
+</p>
+    </div>
+
+
+
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Not the answer you&#39;re looking for?                            Browse other questions tagged <a href="/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="/questions/tagged/jsp" class="post-tag" title="show questions tagged &#39;jsp&#39;" rel="tag">jsp</a> <a href="/questions/tagged/java-ee" class="post-tag" title="show questions tagged &#39;java-ee&#39;" rel="tag">java-ee</a> <a href="/questions/tagged/servlets" class="post-tag" title="show questions tagged &#39;servlets&#39;" rel="tag">servlets</a> <a href="/questions/tagged/file-upload" class="post-tag" title="show questions tagged &#39;file-upload&#39;" rel="tag">file-upload</a>  or <a href="/questions/ask">ask your own question</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tr>
+                            <td>
+                                <p class="label-key">asked</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2010-03-11 04:07:32Z"><b>7 years, 6 months ago</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">viewed</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>397,968 times</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">active</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="?lastactivity" class="lastactivity-link" title="2017-08-11 18:09:08Z">25 days ago</a></b></p>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+                        
+            <script>
+                    var ados = ados || {}; ados.run = ados.run || [];
+                    ados.run.push(function () { ados_add_placement(22,8277,"adzerk792431117",[5,17,2221,1129,43]).setZone(45); });
+                </script>
+                <div class="everyonelovesstackoverflow" id="adzerk792431117"></div>
+            <script>try{;window.clc=window.clc||{},window.clc.init=window.clc.init||function(a){var b=window,c=b.document;try{if('function'!=typeof[].indexOf||!window.addEventListener||!a.allowed)return;var d=new RegExp(a.allowed);if(!d.test(location.hostname))return;if(b.clc.options)for(var e in b.clc.options)a[e]=b.clc.options[e];b.clc.cmd='undefined'==typeof b.clc.cmd?[]:b.clc.cmd,b.clc.autoload=b.clc.autoload||function(){'function'==typeof b.clc.load?b.clc.load():b.clc.cmd.push(function(a){a.load()})};var f=a.wv;if(c.hidden&&f)return void c.addEventListener('visibilitychange',function b(){c.hidden||(window.clc.init(a),c.removeEventListener('visibilitychange',b))});b.clc.options=a,a.al&&b.clc.autoload();var g=c.createElement('script');g.async=!0,g.src=a.lib,c.body.appendChild(g)}catch(a){}},window.clc.loadDisplayAds=window.clc.loadDisplayAds||function(){function a(a){b.googletag=b.googletag||{},b.googletag.cmd=b.googletag.cmd||[],b.googletag.cmd.push(a)}var b=window,c={slots:{lb:[[728,90]],mlb:[[728,90]],sb:[[300,250],[300,600]]},ids:{"dfp-tlb":'lb',"dfp-mlb":'mlb',"dfp-tsb":'sb',"clc-tlb":'lb',"clc-mlb":'mlb',"clc-tsb":'sb'}},d=/^\/tags\//.test(location.pathname)||/^\/questions\/tagged\//.test(location.pathname)?'tag-pages':'question-pages',e=/^dev\./.test(location.hostname)?'test/'+location.hostname:location.hostname;return function(f){var g=(f&&0<f.length?f:Object.keys(c.ids)).map(function(a){return document.getElementById(a)}).filter(function(a){return!!a&&/^\s*$/.test(a.innerHTML)}).map(function(a){return a.id});if(0!==g.length){a(function(){var a=b.googletag;a.pubads().enableSingleRequest();var f=b.dfp_targeting||{};f&&Object.keys(f).forEach(function(b){a.pubads().setTargeting(b,f[b])});for(var h=0,i=g;h<i.length;h++){var j=i[h],k=c.ids[j],l=c.slots[k];a.defineSlot('/'+'248424177'+'/'+e+'/'+k+'/'+d,l,j).addService(a.pubads())}a.enableServices();for(var j,m=0,n=g;m<n.length;m++)j=n[m],a.display(j)});var h=document.createElement('script');h.async=!0,h.src='https://www.googletagservices.com/tag/js/gpt.js',document.body.appendChild(h)}}}(),window.clc.loadDfp=window.clc.loadDisplayAds,window.clc.init.call(null, {"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=8eb17d1d4f2b","u":"https://clc.stackoverflow.com/markup.js","wa":true,"kt":2000,"tto":true,"h":"clc.stackoverflow.com","allowed":"^(((talent\\.)?stackoverflow)|(blog\\.codinghorror)|(serverfault|askubuntu)|([^\\.]+\\.stackexchange))\\.com$","wv":true,"al":false,"fb":null});}catch(e){typeof console!=='undefined'&&typeof console.error==='function'&&console.error(e);}</script>
+            <script>
+                var dfp_targeting={Registered:['false'],'so-tag':['java','jsp','java-ee','servlets','file-upload'],Industry:['Academic']};
+            </script>
+            <div id="hireme"></div>
+            <script>try{window.clc_request='AkbiSozS9NQIAAAAAMT2JAACAAAAAgAAAAA7AAAAfGphdmF8anNwfGphdmEtZWV8c2VydmxldHN8ZmlsZS11cGxvYWR8eC1pbmR1c3RyeS1hY2FkZW1pY3wAiZM-q16JsNej6A';typeof clc!=='undefined'&&typeof clc.autoload==='function'&&clc.autoload();}catch(e){typeof console!=='undefined'&&typeof console.error==='function'&&console.error(e);}</script>
+            <div id="dfp-tsb" class="dfpad"></div>
+                <style>.dfpad{position:absolute;height:1px;width:1px;opacity:0;top:0;left:0;pointer-events:none;}</style>
+<script>try{typeof clc!=='undefined'&&typeof clc.loadDfp==='function'&&clc.loadDfp();}catch(e){typeof console!=='undefined'&&typeof console.error==='function'&&console.error(e);}</script>
+            <div class="module" id="chat-feature">
+
+    <h4><a href="http://chat.stackoverflow.com" id="h-chat-link">Visit Chat</a></h4>
+    <div class="related" id="ad502-rooms"></div>
+    <script>
+    // <!--
+        StackExchange.ready(
+        function () {
+            var options = {
+                chatUrl: 'http://chat.stackoverflow.com',
+                reloadUrl: '/api/recent-chat',
+                preloadData: {"activeUsers":71,"activeRooms":35,"rooms":[{"name":"JavaScript","id":17,"lastPost":1504648249,"posts":4203600,"users":[{"name":"Ben Visness","id":1177139,"emailhash":"57fabd56e631735706cb6fbd7f49b783","lastPost":1504648249},{"name":"towc","id":3161092,"emailhash":"!https://i.stack.imgur.com/oVs5E.png?s=128\u0026g=1","lastPost":1504648228},{"name":"Chris Rasys","id":532744,"emailhash":"f1c25e9e50c654c5091c6aa63214ebee","lastPost":1504648221},{"name":"Kamil Solecki","id":2534346,"emailhash":"!https://i.stack.imgur.com/PnMP0.jpg?s=128\u0026g=1","lastPost":1504648209},{"name":"Arrow","id":2203974,"emailhash":"!https://i.stack.imgur.com/NURaP.jpg?s=128\u0026g=1","lastPost":1504648187},{"name":"ssube","id":129032,"emailhash":"e8bea8f9e6972dfd3113d67da68e6933","lastPost":1504648062},{"name":"Allenph","id":1329850,"emailhash":"!https://i.stack.imgur.com/bTRnJ.jpg?s=128\u0026g=1","lastPost":1504647607}],"messages":[{"date":1504648249,"user":"Ben Visness","userid":1177139}],"singleImage":false,"tags":["ecmascript","ecmascript-6","javascript","legal-advice","nodejs"]},{"name":"Lounge\u003cC++\u003e","id":10,"lastPost":1504648066,"posts":4949838,"users":[{"name":"Captain Giraffe","id":451600,"emailhash":"!https://i.stack.imgur.com/qYIUW.jpg?s=128\u0026g=1","lastPost":1504648066},{"name":"Columbo","id":3647361,"emailhash":"!https://i.stack.imgur.com/xvjhM.png?s=128\u0026g=1","lastPost":1504647897},{"name":"Morwenn","id":1364752,"emailhash":"!https://i.stack.imgur.com/DicPR.jpg?s=128\u0026g=1","lastPost":1504647402},{"name":"Telkitty","id":2369847,"emailhash":"!https://i.stack.imgur.com/P2Yey.jpg?s=128\u0026g=1","lastPost":1504647401},{"name":"Jerry Coffin","id":179910,"emailhash":"d8962238339d771f0348967be6f97b1b","lastPost":1504647356},{"name":"Puppy","id":298661,"emailhash":"3445f56229632874a44596385ed6d40c","lastPost":1504645695},{"name":"Luc Danton","id":726300,"emailhash":"!https://i.stack.imgur.com/ZWH6H.png?s=128\u0026g=1","lastPost":1504643614}],"messages":[{"date":1504648066,"user":"Captain Giraffe","userid":451600}],"singleImage":false,"tags":["c++","c++11","c++14","c++17","c++-faq"]}]} 
+            };
+
+            StackExchange.chatAd.init(options);
+        });
+    // -->
+    </script>
+
+</div>
+
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="/q/3337056" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">50</div>
+	</a>
+	<a href="/questions/3337056/convenient-way-to-parse-incoming-multipart-form-data-parameters-in-a-servlet?noredirect=1" class="question-hyperlink">Convenient way to parse incoming multipart/form-data parameters in a Servlet</a>
+</div>
+<div class="spacer">
+	<a href="/q/5512442" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">12</div>
+	</a>
+	<a href="/questions/5512442/input-type-text-value-from-jsp-form-enctype-multipart-form-data-returns-null?noredirect=1" class="question-hyperlink">Input TYPE TEXT Value from JSP form (enctype=&ldquo;multipart/form-data&rdquo;) returns null</a>
+</div>
+<div class="spacer">
+	<a href="/q/15729777" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">12</div>
+	</a>
+	<a href="/questions/15729777/servlet-get-parameter-from-multipart-form-in-tomcat-7?noredirect=1" class="question-hyperlink">Servlet get parameter from multipart form in tomcat 7</a>
+</div>
+<div class="spacer">
+	<a href="/q/15105322" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">7</div>
+	</a>
+	<a href="/questions/15105322/sending-additional-data-with-multipart?noredirect=1" class="question-hyperlink">Sending additional data with multipart</a>
+</div>
+<div class="spacer">
+	<a href="/q/2197645" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">7</div>
+	</a>
+	<a href="/questions/2197645/multi-part-upload-file-servlet?noredirect=1" class="question-hyperlink">Multi part upload file servlet</a>
+</div>
+<div class="spacer">
+	<a href="/q/17937841" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">8</div>
+	</a>
+	<a href="/questions/17937841/multipart-form-data-does-not-support-for-request-getparamerter?noredirect=1" class="question-hyperlink">Multipart/form-data does not support for request.getparamerter</a>
+</div>
+<div class="spacer">
+	<a href="/q/13048939" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">6</div>
+	</a>
+	<a href="/questions/13048939/file-upload-with-servletfileuploads-parserequest?noredirect=1" class="question-hyperlink">File upload with ServletFileUpload&#39;s parseRequest?</a>
+</div>
+<div class="spacer">
+	<a href="/q/24578680" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">6</div>
+	</a>
+	<a href="/questions/24578680/error-unable-to-process-parts-as-no-multi-part-configuration-has-been-provided?noredirect=1" class="question-hyperlink">Error &ldquo;Unable to process parts as no multi-part configuration has been provided&rdquo; when uploading file</a>
+</div>
+<div class="spacer">
+	<a href="/q/7376364" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">3</div>
+	</a>
+	<a href="/questions/7376364/problem-with-file-upload-in-jsp?noredirect=1" class="question-hyperlink">problem with file upload in jsp</a>
+</div>
+<div class="spacer">
+	<a href="/q/23391520" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">4</div>
+	</a>
+	<a href="/questions/23391520/null-values-getting-in-servlet-using-request-getparameter-from-jsp?noredirect=1" class="question-hyperlink">null values getting in servlet using request.getParameter from jsp</a>
+</div>					<div class="spacer more">
+				<a href="/questions/linked/2422468">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer"><a href="/q/2095397" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">657</div></a><a href="/questions/2095397/what-is-the-difference-between-jsf-servlet-and-jsp" class="question-hyperlink">What is the difference between JSF, Servlet and JSP?</a></div><div class="spacer"><a href="/q/3061940" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">3</div></a><a href="/questions/3061940/spring-upload-file" class="question-hyperlink">Spring upload file</a></div><div class="spacer"><a href="/q/3177733" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">1400</div></a><a href="/questions/3177733/how-to-avoid-java-code-in-jsp-files" class="question-hyperlink">How to avoid Java code in JSP files?</a></div><div class="spacer"><a href="/q/7371201" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="/questions/7371201/i-am-unable-to-call-a-jsp-using-requestdispatcher-forward" class="question-hyperlink">I am unable to call a JSP using RequestDispatcher forward</a></div><div class="spacer"><a href="/q/7376364" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">3</div></a><a href="/questions/7376364/problem-with-file-upload-in-jsp" class="question-hyperlink">problem with file upload in jsp</a></div><div class="spacer"><a href="/q/10800728" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">4</div></a><a href="/questions/10800728/java-lang-nosuchmethoderror-while-uploading-file" class="question-hyperlink">java.lang.NoSuchMethodError while uploading file</a></div><div class="spacer"><a href="/q/12635515" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="/questions/12635515/while-calling-java-method-in-jsp-page-it-is-showing-servlet-service-exception-n" class="question-hyperlink">while calling java method in jsp page, it is showing servlet.service exception nosuchmethod</a></div><div class="spacer"><a href="/q/14160191" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">-1</div></a><a href="/questions/14160191/classnotfound-exception-with-my-jsp-and-servlet" class="question-hyperlink">ClassNotFound exception with my JSP and servlet</a></div><div class="spacer"><a href="/q/17248907" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="/questions/17248907/how-to-pass-more-than-one-hidden-parameter-from-jsp-to-servlet" class="question-hyperlink">How to pass more than one hidden parameter from jsp to servlet?</a></div><div class="spacer"><a href="/q/27503920" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="/questions/27503920/not-able-to-display-a-jasper-report-on-the-browser-allocate-exception-for-serv" class="question-hyperlink">Not able to display a Jasper report on the browser , Allocate exception for servlet JaspersJob_servlet java.lang.ClassNotFoundException</a></div>
+                    </div>
+                </div>
+
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot"
+           class="js-gps-track" 
+           data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li >
+                <div class="favicon favicon-bicycles" title="Bicycles Stack Exchange"></div><a href="https://bicycles.stackexchange.com/questions/49997/can-the-brake-levers-be-moved-from-the-side-to-the-top-of-the-handlebar" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:126 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can the brake levers be moved from the side to the top of the handlebar?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="https://ell.stackexchange.com/questions/141205/what-does-it-mean-to-dine-off-something" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does it mean to &quot;dine off&quot; something?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/141701/my-device-malfunctions-abuse-its-undefined-string-behaviour" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    My device malfunctions... Abuse its undefined string behaviour!
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-parenting" title="Parenting Stack Exchange"></div><a href="https://parenting.stackexchange.com/questions/31510/my-16-year-old-daughter-got-a-speeding-ticket" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:228 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    My 16 year old daughter got a speeding ticket
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-outdoors" title="The Great Outdoors Stack Exchange"></div><a href="https://outdoors.stackexchange.com/questions/17068/is-belaying-a-lead-more-difficult-than-a-top-roped-climber" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:395 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is belaying a lead more difficult than a top roped climber
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/168959/why-is-the-wall-still-manned" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is The Wall still manned?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/90854/why-would-fission-be-used-in-a-world-where-fusion-reactors-exist" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why would Fission be used in a world where Fusion reactors exist?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/168733/why-did-peter-parker-work-as-a-poor-photographer-given-that-he-was-a-top-science" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why did Peter Parker work as a poor photographer given that he was a top science student who could earn much more in Silicon Valley?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="https://money.stackexchange.com/questions/84753/how-to-interpret-stock-performance-charts-vs-sp-500" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to interpret stock performance charts &quot;vs S&amp;P 500&quot;
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/168933/why-did-siriuss-outlook-towards-house-elves-change-drastically-from-gof-to-ootp" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why did Sirius&#39;s outlook towards House Elves change drastically from GoF to OotP?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="https://security.stackexchange.com/questions/168807/why-doesnt-tornado-have-session" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why doesn&#39;t Tornado have session
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/95517/is-there-an-official-widely-used-subject-classification" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there an official, widely used subject classification?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="https://electronics.stackexchange.com/questions/327678/enclosure-best-air-flow-profile" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Enclosure best air flow profile
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/91053/can-urine-be-used-for-radiation-shielding" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can urine be used for radiation shielding?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="https://askubuntu.com/questions/953126/can-i-recover-my-windows-product-key-from-ubuntu" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can I recover my Windows product key from Ubuntu?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2417904/criterion-for-deciding-whether-matrix-is-diagonalizable" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Criterion for deciding whether matrix is diagonalizable
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="https://stackoverflow.com/questions/46060438/in-which-thread-does-completablefutures-completion-handlers-execute-in" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    In which thread does CompletableFuture&#39;s completion handlers execute in?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="https://tex.stackexchange.com/questions/389935/how-to-split-a-really-long-matrix" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to split a really long matrix
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/3213/how-to-deal-politely-with-people-asking-about-your-job-but-unable-to-understand" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to deal politely with people asking about your job but unable to understand it?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/95543/what-is-a-classic-paper-and-when-do-we-refer-to-a-work-as-a-classic-work" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is a &#39;classic paper&#39;, and when do we refer to a work as a &#39;classic work&#39;?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="https://money.stackexchange.com/questions/84764/available-credit-more-than-credit-line" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Available credit more than credit line
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-pets" title="Pets Stack Exchange"></div><a href="https://pets.stackexchange.com/questions/18208/my-cat-seems-to-dislike-the-idea-of-morning-walk-should-i-continue" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:518 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    My cat seems to dislike the idea of morning walk. Should I continue?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-gis" title="Geographic Information Systems Stack Exchange"></div><a href="https://gis.stackexchange.com/questions/254380/set-default-gdal-ogr-config-options" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:79 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Set default GDAL/OGR config options?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/141666/simple-state-sales-tax-calculator" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Simple State Sales Tax Calculator
+                </a>
+
+            </li>
+    </ul>
+
+        <a href="#" 
+           class="show-more js-show-more js-gps-track" 
+           data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+            more hot questions
+        </a>
+</div>
+        </div>
+    
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="/feeds/question/2422468" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>    </div>
+<script>
+StackExchange.ready(function(){$.get('/posts/2422468/ivc/1c84');});
+</script>
+<noscript>
+    <div><img src="/posts/2422468/ivc/1c84" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-java</div></div>
+
+
+        </div>
+    </div>
+
+    <footer id="footer" class="s-footer js-footer" role="contentinfo">
+        <div class="-container">
+            <div class="g-row js-sp-between">
+                    <div class="-logo">
+                        <a href="https://stackoverflow.com"><svg aria-hidden="true" class="svg-icon iconLogo" width="150" height="30" viewBox="0 0 150 30"><g><path d="M33.9 18.6l-1.7-.2c-1.3-.1-1.9-.6-1.9-1.6 0-1.1.8-1.8 2.4-1.8 1.1 0 2.1.3 2.8.8l1-1c-1-.8-2.3-1.1-3.8-1.1-2.3 0-3.9 1.2-3.9 3.1 0 1.8 1.1 2.7 3.2 2.9l1.8.2c1.2.1 1.8.6 1.8 1.6 0 1.3-1.1 1.9-2.8 1.9-1.3 0-2.5-.3-3.3-1.2l-1 1c1.2 1.1 2.6 1.5 4.4 1.5 2.6 0 4.3-1.2 4.3-3.2-.2-2-1.5-2.7-3.3-2.9zm13.3-4.8c-1.7 0-2.8.3-3.7 1.5l1 1c.6-.9 1.3-1.2 2.7-1.2 1.9 0 2.7.8 2.7 2.3v1h-3.2c-2.4 0-3.7 1.2-3.7 3.1 0 .8.3 1.6.8 2.2.7.7 1.5 1 3 1 1.4 0 2.2-.3 3.1-1.1v1h1.6v-7.2c-.1-2.4-1.5-3.6-4.3-3.6zm2.7 7c0 .9-.2 1.5-.5 1.8-.7.6-1.5.7-2.4.7-1.7 0-2.4-.6-2.4-1.8 0-1.2.8-1.9 2.4-1.9h3l-.1 1.2zm7.6-5.6c1 0 1.6.3 2.4 1.2l1-1c-1.1-1.2-2-1.6-3.5-1.6-2.7 0-4.7 1.8-4.7 5.5 0 3.6 2 5.5 4.7 5.5 1.5 0 2.4-.4 3.5-1.6l-1.1-1c-.8.9-1.4 1.2-2.4 1.2s-1.9-.4-2.5-1.2c-.5-.7-.7-1.5-.7-2.9 0-1.3.2-2.2.7-2.9.7-.8 1.6-1.2 2.6-1.2zm13.4-1.3H69l-4.8 4.7V9.1h-1.6v15.4h1.6v-3.9l1.9-1.9 3.6 5.8h1.9l-4.4-6.9 3.7-3.7zm7.3-.33c-1.6 0-2.7.6-3.4 1.4-1 1-1.3 2.3-1.3 4.3s.3 3.3 1.3 4.3c.7.7 1.8 1.4 3.4 1.4 1.6 0 2.8-.6 3.4-1.4 1-1 1.3-2.3 1.3-4.3s-.3-3.3-1.3-4.3c-.6-.8-1.7-1.4-3.4-1.4zm1.3 8.3c-.3.3-.7.5-1.3.5-.6 0-1-.2-1.3-.5-.6-.6-.6-1.6-.6-2.7 0-1.2.1-2.1.6-2.7.3-.3.7-.5 1.3-.5.6 0 1 .2 1.3.5.6.6.6 1.5.6 2.7.1 1.2 0 2.2-.6 2.7zm10.8-8.2l-2.2 6.9-2.3-6.9h-2.9l4.1 11.1h2.2l4.1-11.1h-3zm7.6-.1c-2.9 0-4.8 2-4.8 5.7 0 4.5 2.5 5.7 5.1 5.7 2 0 3.1-.6 4.2-1.7l-1.7-1.6c-.7.7-1.3 1-2.5 1-1.6 0-2.4-1-2.4-2.5h6.9v-1.2c0-3.2-1.7-5.4-4.8-5.4zm-2.1 4.6c0-.5.1-.8.3-1.2.3-.7.9-1.2 1.9-1.2.9 0 1.6.5 1.9 1.2.2.4.2.7.3 1.2h-4.4zm11-3.4v-1.1h-2.7v11.1h2.8v-6.7c0-1.4.9-2 1.8-2 .7 0 1 .2 1.5.7l2.1-2.1c-.8-.8-1.5-1-2.6-1-1.3-.1-2.3.4-2.9 1.1zm6.3-2.3v12.3h2.8v-8.8h2v-2.1h-2v-1.2c0-.6.3-1 1-1h1.1v-2.3h-1.6c-2.3 0-3.3 1.6-3.3 3.1zm16.2 1.1c-1.6 0-2.7.6-3.4 1.4-1 1-1.3 2.3-1.3 4.3s.3 3.3 1.3 4.3c.7.7 1.8 1.4 3.4 1.4 1.6 0 2.8-.6 3.4-1.4 1-1 1.3-2.3 1.3-4.3s-.3-3.3-1.3-4.3c-.6-.8-1.8-1.4-3.4-1.4zm1.3 8.3c-.3.3-.7.5-1.3.5-.6 0-1-.2-1.3-.5-.6-.6-.6-1.6-.6-2.7 0-1.2.1-2.1.6-2.7.3-.3.7-.5 1.3-.5.6 0 1 .2 1.3.5.6.6.6 1.5.6 2.7 0 1.2 0 2.2-.6 2.7zm16.5-8.2l-1.8 6.9-2.3-6.9h-2l-2.3 6.9-1.8-6.9H134l3.4 11.1h2.3l2.3-7 2.3 7h2.3l3.4-11.1h-2.9zm-25.1 7.7V9.27h-2.8v12.3c0 1.6 1 3.2 3.2 3.2h1.6v-2.3h-1c-.7 0-1-.4-1-1.1zM41.3 15.6l1.4-1.4h-3v-3.5h-1.6v11.1c0 1.6.9 2.9 2.7 2.9h1.1v-1.3h-.8c-1 0-1.5-.6-1.5-1.6v-6.1h1.7v-.1z" fill="#222426"/><path fill="#BCBBBB" d="M21 27v-8h3v11H0V19h3v8z"/><path d="M5.4 19.1l13.56 1.96.17-2.38-13.26-2.55-.47 2.97zm1.8-6.8l12 5.6 1.1-2.4-12-5.6-1.1 2.4zm3.4-5.9l10.2 8.5 1.7-2-10.2-8.5-1.7 2zM17.1.2L15 1.8l7.9 10.6 2.1-1.6L17.1.2zM5 25h14v-3H5v3z" fill="#F48024"/></g></svg></a>
+                    </div>
+                
+                    <nav class="-nav js-category _visible" data-name="default">
+                        <h5 class="-title"><a href="https://stackoverflow.com" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="/questions" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 16})">Questions</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Jobs</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs/directory/developer-jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 11})">Developer Jobs Directory</a></li>
+                                                            <li class="-item"><a href="https://stackoverflow.com/documentation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 18})">Documentation</a></li>
+                                                            <li class="-item"><a href="/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Help</a></li>
+                                <li class="-item"><a onclick='StackExchange.switchMobile("on")' class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Mobile</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="-nav js-category _visible" data-name="default">
+                        <h5 class="-title"><a href="https://www.stackoverflowbusiness.com/?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 19 })">Stack Overflow<br /> Business</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/talent?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 20 })">Talent</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/advertise?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 21 })">Ads</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/enterprise?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 22 })">Enterprise</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/insights?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 23 })">Insights</a></li>
+                        </ul>
+                    </nav>
+                <nav class="-nav js-category _visible" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Company</a></h5>
+                    <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">About</a></li>
+                                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Press</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 9 })" href="https://stackoverflow.com/company/work-here">Work Here</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackexchange.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackexchange.com/legal/privacy-policy">Privacy Policy</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://stackoverflow.com/company/contact">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="-network g-row">
+                    <a href="#" class="-back-trigger js-back"><svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"/></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <nav class="-nav js-category" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="//stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="//serverfault.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="//superuser.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="//webapps.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="//askubuntu.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="//webmasters.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="//gamedev.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//tex.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="//softwareengineering.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="//unix.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="//apple.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="//wordpress.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="//gis.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="//electronics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//android.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="//security.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="//dba.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="//drupal.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="//sharepoint.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="//ux.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="//mathematica.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//salesforce.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="//expressionengine.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine&#174; CMS">ExpressionEngine&#174; Answers</a></li>
+                <li class="-item"><a href="//blender.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="//networkengineering.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="//crypto.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="//codereview.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                <li class="-item"><a href="//magento.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//softwarerecs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="//dsp.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="//emacs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="//raspberrypi.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="//codegolf.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                <li class="-item"><a href="//ethereum.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="//datascience.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//arduino.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (27)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="//photo.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="//scifi.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="//graphicdesign.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="//movies.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="//music.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="//worldbuilding.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="//cooking.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="//diy.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="//money.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="//academia.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="//law.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (17)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="//english.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="//skeptics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="//judaism.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="//travel.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="//christianity.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="//ell.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="//japanese.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="//gaming.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="//bicycles.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="//rpg.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="//anime.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="//puzzling.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                <li class="-item"><a href="//mechanics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (32)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="//mathoverflow.net" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="//math.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="//stats.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="//cstheory.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="//physics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="//chemistry.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientists, academics, teachers and students">Chemistry</a></li>
+                <li class="-item"><a href="//biology.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="//cs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="//philosophy.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="//meta.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="//stackapps.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+                <li class="-item"><a href="//area51.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                    </ul>
+    </nav>
+                <div class="-copyright text-right">
+                    <div class="g-column jc-sp-between">
+                        <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog?blb=1">Blog</a></li>
+                            <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link">Facebook</a></li>
+                            <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link">Twitter</a></li>
+                            <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link">LinkedIn</a></li>
+                        </ul>
+
+                        <div>
+                            <p>
+                                site design / logo &#169; 2017 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license" class="-link">cc by-sa 3.0</a>
+                                with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license" class="-link">attribution required</a>.
+                                <span id="svnrev">rev 2017.9.5.26948</span>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    </div>
+    </footer>
+
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled
+            <img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno">
+        </div>
+    </noscript>
+<script>var z=document.createElement("script");z.type="text/javascript",z.async=!0,z.src="https://static.adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+<script>
+var ados = ados || {};
+ados.run = ados.run || [];
+
+
+ados.run.push(function () {
+    setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+    ados_setKeywords('java,jsp,java-ee,servlets,file-upload,x-industry-academic');; ados_load();
+});   
+
+</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-5620270-1');
+                ga('create', 'UA-5620270-59', {name: 'pageData', sampleRate: 5 });
+                ga('set', 'dimension2', '|java|jsp|java-ee|servlets|file-upload|');
+                ga('pageData.set', 'dimension2', '|java|jsp|java-ee|servlets|file-upload|');
+                ga('send', 'pageview');
+                ga('pageData.send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+                <script>
+        var x1=0,x2=0;
+        $('body').on('mousewheel', function(e){ x1=x2; x2=e.originalEvent.wheelDelta; });
+        setInterval(function() { 
+            if(x1!=x2){ 
+                if(x2 > 0) {
+                    console.log('Scroll Up');
+                    //var data = "Scrolling Up";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Scroll Up"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                } 
+                else { 
+                    console.log('Scroll Down');
+                    //var data = "Scrolling Down";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Scroll Down"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                }
+            }
+        },500);
+    </script>
+    <script>
+        var y1=0,y2=0;
+        window.onmousemove = function(e) { y1=y2; y2=e.pageY; }
+        setInterval(function() { 
+            if(y1!=y2){ 
+                if(y2<y1){
+                    console.log('Mouse Up');
+                    //var data = "Mouse movement upward";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Mouse Up"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                } 
+                else { 
+                    console.log('Mouse Down');
+                    //var data = "Mouse movement downward";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Mouse Down"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                }
+            } 
+        },500);
+    </script>
+    <script>
+        $("button").mousedown( function(e) {
+        if(e.which) {
+            console.log(this.value+" Button Click");
+            //var data = this.value+" Button clicked";
+            $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Button Click"}',
+                success: function(data) { console.log(data); },
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        }
+        });
+        $("input").mousedown( function(e) {
+        if(e.which) {
+            console.log(this.value+" Button Click");
+            //var data = "Button";
+            /*$.ajax({
+                url:'/jspost',
+                type:'POST',
+                data:{dat,dat},
+                success: function(data) 
+                {console.log(data);
+                }
+            });*/
+            $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Button Click"}',
+                success: function(data) { console.log(data); },
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        }   
+        });
+        $("a").mousedown( function(e) {
+        if(e.which) {
+            console.log("Link Click");
+            //var data = "Link clicked";
+            $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Link Click"}',
+                success: function(data) { console.log(data); },
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        }
+        });
+        $("button").trigger("mousedown");
+    </script>
+    <script>
+        $('body').mouseup(function() {
+        console.log('Text Select');
+        //var data = "Text is selected";
+        $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Text Select"}',
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        console.log(getSelectedText());
+        });
+        function getSelectedText() {
+        if (window.getSelection) {
+            return window.getSelection().toString();
+        } else if (document.selection) {
+            return document.selection.createRange().text;
+        }
+        return '';
+        }
+    </script>
+    </body>
+</html>

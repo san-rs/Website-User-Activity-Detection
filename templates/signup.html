@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>SignUp Page</title>
+</head>
+<body>
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<div>
+    <a href="/signup">Sign Up</a><br>
+    <a href="/login">Login</a>
+</div>
+<div>
+    <div>
+                <div>
+                    <h3>Sign Up</h3>             
+                    <form role="form" id="signupsubmit" noalert="false" action="/signupsubmit" method='POST'>
+                        <div>
+                            <label>First Name:</label>
+                            <div>
+                                <input type="text" value="" name="firstname" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label>Last Name:</label>
+                            <div>
+                                <input type="text" value="" name="lastname" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label>Username:</label>
+                            <div>
+                                <input type="text" value="" name="username" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label>Password:</label>
+                            <div>
+                                <input type="password" name="password" value="" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label></label>
+                            <div>
+                                <input type="submit" value="Sign Up" id="submit">
+                                <span></span>
+                                <input type="reset" value="Cancel">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,2922 @@
+
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/QAPage">
+
+<head>
+
+<title>jvm - How do I write a correct micro-benchmark in Java? - Stack Overflow</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="/opensearch.xml">
+    <meta property="og:type" content="website"/>
+    <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:domain" content="stackoverflow.com"/>
+
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded" />
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="How do I write a correct micro-benchmark in Java?" />
+    <meta name="twitter:description" property="og:description" itemprop="description" content="How do you write (and run) a correct micro-benchmark in Java?
+
+I&#39;m looking here for code samples and comments illustrating various things to think about.
+
+Example: Should the benchmark measure time/" />
+    <meta property="og:url" content="https://stackoverflow.com/questions/504103/how-do-i-write-a-correct-micro-benchmark-in-java"/>
+    <link rel="canonical" href="https://stackoverflow.com/questions/504103/how-do-i-write-a-correct-micro-benchmark-in-java" />
+
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.sstatic.net/Js/stub.en.js?v=ef1cf9144f35"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.sstatic.net/Sites/stackoverflow/all.css?v=5df92b6be7e1">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;How do I write a correct micro-benchmark in Java?&#39;" href="/feeds/question/504103">
+            <meta name="twitter:app:country" content="US" />
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS" />
+            <meta name="twitter:app:id:iphone" content="871299723" />
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/504103/how-do-i-write-a-correct-micro-benchmark-in-java" />
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS" />
+            <meta name="twitter:app:id:ipad" content="871299723" />
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/504103/how-do-i-write-a-correct-micro-benchmark-in-java" />
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/504103/how-do-i-write-a-correct-micro-benchmark-in-java">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:5,shownCommentCount:5,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:504103});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '504103');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text', true); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1504666403,"routeName":"Questions/Show","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableInsertDocLinkDialog":false,"childUrl":"https://meta.stackoverflow.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"d431d2751f1d1bd16873fe8d68016c0e","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"canSeeNewHeaderDesign":true},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"comments":{},"userProfile":{"openGraphAPIKey":"58740831ad23540e00c58987"},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"813cfe48dc5b","js/moderator.en.js":"9f2375df98d8","js/full-anon.en.js":"68371529faad","js/full.en.js":"3454aa67c8ba","js/wmd.en.js":"b4467a90e4e0","js/third-party/jquery.autocomplete.min.js":"d3b8fa7fdf74","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"3f082f5eb27a","js/help.en.js":"dbd4f489eff2","js/tageditor.en.js":"4f83add90c55","js/tageditornew.en.js":"a5a8b197f53c","js/inline-tag-editing.en.js":"7581a98341e4","js/revisions.en.js":"8f22ba768cac","js/review.en.js":"198183565669","js/tagsuggestions.en.js":"b278f9a0b23b","js/post-validation.en.js":"fcc6f225a77f","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"627d846d8038","js/keyboard-shortcuts.en.js":"96e82e714e10","js/external-editor.en.js":"3e5baf662544","js/adops.en.js":"9a6a7812a212","js/external-editor.en.js":"3e5baf662544","js/snippet-javascript.en.js":"6396a6cc51fa","js/snippet-javascript-codemirror.en.js":"ddc7c6f5f088"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    <noscript id="noscript-css"><style type="text/css">body,.so-header{margin-top:1.9em}</style></noscript>
+</head>
+<body class="question-page new-topbar">
+            <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        <iframe id="adzerk-user-match" width="0" height="0" frameborder="0" scrolling="no" onload="window.AUMIframeDone=true"
+                src="https://ssum-sec.casalemedia.com/usermatch?s=183712&amp;cb=https%3A%2F%2Fengine.adzerk.net%2Fudb%2F22%2Fsync%2Fi.gif%3FpartnerId%3D1%26userId%3D"
+                style="display: none;" marginheight="0" marginwidth="0"></iframe>
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+<header class="so-header js-so-header _fixed">
+    <div class="-container">
+        <div class="-main">            
+            <a href="https://stackoverflow.com" class="-logo js-gps-track "
+               data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+
+                <span class="-img">Stack Overflow</span>
+            </a>
+
+            <nav class="navigation" role="navigation" aria-label="site navigation">
+                <ol class="-list">
+                        <li class="-item _current">
+        <a id="nav-questions" href="/questions" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">Questions</a>
+    </li>
+
+    <li class="-item">
+        <a id="nav-jobs" href="/jobs?med=site-ui&amp;ref=jobs-tab" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:6})">Developer Jobs</a>
+    </li>
+                        <li class="-item">
+        <a id="nav-docs" href="/documentation" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:7})">Documentation <small class='beta-badge'>beta</small></a>
+    </li>
+                        <li class="-item">
+        <a id="nav-tags" href="/tags" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">Tags</a>
+    </li>
+
+                        <li class="-item">
+        <a id="nav-users" href="/users" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">Users</a>
+    </li>
+
+                </ol>
+            </nav>
+
+                <form id="search" action="/search" method="get" class="searchbar" autocomplete="off" role="search">
+                    <svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"/></svg>
+                    <input name="q" type="text" placeholder="Search..." value="" tabindex="1" autocomplete="off" maxlength="240" class="f-input js-search-field" />
+                    <button type="submit" class="btn js-search-submit">
+                        <svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"/></svg>
+                    </button>
+                </form>
+
+        </div>
+        
+
+
+    
+
+<div class="-actions">
+    <nav class="secondary-nav">
+        <div class="-dialog-container js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://stackoverflow.com">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+            <a href="https://stackoverflow.com/help" class="js-gps-track"     data-gps-track="site_switcher.click({ item_type:14 })"
+>help</a>
+                    <a href="https://chat.stackoverflow.com" class="js-gps-track"     data-gps-track="site_switcher.click({ item_type:6 })"
+>chat</a>
+            </div>
+
+    <a href="https://stackoverflow.com"
+       class="current-site-link site-link js-gps-track"
+       data-id="1"
+       data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                        
+    <a href="https://meta.stackoverflow.com"
+       class="site-link js-gps-track"
+       data-id="552"
+       data-gps-track="site.switch({ target_site:552, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;amp;utm_source=stackoverflow.com&amp;amp;utm_medium=dev-story&amp;amp;utm_campaign=signup-redirect" class="login-link js-gps-track"     data-gps-track="site_switcher.click({ item_type:10 })"
+>Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f504103%2fhow-do-i-write-a-correct-micro-benchmark-in-java" class="login-link js-gps-track"     data-gps-track="site_switcher.click({ item_type:11 })"
+>log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+                <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://meta.stackoverflow.com" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+
+        </div>
+        <ol class="-list">
+
+
+    <li class="-item"><a href="#" class="-link js-help-button" title="Help Center and other resources">
+        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"/></svg>
+    </a></li>
+                <li class="-item">
+        <a href="https://stackexchange.com" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 171 Stack Exchange sites">
+            <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"/></svg>
+        </a>
+    </li>
+
+
+        </ol>
+    </nav>
+        <div class="-ctas">
+                <a href="https://stackoverflow.com/users/login?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f504103%2fhow-do-i-write-a-correct-micro-benchmark-in-java" class="login-link btn-clear" rel="nofollow">Log In</a>
+                    <a href="https://stackoverflow.com/users/signup?ssrc=head&returnurl=%2fusers%2fstory%2fcurrent&amp;utm_source=stackoverflow.com&amp;utm_medium=dev-story&amp;utm_campaign=signup-redirect" class="login-link btn" rel="nofollow">Sign Up</a>
+
+        </div>
+</div>
+    </div>
+</header>
+
+    <script>
+        StackExchange.ready(function () { StackExchange.topbar.init(); });
+            StackExchange.scrollPadding.setPaddingTop(60, 10);     </script>
+
+    <div class="container  ">
+        
+
+
+        <div id="content" class="snippet-hidden">
+
+
+
+
+
+            
+
+<div itemscope itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+
+<div id="herobox" class="alternate hero-container">
+    <div class="test"></div>
+        <div id="close">
+            <a title="click to minimize"><span>x</span> Dismiss</a>
+        </div>
+    <div class="content">
+        <b>Join the Stack Overflow Community</b>
+        <div class="separator"></div>
+        <div class="blurb">
+            Stack Overflow is a community of 7.7 million programmers, just like you, helping each other.
+                <br/>
+Join them; it only takes a minute:                <br/>
+        </div>
+        <a href="/users/signup?ssrc=hero&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;amp;utm_source=stackoverflow.com&amp;amp;utm_medium=dev-story&amp;amp;utm_campaign=signup-redirect" id="tell-me-more" class="button">Sign up</a>
+    </div>
+</div>
+<script>
+    StackExchange.ready(function () {
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;
+        }
+        
+        $('#tell-me-more').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+        
+        $('.hero-container #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+            });
+            
+            $.cookie("hero", "mini", { path: "/", expires: 365 });
+            $.ajax({
+                url: "/hero-mini",
+                success: function (data) {
+                    $(".hero-container").fadeOut("fast", function () {
+                        $(".hero-container").replaceWith(data);
+                        $("#herobox-mini").fadeIn("fast");
+                    });
+                }
+            });
+            return false;
+        });
+    });
+
+</script>    <div class="inner-content">
+        <div id="question-header">
+                <h1 itemprop="name"><a href="/questions/504103/how-do-i-write-a-correct-micro-benchmark-in-java" class="question-hyperlink">How do I write a correct micro-benchmark in Java?</a></h1>
+
+            
+<div class="aside-cta" role="navigation" aria-label="ask new question">
+    <a href="/questions/ask" class="btn-outlined">Ask Question</a>
+</div>
+        </div>
+            <div id="mainbar" role="main" aria-label="question and answers">
+
+            
+
+<div class="question" data-questionid="504103"  id="question">
+
+    <script>
+                    var ados = ados || {}; ados.run = ados.run || [];
+                    ados.run.push(function () { ados_add_placement(22,8277,"adzerk482741059",4).setZone(43); });
+                </script>
+                <div class="everyonelovesstackoverflow" id="adzerk482741059"></div>
+            <div id="dfp-tlb" class="dfpad"></div>    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="504103">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">599</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="#">favorite</a>
+        <div class="favoritecount"><b>478</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>How do you write (and run) a correct micro-benchmark in Java?</p>
+
+<p>I'm looking here for code samples and comments illustrating various things to think about.</p>
+
+<p>Example: Should the benchmark measure time/iteration or iterations/time, and why?</p>
+
+<p>Related: <a href="https://stackoverflow.com/questions/410437/is-stopwatch-benchmarking-acceptable">Is stopwatch benchmarking acceptable?</a></p>
+    </div>
+    <div class="post-taglist">
+        <a href="/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="/questions/tagged/jvm" class="post-tag" title="show questions tagged &#39;jvm&#39;" rel="tag">jvm</a> <a href="/questions/tagged/benchmarking" class="post-tag" title="show questions tagged &#39;benchmarking&#39;" rel="tag">benchmarking</a> <a href="/questions/tagged/jvm-hotspot" class="post-tag" title="show questions tagged &#39;jvm-hotspot&#39;" rel="tag">jvm-hotspot</a> <a href="/questions/tagged/microbenchmark" class="post-tag" title="show questions tagged &#39;microbenchmark&#39;" rel="tag">microbenchmark</a> 
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/q/504103" title="short permalink to this question" class="short-link" id="link-post-504103">share</a><span class="lsep">|</span><a href="/posts/504103/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="/posts/504103/revisions" title="show all edits to this post">edited <span title="2017-05-23 12:26:42Z" class="relativetime">May 23 at 12:26</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/-1/community"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/a007be5a61f6aa8f3e85ae2fc18dd66e?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/-1/community">Community</a><span class="mod-flair" title="moderator">&#9830;</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2009-02-02 17:39:41Z" class="relativetime">Feb 2 '09 at 17:39</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/24243/john-nilsson"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/78443e56a77d9c3328197ee5c952c3d7?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/24243/john-nilsson">John Nilsson</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">8,279</span><span title="7 gold badges"><span class="badge1"></span><span class="badgecount">7</span></span><span title="24 silver badges"><span class="badge2"></span><span class="badgecount">24</span></span><span title="37 bronze badges"><span class="badge3"></span><span class="badgecount">37</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</div>
+</td>
+        </tr>
+                    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-504103" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-5404785" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">See [this question][1] from a few minutes ago for some related info.    edit: sorry, this is not supposed to be a answer. I should&#39;ve posted as a comment.      [1]: <a href="http://stackoverflow.com/questions/503877/how-can-i-measure-time-with-microsecond-precision-in-java" title="how can i measure time with microsecond precision in java">stackoverflow.com/questions/503877/&hellip;</a></span>
+                    &ndash;&nbsp;<a href="/users/55283/tiago"
+                       title="5,873 reputation"
+                       class="comment-user">Tiago</a>
+                <span class="comment-date" dir="ltr"><span title="2011-02-01 14:07:10Z" class="relativetime-clean">Feb 1 '11 at 14:07</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-5404786" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">It was after planning to refer the poster of that question to a question like this that I noted that this question didn&#39;t exists. So here it is, hopefully it will assemble some good tips over time.</span>
+                    &ndash;&nbsp;<a href="/users/24243/john-nilsson"
+                       title="8,279 reputation"
+                       class="comment-user owner">John Nilsson</a>
+                <span class="comment-date" dir="ltr"><span title="2011-02-01 14:07:10Z" class="relativetime-clean">Feb 1 '11 at 14:07</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-48526263" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">4</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Java 9 might provide some features for micro-benchmarking: <a href="http://openjdk.java.net/jeps/230" rel="nofollow noreferrer">openjdk.java.net/jeps/230</a></span>
+                    &ndash;&nbsp;<a href="/users/545127/raedwald"
+                       title="20,428 reputation"
+                       class="comment-user">Raedwald</a>
+                <span class="comment-date" dir="ltr"><span title="2015-05-13 09:33:45Z" class="relativetime-clean">May 13 '15 at 9:33</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-55805039" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Raedwald I think that that JEP aims to add some micro benchmark to the JDK code, but I don&#39;t think that jmh will be included in the JDK...</span>
+                    &ndash;&nbsp;<a href="/users/829571/assylias"
+                       title="205,372 reputation"
+                       class="comment-user">assylias</a>
+                <span class="comment-date" dir="ltr"><span title="2015-12-01 16:11:36Z" class="relativetime-clean">Dec 1 '15 at 16:11</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-63738773" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Likely duplicate: <a href="http://stackoverflow.com/q/180158/642706">How do I time a method&#39;s execution in Java?</a></span>
+                    &ndash;&nbsp;<a href="/users/642706/basil-bourque"
+                       title="61,969 reputation"
+                       class="comment-user">Basil Bourque</a>
+                <span class="comment-date" dir="ltr"><span title="2016-07-01 22:48:25Z" class="relativetime-clean">Jul 1 '16 at 22:48</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-504103" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>        </table>
+</div>
+
+            <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2>
+                                11 Answers
+                                <span style="display:none;" itemprop="answerCount">11</span>
+                        </h2>
+                        <div>
+                            <div id="tabs">
+        <a href="/questions/504103/how-do-i-write-a-correct-micro-benchmark-in-java?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="/questions/504103/how-do-i-write-a-correct-micro-benchmark-in-java?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="/questions/504103/how-do-i-write-a-correct-micro-benchmark-in-java?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+                        </div>
+                    </div>    
+                </div>    
+
+
+
+
+  
+<a name="513259"></a>
+<div id="answer-513259" class="answer accepted-answer" data-answerid="513259"  itemscope itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="513259">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">567</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Tips about writing micro benchmarks <a href="https://wiki.openjdk.java.net/display/HotSpot/Main" rel="noreferrer">from the creators of Java HotSpot</a>:</p>
+
+<p><strong>Rule 0:</strong> Read a reputable paper on JVMs and micro-benchmarking. A good one is <a href="http://www.ibm.com/developerworks/java/library/j-jtp02225" rel="noreferrer">Brian Goetz, 2005</a>. Do not expect too much from micro-benchmarks; they measure only a limited range of JVM performance characteristics.</p>
+
+<p><strong>Rule 1:</strong> Always include a warmup phase which runs your test kernel all the way through, enough to trigger all initializations and compilations before timing phase(s). (Fewer iterations is OK on the warmup phase. The rule of thumb is several tens of thousands of inner loop iterations.)</p>
+
+<p><strong>Rule 2:</strong> Always run with <code>-XX:+PrintCompilation</code>, <code>-verbose:gc</code>, etc., so you can verify that the compiler and other parts of the JVM are not doing unexpected work during your timing phase.</p>
+
+<p><strong>Rule 2.1:</strong> Print messages at the beginning and end of timing and warmup phases, so you can verify that there is no output from Rule 2 during the timing phase.</p>
+
+<p><strong>Rule 3:</strong> Be aware of the difference between -client and -server, and OSR and regular compilations. The <code>-XX:+PrintCompilation</code> flag reports OSR compilations with an at-sign to denote the non-initial entry point, for example: <code>Trouble$1::run @ 2 (41 bytes)</code>. Prefer server to client, and regular to OSR, if you are after best performance.</p>
+
+<p><strong>Rule 4:</strong> Be aware of initialization effects. Do not print for the first time during your timing phase, since printing loads and initializes classes. Do not load new classes outside of the warmup phase (or final reporting phase), unless you are testing class loading specifically (and in that case load only the test classes). Rule 2 is your first line of defense against such effects.</p>
+
+<p><strong>Rule 5:</strong> Be aware of deoptimization and recompilation effects. Do not take any code path for the first time in the timing phase, because the compiler may junk and recompile the code, based on an earlier optimistic assumption that the path was not going to be used at all. Rule 2 is your first line of defense against such effects.</p>
+
+<p><strong>Rule 6:</strong> Use appropriate tools to read the compiler's mind, and expect to be surprised by the code it produces. Inspect the code yourself before forming theories about what makes something faster or slower.</p>
+
+<p><strong>Rule 7:</strong> Reduce noise in your measurements. Run your benchmark on a quiet machine, and run it several times, discarding outliers. Use <code>-Xbatch</code> to serialize the compiler with the application, and consider setting <code>-XX:CICompilerCount=1</code> to prevent the compiler from running in parallel with itself.</p>
+
+<p><strong>Rule 8:</strong> Use a library for your benchmark as it is probably more efficient and was already debugged for this sole purpose. Such as <a href="http://openjdk.java.net/projects/code-tools/jmh/" rel="noreferrer">JMH</a>, <a href="https://code.google.com/p/caliper/" rel="noreferrer">Caliper</a> or <a href="http://cseweb.ucsd.edu/users/wgg/JavaProf/javaprof.html" rel="noreferrer">Bill and Paul's Excellent UCSD Benchmarks for Java</a>.  </p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/513259" title="short permalink to this answer" class="short-link" id="link-post-513259">share</a><span class="lsep">|</span><a href="/posts/513259/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/513259/revisions" title="show all edits to this post">edited <span title="2016-03-07 04:10:12Z" class="relativetime">Mar 7 '16 at 4:10</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info">
+    <div class="user-details">
+        <span class="community-wiki" title="This post is community owned as of Feb 4 &#39;09 at 20:49. Votes do not generate reputation, and it can be edited by users with 100 rep">
+            community wiki
+        </span>
+    </div><br>
+    <div class="user-details">
+        <a id="history-513259" href="/posts/513259/revisions" title="show revision history for this post">
+        9 revs, 9 users 66%<br>Eugene Kuleshov
+        </a>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-513259" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="1"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-3323001" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">4</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This was also an interesting article: <a href="http://www.ibm.com/developerworks/java/library/j-jtp12214/" rel="nofollow noreferrer">ibm.com/developerworks/java/library/j-jtp12214</a></span>
+                    &ndash;&nbsp;<a href="/users/24243/john-nilsson"
+                       title="8,279 reputation"
+                       class="comment-user owner">John Nilsson</a>
+                <span class="comment-date" dir="ltr"><span title="2010-07-10 22:29:41Z" class="relativetime-clean">Jul 10 '10 at 22:29</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-6593773" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="supernova">95</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Also, never use System.currentTimeMillis() unless you are OK with + or - 15 ms accuracy, which is typical on most OS + JVM combinations.  Use System.nanoTime() instead.</span>
+                    &ndash;&nbsp;<a href="/users/589907/scott-carey"
+                       title="1,009 reputation"
+                       class="comment-user">Scott Carey</a>
+                <span class="comment-date" dir="ltr"><span title="2011-04-22 18:43:06Z" class="relativetime-clean">Apr 22 '11 at 18:43</span></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-7277852" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Some paper from javaOne: <a href="http://www.azulsystems.com/events/javaone_2009/session/2009_J1_Benchmark.pdf" rel="nofollow noreferrer">azulsystems.com/events/javaone_2009/session/&hellip;</a></span>
+                    &ndash;&nbsp;<a href="/users/554431/bestsss"
+                       title="8,432 reputation"
+                       class="comment-user">bestsss</a>
+                <span class="comment-date" dir="ltr"><span title="2011-06-05 12:29:39Z" class="relativetime-clean">Jun 5 '11 at 12:29</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-8131770" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="supernova">70</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">It should be noted that <code>System.nanoTime()</code> is not <i>guaranteed</i> to be more accurate than <code>System.currentTimeMillis()</code>.  It is only guaranteed to be at least as accurate.  It usually is substantially more accurate, however.</span>
+                    &ndash;&nbsp;<a href="/users/847333/gravity"
+                       title="1,615 reputation"
+                       class="comment-user">Gravity</a>
+                <span class="comment-date" dir="ltr"><span title="2011-07-27 08:00:00Z" class="relativetime-clean">Jul 27 '11 at 8:00</span></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-46383615" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="hot">18</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">The main reason why one must use <code>System.nanoTime()</code> instead of <code>System.currentTimeMillis()</code> is that the former is guaranteed to be monotonically increasing. Subtracting the values returned two <code>currentTimeMillis</code> invocations can actually give negative results, possibly because the system time was adjusted by some NTP daemon.</span>
+                    &ndash;&nbsp;<a href="/users/450811/waldheinz"
+                       title="8,496 reputation"
+                       class="comment-user">Waldheinz</a>
+                <span class="comment-date" dir="ltr"><span title="2015-03-16 10:51:48Z" class="relativetime-clean">Mar 16 '15 at 10:51</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-513259" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link  dno"
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   ></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href=# onclick="">show <b>1</b> more comment</a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+<script>
+                    var ados = ados || {}; ados.run = ados.run || [];
+                    ados.run.push(function () { ados_add_placement(22,8277,"adzerk1054097966",4).setZone(44); });
+                </script>
+                <div class="everyonelovesstackoverflow" id="adzerk1054097966"></div>
+            <div id="dfp-mlb" class="dfpad"></div>
+  
+<a name="4480774"></a>
+<div id="answer-4480774" class="answer" data-answerid="4480774"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="4480774">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">183</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I know this question has been marked as answered but I wanted to mention two libraries that enable us to write micro benchmarks</p>
+
+<p><strong><a href="http://code.google.com/p/caliper/" rel="noreferrer">Caliper from Google</a></strong></p>
+
+<p><em>Getting started tutorials</em></p>
+
+<ol>
+<li><a href="http://codingjunkie.net/micro-benchmarking-with-caliper/" rel="noreferrer">http://codingjunkie.net/micro-benchmarking-with-caliper/</a></li>
+<li><a href="http://vertexlabs.co.uk/blog/caliper" rel="noreferrer">http://vertexlabs.co.uk/blog/caliper</a></li>
+</ol>
+
+<p><strong><a href="http://openjdk.java.net/projects/code-tools/jmh/" rel="noreferrer">JMH from OpenJDK</a></strong></p>
+
+<p><em>Getting started tutorials</em></p>
+
+<ol>
+<li><a href="http://www.oracle.com/technetwork/articles/java/architect-benchmarking-2266277.html" rel="noreferrer">Avoiding Benchmarking Pitfalls on the JVM</a></li>
+<li><a href="http://nitschinger.at/Using-JMH-for-Java-Microbenchmarking" rel="noreferrer">http://nitschinger.at/Using-JMH-for-Java-Microbenchmarking</a></li>
+<li><a href="http://java-performance.info/jmh/" rel="noreferrer">http://java-performance.info/jmh/</a></li>
+</ol>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/4480774" title="short permalink to this answer" class="short-link" id="link-post-4480774">share</a><span class="lsep">|</span><a href="/posts/4480774/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/4480774/revisions" title="show all edits to this post">edited <span title="2014-09-10 17:14:06Z" class="relativetime">Sep 10 '14 at 17:14</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2010-12-18 23:35:07Z" class="relativetime">Dec 18 '10 at 23:35</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/127320/aravind-r-yarram"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/OdIgE.jpg?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/127320/aravind-r-yarram">Aravind R. Yarram</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 54,522" dir="ltr">54.5k</span><span title="28 gold badges"><span class="badge1"></span><span class="badgecount">28</span></span><span title="160 silver badges"><span class="badge2"></span><span class="badgecount">160</span></span><span title="252 bronze badges"><span class="badge3"></span><span class="badgecount">252</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-4480774" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-18904622" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="hot">27</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">+1 it could have been added as Rule 8 of the accepted answer: Rule 8: because so many things can go wrong, you should probably use an existing library rather than trying to do it yourself!</span>
+                    &ndash;&nbsp;<a href="/users/829571/assylias"
+                       title="205,372 reputation"
+                       class="comment-user">assylias</a>
+                <span class="comment-date" dir="ltr"><span title="2012-12-06 23:58:25Z" class="relativetime-clean">Dec 6 '12 at 23:58</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-55878483" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">4</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Pangea jmh is probably superior to Caliper nowadays, See also: <a href="https://groups.google.com/forum/#!msg/mechanical-sympathy/m4opvy4xq3U/7lY8x8SvHgwJ" rel="nofollow noreferrer">groups.google.com/forum/#!msg/mechanical-sympathy/m4opvy4xq3&zwnj;&#8203;U/&hellip;</a></span>
+                    &ndash;&nbsp;<a href="/users/829571/assylias"
+                       title="205,372 reputation"
+                       class="comment-user">assylias</a>
+                <span class="comment-date" dir="ltr"><span title="2015-12-03 09:49:14Z" class="relativetime-clean">Dec 3 '15 at 9:49</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-4480774" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="504119"></a>
+<div id="answer-504119" class="answer" data-answerid="504119"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="504119">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">61</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Important things for Java benchmarks are:</p>
+
+<ul>
+<li>Warm up the JIT first by running the code several times before timing it</li>
+<li>Make sure you run it for long enough to be able to measure the results in seconds or (better) tens of seconds</li>
+<li>While you can't call <code>System.gc()</code> between iterations, it's a good idea to run it between tests, so that each test will hopefully get a "clean" memory space to work with. (Yes, <code>gc()</code> is more of a hint than a guarantee, but it's very <em>likely</em> that it really will garbage collect in my experience.)</li>
+<li>I like to display iterations and time, and a score of time/iteration which can be scaled such that the "best" algorithm gets a score of 1.0 and others are scored in a relative fashion. This means you can run <em>all</em> algorithms for a longish time, varying both number of iterations and time, but still getting comparable results.</li>
+</ul>
+
+<p>I'm just in the process of blogging about the design of a benchmarking framework in .NET. I've got a <a href="http://msmvps.com/blogs/jon_skeet/archive/2009/01/26/benchmarking-made-easy.aspx" rel="noreferrer">couple</a> of <a href="http://msmvps.com/blogs/jon_skeet/archive/2009/01/29/for-vs-foreach-on-arrays-and-lists.aspx" rel="noreferrer">earlier posts</a> which may be able to give you some ideas - not everything will be appropriate, of course, but some of it may be.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/504119" title="short permalink to this answer" class="short-link" id="link-post-504119">share</a><span class="lsep">|</span><a href="/posts/504119/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/504119/revisions" title="show all edits to this post">edited <span title="2013-04-20 08:02:53Z" class="relativetime">Apr 20 '13 at 8:02</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-02-02 17:46:59Z" class="relativetime">Feb 2 '09 at 17:46</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/22656/jon-skeet"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/6d8ebb117e8d83d74ea95fbdd0f87e13?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/22656/jon-skeet">Jon Skeet</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 971,451" dir="ltr">971k</span><span title="576 gold badges"><span class="badge1"></span><span class="badgecount">576</span></span><span title="7161 silver badges"><span class="badge2"></span><span class="badgecount">7161</span></span><span title="7930 bronze badges"><span class="badge3"></span><span class="badgecount">7930</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-504119" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="1"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-23019378" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Minor nitpick: IMO &quot;so that each test gets&quot; should be &quot;so that each test might get&quot; since the former gives the impression that calling <code>gc</code> <i>always</i> frees up unused memory.</span>
+                    &ndash;&nbsp;<a href="/users/193906/sanjay-t-sharma"
+                       title="17,575 reputation"
+                       class="comment-user">Sanjay T. Sharma</a>
+                <span class="comment-date" dir="ltr"><span title="2013-04-20 06:52:06Z" class="relativetime-clean">Apr 20 '13 at 6:52</span></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-23020256" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@SanjayT.Sharma: Well, the <i>intention</i> is that it actually does. While it&#39;s not strictly guaranteed, it&#39;s actually a pretty strong hint. Will edit to be clearer.</span>
+                    &ndash;&nbsp;<a href="/users/22656/jon-skeet"
+                       title="971,451 reputation"
+                       class="comment-user">Jon Skeet</a>
+                <span class="comment-date" dir="ltr"><span title="2013-04-20 08:02:18Z" class="relativetime-clean">Apr 20 '13 at 8:02</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-24748322" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I don&#39;t agree with calling System.gc(). It is a hint, that&#39;s all. Not even &quot;it will hopefully do something&quot;. You should never ever call it. This is programming, not art.</span>
+                    &ndash;&nbsp;<a href="/users/972932/gyabraham"
+                       title="1,149 reputation"
+                       class="comment-user">gyabraham</a>
+                <span class="comment-date" dir="ltr"><span title="2013-06-14 10:38:16Z" class="relativetime-clean">Jun 14 '13 at 10:38</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-24748899" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="warm">11</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@gyabraham: Yes, it&#39;s a hint - but it&#39;s one which I&#39;ve observed to usually be taken. So if you don&#39;t like using <code>System.gc()</code>, how do you propose to minimize garbage collection in one test due to objects created in previous tests? I&#39;m pragmatic, not dogmatic.</span>
+                    &ndash;&nbsp;<a href="/users/22656/jon-skeet"
+                       title="971,451 reputation"
+                       class="comment-user">Jon Skeet</a>
+                <span class="comment-date" dir="ltr"><span title="2013-06-14 10:58:52Z" class="relativetime-clean">Jun 14 '13 at 10:58</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-24762323" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="warm">9</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@gyabraham: I don&#39;t know what you mean by &quot;great fallback&quot;. Can you elaborate, and again - do you have a proposal to give better results? I did explicitly say that it&#39;s not a guarantee...</span>
+                    &ndash;&nbsp;<a href="/users/22656/jon-skeet"
+                       title="971,451 reputation"
+                       class="comment-user">Jon Skeet</a>
+                <span class="comment-date" dir="ltr"><span title="2013-06-14 17:44:34Z" class="relativetime-clean">Jun 14 '13 at 17:44</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-504119" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link  dno"
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   ></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href=# onclick="">show <b>1</b> more comment</a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="15787478"></a>
+<div id="answer-15787478" class="answer" data-answerid="15787478"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="15787478">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">33</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p><a href="http://openjdk.java.net/projects/code-tools/jmh/" rel="noreferrer">jmh</a> is a recent addition to OpenJDK and has been written by some performance engineers from Oracle. Certainly worth having a look.</p>
+
+<blockquote>
+  <p>The jmh is a Java harness for building, running, and analysing nano/micro/macro benchmarks written in Java and other languages targetting the JVM.</p>
+</blockquote>
+
+<p>Very interesting pieces of information buried in <a href="http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/" rel="noreferrer">the sample tests comments</a>.</p>
+
+<p>See also:</p>
+
+<ul>
+<li><a href="http://www.oracle.com/technetwork/articles/java/architect-benchmarking-2266277.html" rel="noreferrer">Avoiding Benchmarking Pitfalls on the JVM</a></li>
+<li><a href="https://groups.google.com/forum/#!msg/mechanical-sympathy/m4opvy4xq3U/7lY8x8SvHgwJ" rel="noreferrer">Discussion on the main strengths of jmh</a>.</li>
+</ul>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/15787478" title="short permalink to this answer" class="short-link" id="link-post-15787478">share</a><span class="lsep">|</span><a href="/posts/15787478/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/15787478/revisions" title="show all edits to this post">edited <span title="2015-12-21 07:47:26Z" class="relativetime">Dec 21 '15 at 7:47</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-04-03 12:32:49Z" class="relativetime">Apr 3 '13 at 12:32</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/829571/assylias"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/nGMm2.jpg?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/829571/assylias">assylias</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 205,372" dir="ltr">205k</span><span title="32 gold badges"><span class="badge1"></span><span class="badgecount">32</span></span><span title="430 silver badges"><span class="badge2"></span><span class="badgecount">430</span></span><span title="570 bronze badges"><span class="badge3"></span><span class="badgecount">570</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-15787478" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-23408537" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">See also this blog post: <a href="http://psy-lob-saw.blogspot.com/2013/04/writing-java-micro-benchmarks-with-jmh.html" rel="nofollow noreferrer">psy-lob-saw.blogspot.com/2013/04/&hellip;</a> for details on getting started with JMH.</span>
+                    &ndash;&nbsp;<a href="/users/1047667/nitsan-wakart"
+                       title="1,460 reputation"
+                       class="comment-user">Nitsan Wakart</a>
+                <span class="comment-date" dir="ltr"><span title="2013-05-02 15:41:49Z" class="relativetime-clean">May 2 '13 at 15:41</span></span>
+                        <span class="edited-yes" title="this comment was edited 3 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-63738984" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">FYI, <a href="http://openjdk.java.net/jeps/230" rel="nofollow noreferrer">JEP 230: Microbenchmark Suite</a> is an <a href="http://openjdk.java.net/" rel="nofollow noreferrer">OpenJDK</a> proposal based on this <a href="http://openjdk.java.net/projects/code-tools/jmh/" rel="nofollow noreferrer">Java Microbenchmark Harness (JMH)</a> project. <a href="http://mail.openjdk.java.net/pipermail/jdk9-dev/2016-March/003894.html" rel="nofollow noreferrer">Did not make the cut for Java 9</a> but may be added later.</span>
+                    &ndash;&nbsp;<a href="/users/642706/basil-bourque"
+                       title="61,969 reputation"
+                       class="comment-user">Basil Bourque</a>
+                <span class="comment-date" dir="ltr"><span title="2016-07-01 23:03:11Z" class="relativetime-clean">Jul 1 '16 at 23:03</span></span>
+                        <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-15787478" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="504632"></a>
+<div id="answer-504632" class="answer" data-answerid="504632"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="504632">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">14</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<blockquote>
+  <p>Should the benchmark measure time/iteration or iterations/time, and why?</p>
+</blockquote>
+
+<p>It depends on what you are trying to test.  If you are interested in latency, use time/iteration and if you are interested in throughput use iterations/time.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/504632" title="short permalink to this answer" class="short-link" id="link-post-504632">share</a><span class="lsep">|</span><a href="/posts/504632/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-02-02 19:54:35Z" class="relativetime">Feb 2 '09 at 19:54</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/57695/peter-lawrey"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/53ee9941b3fefef67175daf212e62d41?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/57695/peter-lawrey">Peter Lawrey</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 392,741" dir="ltr">393k</span><span title="50 gold badges"><span class="badge1"></span><span class="badgecount">50</span></span><span title="470 silver badges"><span class="badge2"></span><span class="badgecount">470</span></span><span title="810 bronze badges"><span class="badge3"></span><span class="badgecount">810</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-504632" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-504632" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="504172"></a>
+<div id="answer-504172" class="answer" data-answerid="504172"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="504172">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">13</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Make sure you somehow use results which are computed in benchmarked code. Otherwise your code can be optimized away.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/504172" title="short permalink to this answer" class="short-link" id="link-post-504172">share</a><span class="lsep">|</span><a href="/posts/504172/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-02-02 18:00:10Z" class="relativetime">Feb 2 '09 at 18:00</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/47190/peter-%c5%a0tibran%c3%bd"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/197266eab5b4d533a5ec3ea83efe2143?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/47190/peter-%c5%a0tibran%c3%bd">Peter Štibran&#253;</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 24,865" dir="ltr">24.9k</span><span title="8 gold badges"><span class="badge1"></span><span class="badgecount">8</span></span><span title="67 silver badges"><span class="badge2"></span><span class="badgecount">67</span></span><span title="107 bronze badges"><span class="badge3"></span><span class="badgecount">107</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-504172" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-504172" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="504162"></a>
+<div id="answer-504162" class="answer" data-answerid="504162"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="504162">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">11</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>If you are trying to compare two algorithms, do at least two benchmarks on each, alternating the order.  i.e.:</p>
+
+<pre><code>for(i=1..n)
+  alg1();
+for(i=1..n)
+  alg2();
+for(i=1..n)
+  alg2();
+for(i=1..n)
+  alg1();
+</code></pre>
+
+<p>I have found some noticeable differences (5-10% sometimes) in the runtime of the same algorithm in different passes..</p>
+
+<p>Also, make sure that <em>n</em> is very large, so that the runtime of each loop is at the very least 10 seconds or so.  The more iterations, the more significant figures in your benchmark time and the more reliable that data is.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/504162" title="short permalink to this answer" class="short-link" id="link-post-504162">share</a><span class="lsep">|</span><a href="/posts/504162/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-02-02 17:57:01Z" class="relativetime">Feb 2 '09 at 17:57</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/18511/kip"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/c621039e41aef415ad25054da3bf3f9a?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/18511/kip">Kip</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 58,496" dir="ltr">58.5k</span><span title="72 gold badges"><span class="badge1"></span><span class="badgecount">72</span></span><span title="186 silver badges"><span class="badge2"></span><span class="badgecount">186</span></span><span title="232 bronze badges"><span class="badge3"></span><span class="badgecount">232</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-504162" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-318932" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="warm">5</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Naturally changing the order influences the runtime. JVM-optimizations and caching-effects are going to work here. Better is to &#39;warm up&#39; the JVM-optimization, mak multiple runs and benchmark every test in a different JVM.</span>
+                    &ndash;&nbsp;<a href="/users/21005/mnementh"
+                       title="28,081 reputation"
+                       class="comment-user">Mnementh</a>
+                <span class="comment-date" dir="ltr"><span title="2009-02-02 18:04:23Z" class="relativetime-clean">Feb 2 '09 at 18:04</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-504162" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="504120"></a>
+<div id="answer-504120" class="answer" data-answerid="504120"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="504120">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">10</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>There are many possible pitfalls for writing micro-benchmarks in Java.</p>
+
+<p>First: You have to calculate with all sorts of events that take time more or less random: Garbage collection, caching effects (of OS for files and of CPU for memory), IO etc.</p>
+
+<p>Second: You cannot trust the accuracy of the measured times for very short intervals.</p>
+
+<p>Third: The JVM optimizes your code while executing. So different runs in the same JVM-instance will become faster and faster.</p>
+
+<p>My recommendations: Make your benchmark run some seconds, that is more reliable than a runtime over milliseconds. Warm up the JVM (means running the benchmark at least once without measuring, that the JVM can run optimizations). And run your benchmark multiple times (maybe 5 times) and take the median-value. Run every micro-benchmark in a new JVM-instance (call for every benchmark new Java) otherwise optimization effects of the JVM can influence later running tests. Don't execute things, that aren't executed in the warmup-phase (as this could trigger class-load and recompilation).</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/504120" title="short permalink to this answer" class="short-link" id="link-post-504120">share</a><span class="lsep">|</span><a href="/posts/504120/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/504120/revisions" title="show all edits to this post">edited <span title="2009-06-23 11:32:55Z" class="relativetime">Jun 23 '09 at 11:32</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-02-02 17:46:59Z" class="relativetime">Feb 2 '09 at 17:46</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/21005/mnementh"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/1768cce8ccf2dffe3483b0ab5d7cfd74?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/21005/mnementh">Mnementh</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 28,081" dir="ltr">28.1k</span><span title="36 gold badges"><span class="badge1"></span><span class="badgecount">36</span></span><span title="123 silver badges"><span class="badge2"></span><span class="badgecount">123</span></span><span title="192 bronze badges"><span class="badge3"></span><span class="badgecount">192</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-504120" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-504120" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="14440319"></a>
+<div id="answer-14440319" class="answer" data-answerid="14440319"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="14440319">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">6</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>It should also be noted that it might also be important to analyze the results of the micro benchmark when comparing different implementations. Therefore a <a href="http://en.wikipedia.org/wiki/Significance_testing" rel="noreferrer">significance test</a> should be made.</p>
+
+<p>This is because implementation <code>A</code> might be faster during most of the runs of the benchmark than implementation <code>B</code>. But <code>A</code> might also have a higher spread, so the measured performance benefit of <code>A</code> won't be of any significance when compared with <code>B</code>.</p>
+
+<p>So it is also important to write and run a micro benchmark correctly, but also to analyze it correctly.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/14440319" title="short permalink to this answer" class="short-link" id="link-post-14440319">share</a><span class="lsep">|</span><a href="/posts/14440319/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-01-21 14:04:05Z" class="relativetime">Jan 21 '13 at 14:04</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/1466267/spacetrucker"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/c47d1f7544a8c4a1bb7a41d511f53604?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/1466267/spacetrucker">SpaceTrucker</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">7,468</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="31 silver badges"><span class="badge2"></span><span class="badgecount">31</span></span><span title="74 bronze badges"><span class="badge3"></span><span class="badgecount">74</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-14440319" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-14440319" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="4480713"></a>
+<div id="answer-4480713" class="answer" data-answerid="4480713"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="4480713">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">5</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p><a href="http://opt.sourceforge.net/" rel="noreferrer">http://opt.sourceforge.net/</a> Java Micro Benchmark - control tasks required to determine the comparative performance characteristics of the computer system on different platforms. Can be used to guide optimization decisions and to compare different Java implementations.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/4480713" title="short permalink to this answer" class="short-link" id="link-post-4480713">share</a><span class="lsep">|</span><a href="/posts/4480713/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2010-12-18 23:22:11Z" class="relativetime">Dec 18 '10 at 23:22</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/547330/yuriy"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/fbd1a5e66d89f86ddaa3d45b8ecea0af?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/547330/yuriy">Yuriy</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">67</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="1 bronze badge"><span class="badge3"></span><span class="badgecount">1</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-4480713" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-12040121" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Seems to just benchmark the JVM + hardware, not an arbitrary piece of Java code.</span>
+                    &ndash;&nbsp;<a href="/users/218139/stefan-l"
+                       title="1,138 reputation"
+                       class="comment-user">Stefan L</a>
+                <span class="comment-date" dir="ltr"><span title="2012-02-29 22:05:31Z" class="relativetime-clean">Feb 29 '12 at 22:05</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-4480713" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="42891083"></a>
+<div id="answer-42891083" class="answer" data-answerid="42891083"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="42891083">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>To add to the other excellent advice, I'd also be mindful of the following:</p>
+
+<p>For some CPUs (e.g. Intel Core i5 range with TurboBoost), the temperature (and number of cores currently being used, as well as thier utilisation percent) affects the clock speed. Since CPUs are dynamically clocked, this can affect your results. For example, if you have a single-threaded application, the maximum clock speed (with TurboBoost) is higher than for an application using all cores. This can therefore interfere with comparisons of single and multi-threaded performance on some systems. Bear in mind that the temperature and volatages also affect how long Turbo frequency is maintained.</p>
+
+<p>Perhaps a more fundamentally important aspect that you have direct control over: make sure you're measuring the right thing! For example, if you're using <code>System.nanoTime()</code> to benchmark a particular bit of code, put the calls to the assignment in places that make sense to avoid measuring things which you aren't interested in. For example, don't do:</p>
+
+<pre><code>long startTime = System.nanoTime();
+//code here...
+System.out.println("Code took "+(System.nanoTime()-startTime)+"nano seconds");
+</code></pre>
+
+<p>Problem is you're not immediately getting the end time when the code has finished. Instead, try the following:</p>
+
+<pre><code>final long endTime, startTime = System.nanoTime();
+//code here...
+endTime = System.nanoTime();
+System.out.println("Code took "+(endTime-startTime)+"nano seconds");
+</code></pre>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/42891083" title="short permalink to this answer" class="short-link" id="link-post-42891083">share</a><span class="lsep">|</span><a href="/posts/42891083/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2017-03-19 19:21:23Z" class="relativetime">Mar 19 at 19:21</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/5870336/sina-madani"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/21a411552aec6db6c9f636258ced2d4c?s=32&amp;d=identicon&amp;r=PG&amp;f=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/5870336/sina-madani">Sina Madani</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">347</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="15 bronze badges"><span class="badge3"></span><span class="badgecount">15</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-42891083" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-42891083" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+                    <div class="question-status">
+        <h2>                    <b>protected</b> by <a href="/users/1228/will">Will</a> <span dir="ltr"><span title="2011-02-01 14:07:15Z" class="relativetime">Feb 1 '11 at 14:07</span></span>
+</h2>
+        <p>
+Thank you for your interest in this question. 
+Because it has attracted low-quality or spam answers that had to be removed, posting an answer now requires 10 <a href="/help/whats-reputation">reputation</a> on this site (the <a href="/help/privileges/new-user">association bonus does not count</a>).
+<br /><br />
+Would you like to answer one of these <a href="/unanswered?fromProtectedNotice=true">unanswered questions</a> instead?
+</p>
+    </div>
+
+
+
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Not the answer you&#39;re looking for?                            Browse other questions tagged <a href="/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="/questions/tagged/jvm" class="post-tag" title="show questions tagged &#39;jvm&#39;" rel="tag">jvm</a> <a href="/questions/tagged/benchmarking" class="post-tag" title="show questions tagged &#39;benchmarking&#39;" rel="tag">benchmarking</a> <a href="/questions/tagged/jvm-hotspot" class="post-tag" title="show questions tagged &#39;jvm-hotspot&#39;" rel="tag">jvm-hotspot</a> <a href="/questions/tagged/microbenchmark" class="post-tag" title="show questions tagged &#39;microbenchmark&#39;" rel="tag">microbenchmark</a>  or <a href="/questions/ask">ask your own question</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tr>
+                            <td>
+                                <p class="label-key">asked</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2009-02-02 17:39:41Z"><b>8 years, 7 months ago</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">viewed</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>73,406 times</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">active</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="?lastactivity" class="lastactivity-link" title="2017-03-22 16:09:45Z">5 months ago</a></b></p>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+                        
+            <script>
+                    var ados = ados || {}; ados.run = ados.run || [];
+                    ados.run.push(function () { ados_add_placement(22,8277,"adzerk1375489957",[5,17,2221,1129,43]).setZone(45); });
+                </script>
+                <div class="everyonelovesstackoverflow" id="adzerk1375489957"></div>
+            <script>try{;window.clc=window.clc||{},window.clc.init=window.clc.init||function(a){var b=window,c=b.document;try{if('function'!=typeof[].indexOf||!window.addEventListener||!a.allowed)return;var d=new RegExp(a.allowed);if(!d.test(location.hostname))return;if(b.clc.options)for(var e in b.clc.options)a[e]=b.clc.options[e];b.clc.cmd='undefined'==typeof b.clc.cmd?[]:b.clc.cmd,b.clc.autoload=b.clc.autoload||function(){'function'==typeof b.clc.load?b.clc.load():b.clc.cmd.push(function(a){a.load()})};var f=a.wv;if(c.hidden&&f)return void c.addEventListener('visibilitychange',function b(){c.hidden||(window.clc.init(a),c.removeEventListener('visibilitychange',b))});b.clc.options=a,a.al&&b.clc.autoload();var g=c.createElement('script');g.async=!0,g.src=a.lib,c.body.appendChild(g)}catch(a){}},window.clc.loadDisplayAds=window.clc.loadDisplayAds||function(){function a(a){b.googletag=b.googletag||{},b.googletag.cmd=b.googletag.cmd||[],b.googletag.cmd.push(a)}var b=window,c={slots:{lb:[[728,90]],mlb:[[728,90]],sb:[[300,250],[300,600]]},ids:{"dfp-tlb":'lb',"dfp-mlb":'mlb',"dfp-tsb":'sb',"clc-tlb":'lb',"clc-mlb":'mlb',"clc-tsb":'sb'}},d=/^\/tags\//.test(location.pathname)||/^\/questions\/tagged\//.test(location.pathname)?'tag-pages':'question-pages',e=/^dev\./.test(location.hostname)?'test/'+location.hostname:location.hostname;return function(f){var g=(f&&0<f.length?f:Object.keys(c.ids)).map(function(a){return document.getElementById(a)}).filter(function(a){return!!a&&/^\s*$/.test(a.innerHTML)}).map(function(a){return a.id});if(0!==g.length){a(function(){var a=b.googletag;a.pubads().enableSingleRequest();var f=b.dfp_targeting||{};f&&Object.keys(f).forEach(function(b){a.pubads().setTargeting(b,f[b])});for(var h=0,i=g;h<i.length;h++){var j=i[h],k=c.ids[j],l=c.slots[k];a.defineSlot('/'+'248424177'+'/'+e+'/'+k+'/'+d,l,j).addService(a.pubads())}a.enableServices();for(var j,m=0,n=g;m<n.length;m++)j=n[m],a.display(j)});var h=document.createElement('script');h.async=!0,h.src='https://www.googletagservices.com/tag/js/gpt.js',document.body.appendChild(h)}}}(),window.clc.loadDfp=window.clc.loadDisplayAds,window.clc.init.call(null, {"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=8eb17d1d4f2b","u":"https://clc.stackoverflow.com/markup.js","wa":true,"kt":2000,"tto":true,"h":"clc.stackoverflow.com","allowed":"^(((talent\\.)?stackoverflow)|(blog\\.codinghorror)|(serverfault|askubuntu)|([^\\.]+\\.stackexchange))\\.com$","wv":true,"al":false,"fb":null});}catch(e){typeof console!=='undefined'&&typeof console.error==='function'&&console.error(e);}</script>
+            <script>
+                var dfp_targeting={Registered:['false'],'so-tag':['java','jvm','benchmarking','jvm-hotspot','microbenchmark'],Industry:['Academic']};
+            </script>
+            <div id="hireme"></div>
+            <script>try{window.clc_request='AtRpcHDS9NQIAAAAACexBwACAAAAAgAAAABGAAAAfGphdmF8anZtfGJlbmNobWFya2luZ3xqdm0taG90c3BvdHxtaWNyb2JlbmNobWFya3x4LWluZHVzdHJ5LWFjYWRlbWljfABfMuSc5r9x3Gsq';typeof clc!=='undefined'&&typeof clc.autoload==='function'&&clc.autoload();}catch(e){typeof console!=='undefined'&&typeof console.error==='function'&&console.error(e);}</script>
+            <div id="dfp-tsb" class="dfpad"></div>
+                <style>.dfpad{position:absolute;height:1px;width:1px;opacity:0;top:0;left:0;pointer-events:none;}</style>
+<script>try{typeof clc!=='undefined'&&typeof clc.loadDfp==='function'&&clc.loadDfp();}catch(e){typeof console!=='undefined'&&typeof console.error==='function'&&console.error(e);}</script>
+            
+
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="/q/20211648" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">15</div>
+	</a>
+	<a href="/questions/20211648/how-to-measure-time-taken-by-java-code?noredirect=1" class="question-hyperlink">How to measure time taken by Java code?</a>
+</div>
+<div class="spacer">
+	<a href="/q/18834092" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">6</div>
+	</a>
+	<a href="/questions/18834092/java-faster-than-c?noredirect=1" class="question-hyperlink">Java faster than C</a>
+</div>
+<div class="spacer">
+	<a href="/q/12850503" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">5</div>
+	</a>
+	<a href="/questions/12850503/benchmarking-in-scala?noredirect=1" class="question-hyperlink">Benchmarking in scala</a>
+</div>
+<div class="spacer">
+	<a href="/q/34304949" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">4</div>
+	</a>
+	<a href="/questions/34304949/what-am-i-doing-wrong-with-java-8-lambda-predicateinteger?noredirect=1" class="question-hyperlink">What am i doing wrong with java 8 lambda Predicate&lt;Integer&gt;?</a>
+</div>
+<div class="spacer">
+	<a href="/q/37049363" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">4</div>
+	</a>
+	<a href="/questions/37049363/why-do-the-execution-time-of-independent-code-blocks-depend-on-execution-order-i?noredirect=1" class="question-hyperlink">Why do the execution time of independent code blocks depend on execution order in Scala?</a>
+</div>
+<div class="spacer">
+	<a href="/q/14792716" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="/questions/14792716/how-compute-elapsed-time-encrypt-and-decrypt-algorithm?noredirect=1" class="question-hyperlink">How compute elapsed time encrypt and decrypt algorithm?</a>
+</div>
+<div class="spacer">
+	<a href="/q/34410826" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">3</div>
+	</a>
+	<a href="/questions/34410826/testing-a-java-methods-execution-time-and-memory-consumption-via-junit?noredirect=1" class="question-hyperlink">Testing a Java method&#39;s execution time and memory consumption via JUnit</a>
+</div>
+<div class="spacer">
+	<a href="/q/15168509" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="/questions/15168509/performance-engineering-inconsistent-results-in-measuring-turnaround-time?noredirect=1" class="question-hyperlink">Performance engineering: Inconsistent results in measuring turnaround time</a>
+</div>
+<div class="spacer">
+	<a href="/q/22122446" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">-1</div>
+	</a>
+	<a href="/questions/22122446/why-does-running-my-tests-in-a-different-order-result-in-drastically-different-p?noredirect=1" class="question-hyperlink">Why does running my tests in a different order result in drastically different performances?</a>
+</div>
+<div class="spacer">
+	<a href="/q/33573687" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="/questions/33573687/does-java-8-streams-reuse-itself-when-processed-again-on-the-same-data-and-task?noredirect=1" class="question-hyperlink">Does java 8 streams reuse itself when processed again on the same data and task?</a>
+</div>					<div class="spacer more">
+				<a href="/questions/linked/504103">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer"><a href="/q/198577" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">326</div></a><a href="/questions/198577/real-differences-between-java-server-and-java-client" class="question-hyperlink">Real differences between &ldquo;java -server&rdquo; and &ldquo;java -client&rdquo;?</a></div><div class="spacer"><a href="/q/860231" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">11</div></a><a href="/questions/860231/first-time-a-java-loop-is-run-slow-why-sun-hotspot-1-5-sparc" class="question-hyperlink">First time a Java loop is run SLOW, why? [Sun HotSpot 1.5, sparc]</a></div><div class="spacer"><a href="/q/2794673" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">3</div></a><a href="/questions/2794673/how-to-benchmark-on-multi-core-processors" class="question-hyperlink">How to benchmark on multi-core processors</a></div><div class="spacer"><a href="/q/10036280" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">13</div></a><a href="/questions/10036280/jvm-native-code-compilation-crazyness-i-seem-to-suffer-odd-performance-penalti" class="question-hyperlink">Jvm native code compilation crazyness - I seem to suffer odd performance penalties for some time even after the code is compiled. Why?</a></div><div class="spacer"><a href="/q/10382929" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">1227</div></a><a href="/questions/10382929/how-to-fix-java-lang-unsupportedclassversionerror-unsupported-major-minor-versi" class="question-hyperlink">How to fix java.lang.UnsupportedClassVersionError: Unsupported major.minor version</a></div><div class="spacer"><a href="/q/15834059" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">4</div></a><a href="/questions/15834059/caliper-micro-and-macro-benchmarks" class="question-hyperlink">Caliper: micro- and macro benchmarks</a></div><div class="spacer"><a href="/q/15944803" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">4</div></a><a href="/questions/15944803/how-can-jvm-jitter-get-caused-by-a-for-loop-with-no-object-allocations" class="question-hyperlink">How can JVM jitter get caused by a for loop with no object allocations?</a></div><div class="spacer"><a href="/q/19548673" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">2</div></a><a href="/questions/19548673/how-to-speed-up-this-dart-micro-benchmark" class="question-hyperlink">How to speed up this Dart micro-benchmark?</a></div><div class="spacer"><a href="/q/31827058" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">3</div></a><a href="/questions/31827058/how-to-benchmark-the-throughput-with-jmh-if-the-work-is-performed-by-different-t" class="question-hyperlink">How to benchmark the throughput with JMH if the work is performed by different threads?</a></div><div class="spacer"><a href="/q/35531369" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">317</div></a><a href="/questions/35531369/why-is-ab-0-faster-than-a-0-b-0-in-java" class="question-hyperlink">Why is (a*b != 0) faster than (a != 0 &amp;&amp; b != 0) in Java?</a></div>
+                    </div>
+                </div>
+
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot"
+           class="js-gps-track" 
+           data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li >
+                <div class="favicon favicon-movies" title="Movies &amp; TV Stack Exchange"></div><a href="https://movies.stackexchange.com/questions/79966/why-is-the-number-4-so-prominent-in-the-death-note" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is the number &#39;4&#39; so prominent in the Death Note?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/95543/what-is-a-classic-paper-and-when-do-we-refer-to-a-work-as-a-classic-work" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is a &#39;classic paper&#39;, and when do we refer to a work as a &#39;classic work&#39;?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-gis" title="Geographic Information Systems Stack Exchange"></div><a href="https://gis.stackexchange.com/questions/254380/set-default-gdal-ogr-config-options" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:79 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Set default GDAL/OGR config options?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/168733/why-did-peter-parker-work-as-a-poor-photographer-given-that-he-was-a-top-science" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why did Peter Parker work as a poor photographer given that he was a top science student who could earn much more in Silicon Valley?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/91053/can-urine-be-used-for-radiation-shielding" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can urine be used for radiation shielding?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/3221/how-do-i-tell-my-new-boyfriend-that-i-make-a-lot-of-money" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do I tell my new boyfriend that I make a lot of money?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/141701/my-device-malfunctions-abuse-its-undefined-string-behaviour" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    My device malfunctions... Abuse its undefined string behaviour!
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/106362/how-is-the-magic-weapon-level-of-javelin-of-lightning-decided" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How is the magic weapon level of Javelin of Lightning decided?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/168959/why-is-the-wall-still-manned" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is The Wall still manned?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="https://travel.stackexchange.com/questions/101574/should-i-just-not-bother-to-reserve-rental-cars-anymore" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should I just not bother to &quot;reserve&quot; rental cars anymore?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="https://travel.stackexchange.com/questions/101309/i-am-chinese-which-name-is-my-surname-and-which-is-my-last-name-for-a-flight-b" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    I am Chinese. Which name is my surname and which is my last name, for a flight booking?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-mathoverflow" title="MathOverflow"></div><a href="https://mathoverflow.net/questions/280455/can-you-remove-all-the-extra-arithemetic-from-zfc-or-other-theories" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can you remove all the extra arithemetic from ZFC (or other theories)?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/3213/how-to-deal-politely-with-people-asking-about-your-job-but-unable-to-understand" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to deal politely with people asking about your job but unable to understand it?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-outdoors" title="The Great Outdoors Stack Exchange"></div><a href="https://outdoors.stackexchange.com/questions/17068/is-belaying-a-lead-more-difficult-than-a-top-roped-climber" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:395 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is belaying a lead more difficult than a top roped climber
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/141772/lets-converge-to-9" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Let&#39;s converge to 9!
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-retrocomputing" title="Retrocomputing Stack Exchange"></div><a href="https://retrocomputing.stackexchange.com/questions/4647/core-memory-stability" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:648 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Core Memory Stability
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/91026/database-of-real-historical-names" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Database of real historical names
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-mechanics" title="Motor Vehicle Maintenance &amp; Repair Stack Exchange"></div><a href="https://mechanics.stackexchange.com/questions/47662/why-only-one-spare-wheel" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:224 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why only one spare wheel
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/95517/is-there-an-official-widely-used-subject-classification" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there an official, widely used subject classification?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2417236/is-it-possible-to-construct-an-ordered-sequence-of-all-rational-numbers" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it possible to construct an ordered sequence of all rational numbers?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/141675/when-do-i-get-my-sandwich" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    When do I get my sandwich?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-philosophy" title="Philosophy Stack Exchange"></div><a href="https://philosophy.stackexchange.com/questions/45789/have-i-found-a-paradox-or-is-the-universe-digital-or-am-i-just-plain-wrong" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:265 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Have I found a paradox, or is the universe digital? Or am I just plain wrong?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-bicycles" title="Bicycles Stack Exchange"></div><a href="https://bicycles.stackexchange.com/questions/49997/can-the-brake-levers-be-moved-from-the-side-to-the-top-of-the-handlebar" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:126 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can the brake levers be moved from the side to the top of the handlebar?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-law" title="Law Stack Exchange"></div><a href="https://law.stackexchange.com/questions/22444/what-are-the-implications-of-a-company-being-not-in-good-standing" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:617 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What are the implications of a company being &quot;not in good standing?&quot;
+                </a>
+
+            </li>
+    </ul>
+
+        <a href="#" 
+           class="show-more js-show-more js-gps-track" 
+           data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+            more hot questions
+        </a>
+</div>
+        </div>
+    
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="/feeds/question/504103" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>    </div>
+<script>
+StackExchange.ready(function(){$.get('/posts/504103/ivc/1c84');});
+</script>
+<noscript>
+    <div><img src="/posts/504103/ivc/1c84" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-java</div></div>
+
+
+        </div>
+    </div>
+
+    <footer id="footer" class="s-footer js-footer" role="contentinfo">
+        <div class="-container">
+            <div class="g-row js-sp-between">
+                    <div class="-logo">
+                        <a href="https://stackoverflow.com"><svg aria-hidden="true" class="svg-icon iconLogo" width="150" height="30" viewBox="0 0 150 30"><g><path d="M33.9 18.6l-1.7-.2c-1.3-.1-1.9-.6-1.9-1.6 0-1.1.8-1.8 2.4-1.8 1.1 0 2.1.3 2.8.8l1-1c-1-.8-2.3-1.1-3.8-1.1-2.3 0-3.9 1.2-3.9 3.1 0 1.8 1.1 2.7 3.2 2.9l1.8.2c1.2.1 1.8.6 1.8 1.6 0 1.3-1.1 1.9-2.8 1.9-1.3 0-2.5-.3-3.3-1.2l-1 1c1.2 1.1 2.6 1.5 4.4 1.5 2.6 0 4.3-1.2 4.3-3.2-.2-2-1.5-2.7-3.3-2.9zm13.3-4.8c-1.7 0-2.8.3-3.7 1.5l1 1c.6-.9 1.3-1.2 2.7-1.2 1.9 0 2.7.8 2.7 2.3v1h-3.2c-2.4 0-3.7 1.2-3.7 3.1 0 .8.3 1.6.8 2.2.7.7 1.5 1 3 1 1.4 0 2.2-.3 3.1-1.1v1h1.6v-7.2c-.1-2.4-1.5-3.6-4.3-3.6zm2.7 7c0 .9-.2 1.5-.5 1.8-.7.6-1.5.7-2.4.7-1.7 0-2.4-.6-2.4-1.8 0-1.2.8-1.9 2.4-1.9h3l-.1 1.2zm7.6-5.6c1 0 1.6.3 2.4 1.2l1-1c-1.1-1.2-2-1.6-3.5-1.6-2.7 0-4.7 1.8-4.7 5.5 0 3.6 2 5.5 4.7 5.5 1.5 0 2.4-.4 3.5-1.6l-1.1-1c-.8.9-1.4 1.2-2.4 1.2s-1.9-.4-2.5-1.2c-.5-.7-.7-1.5-.7-2.9 0-1.3.2-2.2.7-2.9.7-.8 1.6-1.2 2.6-1.2zm13.4-1.3H69l-4.8 4.7V9.1h-1.6v15.4h1.6v-3.9l1.9-1.9 3.6 5.8h1.9l-4.4-6.9 3.7-3.7zm7.3-.33c-1.6 0-2.7.6-3.4 1.4-1 1-1.3 2.3-1.3 4.3s.3 3.3 1.3 4.3c.7.7 1.8 1.4 3.4 1.4 1.6 0 2.8-.6 3.4-1.4 1-1 1.3-2.3 1.3-4.3s-.3-3.3-1.3-4.3c-.6-.8-1.7-1.4-3.4-1.4zm1.3 8.3c-.3.3-.7.5-1.3.5-.6 0-1-.2-1.3-.5-.6-.6-.6-1.6-.6-2.7 0-1.2.1-2.1.6-2.7.3-.3.7-.5 1.3-.5.6 0 1 .2 1.3.5.6.6.6 1.5.6 2.7.1 1.2 0 2.2-.6 2.7zm10.8-8.2l-2.2 6.9-2.3-6.9h-2.9l4.1 11.1h2.2l4.1-11.1h-3zm7.6-.1c-2.9 0-4.8 2-4.8 5.7 0 4.5 2.5 5.7 5.1 5.7 2 0 3.1-.6 4.2-1.7l-1.7-1.6c-.7.7-1.3 1-2.5 1-1.6 0-2.4-1-2.4-2.5h6.9v-1.2c0-3.2-1.7-5.4-4.8-5.4zm-2.1 4.6c0-.5.1-.8.3-1.2.3-.7.9-1.2 1.9-1.2.9 0 1.6.5 1.9 1.2.2.4.2.7.3 1.2h-4.4zm11-3.4v-1.1h-2.7v11.1h2.8v-6.7c0-1.4.9-2 1.8-2 .7 0 1 .2 1.5.7l2.1-2.1c-.8-.8-1.5-1-2.6-1-1.3-.1-2.3.4-2.9 1.1zm6.3-2.3v12.3h2.8v-8.8h2v-2.1h-2v-1.2c0-.6.3-1 1-1h1.1v-2.3h-1.6c-2.3 0-3.3 1.6-3.3 3.1zm16.2 1.1c-1.6 0-2.7.6-3.4 1.4-1 1-1.3 2.3-1.3 4.3s.3 3.3 1.3 4.3c.7.7 1.8 1.4 3.4 1.4 1.6 0 2.8-.6 3.4-1.4 1-1 1.3-2.3 1.3-4.3s-.3-3.3-1.3-4.3c-.6-.8-1.8-1.4-3.4-1.4zm1.3 8.3c-.3.3-.7.5-1.3.5-.6 0-1-.2-1.3-.5-.6-.6-.6-1.6-.6-2.7 0-1.2.1-2.1.6-2.7.3-.3.7-.5 1.3-.5.6 0 1 .2 1.3.5.6.6.6 1.5.6 2.7 0 1.2 0 2.2-.6 2.7zm16.5-8.2l-1.8 6.9-2.3-6.9h-2l-2.3 6.9-1.8-6.9H134l3.4 11.1h2.3l2.3-7 2.3 7h2.3l3.4-11.1h-2.9zm-25.1 7.7V9.27h-2.8v12.3c0 1.6 1 3.2 3.2 3.2h1.6v-2.3h-1c-.7 0-1-.4-1-1.1zM41.3 15.6l1.4-1.4h-3v-3.5h-1.6v11.1c0 1.6.9 2.9 2.7 2.9h1.1v-1.3h-.8c-1 0-1.5-.6-1.5-1.6v-6.1h1.7v-.1z" fill="#222426"/><path fill="#BCBBBB" d="M21 27v-8h3v11H0V19h3v8z"/><path d="M5.4 19.1l13.56 1.96.17-2.38-13.26-2.55-.47 2.97zm1.8-6.8l12 5.6 1.1-2.4-12-5.6-1.1 2.4zm3.4-5.9l10.2 8.5 1.7-2-10.2-8.5-1.7 2zM17.1.2L15 1.8l7.9 10.6 2.1-1.6L17.1.2zM5 25h14v-3H5v3z" fill="#F48024"/></g></svg></a>
+                    </div>
+                
+                    <nav class="-nav js-category _visible" data-name="default">
+                        <h5 class="-title"><a href="https://stackoverflow.com" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="/questions" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 16})">Questions</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Jobs</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs/directory/developer-jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 11})">Developer Jobs Directory</a></li>
+                                                            <li class="-item"><a href="https://stackoverflow.com/documentation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 18})">Documentation</a></li>
+                                                            <li class="-item"><a href="/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Help</a></li>
+                                <li class="-item"><a onclick='StackExchange.switchMobile("on")' class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Mobile</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="-nav js-category _visible" data-name="default">
+                        <h5 class="-title"><a href="https://www.stackoverflowbusiness.com/?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 19 })">Stack Overflow<br /> Business</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/talent?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 20 })">Talent</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/advertise?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 21 })">Ads</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/enterprise?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 22 })">Enterprise</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/insights?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 23 })">Insights</a></li>
+                        </ul>
+                    </nav>
+                <nav class="-nav js-category _visible" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Company</a></h5>
+                    <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">About</a></li>
+                                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Press</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 9 })" href="https://stackoverflow.com/company/work-here">Work Here</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackexchange.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackexchange.com/legal/privacy-policy">Privacy Policy</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://stackoverflow.com/company/contact">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="-network g-row">
+                    <a href="#" class="-back-trigger js-back"><svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"/></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <nav class="-nav js-category" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="//stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="//serverfault.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="//superuser.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="//webapps.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="//askubuntu.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="//webmasters.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="//gamedev.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//tex.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="//softwareengineering.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="//unix.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="//apple.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="//wordpress.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="//gis.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="//electronics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//android.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="//security.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="//dba.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="//drupal.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="//sharepoint.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="//ux.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="//mathematica.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//salesforce.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="//expressionengine.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine&#174; CMS">ExpressionEngine&#174; Answers</a></li>
+                <li class="-item"><a href="//blender.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="//networkengineering.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="//crypto.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="//codereview.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                <li class="-item"><a href="//magento.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//softwarerecs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="//dsp.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="//emacs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="//raspberrypi.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="//codegolf.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                <li class="-item"><a href="//ethereum.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="//datascience.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//arduino.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (27)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="//photo.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="//scifi.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="//graphicdesign.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="//movies.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="//music.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="//worldbuilding.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="//cooking.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="//diy.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="//money.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="//academia.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="//law.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (17)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="//english.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="//skeptics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="//judaism.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="//travel.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="//christianity.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="//ell.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="//japanese.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="//gaming.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="//bicycles.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="//rpg.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="//anime.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="//puzzling.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                <li class="-item"><a href="//mechanics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (32)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="//mathoverflow.net" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="//math.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="//stats.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="//cstheory.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="//physics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="//chemistry.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientists, academics, teachers and students">Chemistry</a></li>
+                <li class="-item"><a href="//biology.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="//cs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="//philosophy.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="//meta.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="//stackapps.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+                <li class="-item"><a href="//area51.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                    </ul>
+    </nav>
+                <div class="-copyright text-right">
+                    <div class="g-column jc-sp-between">
+                        <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog?blb=1">Blog</a></li>
+                            <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link">Facebook</a></li>
+                            <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link">Twitter</a></li>
+                            <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link">LinkedIn</a></li>
+                        </ul>
+
+                        <div>
+                            <p>
+                                site design / logo &#169; 2017 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license" class="-link">cc by-sa 3.0</a>
+                                with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license" class="-link">attribution required</a>.
+                                <span id="svnrev">rev 2017.9.5.26948</span>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    </div>
+    </footer>
+
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled
+            <img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno">
+        </div>
+    </noscript>
+<script>var z=document.createElement("script");z.type="text/javascript",z.async=!0,z.src="https://static.adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+<script>
+var ados = ados || {};
+ados.run = ados.run || [];
+
+
+ados.run.push(function () {
+    setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+    ados_setKeywords('java,jvm,benchmarking,jvm-hotspot,microbenchmark,x-industry-academic');; ados_load();
+});   
+
+</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-5620270-1');
+                ga('create', 'UA-5620270-59', {name: 'pageData', sampleRate: 5 });
+                ga('set', 'dimension2', '|java|jvm|benchmarking|jvm-hotspot|microbenchmark|');
+                ga('pageData.set', 'dimension2', '|java|jvm|benchmarking|jvm-hotspot|microbenchmark|');
+                ga('send', 'pageview');
+                ga('pageData.send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+                <script>
+        var x1=0,x2=0;
+        $('body').on('mousewheel', function(e){ x1=x2; x2=e.originalEvent.wheelDelta; });
+        setInterval(function() { 
+            if(x1!=x2){ 
+                if(x2 > 0) {
+                    console.log('Scroll Up');
+                    //var data = "Scrolling Up";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Scroll Up"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                } 
+                else { 
+                    console.log('Scroll Down');
+                    //var data = "Scrolling Down";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Scroll Down"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                }
+            }
+        },500);
+    </script>
+    <script>
+        var y1=0,y2=0;
+        window.onmousemove = function(e) { y1=y2; y2=e.pageY; }
+        setInterval(function() { 
+            if(y1!=y2){ 
+                if(y2<y1){
+                    console.log('Mouse Up');
+                    //var data = "Mouse movement upward";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Mouse Up"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                } 
+                else { 
+                    console.log('Mouse Down');
+                    //var data = "Mouse movement downward";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Mouse Down"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                }
+            } 
+        },500);
+    </script>
+    <script>
+        $("button").mousedown( function(e) {
+        if(e.which) {
+            console.log(this.value+" Button Click");
+            //var data = this.value+" Button clicked";
+            $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Button Click"}',
+                success: function(data) { console.log(data); },
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        }
+        });
+        $("input").mousedown( function(e) {
+        if(e.which) {
+            console.log(this.value+" Button Click");
+            //var data = "Button";
+            /*$.ajax({
+                url:'/jspost',
+                type:'POST',
+                data:{dat,dat},
+                success: function(data) 
+                {console.log(data);
+                }
+            });*/
+            $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Button Click"}',
+                success: function(data) { console.log(data); },
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        }   
+        });
+        $("a").mousedown( function(e) {
+        if(e.which) {
+            console.log("Link Click");
+            //var data = "Link clicked";
+            $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Link Click"}',
+                success: function(data) { console.log(data); },
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        }
+        });
+        $("button").trigger("mousedown");
+    </script>
+    <script>
+        $('body').mouseup(function() {
+        console.log('Text Select');
+        //var data = "Text is selected";
+        $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Text Select"}',
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        console.log(getSelectedText());
+        });
+        function getSelectedText() {
+        if (window.getSelection) {
+            return window.getSelection().toString();
+        } else if (document.selection) {
+            return document.selection.createRange().text;
+        }
+        return '';
+        }
+    </script>
+    </body>
+</html>

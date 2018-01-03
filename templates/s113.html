@@ -1,0 +1,3286 @@
+
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/QAPage">
+
+<head>
+
+<title>java - What is a raw type and why shouldn&#39;t we use it? - Stack Overflow</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="/opensearch.xml">
+    <meta property="og:type" content="website"/>
+    <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:domain" content="stackoverflow.com"/>
+
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded" />
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="What is a raw type and why shouldn&#39;t we use it?" />
+    <meta name="twitter:description" property="og:description" itemprop="description" content="Questions:
+What are raw types in Java, and why do I often hear that they shouldn&#39;t be used in new code?
+What is the alternative if we can&#39;t use raw types, and how is it better?" />
+    <meta property="og:url" content="https://stackoverflow.com/questions/2770321/what-is-a-raw-type-and-why-shouldnt-we-use-it"/>
+    <link rel="canonical" href="https://stackoverflow.com/questions/2770321/what-is-a-raw-type-and-why-shouldnt-we-use-it" />
+
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.sstatic.net/Js/stub.en.js?v=ef1cf9144f35"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.sstatic.net/Sites/stackoverflow/all.css?v=5df92b6be7e1">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;What is a raw type and why shouldn&#39;t we use it?&#39;" href="/feeds/question/2770321">
+            <meta name="twitter:app:country" content="US" />
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS" />
+            <meta name="twitter:app:id:iphone" content="871299723" />
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/2770321/what-is-a-raw-type-and-why-shouldnt-we-use-it" />
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS" />
+            <meta name="twitter:app:id:ipad" content="871299723" />
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/2770321/what-is-a-raw-type-and-why-shouldnt-we-use-it" />
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/2770321/what-is-a-raw-type-and-why-shouldnt-we-use-it">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:2,shownCommentCount:2,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:2770321});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '2770321');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text', true); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1504666433,"routeName":"Questions/Show","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableInsertDocLinkDialog":false,"childUrl":"https://meta.stackoverflow.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"timingsGuid":"2ae920ce-d4e4-45ef-94be-b8e2bea51852","timingsInfo":"tyFZn8pfwW4TCM2sW80CurMy3tGBGZzPpomiRySBve7uUZm+XPR/aSxHUdY9LQ6kocgGZMVvHIFqie1WR8ZYsnw5t/iaNhl9KYsAABTZwXIYMnPaXLhnOv0SaXUxBa4pI9EnXgMT7S7lsQ9SZIG6ajxodD0C0T4h1LwaqTMwJzJnvZaLxtEdz1EvG7yBu1z73/TELkbHYIUceGS+8TdQT1bhb5/IPKmOuxhS8/X89jVTrrmcw3dswdvOuSlNWmuKh3499RVUnop5XLMwvllX0RZlWoQU4eMb1Z13AnvqJEo=","user":{"fkey":"d431d2751f1d1bd16873fe8d68016c0e","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"canSeeNewHeaderDesign":true},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"comments":{},"userProfile":{"openGraphAPIKey":"58740831ad23540e00c58987"},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"813cfe48dc5b","js/moderator.en.js":"9f2375df98d8","js/full-anon.en.js":"68371529faad","js/full.en.js":"3454aa67c8ba","js/wmd.en.js":"b4467a90e4e0","js/third-party/jquery.autocomplete.min.js":"d3b8fa7fdf74","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"3f082f5eb27a","js/help.en.js":"dbd4f489eff2","js/tageditor.en.js":"4f83add90c55","js/tageditornew.en.js":"a5a8b197f53c","js/inline-tag-editing.en.js":"7581a98341e4","js/revisions.en.js":"8f22ba768cac","js/review.en.js":"198183565669","js/tagsuggestions.en.js":"b278f9a0b23b","js/post-validation.en.js":"fcc6f225a77f","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"627d846d8038","js/keyboard-shortcuts.en.js":"96e82e714e10","js/external-editor.en.js":"3e5baf662544","js/adops.en.js":"9a6a7812a212","js/external-editor.en.js":"3e5baf662544","js/snippet-javascript.en.js":"6396a6cc51fa","js/snippet-javascript-codemirror.en.js":"ddc7c6f5f088"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    <noscript id="noscript-css"><style type="text/css">body,.so-header{margin-top:1.9em}</style></noscript>
+</head>
+<body class="question-page new-topbar">
+            <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        <iframe id="adzerk-user-match" width="0" height="0" frameborder="0" scrolling="no" onload="window.AUMIframeDone=true"
+                src="https://ssum-sec.casalemedia.com/usermatch?s=183712&amp;cb=https%3A%2F%2Fengine.adzerk.net%2Fudb%2F22%2Fsync%2Fi.gif%3FpartnerId%3D1%26userId%3D"
+                style="display: none;" marginheight="0" marginwidth="0"></iframe>
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+<header class="so-header js-so-header _fixed">
+    <div class="-container">
+        <div class="-main">            
+            <a href="https://stackoverflow.com" class="-logo js-gps-track "
+               data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+
+                <span class="-img">Stack Overflow</span>
+            </a>
+
+            <nav class="navigation" role="navigation" aria-label="site navigation">
+                <ol class="-list">
+                        <li class="-item _current">
+        <a id="nav-questions" href="/questions" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">Questions</a>
+    </li>
+
+    <li class="-item">
+        <a id="nav-jobs" href="/jobs?med=site-ui&amp;ref=jobs-tab" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:6})">Developer Jobs</a>
+    </li>
+                        <li class="-item">
+        <a id="nav-docs" href="/documentation" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:7})">Documentation <small class='beta-badge'>beta</small></a>
+    </li>
+                        <li class="-item">
+        <a id="nav-tags" href="/tags" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">Tags</a>
+    </li>
+
+                        <li class="-item">
+        <a id="nav-users" href="/users" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">Users</a>
+    </li>
+
+                </ol>
+            </nav>
+
+                <form id="search" action="/search" method="get" class="searchbar" autocomplete="off" role="search">
+                    <svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"/></svg>
+                    <input name="q" type="text" placeholder="Search..." value="" tabindex="1" autocomplete="off" maxlength="240" class="f-input js-search-field" />
+                    <button type="submit" class="btn js-search-submit">
+                        <svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"/></svg>
+                    </button>
+                </form>
+
+        </div>
+        
+
+
+    
+
+<div class="-actions">
+    <nav class="secondary-nav">
+        <div class="-dialog-container js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://stackoverflow.com">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+            <a href="https://stackoverflow.com/help" class="js-gps-track"     data-gps-track="site_switcher.click({ item_type:14 })"
+>help</a>
+                    <a href="https://chat.stackoverflow.com" class="js-gps-track"     data-gps-track="site_switcher.click({ item_type:6 })"
+>chat</a>
+            </div>
+
+    <a href="https://stackoverflow.com"
+       class="current-site-link site-link js-gps-track"
+       data-id="1"
+       data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                        
+    <a href="https://meta.stackoverflow.com"
+       class="site-link js-gps-track"
+       data-id="552"
+       data-gps-track="site.switch({ target_site:552, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;amp;utm_source=stackoverflow.com&amp;amp;utm_medium=dev-story&amp;amp;utm_campaign=signup-redirect" class="login-link js-gps-track"     data-gps-track="site_switcher.click({ item_type:10 })"
+>Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f2770321%2fwhat-is-a-raw-type-and-why-shouldnt-we-use-it" class="login-link js-gps-track"     data-gps-track="site_switcher.click({ item_type:11 })"
+>log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+                <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://meta.stackoverflow.com" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+
+        </div>
+        <ol class="-list">
+
+
+    <li class="-item"><a href="#" class="-link js-help-button" title="Help Center and other resources">
+        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"/></svg>
+    </a></li>
+                <li class="-item">
+        <a href="https://stackexchange.com" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 171 Stack Exchange sites">
+            <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"/></svg>
+        </a>
+    </li>
+
+
+        </ol>
+    </nav>
+        <div class="-ctas">
+                <a href="https://stackoverflow.com/users/login?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f2770321%2fwhat-is-a-raw-type-and-why-shouldnt-we-use-it" class="login-link btn-clear" rel="nofollow">Log In</a>
+                    <a href="https://stackoverflow.com/users/signup?ssrc=head&returnurl=%2fusers%2fstory%2fcurrent&amp;utm_source=stackoverflow.com&amp;utm_medium=dev-story&amp;utm_campaign=signup-redirect" class="login-link btn" rel="nofollow">Sign Up</a>
+
+        </div>
+</div>
+    </div>
+</header>
+
+    <script>
+        StackExchange.ready(function () { StackExchange.topbar.init(); });
+            StackExchange.scrollPadding.setPaddingTop(60, 10);     </script>
+
+    <div class="container  ">
+        
+
+
+        <div id="content" class="snippet-hidden">
+
+
+
+
+
+            
+
+<div itemscope itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+
+<div id="herobox" class="alternate hero-container">
+    <div class="test"></div>
+        <div id="close">
+            <a title="click to minimize"><span>x</span> Dismiss</a>
+        </div>
+    <div class="content">
+        <b>Join the Stack Overflow Community</b>
+        <div class="separator"></div>
+        <div class="blurb">
+            Stack Overflow is a community of 7.7 million programmers, just like you, helping each other.
+                <br/>
+Join them; it only takes a minute:                <br/>
+        </div>
+        <a href="/users/signup?ssrc=hero&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;amp;utm_source=stackoverflow.com&amp;amp;utm_medium=dev-story&amp;amp;utm_campaign=signup-redirect" id="tell-me-more" class="button">Sign up</a>
+    </div>
+</div>
+<script>
+    StackExchange.ready(function () {
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;
+        }
+        
+        $('#tell-me-more').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+        
+        $('.hero-container #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+            });
+            
+            $.cookie("hero", "mini", { path: "/", expires: 365 });
+            $.ajax({
+                url: "/hero-mini",
+                success: function (data) {
+                    $(".hero-container").fadeOut("fast", function () {
+                        $(".hero-container").replaceWith(data);
+                        $("#herobox-mini").fadeIn("fast");
+                    });
+                }
+            });
+            return false;
+        });
+    });
+
+</script>    <div class="inner-content">
+        <div id="question-header">
+                <h1 itemprop="name"><a href="/questions/2770321/what-is-a-raw-type-and-why-shouldnt-we-use-it" class="question-hyperlink">What is a raw type and why shouldn&#39;t we use it?</a></h1>
+
+            
+<div class="aside-cta" role="navigation" aria-label="ask new question">
+    <a href="/questions/ask" class="btn-outlined">Ask Question</a>
+</div>
+        </div>
+            <div id="mainbar" role="main" aria-label="question and answers">
+
+            
+
+<div class="question" data-questionid="2770321"  id="question">
+
+    <div class="everyonelovesstackoverflow" id="clc-tlb"></div>    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="2770321">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">434</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="#">favorite</a>
+        <div class="favoritecount"><b>211</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<h3>Questions:</h3>
+
+<ul>
+<li>What are raw types in Java, and why do I often hear that they shouldn't be used in new code?</li>
+<li>What is the alternative if we can't use raw types, and how is it better?</li>
+</ul>
+    </div>
+    <div class="post-taglist">
+        <a href="/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="/questions/tagged/generics" class="post-tag" title="show questions tagged &#39;generics&#39;" rel="tag">generics</a> <a href="/questions/tagged/raw-types" class="post-tag" title="show questions tagged &#39;raw-types&#39;" rel="tag">raw-types</a> 
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/q/2770321" title="short permalink to this question" class="short-link" id="link-post-2770321">share</a><span class="lsep">|</span><a href="/posts/2770321/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="/posts/2770321/revisions" title="show all edits to this post">edited <span title="2017-03-22 16:13:06Z" class="relativetime">Mar 22 at 16:13</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/426671/bluefeet"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/32d2ee92e99e287861b25f508416a787?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/426671/bluefeet">bluefeet</a><span class="mod-flair" title="moderator">&#9830;</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 165,143" dir="ltr">165k</span><span title="40 gold badges"><span class="badge1"></span><span class="badgecount">40</span></span><span title="247 silver badges"><span class="badge2"></span><span class="badgecount">247</span></span><span title="320 bronze badges"><span class="badge3"></span><span class="badgecount">320</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        asked <span title="2010-05-05 02:48:53Z" class="relativetime">May 5 '10 at 2:48</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/276101/polygenelubricants"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/30fe97e726af0ea4ff8b756fbf2e6d15?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/276101/polygenelubricants">polygenelubricants</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 242,858" dir="ltr">243k</span><span title="88 gold badges"><span class="badge1"></span><span class="badgecount">88</span></span><span title="480 silver badges"><span class="badge2"></span><span class="badgecount">480</span></span><span title="578 bronze badges"><span class="badge3"></span><span class="badgecount">578</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</div>
+</td>
+        </tr>
+                    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-2770321" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-22400936" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">the java tutorials still use the JComboBox that causes this warning. Which version of the combobox will not cause this warning ? <a href="http://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html" rel="nofollow noreferrer">docs.oracle.com/javase/tutorial/uiswing/components/&hellip;</a></span>
+                    &ndash;&nbsp;<a href="/users/2128208/superstar"
+                       title="154 reputation"
+                       class="comment-user">SuperStar</a>
+                <span class="comment-date" dir="ltr"><span title="2013-04-02 10:04:31Z" class="relativetime-clean">Apr 2 '13 at 10:04</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-62281402" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Note that the reason why raw types exist is for backwards compatibility with Java 1.4 and older, which did not have generics at all.</span>
+                    &ndash;&nbsp;<a href="/users/135589/jesper"
+                       title="129,908 reputation"
+                       class="comment-user">Jesper</a>
+                <span class="comment-date" dir="ltr"><span title="2016-05-23 08:07:55Z" class="relativetime-clean">May 23 '16 at 8:07</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-2770321" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>        </table>
+</div>
+
+            <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2>
+                                12 Answers
+                                <span style="display:none;" itemprop="answerCount">12</span>
+                        </h2>
+                        <div>
+                            <div id="tabs">
+        <a href="/questions/2770321/what-is-a-raw-type-and-why-shouldnt-we-use-it?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="/questions/2770321/what-is-a-raw-type-and-why-shouldnt-we-use-it?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="/questions/2770321/what-is-a-raw-type-and-why-shouldnt-we-use-it?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+                        </div>
+                    </div>    
+                </div>    
+
+
+
+
+  
+<a name="2770692"></a>
+<div id="answer-2770692" class="answer" data-answerid="2770692"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="2770692">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">533</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<h2>What is a raw type?</h2>
+
+<p>The Java Language Specification defines a <em>raw type</em> as follows:</p>
+
+<h3><a href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-4.html#jls-4.8" rel="noreferrer">JLS 4.8 Raw Types</a></h3>
+
+<blockquote>
+  <p>A raw type is defined to be one of:</p>
+  
+  <ul>
+  <li><p>The reference type that is formed by taking the name of a generic type declaration without an accompanying type argument list.</p></li>
+  <li><p>An array type whose element type is a raw type.</p></li>
+  <li><p>A non-<code>static</code> member type of a raw type <code>R</code> that is not inherited from a superclass or superinterface of <code>R</code>.</p></li>
+  </ul>
+</blockquote>
+
+<p>Here's an example to illustrate:</p>
+
+<pre><code>public class MyType&lt;E&gt; {
+    class Inner { }
+    static class Nested { }
+
+    public static void main(String[] args) {
+        MyType mt;          // warning: MyType is a raw type
+        MyType.Inner inn;   // warning: MyType.Inner is a raw type
+
+        MyType.Nested nest; // no warning: not parameterized type
+        MyType&lt;Object&gt; mt1; // no warning: type parameter given
+        MyType&lt;?&gt; mt2;      // no warning: type parameter given (wildcard OK!)
+    }
+}
+</code></pre>
+
+<p>Here, <code>MyType&lt;E&gt;</code> is a <em>parameterized type</em> (<a href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-4.html#jls-4.5" rel="noreferrer">JLS 4.5</a>). It is common to colloquially refer to this type as simply <code>MyType</code> for short, but technically the name is <code>MyType&lt;E&gt;</code>.</p>
+
+<p><code>mt</code> has a raw type (and generates a compilation warning) by the first bullet point in the above definition; <code>inn</code> also has a raw type by the second bullet point.</p>
+
+<p><code>MyType.Nested</code> is not a parameterized type, even though it's a member type of a parameterized type <code>MyType&lt;E&gt;</code>, because it's <code>static</code>.</p>
+
+<p><code>mt1</code>, and <code>mt2</code> are both declared with actual type parameters, so they're not raw types.</p>
+
+<hr>
+
+<h2>What's so special about raw types?</h2>
+
+<p>Essentially, raw types behaves just like they were before generics were introduced. That is, the following is entirely legal at compile-time.</p>
+
+<pre><code>List names = new ArrayList(); // warning: raw type!
+names.add("John");
+names.add("Mary");
+names.add(Boolean.FALSE); // not a compilation error!
+</code></pre>
+
+<p>The above code runs just fine, but suppose you also have the following:</p>
+
+<pre><code>for (Object o : names) {
+    String name = (String) o;
+    System.out.println(name);
+} // throws ClassCastException!
+  //    java.lang.Boolean cannot be cast to java.lang.String
+</code></pre>
+
+<p>Now we run into trouble at run-time, because <code>names</code> contains something that isn't an <code>instanceof String</code>.</p>
+
+<p>Presumably, if you want <code>names</code> to contain only <code>String</code>, you <em>could</em> perhaps still use a raw type and <em>manually check every</em> <code>add</code> yourself, and then <em>manually cast</em> to <code>String</code> every item from <code>names</code>. <strong>Even better</strong>, though is NOT to use a raw type and <em>let the compiler do all the work for you</em>, harnessing the power of Java generics.</p>
+
+<pre><code>List&lt;String&gt; names = new ArrayList&lt;String&gt;();
+names.add("John");
+names.add("Mary");
+names.add(Boolean.FALSE); // compilation error!
+</code></pre>
+
+<p>Of course, if you <em>DO</em> want <code>names</code> to allow a <code>Boolean</code>, then you can declare it as <code>List&lt;Object&gt; names</code>, and the above code would compile.</p>
+
+<h3>See also</h3>
+
+<ul>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/generics/" rel="noreferrer">Java Tutorials/Generics</a></li>
+</ul>
+
+<hr>
+
+<h2>How's a raw type different from using <code>&lt;Object&gt;</code> as type parameters?</h2>
+
+<p>The following is a quote from <em>Effective Java 2nd Edition, Item 23: Don't use raw types in new code</em>:</p>
+
+<blockquote>
+  <p>Just what is the difference between the raw type <code>List</code> and the parameterized type <code>List&lt;Object&gt;</code>? Loosely speaking, the former has opted out generic type checking, while the latter explicitly told the compiler that it is capable of holding objects of any type. While you can pass a <code>List&lt;String&gt;</code> to a parameter of type <code>List</code>, you can't pass it to a parameter of type <code>List&lt;Object&gt;</code>. There are subtyping rules for generics, and <code>List&lt;String&gt;</code> is a subtype of the raw type <code>List</code>, but not of the parameterized type <code>List&lt;Object&gt;</code>. As a consequence, <strong>you lose type safety if you use raw type like <code>List</code>, but not if you use a parameterized type like <code>List&lt;Object&gt;</code></strong>.</p>
+</blockquote>
+
+<p>To illustrate the point, consider the following method which takes a <code>List&lt;Object&gt;</code> and appends a <code>new Object()</code>.</p>
+
+<pre><code>void appendNewObject(List&lt;Object&gt; list) {
+   list.add(new Object());
+}
+</code></pre>
+
+<p>Generics in Java are invariant. A <code>List&lt;String&gt;</code> is not a <code>List&lt;Object&gt;</code>, so the following would generate a compiler warning:</p>
+
+<pre><code>List&lt;String&gt; names = new ArrayList&lt;String&gt;();
+appendNewObject(names); // compilation error!
+</code></pre>
+
+<p>If you had declared <code>appendNewObject</code> to take a raw type <code>List</code> as parameter, then this would compile, and you'd therefore lose the type safety that you get from generics.</p>
+
+<h3>See also</h3>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/2770264/what-is-the-difference-between-e-extends-number-and-number/">What is the difference between <code>&lt;E extends Number&gt;</code> and <code>&lt;Number&gt;</code>?</a></li>
+<li><a href="https://stackoverflow.com/questions/2660827/java-generics-covariance">java generics (not) covariance</a></li>
+</ul>
+
+<hr>
+
+<h2>How's a raw type different from using <code>&lt;?&gt;</code> as a type parameter?</h2>
+
+<p><code>List&lt;Object&gt;</code>, <code>List&lt;String&gt;</code>, etc are all <code>List&lt;?&gt;</code>, so it may be tempting to just say that they're just <code>List</code> instead. However, there is a major difference: since a <code>List&lt;E&gt;</code> defines only <code>add(E)</code>, you can't add just any arbitrary object to a <code>List&lt;?&gt;</code>. On the other hand, since the raw type <code>List</code> does not have type safety, you can <code>add</code> just about anything to a <code>List</code>.</p>
+
+<p>Consider the following variation of the previous snippet:</p>
+
+<pre><code>static void appendNewObject(List&lt;?&gt; list) {
+    list.add(new Object()); // compilation error!
+}
+//...
+
+List&lt;String&gt; names = new ArrayList&lt;String&gt;();
+appendNewObject(names); // this part is fine!
+</code></pre>
+
+<p>The compiler did a wonderful job of protecting you from potentially violating the type invariance of the <code>List&lt;?&gt;</code>! If you had declared the parameter as the raw type <code>List list</code>, then the code would compile, and you'd violate the type invariant of <code>List&lt;String&gt; names</code>.</p>
+
+<hr>
+
+<h2>A raw type is the erasure of that type</h2>
+
+<p>Back to JLS 4.8:</p>
+
+<blockquote>
+  <p>It is possible to use as a type <strong>the erasure</strong> of a parameterized type or the erasure of an array type whose element type is a parameterized type. <strong>Such a type is called a <em>raw type</em>.</strong></p>
+  
+  <p><em>[...]</em></p>
+  
+  <p>The superclasses (respectively, superinterfaces) of a raw type are the erasures of the superclasses (superinterfaces) of any of the parameterizations of the generic type.</p>
+  
+  <p>The type of a constructor, instance method, or non-<code>static</code> field of a raw type <code>C</code> that is not inherited from its superclasses or superinterfaces is the raw type that corresponds to the erasure of its type in the generic declaration corresponding to <code>C</code>.</p>
+</blockquote>
+
+<p>In simpler terms, when a raw type is used, the constructors, instance methods and non-<code>static</code> fields are <em>also erased</em>.</p>
+
+<p>Take the following example:</p>
+
+<pre><code>class MyType&lt;E&gt; {
+    List&lt;String&gt; getNames() {
+        return Arrays.asList("John", "Mary");
+    }
+
+    public static void main(String[] args) {
+        MyType rawType = new MyType();
+        // unchecked warning!
+        // required: List&lt;String&gt; found: List
+        List&lt;String&gt; names = rawType.getNames();
+        // compilation error!
+        // incompatible types: Object cannot be converted to String
+        for (String str : rawType.getNames())
+            System.out.print(str);
+    }
+}
+</code></pre>
+
+<p>When we use the raw <code>MyType</code>, <code>getNames</code> becomes erased as well, so that it returns a raw <code>List</code>!</p>
+
+<p><a href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-4.html#jls-4.6" rel="noreferrer">JLS 4.6</a> continues to explain the following:</p>
+
+<blockquote>
+  <p><strong>Type erasure also maps the signature of a constructor or method to a signature that has no parameterized types or type variables.</strong> The erasure of a constructor or method signature <code>s</code> is a signature consisting of the same name as <code>s</code> and the erasures of all the formal parameter types given in <code>s</code>.</p>
+  
+  <p><strong>The return type of a method and the type parameters of a generic method or constructor also undergo erasure if the method or constructor's signature is erased.</strong></p>
+  
+  <p>The erasure of the signature of a generic method has no type parameters.</p>
+</blockquote>
+
+<p>The following bug report contains some thoughts from Maurizio Cimadamore, a compiler dev, and Alex Buckley, one of the authors of the JLS, on why this sort of behavior ought to occur: <a href="https://bugs.openjdk.java.net/browse/JDK-6400189" rel="noreferrer">https://bugs.openjdk.java.net/browse/JDK-6400189</a>. (In short, it makes the specification simpler.)</p>
+
+<hr>
+
+<h2>If it's unsafe, why is it allowed to use a raw type?</h2>
+
+<p>Here's another quote from JLS 4.8:</p>
+
+<blockquote>
+  <p>The use of raw types is allowed only as a concession to compatibility of legacy code. <em>The use of raw types in code written after the introduction of genericity into the Java programming language is strongly discouraged. It is possible that future versions of the Java programming language will disallow the use of raw types.</em></p>
+</blockquote>
+
+<p><em>Effective Java 2nd Edition</em> also has this to add:</p>
+
+<blockquote>
+  <p>Given that you shouldn't use raw types, why did the language designers allow them? To provide compatibility.</p>
+  
+  <p>The Java platform was about to enter its second decade when generics were introduced, and there was an enormous amount of Java code in existence that did not use generics. It was deemed critical that all this code remains legal and interoperable with new code that does use generics. It had to be legal to pass instances of parameterized types to methods that were designed for use with ordinary types, and vice versa. This requirement, known as <em>migration compatibility</em>, drove the decision to support raw types.</p>
+</blockquote>
+
+<p>In summary, raw types should NEVER be used in new code. <strong>You should always use parameterized types</strong>.</p>
+
+<hr>
+
+<h2>Are there no exceptions?</h2>
+
+<p>Unfortunately, because Java generics are non-reified, there are two exceptions where raw types must be used in new code:</p>
+
+<ul>
+<li>Class literals, e.g. <code>List.class</code>, not <code>List&lt;String&gt;.class</code></li>
+<li><code>instanceof</code> operand, e.g. <code>o instanceof Set</code>, not <code>o instanceof Set&lt;String&gt;</code></li>
+</ul>
+
+<h3>See also</h3>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/2745193/why-is-collectionstring-class-illegal/">Why is <code>Collection&lt;String&gt;.class</code> Illegal?</a></li>
+</ul>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/2770692" title="short permalink to this answer" class="short-link" id="link-post-2770692">share</a><span class="lsep">|</span><a href="/posts/2770692/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="/posts/2770692/revisions" title="show all edits to this post">edited <span title="2017-07-15 00:01:17Z" class="relativetime">Jul 15 at 0:01</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/2891664/radiodef"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/3d80e34fd889cfa639aa822b4f810815?s=32&amp;d=identicon&amp;r=PG&amp;f=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/2891664/radiodef">Radiodef</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 26,949" dir="ltr">26.9k</span><span title="8 gold badges"><span class="badge1"></span><span class="badgecount">8</span></span><span title="51 silver badges"><span class="badge2"></span><span class="badgecount">51</span></span><span title="88 bronze badges"><span class="badge3"></span><span class="badgecount">88</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature owner">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2010-05-05 04:50:35Z" class="relativetime">May 5 '10 at 4:50</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/276101/polygenelubricants"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/30fe97e726af0ea4ff8b756fbf2e6d15?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/276101/polygenelubricants">polygenelubricants</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 242,858" dir="ltr">243k</span><span title="88 gold badges"><span class="badge1"></span><span class="badgecount">88</span></span><span title="480 silver badges"><span class="badge2"></span><span class="badgecount">480</span></span><span title="578 bronze badges"><span class="badge3"></span><span class="badgecount">578</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-2770692" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="6"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-19145305" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="warm">11</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">What do you mean that, &quot;Java generics are non-reified&quot;?</span>
+                    &ndash;&nbsp;<a href="/users/39396/carl-g"
+                       title="5,206 reputation"
+                       class="comment-user">Carl G</a>
+                <span class="comment-date" dir="ltr"><span title="2012-12-15 20:07:52Z" class="relativetime-clean">Dec 15 '12 at 20:07</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-23935708" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="warm">6</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">For the second exception, the syntax <code>o instanceof Set&lt;?&gt;</code> is also permitted to avoid the raw type (though it&#39;s only superficial in this case).</span>
+                    &ndash;&nbsp;<a href="/users/697449/paul-bellora"
+                       title="40,565 reputation"
+                       class="comment-user">Paul Bellora</a>
+                <span class="comment-date" dir="ltr"><span title="2013-05-20 04:20:46Z" class="relativetime-clean">May 20 '13 at 4:20</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-37265759" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="warm">6</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">/me Slow claps at end of answer</span>
+                    &ndash;&nbsp;<a href="/users/1669208/screenmutt"
+                       title="5,868 reputation"
+                       class="comment-user">screenmutt</a>
+                <span class="comment-date" dir="ltr"><span title="2014-06-10 18:56:52Z" class="relativetime-clean">Jun 10 '14 at 18:56</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-51052430" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="warm">5</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">&quot;Non-reified&quot; is another way of saying that they are erased. The compiler knows what the generic parameters are, but that information is not passed on to the generated bytecode. The JLS requires that class literals have no type parameters.</span>
+                    &ndash;&nbsp;<a href="/users/1977887/erick-g-hagstrom"
+                       title="3,854 reputation"
+                       class="comment-user">Erick G. Hagstrom</a>
+                <span class="comment-date" dir="ltr"><span title="2015-07-21 18:24:42Z" class="relativetime-clean">Jul 21 '15 at 18:24</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-61026623" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@OldCurmudgeon That&#39;s interesting. I mean officially it&#39;s <i>neither</i>, because a class literal defined as just <code>TypeName.class</code>, where <code>TypeName</code> is a plain identifier (<a href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html#jls-15.8.2" rel="nofollow noreferrer">jls</a>). Speaking hypothetically, I guess it could really be either. Maybe as a clue, <code>List&lt;String&gt;.class</code> is the variant that the JLS specifically calls a compiler error, so if they ever add it to the language I&#39;d expect that that is the one they use.</span>
+                    &ndash;&nbsp;<a href="/users/2891664/radiodef"
+                       title="26,949 reputation"
+                       class="comment-user">Radiodef</a>
+                <span class="comment-date" dir="ltr"><span title="2016-04-19 14:09:23Z" class="relativetime-clean">Apr 19 '16 at 14:09</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-2770692" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link  dno"
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   ></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href=# onclick="">show <b>6</b> more comments</a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+<div class="everyonelovesstackoverflow" id="clc-mlb"></div>
+  
+<a name="2777051"></a>
+<div id="answer-2777051" class="answer" data-answerid="2777051"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="2777051">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">42</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<blockquote>
+  <p>What are raw types in Java, and why do I often hear that they shouldn't be used in new code?</p>
+</blockquote>
+
+<p>Raw-types are ancient history of the Java language. In the beginning there were <code>Collections</code> and they held <code>Objects</code> nothing more and nothing less. Every operation on <code>Collections</code> required casts from <code>Object</code> to the desired type.</p>
+
+<pre><code>List aList = new ArrayList();
+String s = "Hello World!";
+aList.add(s);
+String c = (String)aList.get(0);
+</code></pre>
+
+<p>While this worked most of the time, errors did happen</p>
+
+<pre><code>List aNumberList = new ArrayList();
+String one = "1";//Number one
+aNumberList.add(one);
+Integer iOne = (Integer)aNumberList.get(0);//Insert ClassCastException here
+</code></pre>
+
+<p>The old typeless collections could not enforce type-safety so the programmer had to remember what he stored within a collection.<br>
+Generics where invented to get around this limitation, the developer would declare the stored type once and the compiler would do it instead.</p>
+
+<pre><code>List&lt;String&gt; aNumberList = new ArrayList&lt;String&gt;();
+aNumberList.add("one");
+Integer iOne = aNumberList.get(0);//Compile time error
+String sOne = aNumberList.get(0);//works fine
+</code></pre>
+
+<p>For Comparison:</p>
+
+<pre><code>// Old style collections now known as raw types
+List aList = new ArrayList(); //Could contain anything
+// New style collections with Generics
+List&lt;String&gt; aList = new ArrayList&lt;String&gt;(); //Contains only Strings
+</code></pre>
+
+<p>More complex the Compareable interface:</p>
+
+<pre><code>//raw, not type save can compare with Other classes
+class MyCompareAble implements CompareAble
+{
+   int id;
+   public int compareTo(Object other)
+   {return this.id - ((MyCompareAble)other).id;}
+}
+//Generic
+class MyCompareAble implements CompareAble&lt;MyCompareAble&gt;
+{
+   int id;
+   public int compareTo(MyCompareAble other)
+   {return this.id - other.id;}
+}
+</code></pre>
+
+<p>Note that it is impossible to implement the <code>CompareAble</code> interface with <code>compareTo(MyCompareAble)</code> with raw types.
+Why you should not use them:</p>
+
+<ul>
+<li>Any <code>Object</code> stored in a <code>Collection</code> has to be cast before it can be used</li>
+<li>Using generics enables compile time checks</li>
+<li>Using raw types is the same as storing each value as <code>Object</code></li>
+</ul>
+
+<p>What the compiler does:
+Generics are backward compatible, they use the same java classes as the raw types do. The magic happens mostly at compile time.</p>
+
+<pre><code>List&lt;String&gt; someStrings = new ArrayList&lt;String&gt;();
+someStrings.add("one");
+String one = someStrings.get(0);
+</code></pre>
+
+<p>Will be compiled as:</p>
+
+<pre><code>List someStrings = new ArrayList();
+someStrings.add("one"); 
+String one = (String)someStrings.get(0);
+</code></pre>
+
+<p>This is the same code you would write if you used the raw types directly. Thought I'm not sure what happens with the <code>CompareAble</code> interface, I guess that it creates two <code>compareTo</code> functions, one taking a <code>MyCompareAble</code> and the other taking an <code>Object</code> and passing it to the first after casting it.</p>
+
+<p>What are the alternatives to raw types: Use <a href="http://java.sun.com/docs/books/tutorial/extra/generics/index.html" rel="noreferrer">generics</a></p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/2777051" title="short permalink to this answer" class="short-link" id="link-post-2777051">share</a><span class="lsep">|</span><a href="/posts/2777051/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/2777051/revisions" title="show all edits to this post">edited <span title="2015-11-21 00:48:17Z" class="relativetime">Nov 21 '15 at 0:48</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/4926126/jiaweizhang"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/6U8yw.png?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/4926126/jiaweizhang">jiaweizhang</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">620</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="6 silver badges"><span class="badge2"></span><span class="badgecount">6</span></span><span title="26 bronze badges"><span class="badge3"></span><span class="badgecount">26</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2010-05-05 21:50:47Z" class="relativetime">May 5 '10 at 21:50</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/216111/josefx"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/4f6b5ef485ac16233e1536193245fc55?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/216111/josefx">josefx</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 12,115" dir="ltr">12.1k</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="24 silver badges"><span class="badge2"></span><span class="badgecount">24</span></span><span title="50 bronze badges"><span class="badge3"></span><span class="badgecount">50</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-2777051" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-2777051" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="18167472"></a>
+<div id="answer-18167472" class="answer" data-answerid="18167472"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="18167472">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">20</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>A raw type is the name of a generic class or interface without any type arguments. For example, given the generic Box class:</p>
+
+<pre><code>public class Box&lt;T&gt; {
+    public void set(T t) { /* ... */ }
+    // ...
+}
+</code></pre>
+
+<p>To create a parameterized type of <code>Box&lt;T&gt;</code>, you supply an actual type argument for the formal type parameter <code>T</code>:</p>
+
+<pre><code>Box&lt;Integer&gt; intBox = new Box&lt;&gt;();
+</code></pre>
+
+<p>If the actual type argument is omitted, you create a raw type of <code>Box&lt;T&gt;</code>:</p>
+
+<pre><code>Box rawBox = new Box();
+</code></pre>
+
+<p>Therefore, <code>Box</code> is the raw type of the generic type <code>Box&lt;T&gt;</code>. However, a non-generic class or interface type is not a raw type.</p>
+
+<p>Raw types show up in legacy code because lots of API classes (such as the Collections classes) were not generic prior to JDK 5.0. When using raw types, you essentially get pre-generics behavior — a <code>Box</code> gives you <code>Object</code>s. For backward compatibility, assigning a parameterized type to its raw type is allowed:</p>
+
+<pre><code>Box&lt;String&gt; stringBox = new Box&lt;&gt;();
+Box rawBox = stringBox;               // OK
+</code></pre>
+
+<p>But if you assign a raw type to a parameterized type, you get a warning:</p>
+
+<pre><code>Box rawBox = new Box();           // rawBox is a raw type of Box&lt;T&gt;
+Box&lt;Integer&gt; intBox = rawBox;     // warning: unchecked conversion
+</code></pre>
+
+<p>You also get a warning if you use a raw type to invoke generic methods defined in the corresponding generic type:</p>
+
+<pre><code>Box&lt;String&gt; stringBox = new Box&lt;&gt;();
+Box rawBox = stringBox;
+rawBox.set(8);  // warning: unchecked invocation to set(T)
+</code></pre>
+
+<p>The warning shows that raw types bypass generic type checks, deferring the catch of unsafe code to runtime. Therefore, you should avoid using raw types.</p>
+
+<p>The Type Erasure section has more information on how the Java compiler uses raw types.</p>
+
+<h3>Unchecked Error Messages</h3>
+
+<p>As mentioned previously, when mixing legacy code with generic code, you may encounter warning messages similar to the following:</p>
+
+<blockquote>
+  <p>Note: Example.java uses unchecked or unsafe operations.</p>
+  
+  <p>Note: Recompile with -Xlint:unchecked for details.</p>
+</blockquote>
+
+<p>This can happen when using an older API that operates on raw types, as shown in the following example:</p>
+
+<pre><code>public class WarningDemo {
+    public static void main(String[] args){
+        Box&lt;Integer&gt; bi;
+        bi = createBox();
+    }
+
+    static Box createBox(){
+        return new Box();
+    }
+}
+</code></pre>
+
+<p>The term "unchecked" means that the compiler does not have enough type information to perform all type checks necessary to ensure type safety. The "unchecked" warning is disabled, by default, though the compiler gives a hint. To see all "unchecked" warnings, recompile with -Xlint:unchecked.</p>
+
+<p>Recompiling the previous example with -Xlint:unchecked reveals the following additional information:</p>
+
+<pre><code>WarningDemo.java:4: warning: [unchecked] unchecked conversion
+found   : Box
+required: Box&lt;java.lang.Integer&gt;
+        bi = createBox();
+                      ^
+1 warning
+</code></pre>
+
+<p>To completely disable unchecked warnings, use the -Xlint:-unchecked flag. The <code>@SuppressWarnings("unchecked")</code> annotation suppresses unchecked warnings. If you are unfamiliar with the <code>@SuppressWarnings</code> syntax, see Annotations.</p>
+
+<p>Original source: <a href="http://docs.oracle.com/javase/tutorial/java/generics/rawTypes.html" rel="noreferrer">Java Tutorials</a> </p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/18167472" title="short permalink to this answer" class="short-link" id="link-post-18167472">share</a><span class="lsep">|</span><a href="/posts/18167472/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="/posts/18167472/revisions" title="show all edits to this post">edited <span title="2013-08-11 00:29:16Z" class="relativetime">Aug 11 '13 at 0:29</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/697449/paul-bellora"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/0d825a4fb8f4417045815f4c921aa0cc?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/697449/paul-bellora">Paul Bellora</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 40,565" dir="ltr">40.6k</span><span title="12 gold badges"><span class="badge1"></span><span class="badgecount">12</span></span><span title="98 silver badges"><span class="badge2"></span><span class="badgecount">98</span></span><span title="150 bronze badges"><span class="badge3"></span><span class="badgecount">150</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-08-10 23:58:29Z" class="relativetime">Aug 10 '13 at 23:58</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/1170677/adelin"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/FLeFp.jpg?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/1170677/adelin">Adelin</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">5,174</span><span title="13 gold badges"><span class="badge1"></span><span class="badgecount">13</span></span><span title="56 silver badges"><span class="badge2"></span><span class="badgecount">56</span></span><span title="101 bronze badges"><span class="badge3"></span><span class="badgecount">101</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-18167472" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-18167472" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="3051465"></a>
+<div id="answer-3051465" class="answer" data-answerid="3051465"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="3051465">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">17</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<pre><code> private static List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+</code></pre>
+
+<p>You should specify the type-parameter. </p>
+
+<p>The warning advises that types that are defined to support <a href="http://java.sun.com/j2se/1.5.0/docs/guide/language/generics.html" rel="noreferrer">generics</a> should be parameterized, rather than using their raw form.</p>
+
+<p><code>List</code> is defined to support generics: <code>public class List&lt;E&gt;</code>. This allows many type-safe operations, that are checked compile-time.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/3051465" title="short permalink to this answer" class="short-link" id="link-post-3051465">share</a><span class="lsep">|</span><a href="/posts/3051465/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2010-06-16 07:44:53Z" class="relativetime">Jun 16 '10 at 7:44</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/203907/bozho"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/07ej2.jpg?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/203907/bozho">Bozho</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 428,404" dir="ltr">428k</span><span title="93 gold badges"><span class="badge1"></span><span class="badgecount">93</span></span><span title="854 silver badges"><span class="badge2"></span><span class="badgecount">854</span></span><span title="1003 bronze badges"><span class="badge3"></span><span class="badgecount">1003</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3051465" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-41271218" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Now replaced by <i>diamond inference</i> in Java 7 -- <code>private static List&lt;String&gt; list = new ArrayList&lt;&gt;();</code></span>
+                    &ndash;&nbsp;<a href="/users/1298685/ian-campbell"
+                       title="1,167 reputation"
+                       class="comment-user">Ian Campbell</a>
+                <span class="comment-date" dir="ltr"><span title="2014-10-10 14:03:13Z" class="relativetime-clean">Oct 10 '14 at 14:03</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-3051465" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="2770338"></a>
+<div id="answer-2770338" class="answer" data-answerid="2770338"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="2770338">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">13</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>A "raw" type in Java is a class which is non-generic and deals with "raw" Objects, rather than type-safe generic type parameters.</p>
+
+<p>For example, before Java generics was available, you would use a collection class like this:</p>
+
+<pre><code>LinkedList list = new LinkedList();
+list.add(new MyObject());
+MyObject myObject = (MyObject)list.get(0);
+</code></pre>
+
+<p>When you add your object to the list, it doesn't care what type of object it is, and when you get it from the list, you have to explicitly cast it to the type you are expecting.</p>
+
+<p>Using generics, you remove the "unknown" factor, because you must explicitly specify which type of objects can go in the list:</p>
+
+<pre><code>LinkedList&lt;MyObject&gt; list = new LinkedList&lt;MyObject&gt;();
+list.add(new MyObject());
+MyObject myObject = list.get(0);
+</code></pre>
+
+<p>Notice that with generics you don't have to cast the object coming from the get call, the collection is pre-defined to only work with MyObject.  This very fact is the main driving factor for generics.  It changes a source of runtime errors into something that can be checked at compile time.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/2770338" title="short permalink to this answer" class="short-link" id="link-post-2770338">share</a><span class="lsep">|</span><a href="/posts/2770338/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2010-05-05 02:58:03Z" class="relativetime">May 5 '10 at 2:58</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/60096/andy-white"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/5bf1f11c3493fb7dc5b4045c90a80403?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/60096/andy-white">Andy White</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 52,345" dir="ltr">52.3k</span><span title="41 gold badges"><span class="badge1"></span><span class="badgecount">41</span></span><span title="149 silver badges"><span class="badge2"></span><span class="badgecount">149</span></span><span title="192 bronze badges"><span class="badge3"></span><span class="badgecount">192</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-2770338" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-2803728" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">More specifically, a raw type is what you get when you simply omit the type parameters for a generic type.  Raw types were really only ever a backwards-compatibility feature, and are potentially subject to removal.  You can get similar behavior using ? wildcard parameters.</span>
+                    &ndash;&nbsp;<a href="/users/331137/john-flatness"
+                       title="21,408 reputation"
+                       class="comment-user">John Flatness</a>
+                <span class="comment-date" dir="ltr"><span title="2010-05-05 03:10:01Z" class="relativetime-clean">May 5 '10 at 3:10</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-2804111" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@zerocrates: similar but different! Using <code>?</code> still offers type safety. I covered it in my answer.</span>
+                    &ndash;&nbsp;<a href="/users/276101/polygenelubricants"
+                       title="242,858 reputation"
+                       class="comment-user owner">polygenelubricants</a>
+                <span class="comment-date" dir="ltr"><span title="2010-05-05 05:08:49Z" class="relativetime-clean">May 5 '10 at 5:08</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-2770338" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="2770631"></a>
+<div id="answer-2770631" class="answer" data-answerid="2770631"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="2770631">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">11</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p><em>What is a raw type and why do I often hear that they shouldn't be used in new code?</em></p>
+
+<p>A "raw type" is the use of a generic class without specifying a type argument(s) for its parameterized type(s), e.g. using <code>List</code> instead of <code>List&lt;String&gt;</code>. When generics were introduced into Java, several classes were updated to use generics.  Using these class as a "raw type" (without specifying a type argument) allowed legacy code to still compile.</p>
+
+<p>"Raw types" are used for backwards compatibility. Their use in new code is not recommended because using the generic class with a type argument allows for stronger typing, which in turn may improve code understandability and lead to catching potential problems earlier.</p>
+
+<p><em>What is the alternative if we can't use raw types, and how is it better?</em></p>
+
+<p>The preferred alternative is to use generic classes as intended - with a suitable type argument (e.g. <code>List&lt;String&gt;</code>). This allows the programmer to specify types more specifically, conveys more meaning to future maintainers about the intended use of a variable or data structure, and it allows compiler to enforce better type-safety.  These advantages together may improve code quality and help prevent the introduction of some coding errors.</p>
+
+<p>For example, for a method where the programmer wants to ensure a List variable called 'names' contains only Strings:</p>
+
+<pre><code>List&lt;String&gt; names = new ArrayList&lt;String&gt;();
+names.add("John");          // OK
+names.add(new Integer(1));  // compile error
+</code></pre>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/2770631" title="short permalink to this answer" class="short-link" id="link-post-2770631">share</a><span class="lsep">|</span><a href="/posts/2770631/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2010-05-05 04:31:57Z" class="relativetime">May 5 '10 at 4:31</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/11296/bert-f"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/f421285f45fc6d8d679b198dd318f35f?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/11296/bert-f">Bert F</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 52,349" dir="ltr">52.3k</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="77 silver badges"><span class="badge2"></span><span class="badgecount">77</span></span><span title="116 bronze badges"><span class="badge3"></span><span class="badgecount">116</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-2770631" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-2804016" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Ah, so tempted to copy <code>polygenelubricants</code>&#39;s &quot;raw type&quot; references from <a href="http://stackoverflow.com/questions/2770111/how-can-we-improve-performance-of-this-piece-of-code/2770253#2770253" title="how can we improve performance of this piece of code">stackoverflow.com/questions/2770111/&hellip;</a> into my own answer, but I suppose I&#39;ll leave them for use in his/her own answer.</span>
+                    &ndash;&nbsp;<a href="/users/11296/bert-f"
+                       title="52,349 reputation"
+                       class="comment-user">Bert F</a>
+                <span class="comment-date" dir="ltr"><span title="2010-05-05 04:38:03Z" class="relativetime-clean">May 5 '10 at 4:38</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-2804097" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">yes, I&#39;ve been essentially copying-and-pasting that segment everywhere people use raw types on stackoverflow, and finally decided to just have one question to refer to from now on. I hope it&#39;s a good contribution for the community.</span>
+                    &ndash;&nbsp;<a href="/users/276101/polygenelubricants"
+                       title="242,858 reputation"
+                       class="comment-user owner">polygenelubricants</a>
+                <span class="comment-date" dir="ltr"><span title="2010-05-05 05:02:36Z" class="relativetime-clean">May 5 '10 at 5:02</span></span>
+                        <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-2804149" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@polygenelubricants I noticed - we hit some of the same questions :-)</span>
+                    &ndash;&nbsp;<a href="/users/11296/bert-f"
+                       title="52,349 reputation"
+                       class="comment-user">Bert F</a>
+                <span class="comment-date" dir="ltr"><span title="2010-05-05 05:17:48Z" class="relativetime-clean">May 5 '10 at 5:17</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-64815198" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">this answer is much better than the accepted one - concise and simple</span>
+                    &ndash;&nbsp;<a href="/users/1770601/ha9u63ar"
+                       title="2,662 reputation"
+                       class="comment-user">ha9u63ar</a>
+                <span class="comment-date" dir="ltr"><span title="2016-08-02 11:47:56Z" class="relativetime-clean">Aug 2 '16 at 11:47</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-78059625" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@ha9u63ar: Indeed. In general concise and simple answers are at least as good as the long and accepted ones.</span>
+                    &ndash;&nbsp;<a href="/users/1835769/displayname"
+                       title="5,807 reputation"
+                       class="comment-user">displayName</a>
+                <span class="comment-date" dir="ltr"><span title="2017-08-07 15:02:38Z" class="relativetime-clean">Aug 7 at 15:02</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-2770631" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="3051504"></a>
+<div id="answer-3051504" class="answer" data-answerid="3051504"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="3051504">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">10</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>The compiler wants you to write this:</p>
+
+<pre><code>private static List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+</code></pre>
+
+<p>because otherwise, you could add any type you like into <code>list</code>, making the instantiation as <code>new ArrayList&lt;String&gt;()</code> pointless. Java generics are a compile-time feature only, so an object created with <code>new ArrayList&lt;String&gt;()</code> will happily accept <code>Integer</code> or <code>JFrame</code> elements if assigned to a reference of the "raw type" <code>List</code> - the object itself knows nothing about what types it's supposed to contain, only the compiler does.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/3051504" title="short permalink to this answer" class="short-link" id="link-post-3051504">share</a><span class="lsep">|</span><a href="/posts/3051504/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2010-06-16 07:53:30Z" class="relativetime">Jun 16 '10 at 7:53</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/16883/michael-borgwardt"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/0382297f273df0a544b0c6c2734de096?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/16883/michael-borgwardt">Michael Borgwardt</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 266,593" dir="ltr">267k</span><span title="54 gold badges"><span class="badge1"></span><span class="badgecount">54</span></span><span title="393 silver badges"><span class="badge2"></span><span class="badgecount">393</span></span><span title="632 bronze badges"><span class="badge3"></span><span class="badgecount">632</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3051504" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-3051504" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="2770671"></a>
+<div id="answer-2770671" class="answer" data-answerid="2770671"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="2770671">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">7</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>A <em>raw</em>-type is the a lack of a <em>type parameter</em> when using a generic type.</p>
+
+<p>Raw-type should not be used because it could cause runtime errors, like inserting a <code>double</code> into what was supposed to be a <code>Set</code> of <code>int</code>s.</p>
+
+<pre><code>Set set = new HashSet();
+set.add(3.45); //ok
+</code></pre>
+
+<p>When retrieving the stuff from the <code>Set</code>, you don't know what is coming out. Let's assume that you expect it to be all <code>int</code>s, you are casting it to <code>Integer</code>; exception at runtime when the <code>double</code> 3.45 comes along.</p>
+
+<p>With a <em>type parameter</em> added to your <code>Set</code>, you will get a compile error at once. This preemptive error lets you fix the problem before something blows up during runtime (thus saving on time and effort).</p>
+
+<pre><code>Set&lt;Integer&gt; set = new HashSet&lt;Integer&gt;();
+set.add(3.45); //NOT ok.
+</code></pre>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/2770671" title="short permalink to this answer" class="short-link" id="link-post-2770671">share</a><span class="lsep">|</span><a href="/posts/2770671/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/2770671/revisions" title="show all edits to this post">edited <span title="2015-12-01 15:38:00Z" class="relativetime">Dec 1 '15 at 15:38</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/1076171/the-nail"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/24f2107d12b737d2fb97f47f4e87e706?s=32&amp;d=identicon&amp;r=PG&amp;f=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/1076171/the-nail">The Nail</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">5,668</span><span title="23 silver badges"><span class="badge2"></span><span class="badgecount">23</span></span><span title="39 bronze badges"><span class="badge3"></span><span class="badgecount">39</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2010-05-05 04:44:16Z" class="relativetime">May 5 '10 at 4:44</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/295339/lars-andren"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/d43310e2b983d83f5b57ad70785b151b?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/295339/lars-andren">Lars Andren</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">5,357</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="27 silver badges"><span class="badge2"></span><span class="badgecount">27</span></span><span title="48 bronze badges"><span class="badge3"></span><span class="badgecount">48</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-2770671" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-2770671" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="37211785"></a>
+<div id="answer-37211785" class="answer" data-answerid="37211785"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="37211785">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">7</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Here I am Considering multiple cases  through which you can clearify  the concept</p>
+
+<pre><code>1. ArrayList&lt;String&gt; arr = new ArrayList&lt;String&gt;();
+2. ArrayList&lt;String&gt; arr = new ArrayList();
+3. ArrayList arr = new ArrayList&lt;String&gt;();
+</code></pre>
+
+<h2>Case 1</h2>
+
+<p><code>ArrayList&lt;String&gt; arr</code> it is a <code>ArrayList</code> reference variable with type <code>String</code> which reference to a <code>ArralyList</code> Object of Type <code>String</code>. It means it can hold only String type Object.</p>
+
+<p>It is a Strict to <code>String</code> not  a Raw Type so, It will never raise an warning .</p>
+
+<pre><code>    arr.add("hello");// alone statement will compile successfully and no warning.
+
+    arr.add(23);  //prone to compile time error.
+     //error: no suitable method found for add(int)
+</code></pre>
+
+<h2>Case 2</h2>
+
+<p>In this case <code>ArrayList&lt;String&gt; arr</code> is a strict type but your Object <code>new ArrayList();</code> is a raw type. </p>
+
+<pre><code>    arr.add("hello"); //alone this compile but raise the warning.
+    arr.add(23);  //again prone to compile time error.
+    //error: no suitable method found for add(int)
+</code></pre>
+
+<p>here <code>arr</code> is a Strict type. So, It will raise compile time error when adding a <code>integer</code>.</p>
+
+<blockquote>
+  <p><strong>Warning</strong> :- A <code>Raw</code> Type Object is referenced to a <code>Strict</code> type Referenced Variable of <code>ArrayList</code>.</p>
+</blockquote>
+
+<h2>Case 3</h2>
+
+<p>In this case <code>ArrayList arr</code> is a raw type but your Object <code>new ArrayList&lt;String&gt;();</code> is a Strict type. </p>
+
+<pre><code>    arr.add("hello");  
+    arr.add(23);  //compiles fine but raise the warning.
+</code></pre>
+
+<p>It will add any type of Object into it because <code>arr</code> is a Raw Type.</p>
+
+<blockquote>
+  <p><strong>Warning</strong> :- A <code>Strict</code> Type Object is referenced to a <code>raw</code> type referenced Variable.</p>
+</blockquote>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/37211785" title="short permalink to this answer" class="short-link" id="link-post-37211785">share</a><span class="lsep">|</span><a href="/posts/37211785/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/37211785/revisions" title="show all edits to this post">edited <span title="2017-07-10 14:14:44Z" class="relativetime">Jul 10 at 14:14</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/1915893/aluan-haddad"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/580b31b0be7173bbc477ca1d6967d87c?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/1915893/aluan-haddad">Aluan Haddad</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">5,946</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="10 silver badges"><span class="badge2"></span><span class="badgecount">10</span></span><span title="25 bronze badges"><span class="badge3"></span><span class="badgecount">25</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2016-05-13 13:51:04Z" class="relativetime">May 13 '16 at 13:51</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/4501480/vikrant-kashyap"><div class="gravatar-wrapper-32"><img src="https://lh3.googleusercontent.com/-WM3Hs4WWMBY/AAAAAAAAAAI/AAAAAAAAAAA/u2L29rWnQH8/photo.jpg?sz=32" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/4501480/vikrant-kashyap">Vikrant Kashyap</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,888</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="10 silver badges"><span class="badge2"></span><span class="badgecount">10</span></span><span title="27 bronze badges"><span class="badge3"></span><span class="badgecount">27</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-37211785" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-37211785" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="3051481"></a>
+<div id="answer-3051481" class="answer" data-answerid="3051481"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="3051481">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>What is saying is that your <code>list</code> is a <code>List</code> of unespecified objects. That is that Java does not know what kind of objects are inside the list. Then when you want to iterate the list you have to cast every element, to be able to access the properties of that element (in this case, String).</p>
+
+<p>In general is a better idea to parametrize the collections, so you don't have conversion problems, you will only be able to add elements of the parametrized type and your editor will offer you the appropiate methods to select.</p>
+
+<pre><code>private static List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+</code></pre>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/3051481" title="short permalink to this answer" class="short-link" id="link-post-3051481">share</a><span class="lsep">|</span><a href="/posts/3051481/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2010-06-16 07:47:59Z" class="relativetime">Jun 16 '10 at 7:47</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/222851/pakore"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/aIRcz.jpg?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/222851/pakore">pakore</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">7,052</span><span title="8 gold badges"><span class="badge1"></span><span class="badgecount">8</span></span><span title="34 silver badges"><span class="badge2"></span><span class="badgecount">34</span></span><span title="57 bronze badges"><span class="badge3"></span><span class="badgecount">57</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3051481" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-3051481" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="37415442"></a>
+<div id="answer-37415442" class="answer" data-answerid="37415442"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="37415442">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p><a href="https://docs.oracle.com/javase/tutorial/java/generics/rawTypes.html" rel="nofollow noreferrer">tutorial page</a>.  </p>
+
+<p>A raw type is the name of a generic class or interface without any type arguments. For example, given the generic Box class:  </p>
+
+<pre><code>public class Box&lt;T&gt; {
+    public void set(T t) { /* ... */ }
+    // ...
+}
+</code></pre>
+
+<p>To create a parameterized type of Box, you supply an actual type argument for the formal type parameter T:  </p>
+
+<pre><code>Box&lt;Integer&gt; intBox = new Box&lt;&gt;();
+</code></pre>
+
+<p>If the actual type argument is omitted, you create a raw type of Box:  </p>
+
+<pre><code>Box rawBox = new Box();
+</code></pre>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/37415442" title="short permalink to this answer" class="short-link" id="link-post-37415442">share</a><span class="lsep">|</span><a href="/posts/37415442/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/37415442/revisions" title="show all edits to this post">edited <span title="2017-02-25 16:41:36Z" class="relativetime">Feb 25 at 16:41</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2016-05-24 13:42:09Z" class="relativetime">May 24 '16 at 13:42</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/448078/mykhaylo-adamovych"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/0cea45314cdd61d5e1f9dc6f0c1c0582?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/448078/mykhaylo-adamovych">Mykhaylo Adamovych</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">6,321</span><span title="13 gold badges"><span class="badge1"></span><span class="badgecount">13</span></span><span title="50 silver badges"><span class="badge2"></span><span class="badgecount">50</span></span><span title="76 bronze badges"><span class="badge3"></span><span class="badgecount">76</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-37415442" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-37415442" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="35835223"></a>
+<div id="answer-35835223" class="answer" data-answerid="35835223"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="35835223">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I found this page after doing some sample exercises and having the exact same puzzlement.</p>
+
+<p>============== I went from this code as provide by the sample ===============</p>
+
+<pre><code>public static void main(String[] args) throws IOException {
+
+    Map wordMap = new HashMap();
+    if (args.length &gt; 0) {
+        for (int i = 0; i &lt; args.length; i++) {
+            countWord(wordMap, args[i]);
+        }
+    } else {
+        getWordFrequency(System.in, wordMap);
+    }
+    for (Iterator i = wordMap.entrySet().iterator(); i.hasNext();) {
+        Map.Entry entry = (Map.Entry) i.next();
+        System.out.println(entry.getKey() + " :\t" + entry.getValue());
+    }
+</code></pre>
+
+<p>====================== To This code ========================</p>
+
+<pre><code>public static void main(String[] args) throws IOException {
+    // replace with TreeMap to get them sorted by name
+    Map&lt;String, Integer&gt; wordMap = new HashMap&lt;String, Integer&gt;();
+    if (args.length &gt; 0) {
+        for (int i = 0; i &lt; args.length; i++) {
+            countWord(wordMap, args[i]);
+        }
+    } else {
+        getWordFrequency(System.in, wordMap);
+    }
+    for (Iterator&lt;Entry&lt;String, Integer&gt;&gt; i = wordMap.entrySet().iterator(); i.hasNext();) {
+        Entry&lt;String, Integer&gt; entry =   i.next();
+        System.out.println(entry.getKey() + " :\t" + entry.getValue());
+    }
+
+}
+</code></pre>
+
+<p>===============================================================================</p>
+
+<p>It may be safer but took 4  hours to demuddle the philosophy...</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/35835223" title="short permalink to this answer" class="short-link" id="link-post-35835223">share</a><span class="lsep">|</span><a href="/posts/35835223/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/35835223/revisions" title="show all edits to this post">edited <span title="2016-03-07 02:43:21Z" class="relativetime">Mar 7 '16 at 2:43</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/1402846/pang"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/z5AzI.png?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/1402846/pang">Pang</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">6,005</span><span title="14 gold badges"><span class="badge1"></span><span class="badgecount">14</span></span><span title="53 silver badges"><span class="badge2"></span><span class="badgecount">53</span></span><span title="89 bronze badges"><span class="badge3"></span><span class="badgecount">89</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2016-03-07 02:24:43Z" class="relativetime">Mar 7 '16 at 2:24</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/2442615/user2442615"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/837f44b15351a7e7aa46353c07200498?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/2442615/user2442615">user2442615</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">31</span><span title="3 bronze badges"><span class="badge3"></span><span class="badgecount">3</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-35835223" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-35835223" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+                    <div class="question-status">
+        <h2>                    <b>protected</b> by <a href="/users/1065197/luiggi-mendoza">Luiggi Mendoza</a> <span dir="ltr"><span title="2013-10-12 17:37:04Z" class="relativetime">Oct 12 '13 at 17:37</span></span>
+</h2>
+        <p>
+Thank you for your interest in this question. 
+Because it has attracted low-quality or spam answers that had to be removed, posting an answer now requires 10 <a href="/help/whats-reputation">reputation</a> on this site (the <a href="/help/privileges/new-user">association bonus does not count</a>).
+<br /><br />
+Would you like to answer one of these <a href="/unanswered?fromProtectedNotice=true">unanswered questions</a> instead?
+</p>
+    </div>
+
+
+
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Not the answer you&#39;re looking for?                            Browse other questions tagged <a href="/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="/questions/tagged/generics" class="post-tag" title="show questions tagged &#39;generics&#39;" rel="tag">generics</a> <a href="/questions/tagged/raw-types" class="post-tag" title="show questions tagged &#39;raw-types&#39;" rel="tag">raw-types</a>  or <a href="/questions/ask">ask your own question</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tr>
+                            <td>
+                                <p class="label-key">asked</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2010-05-05 02:48:53Z"><b>7 years, 4 months ago</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">viewed</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>147,360 times</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">active</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="?lastactivity" class="lastactivity-link" title="2017-07-15 00:01:17Z">1 month ago</a></b></p>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+                        
+            <div class="everyonelovesstackoverflow" id="clc-tsb"></div>
+            <script>try{;window.clc=window.clc||{},window.clc.init=window.clc.init||function(a){var b=window,c=b.document;try{if('function'!=typeof[].indexOf||!window.addEventListener||!a.allowed)return;var d=new RegExp(a.allowed);if(!d.test(location.hostname))return;if(b.clc.options)for(var e in b.clc.options)a[e]=b.clc.options[e];b.clc.cmd='undefined'==typeof b.clc.cmd?[]:b.clc.cmd,b.clc.autoload=b.clc.autoload||function(){'function'==typeof b.clc.load?b.clc.load():b.clc.cmd.push(function(a){a.load()})};var f=a.wv;if(c.hidden&&f)return void c.addEventListener('visibilitychange',function b(){c.hidden||(window.clc.init(a),c.removeEventListener('visibilitychange',b))});b.clc.options=a,a.al&&b.clc.autoload();var g=c.createElement('script');g.async=!0,g.src=a.lib,c.body.appendChild(g)}catch(a){}},window.clc.loadDisplayAds=window.clc.loadDisplayAds||function(){function a(a){b.googletag=b.googletag||{},b.googletag.cmd=b.googletag.cmd||[],b.googletag.cmd.push(a)}var b=window,c={slots:{lb:[[728,90]],mlb:[[728,90]],sb:[[300,250],[300,600]]},ids:{"dfp-tlb":'lb',"dfp-mlb":'mlb',"dfp-tsb":'sb',"clc-tlb":'lb',"clc-mlb":'mlb',"clc-tsb":'sb'}},d=/^\/tags\//.test(location.pathname)||/^\/questions\/tagged\//.test(location.pathname)?'tag-pages':'question-pages',e=/^dev\./.test(location.hostname)?'test/'+location.hostname:location.hostname;return function(f){var g=(f&&0<f.length?f:Object.keys(c.ids)).map(function(a){return document.getElementById(a)}).filter(function(a){return!!a&&/^\s*$/.test(a.innerHTML)}).map(function(a){return a.id});if(0!==g.length){a(function(){var a=b.googletag;a.pubads().enableSingleRequest();var f=b.dfp_targeting||{};f&&Object.keys(f).forEach(function(b){a.pubads().setTargeting(b,f[b])});for(var h=0,i=g;h<i.length;h++){var j=i[h],k=c.ids[j],l=c.slots[k];a.defineSlot('/'+'248424177'+'/'+e+'/'+k+'/'+d,l,j).addService(a.pubads())}a.enableServices();for(var j,m=0,n=g;m<n.length;m++)j=n[m],a.display(j)});var h=document.createElement('script');h.async=!0,h.src='https://www.googletagservices.com/tag/js/gpt.js',document.body.appendChild(h)}}}(),window.clc.loadDfp=window.clc.loadDisplayAds,window.clc.init.call(null, {"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=8eb17d1d4f2b","u":"https://clc.stackoverflow.com/markup.js","wa":true,"kt":2000,"tto":true,"h":"clc.stackoverflow.com","allowed":"^(((talent\\.)?stackoverflow)|(blog\\.codinghorror)|(serverfault|askubuntu)|([^\\.]+\\.stackexchange))\\.com$","wv":true,"al":false,"fb":null});}catch(e){typeof console!=='undefined'&&typeof console.error==='function'&&console.error(e);}</script>
+            <div id="hireme"></div>
+            <script>try{window.clc_request='ApkRUILS9NQIAAAAAJFFKgACAAAAAgAAAAAtAAAAfGphdmF8Z2VuZXJpY3N8cmF3LXR5cGVzfHgtaW5kdXN0cnktYWNhZGVtaWN8AO5aA-jchdpTeRk';typeof clc!=='undefined'&&typeof clc.autoload==='function'&&clc.autoload();}catch(e){typeof console!=='undefined'&&typeof console.error==='function'&&console.error(e);}</script>
+            
+
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="/q/32438466" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">7</div>
+	</a>
+	<a href="/questions/32438466/why-type-is-not-inferred-when-leaving-away-generics-operator?noredirect=1" class="question-hyperlink">Why type is not inferred when leaving away generics operator</a>
+</div>
+<div class="spacer">
+	<a href="/q/18633357" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">4</div>
+	</a>
+	<a href="/questions/18633357/why-cannot-add-string-to-type-to-list?noredirect=1" class="question-hyperlink">Why cannot add String to type to List&lt;?&gt;?</a>
+</div>
+<div class="spacer">
+	<a href="/q/5436656" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">7</div>
+	</a>
+	<a href="/questions/5436656/why-does-the-java-compiler-complain-on-using-foreach-with-a-raw-type?noredirect=1" class="question-hyperlink">Why does the Java Compiler complain on using foreach with a raw type?</a>
+</div>
+<div class="spacer">
+	<a href="/q/3316095" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">5</div>
+	</a>
+	<a href="/questions/3316095/generics-in-for-each-loop-problem-if-instance-does-not-have-generic-type-assigne?noredirect=1" class="question-hyperlink">Generics in for each loop problem if instance does not have generic type assigned</a>
+</div>
+<div class="spacer">
+	<a href="/q/9573031" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="/questions/9573031/iterator-vs-iterator-in-java?noredirect=1" class="question-hyperlink">Iterator&lt;?&gt; vs Iterator in java</a>
+</div>
+<div class="spacer">
+	<a href="/q/24563349" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="/questions/24563349/java-generics-type-mismatch-cannot-convert-from-object-to?noredirect=1" class="question-hyperlink">Java generics. Type mismatch: cannot convert from object to</a>
+</div>
+<div class="spacer">
+	<a href="/q/28003013" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">-2</div>
+	</a>
+	<a href="/questions/28003013/incompatible-types-object-cannot-be-converted-to-number?noredirect=1" class="question-hyperlink">incompatible types object cannot be converted to Number</a>
+</div>
+<div class="spacer">
+	<a href="/q/37122491" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="/questions/37122491/object-cannot-be-converted-to-entrystring-integer?noredirect=1" class="question-hyperlink">Object cannot be converted to Entry&lt;String,Integer&gt;</a>
+</div>
+<div class="spacer">
+	<a href="/q/38047298" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="/questions/38047298/hashmapinteger-string-how-is-it-taking-values-string-integer?noredirect=1" class="question-hyperlink">HashMap&lt;Integer,String&gt; how is it taking values &lt;String,Integer&gt;</a>
+</div>
+<div class="spacer">
+	<a href="/q/20765809" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">3</div>
+	</a>
+	<a href="/questions/20765809/java-generics-understanding?noredirect=1" class="question-hyperlink">Java generics understanding</a>
+</div>					<div class="spacer more">
+				<a href="/questions/linked/2770321">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer"><a href="/q/5436656" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">7</div></a><a href="/questions/5436656/why-does-the-java-compiler-complain-on-using-foreach-with-a-raw-type" class="question-hyperlink">Why does the Java Compiler complain on using foreach with a raw type?</a></div><div class="spacer"><a href="/q/8805428" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">4</div></a><a href="/questions/8805428/avoiding-raw-types-in-java-message-dispatcher" class="question-hyperlink">Avoiding raw types in Java message dispatcher</a></div><div class="spacer"><a href="/q/11007723" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">17</div></a><a href="/questions/11007723/combining-raw-types-and-generic-methods" class="question-hyperlink">Combining Raw Types and Generic Methods</a></div><div class="spacer"><a href="/q/11227809" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">19045</div></a><a href="/questions/11227809/why-is-it-faster-to-process-a-sorted-array-than-an-unsorted-array" class="question-hyperlink">Why is it faster to process a sorted array than an unsorted array?</a></div><div class="spacer"><a href="/q/13752436" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="/questions/13752436/java-generics-and-raw-type" class="question-hyperlink">Java generics and raw type</a></div><div class="spacer"><a href="/q/19088867" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="/questions/19088867/raw-type-and-type-parameter" class="question-hyperlink">Raw type and type parameter</a></div><div class="spacer"><a href="/q/22203257" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">4</div></a><a href="/questions/22203257/is-this-raw-type-assignment-type-safe-listt-new-arraylist" class="question-hyperlink">Is this raw type assignment type-safe? List&lt;T&gt; = new ArrayList();</a></div><div class="spacer"><a href="/q/26733112" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">4</div></a><a href="/questions/26733112/java-generics-and-raw-types" class="question-hyperlink">Java Generics and Raw Types</a></div><div class="spacer"><a href="/q/29572014" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="/questions/29572014/can-we-use-raw-types-for-t-extends-someclass" class="question-hyperlink">Can we use raw types for &lt;T extends SomeClass&gt;?</a></div><div class="spacer"><a href="/q/43171145" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">4</div></a><a href="/questions/43171145/java-weird-compilation-error-with-raw-generic-type-parameter-and-optionals" class="question-hyperlink">Java weird compilation error with raw generic type parameter and Optionals</a></div>
+                    </div>
+                </div>
+
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot"
+           class="js-gps-track" 
+           data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li >
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/95446/is-it-standard-for-a-math-research-paper-to-include-less-detail-in-proofs-than-a" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it standard for a math research paper to include less detail in proofs than a typical textbook would?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/106376/what-do-devils-eat-and-how-do-they-get-it" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What do Devils eat, and how do they get it?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-mathoverflow" title="MathOverflow"></div><a href="https://mathoverflow.net/questions/280455/can-you-remove-all-the-extra-arithemetic-from-zfc-or-other-theories" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can you remove all the extra arithemetic from ZFC (or other theories)?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-retrocomputing" title="Retrocomputing Stack Exchange"></div><a href="https://retrocomputing.stackexchange.com/questions/4647/core-memory-stability" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:648 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Core Memory Stability
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/141725/make-an-alphabet-searchlight" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Make an alphabet searchlight!
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/3253/how-to-get-friends-partner-to-stop-texting-me-pointless-pictures-videos" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to get friends/partner to stop texting me pointless pictures/videos
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/141675/when-do-i-get-my-sandwich" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    When do I get my sandwich?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="https://money.stackexchange.com/questions/84753/how-to-interpret-stock-performance-charts-vs-sp-500" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to interpret stock performance charts &quot;vs S&amp;P 500&quot;
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-movies" title="Movies &amp; TV Stack Exchange"></div><a href="https://movies.stackexchange.com/questions/80005/why-didnt-gollum-take-the-ring-back-from-bilbo-between-the-hobbit-and-the-lord" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why didn&#39;t Gollum take the ring back from Bilbo between The Hobbit and The Lord of the Rings?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-dba" title="Database Administrators Stack Exchange"></div><a href="https://dba.stackexchange.com/questions/185123/locate-the-smallest-missing-element-based-on-a-specific-formula" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Locate the smallest missing element based on a specific formula
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2418096/is-it-possible-to-determine-if-you-were-on-a-mobius-strip" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it possible to determine if you were on a mobius strip?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="https://electronics.stackexchange.com/questions/327629/why-do-we-use-step-response" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why do we use step response?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/168933/why-did-siriuss-outlook-towards-house-elves-change-drastically-from-gof-to-ootp" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why did Sirius&#39;s outlook towards House Elves change drastically from GoF to OotP?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/106315/i-erased-an-obstacle-from-having-ever-existed-should-i-get-any-experience-for-i" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    I erased an obstacle from having ever existed. Should I get any experience for it?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="https://codereview.stackexchange.com/questions/174797/simple-blackjack-game-in-console" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Simple Blackjack game in console
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-chemistry" title="Chemistry Stack Exchange"></div><a href="https://chemistry.stackexchange.com/questions/82219/can-a-solution-of-fecl2-go-bad-over-time" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:431 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can a solution of FeCl2 go bad over time?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-earthscience" title="Earth Science Stack Exchange"></div><a href="https://earthscience.stackexchange.com/questions/12223/why-were-both-the-sun-and-the-moon-red-today" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:553 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why were both the sun and the moon red today?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="https://security.stackexchange.com/questions/168807/why-doesnt-tornado-have-session" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why doesn&#39;t Tornado have session
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="https://english.stackexchange.com/questions/408391/idiom-for-explaining-something-too-thoroughly" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Idiom for explaining something too thoroughly
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="https://ell.stackexchange.com/questions/141205/what-does-it-mean-to-dine-off-something" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does it mean to &quot;dine off&quot; something?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="https://ell.stackexchange.com/questions/141216/using-a-cold-yesterday-as-noun-phrase" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Using &#39;&#39;A cold yesterday&#39;&#39; as noun phrase
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-law" title="Law Stack Exchange"></div><a href="https://law.stackexchange.com/questions/22444/what-are-the-implications-of-a-company-being-not-in-good-standing" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:617 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What are the implications of a company being &quot;not in good standing?&quot;
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-diy" title="Home Improvement Stack Exchange"></div><a href="https://diy.stackexchange.com/questions/122801/ive-stripped-woodchip-wallpaper-with-lead-paint-on-it-i-think-i-have-all-the-d" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    I&#39;ve stripped woodchip wallpaper with lead paint on it. I think I have all the dust in my carpet and furnitre. What do I do?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="https://askubuntu.com/questions/952673/how-do-i-copy-a-file-larger-than-4gb-to-a-usb-flash-drive" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do I copy a file larger than 4GB to a USB flash drive?
+                </a>
+
+            </li>
+    </ul>
+
+        <a href="#" 
+           class="show-more js-show-more js-gps-track" 
+           data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+            more hot questions
+        </a>
+</div>
+        </div>
+    
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="/feeds/question/2770321" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>    </div>
+<script>
+StackExchange.ready(function(){$.get('/posts/2770321/ivc/1c84');});
+</script>
+<noscript>
+    <div><img src="/posts/2770321/ivc/1c84" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-java</div></div>
+
+
+        </div>
+    </div>
+
+    <footer id="footer" class="s-footer js-footer" role="contentinfo">
+        <div class="-container">
+            <div class="g-row js-sp-between">
+                    <div class="-logo">
+                        <a href="https://stackoverflow.com"><svg aria-hidden="true" class="svg-icon iconLogo" width="150" height="30" viewBox="0 0 150 30"><g><path d="M33.9 18.6l-1.7-.2c-1.3-.1-1.9-.6-1.9-1.6 0-1.1.8-1.8 2.4-1.8 1.1 0 2.1.3 2.8.8l1-1c-1-.8-2.3-1.1-3.8-1.1-2.3 0-3.9 1.2-3.9 3.1 0 1.8 1.1 2.7 3.2 2.9l1.8.2c1.2.1 1.8.6 1.8 1.6 0 1.3-1.1 1.9-2.8 1.9-1.3 0-2.5-.3-3.3-1.2l-1 1c1.2 1.1 2.6 1.5 4.4 1.5 2.6 0 4.3-1.2 4.3-3.2-.2-2-1.5-2.7-3.3-2.9zm13.3-4.8c-1.7 0-2.8.3-3.7 1.5l1 1c.6-.9 1.3-1.2 2.7-1.2 1.9 0 2.7.8 2.7 2.3v1h-3.2c-2.4 0-3.7 1.2-3.7 3.1 0 .8.3 1.6.8 2.2.7.7 1.5 1 3 1 1.4 0 2.2-.3 3.1-1.1v1h1.6v-7.2c-.1-2.4-1.5-3.6-4.3-3.6zm2.7 7c0 .9-.2 1.5-.5 1.8-.7.6-1.5.7-2.4.7-1.7 0-2.4-.6-2.4-1.8 0-1.2.8-1.9 2.4-1.9h3l-.1 1.2zm7.6-5.6c1 0 1.6.3 2.4 1.2l1-1c-1.1-1.2-2-1.6-3.5-1.6-2.7 0-4.7 1.8-4.7 5.5 0 3.6 2 5.5 4.7 5.5 1.5 0 2.4-.4 3.5-1.6l-1.1-1c-.8.9-1.4 1.2-2.4 1.2s-1.9-.4-2.5-1.2c-.5-.7-.7-1.5-.7-2.9 0-1.3.2-2.2.7-2.9.7-.8 1.6-1.2 2.6-1.2zm13.4-1.3H69l-4.8 4.7V9.1h-1.6v15.4h1.6v-3.9l1.9-1.9 3.6 5.8h1.9l-4.4-6.9 3.7-3.7zm7.3-.33c-1.6 0-2.7.6-3.4 1.4-1 1-1.3 2.3-1.3 4.3s.3 3.3 1.3 4.3c.7.7 1.8 1.4 3.4 1.4 1.6 0 2.8-.6 3.4-1.4 1-1 1.3-2.3 1.3-4.3s-.3-3.3-1.3-4.3c-.6-.8-1.7-1.4-3.4-1.4zm1.3 8.3c-.3.3-.7.5-1.3.5-.6 0-1-.2-1.3-.5-.6-.6-.6-1.6-.6-2.7 0-1.2.1-2.1.6-2.7.3-.3.7-.5 1.3-.5.6 0 1 .2 1.3.5.6.6.6 1.5.6 2.7.1 1.2 0 2.2-.6 2.7zm10.8-8.2l-2.2 6.9-2.3-6.9h-2.9l4.1 11.1h2.2l4.1-11.1h-3zm7.6-.1c-2.9 0-4.8 2-4.8 5.7 0 4.5 2.5 5.7 5.1 5.7 2 0 3.1-.6 4.2-1.7l-1.7-1.6c-.7.7-1.3 1-2.5 1-1.6 0-2.4-1-2.4-2.5h6.9v-1.2c0-3.2-1.7-5.4-4.8-5.4zm-2.1 4.6c0-.5.1-.8.3-1.2.3-.7.9-1.2 1.9-1.2.9 0 1.6.5 1.9 1.2.2.4.2.7.3 1.2h-4.4zm11-3.4v-1.1h-2.7v11.1h2.8v-6.7c0-1.4.9-2 1.8-2 .7 0 1 .2 1.5.7l2.1-2.1c-.8-.8-1.5-1-2.6-1-1.3-.1-2.3.4-2.9 1.1zm6.3-2.3v12.3h2.8v-8.8h2v-2.1h-2v-1.2c0-.6.3-1 1-1h1.1v-2.3h-1.6c-2.3 0-3.3 1.6-3.3 3.1zm16.2 1.1c-1.6 0-2.7.6-3.4 1.4-1 1-1.3 2.3-1.3 4.3s.3 3.3 1.3 4.3c.7.7 1.8 1.4 3.4 1.4 1.6 0 2.8-.6 3.4-1.4 1-1 1.3-2.3 1.3-4.3s-.3-3.3-1.3-4.3c-.6-.8-1.8-1.4-3.4-1.4zm1.3 8.3c-.3.3-.7.5-1.3.5-.6 0-1-.2-1.3-.5-.6-.6-.6-1.6-.6-2.7 0-1.2.1-2.1.6-2.7.3-.3.7-.5 1.3-.5.6 0 1 .2 1.3.5.6.6.6 1.5.6 2.7 0 1.2 0 2.2-.6 2.7zm16.5-8.2l-1.8 6.9-2.3-6.9h-2l-2.3 6.9-1.8-6.9H134l3.4 11.1h2.3l2.3-7 2.3 7h2.3l3.4-11.1h-2.9zm-25.1 7.7V9.27h-2.8v12.3c0 1.6 1 3.2 3.2 3.2h1.6v-2.3h-1c-.7 0-1-.4-1-1.1zM41.3 15.6l1.4-1.4h-3v-3.5h-1.6v11.1c0 1.6.9 2.9 2.7 2.9h1.1v-1.3h-.8c-1 0-1.5-.6-1.5-1.6v-6.1h1.7v-.1z" fill="#222426"/><path fill="#BCBBBB" d="M21 27v-8h3v11H0V19h3v8z"/><path d="M5.4 19.1l13.56 1.96.17-2.38-13.26-2.55-.47 2.97zm1.8-6.8l12 5.6 1.1-2.4-12-5.6-1.1 2.4zm3.4-5.9l10.2 8.5 1.7-2-10.2-8.5-1.7 2zM17.1.2L15 1.8l7.9 10.6 2.1-1.6L17.1.2zM5 25h14v-3H5v3z" fill="#F48024"/></g></svg></a>
+                    </div>
+                
+                    <nav class="-nav js-category _visible" data-name="default">
+                        <h5 class="-title"><a href="https://stackoverflow.com" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="/questions" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 16})">Questions</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Jobs</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs/directory/developer-jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 11})">Developer Jobs Directory</a></li>
+                                                            <li class="-item"><a href="https://stackoverflow.com/documentation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 18})">Documentation</a></li>
+                                                            <li class="-item"><a href="/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Help</a></li>
+                                <li class="-item"><a onclick='StackExchange.switchMobile("on")' class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Mobile</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="-nav js-category _visible" data-name="default">
+                        <h5 class="-title"><a href="https://www.stackoverflowbusiness.com/?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 19 })">Stack Overflow<br /> Business</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/talent?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 20 })">Talent</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/advertise?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 21 })">Ads</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/enterprise?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 22 })">Enterprise</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/insights?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 23 })">Insights</a></li>
+                        </ul>
+                    </nav>
+                <nav class="-nav js-category _visible" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Company</a></h5>
+                    <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">About</a></li>
+                                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Press</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 9 })" href="https://stackoverflow.com/company/work-here">Work Here</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackexchange.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackexchange.com/legal/privacy-policy">Privacy Policy</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://stackoverflow.com/company/contact">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="-network g-row">
+                    <a href="#" class="-back-trigger js-back"><svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"/></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <nav class="-nav js-category" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="//stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="//serverfault.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="//superuser.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="//webapps.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="//askubuntu.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="//webmasters.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="//gamedev.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//tex.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="//softwareengineering.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="//unix.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="//apple.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="//wordpress.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="//gis.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="//electronics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//android.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="//security.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="//dba.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="//drupal.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="//sharepoint.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="//ux.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="//mathematica.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//salesforce.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="//expressionengine.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine&#174; CMS">ExpressionEngine&#174; Answers</a></li>
+                <li class="-item"><a href="//blender.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="//networkengineering.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="//crypto.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="//codereview.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                <li class="-item"><a href="//magento.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//softwarerecs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="//dsp.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="//emacs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="//raspberrypi.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="//codegolf.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                <li class="-item"><a href="//ethereum.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="//datascience.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//arduino.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (27)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="//photo.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="//scifi.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="//graphicdesign.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="//movies.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="//music.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="//worldbuilding.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="//cooking.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="//diy.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="//money.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="//academia.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="//law.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (17)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="//english.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="//skeptics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="//judaism.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="//travel.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="//christianity.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="//ell.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="//japanese.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="//gaming.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="//bicycles.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="//rpg.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="//anime.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="//puzzling.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                <li class="-item"><a href="//mechanics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (32)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="//mathoverflow.net" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="//math.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="//stats.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="//cstheory.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="//physics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="//chemistry.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientists, academics, teachers and students">Chemistry</a></li>
+                <li class="-item"><a href="//biology.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="//cs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="//philosophy.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="//meta.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="//stackapps.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+                <li class="-item"><a href="//area51.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                    </ul>
+    </nav>
+                <div class="-copyright text-right">
+                    <div class="g-column jc-sp-between">
+                        <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog?blb=1">Blog</a></li>
+                            <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link">Facebook</a></li>
+                            <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link">Twitter</a></li>
+                            <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link">LinkedIn</a></li>
+                        </ul>
+
+                        <div>
+                            <p>
+                                site design / logo &#169; 2017 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license" class="-link">cc by-sa 3.0</a>
+                                with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license" class="-link">attribution required</a>.
+                                <span id="svnrev">rev 2017.9.5.26948</span>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    </div>
+    </footer>
+
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled
+            <img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno">
+        </div>
+    </noscript>
+        <script> setTimeout(function() { $("#adzerk-user-match").remove(); }, 2000);</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-5620270-1');
+                ga('create', 'UA-5620270-59', {name: 'pageData', sampleRate: 5 });
+                ga('set', 'dimension2', '|java|generics|raw-types|');
+                ga('pageData.set', 'dimension2', '|java|generics|raw-types|');
+                ga('send', 'pageview');
+                ga('pageData.send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+                <script>
+        var x1=0,x2=0;
+        $('body').on('mousewheel', function(e){ x1=x2; x2=e.originalEvent.wheelDelta; });
+        setInterval(function() { 
+            if(x1!=x2){ 
+                if(x2 > 0) {
+                    console.log('Scroll Up');
+                    //var data = "Scrolling Up";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Scroll Up"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                } 
+                else { 
+                    console.log('Scroll Down');
+                    //var data = "Scrolling Down";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Scroll Down"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                }
+            }
+        },500);
+    </script>
+    <script>
+        var y1=0,y2=0;
+        window.onmousemove = function(e) { y1=y2; y2=e.pageY; }
+        setInterval(function() { 
+            if(y1!=y2){ 
+                if(y2<y1){
+                    console.log('Mouse Up');
+                    //var data = "Mouse movement upward";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Mouse Up"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                } 
+                else { 
+                    console.log('Mouse Down');
+                    //var data = "Mouse movement downward";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Mouse Down"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                }
+            } 
+        },500);
+    </script>
+    <script>
+        $("button").mousedown( function(e) {
+        if(e.which) {
+            console.log(this.value+" Button Click");
+            //var data = this.value+" Button clicked";
+            $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Button Click"}',
+                success: function(data) { console.log(data); },
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        }
+        });
+        $("input").mousedown( function(e) {
+        if(e.which) {
+            console.log(this.value+" Button Click");
+            //var data = "Button";
+            /*$.ajax({
+                url:'/jspost',
+                type:'POST',
+                data:{dat,dat},
+                success: function(data) 
+                {console.log(data);
+                }
+            });*/
+            $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Button Click"}',
+                success: function(data) { console.log(data); },
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        }   
+        });
+        $("a").mousedown( function(e) {
+        if(e.which) {
+            console.log("Link Click");
+            //var data = "Link clicked";
+            $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Link Click"}',
+                success: function(data) { console.log(data); },
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        }
+        });
+        $("button").trigger("mousedown");
+    </script>
+    <script>
+        $('body').mouseup(function() {
+        console.log('Text Select');
+        //var data = "Text is selected";
+        $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Text Select"}',
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        console.log(getSelectedText());
+        });
+        function getSelectedText() {
+        if (window.getSelection) {
+            return window.getSelection().toString();
+        } else if (document.selection) {
+            return document.selection.createRange().text;
+        }
+        return '';
+        }
+    </script>
+    </body>
+</html>

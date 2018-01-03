@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Profile</title>
+</head>
+<body>
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+<div>
+	<div>
+        <div>
+            <h2>User Profile </h2> 
+            <button type="button" style="font-size : 20px;"><a href="/logout">Logout!</a></button><br><br>
+            <button type="button" style="font-size : 20px;"><a href="/sohome">Stack Overflow!</a></button>
+            <h2>{{temp.firstname}} {{temp.lastname}}</h2]
+            <hr>
+            <h3><u><font color="red">Login History</font></u></h3>
+            <h4>{{temp.logintime}}</h4>
+            <object align='right'><h3><u><font color="red">Why do you decide to log these actions?</font></u></h3>
+            <h4>I wish to log the user (your) actions to create a user profile which <br> I can then use in order to improve the quality of information access.<br> I can display the website you are viewing according to your interests <br> using the collection of information about the user of the system.<br>Here I am trying to create a Core Profile for the user by logging the<br>user's behaviors on the system. I am collecting this information implicitly, <br>that is, through agents that passively monitor user activities.<br>Each user begins a session with a blank profile if he is signing up for the <br>first time, but their activity during each visit is tracked. His session ID is<br> stored and his logs are persistent so the next time his data is logged<br>it will be recorded next to the same user ID in the MongoDB database.</h4></object>
+        </div>
+    <div>
+</div>
+<video id="video" width="250" height="250" autoplay></video>
+<br><h3><p id="emo"></p></h3>
+<script>
+var myArray = ['Happy','Neutral','Studious','Distracted'];
+setInterval(function(){var rand = myArray[Math.floor(Math.random() * myArray.length)];
+   	document.getElementById("emo").innerHTML = (rand);},1000);
+</script> 
+<script>
+var video = document.getElementById('video');
+
+if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+        video.src = window.URL.createObjectURL(stream);
+        video.play();
+    });
+}
+</script>
+</body>
+</html>

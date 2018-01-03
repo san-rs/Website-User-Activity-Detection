@@ -1,0 +1,2646 @@
+
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/QAPage">
+
+<head>
+
+<title>java - Providing white space in a Swing GUI - Stack Overflow</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="/opensearch.xml">
+    <meta property="og:type" content="website"/>
+    <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:domain" content="stackoverflow.com"/>
+
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded" />
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Providing white space in a Swing GUI" />
+    <meta name="twitter:description" property="og:description" itemprop="description" content="A GUI with no white space appears &#39;crowded&#39;.  How can I provide white space without resorting to explicitly setting the position or size of components?&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;&#173;..." />
+    <meta property="og:url" content="https://stackoverflow.com/questions/17874717/providing-white-space-in-a-swing-gui"/>
+    <link rel="canonical" href="https://stackoverflow.com/questions/17874717/providing-white-space-in-a-swing-gui" />
+
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.sstatic.net/Js/stub.en.js?v=ef1cf9144f35"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.sstatic.net/Sites/stackoverflow/all.css?v=5df92b6be7e1">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Providing white space in a Swing GUI&#39;" href="/feeds/question/17874717">
+            <meta name="twitter:app:country" content="US" />
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS" />
+            <meta name="twitter:app:id:iphone" content="871299723" />
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/17874717/providing-white-space-in-a-swing-gui" />
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS" />
+            <meta name="twitter:app:id:ipad" content="871299723" />
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/17874717/providing-white-space-in-a-swing-gui" />
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/17874717/providing-white-space-in-a-swing-gui">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:2,shownCommentCount:2,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:17874717});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '17874717');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text', true); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1504666385,"routeName":"Questions/Show","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableInsertDocLinkDialog":false,"childUrl":"https://meta.stackoverflow.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"d431d2751f1d1bd16873fe8d68016c0e","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"canSeeNewHeaderDesign":true},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"comments":{},"userProfile":{"openGraphAPIKey":"58740831ad23540e00c58987"},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"813cfe48dc5b","js/moderator.en.js":"9f2375df98d8","js/full-anon.en.js":"68371529faad","js/full.en.js":"3454aa67c8ba","js/wmd.en.js":"b4467a90e4e0","js/third-party/jquery.autocomplete.min.js":"d3b8fa7fdf74","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"3f082f5eb27a","js/help.en.js":"dbd4f489eff2","js/tageditor.en.js":"4f83add90c55","js/tageditornew.en.js":"a5a8b197f53c","js/inline-tag-editing.en.js":"7581a98341e4","js/revisions.en.js":"8f22ba768cac","js/review.en.js":"198183565669","js/tagsuggestions.en.js":"b278f9a0b23b","js/post-validation.en.js":"fcc6f225a77f","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"627d846d8038","js/keyboard-shortcuts.en.js":"96e82e714e10","js/external-editor.en.js":"3e5baf662544","js/adops.en.js":"9a6a7812a212","js/external-editor.en.js":"3e5baf662544","js/snippet-javascript.en.js":"6396a6cc51fa","js/snippet-javascript-codemirror.en.js":"ddc7c6f5f088"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    <noscript id="noscript-css"><style type="text/css">body,.so-header{margin-top:1.9em}</style></noscript>
+</head>
+<body class="question-page new-topbar">
+            <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        <iframe id="adzerk-user-match" width="0" height="0" frameborder="0" scrolling="no" onload="window.AUMIframeDone=true"
+                src="https://ssum-sec.casalemedia.com/usermatch?s=183712&amp;cb=https%3A%2F%2Fengine.adzerk.net%2Fudb%2F22%2Fsync%2Fi.gif%3FpartnerId%3D1%26userId%3D"
+                style="display: none;" marginheight="0" marginwidth="0"></iframe>
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+<header class="so-header js-so-header _fixed">
+    <div class="-container">
+        <div class="-main">            
+            <a href="https://stackoverflow.com" class="-logo js-gps-track "
+               data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+
+                <span class="-img">Stack Overflow</span>
+            </a>
+
+            <nav class="navigation" role="navigation" aria-label="site navigation">
+                <ol class="-list">
+                        <li class="-item _current">
+        <a id="nav-questions" href="/questions" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">Questions</a>
+    </li>
+
+    <li class="-item">
+        <a id="nav-jobs" href="/jobs?med=site-ui&amp;ref=jobs-tab" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:6})">Developer Jobs</a>
+    </li>
+                        <li class="-item">
+        <a id="nav-docs" href="/documentation" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:7})">Documentation <small class='beta-badge'>beta</small></a>
+    </li>
+                        <li class="-item">
+        <a id="nav-tags" href="/tags" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">Tags</a>
+    </li>
+
+                        <li class="-item">
+        <a id="nav-users" href="/users" class="-link js-gps-track" 
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">Users</a>
+    </li>
+
+                </ol>
+            </nav>
+
+                <form id="search" action="/search" method="get" class="searchbar" autocomplete="off" role="search">
+                    <svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"/></svg>
+                    <input name="q" type="text" placeholder="Search..." value="" tabindex="1" autocomplete="off" maxlength="240" class="f-input js-search-field" />
+                    <button type="submit" class="btn js-search-submit">
+                        <svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"/></svg>
+                    </button>
+                </form>
+
+        </div>
+        
+
+
+    
+
+<div class="-actions">
+    <nav class="secondary-nav">
+        <div class="-dialog-container js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://stackoverflow.com">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+            <a href="https://stackoverflow.com/help" class="js-gps-track"     data-gps-track="site_switcher.click({ item_type:14 })"
+>help</a>
+                    <a href="https://chat.stackoverflow.com" class="js-gps-track"     data-gps-track="site_switcher.click({ item_type:6 })"
+>chat</a>
+            </div>
+
+    <a href="https://stackoverflow.com"
+       class="current-site-link site-link js-gps-track"
+       data-id="1"
+       data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                        
+    <a href="https://meta.stackoverflow.com"
+       class="site-link js-gps-track"
+       data-id="552"
+       data-gps-track="site.switch({ target_site:552, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;amp;utm_source=stackoverflow.com&amp;amp;utm_medium=dev-story&amp;amp;utm_campaign=signup-redirect" class="login-link js-gps-track"     data-gps-track="site_switcher.click({ item_type:10 })"
+>Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f17874717%2fproviding-white-space-in-a-swing-gui" class="login-link js-gps-track"     data-gps-track="site_switcher.click({ item_type:11 })"
+>log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+                <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://meta.stackoverflow.com" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+
+        </div>
+        <ol class="-list">
+
+
+    <li class="-item"><a href="#" class="-link js-help-button" title="Help Center and other resources">
+        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"/></svg>
+    </a></li>
+                <li class="-item">
+        <a href="https://stackexchange.com" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 171 Stack Exchange sites">
+            <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"/></svg>
+        </a>
+    </li>
+
+
+        </ol>
+    </nav>
+        <div class="-ctas">
+                <a href="https://stackoverflow.com/users/login?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f17874717%2fproviding-white-space-in-a-swing-gui" class="login-link btn-clear" rel="nofollow">Log In</a>
+                    <a href="https://stackoverflow.com/users/signup?ssrc=head&returnurl=%2fusers%2fstory%2fcurrent&amp;utm_source=stackoverflow.com&amp;utm_medium=dev-story&amp;utm_campaign=signup-redirect" class="login-link btn" rel="nofollow">Sign Up</a>
+
+        </div>
+</div>
+    </div>
+</header>
+
+    <script>
+        StackExchange.ready(function () { StackExchange.topbar.init(); });
+            StackExchange.scrollPadding.setPaddingTop(60, 10);     </script>
+
+    <div class="container  ">
+        
+
+
+        <div id="content" class="snippet-hidden">
+
+
+
+
+
+            
+
+<div itemscope itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+
+<div id="herobox" class="alternate hero-container">
+    <div class="test"></div>
+        <div id="close">
+            <a title="click to minimize"><span>x</span> Dismiss</a>
+        </div>
+    <div class="content">
+        <b>Join the Stack Overflow Community</b>
+        <div class="separator"></div>
+        <div class="blurb">
+            Stack Overflow is a community of 7.7 million programmers, just like you, helping each other.
+                <br/>
+Join them; it only takes a minute:                <br/>
+        </div>
+        <a href="/users/signup?ssrc=hero&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;amp;utm_source=stackoverflow.com&amp;amp;utm_medium=dev-story&amp;amp;utm_campaign=signup-redirect" id="tell-me-more" class="button">Sign up</a>
+    </div>
+</div>
+<script>
+    StackExchange.ready(function () {
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;
+        }
+        
+        $('#tell-me-more').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+        
+        $('.hero-container #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+            });
+            
+            $.cookie("hero", "mini", { path: "/", expires: 365 });
+            $.ajax({
+                url: "/hero-mini",
+                success: function (data) {
+                    $(".hero-container").fadeOut("fast", function () {
+                        $(".hero-container").replaceWith(data);
+                        $("#herobox-mini").fadeIn("fast");
+                    });
+                }
+            });
+            return false;
+        });
+    });
+
+</script>    <div class="inner-content">
+        <div id="question-header">
+                <h1 itemprop="name"><a href="/questions/17874717/providing-white-space-in-a-swing-gui" class="question-hyperlink">Providing white space in a Swing GUI</a></h1>
+
+            
+<div class="aside-cta" role="navigation" aria-label="ask new question">
+    <a href="/questions/ask" class="btn-outlined">Ask Question</a>
+</div>
+        </div>
+            <div id="mainbar" role="main" aria-label="question and answers">
+
+            
+
+<div class="question" data-questionid="17874717"  id="question">
+
+    <script>
+                    var ados = ados || {}; ados.run = ados.run || [];
+                    ados.run.push(function () { ados_add_placement(22,8277,"adzerk1761417790",4).setZone(43); });
+                </script>
+                <div class="everyonelovesstackoverflow" id="adzerk1761417790"></div>
+            <div id="dfp-tlb" class="dfpad"></div>    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="17874717">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">108</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="#">favorite</a>
+        <div class="favoritecount"><b>23</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>A GUI with no white space appears 'crowded'.  How can I provide white space without resorting to explicitly setting the position or size of components?­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­</p>
+    </div>
+    <div class="post-taglist">
+        <a href="/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="/questions/tagged/swing" class="post-tag" title="show questions tagged &#39;swing&#39;" rel="tag">swing</a> <a href="/questions/tagged/whitespace" class="post-tag" title="show questions tagged &#39;whitespace&#39;" rel="tag">whitespace</a> <a href="/questions/tagged/layout-manager" class="post-tag" title="show questions tagged &#39;layout-manager&#39;" rel="tag">layout-manager</a> 
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/q/17874717" title="short permalink to this question" class="short-link" id="link-post-17874717">share</a><span class="lsep">|</span><a href="/posts/17874717/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/17874717/revisions" title="show all edits to this post">edited <span title="2017-03-21 19:13:50Z" class="relativetime">Mar 21 at 19:13</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        asked <span title="2013-07-26 06:50:12Z" class="relativetime">Jul 26 '13 at 6:50</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/418556/andrew-thompson"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/yOfDr.png?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/418556/andrew-thompson">Andrew Thompson</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 145,141" dir="ltr">145k</span><span title="22 gold badges"><span class="badge1"></span><span class="badgecount">22</span></span><span title="145 silver badges"><span class="badge2"></span><span class="badgecount">145</span></span><span title="296 bronze badges"><span class="badge3"></span><span class="badgecount">296</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</div>
+</td>
+        </tr>
+                    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-17874717" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-26102433" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">For example <a href="http://stackoverflow.com/a/9425769/1057230">CardLayout(int, int)</a>, <a href="http://stackoverflow.com/a/10372005/1057230">FlowLayout(int, int, int) and GridLayout(int, int, int, int)</a>, another example <a href="http://stackoverflow.com/a/10701307/1057230">GridLayout(int, int, int, int)</a> and <a href="http://stackoverflow.com/a/10596800/1057230">GridBagLayout() using GridBagConstraints.insets</a></span>
+                    &ndash;&nbsp;<a href="/users/1057230/nice-cow"
+                       title="21,345 reputation"
+                       class="comment-user">nIcE cOw</a>
+                <span class="comment-date" dir="ltr"><span title="2013-07-26 08:02:07Z" class="relativetime-clean">Jul 26 '13 at 8:02</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-26102912" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">use a LayoutManager that supports gaps in semantic terms. You see it coming, don&#39;t you :-) MigLayout to the rescue: you define a grid and the gaps in-between like related, unrelated, paragraph - aftet that just add the components</span>
+                    &ndash;&nbsp;<a href="/users/203657/kleopatra"
+                       title="41,207 reputation"
+                       class="comment-user">kleopatra</a>
+                <span class="comment-date" dir="ltr"><span title="2013-07-26 08:17:33Z" class="relativetime-clean">Jul 26 '13 at 8:17</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-17874717" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>        </table>
+</div>
+
+            <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2>
+                                5 Answers
+                                <span style="display:none;" itemprop="answerCount">5</span>
+                        </h2>
+                        <div>
+                            <div id="tabs">
+        <a href="/questions/17874717/providing-white-space-in-a-swing-gui?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="/questions/17874717/providing-white-space-in-a-swing-gui?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="/questions/17874717/providing-white-space-in-a-swing-gui?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+                        </div>
+                    </div>    
+                </div>    
+
+
+
+
+  
+<a name="17876938"></a>
+<div id="answer-17876938" class="answer" data-answerid="17876938"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="17876938">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">78</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+<div class="bounty-award-container"><span class="bounty-award" title="This answer has been awarded bounties worth 200 reputation by Andrew Thompson">+200</span></div>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Using various <code>LayoutManagers</code> one can provide spacing between various components. </p>
+
+<h2> 1.) BorderLayout :</h2>
+
+<ul>
+<li><strong>Overloaded Constructor :</strong> <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/BorderLayout.html#BorderLayout%28int,%20int%29">BorderLayout(int horizontalGap, int verticalGap)</a></li>
+<li><p><strong>Getter and setter methods</strong></p>
+
+<p>For Horizontal Spacing <strong>:</strong> <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/BorderLayout.html#getHgap%28%29">BorderLayout.getHgap()</a> and <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/BorderLayout.html#setHgap%28int%29">BorderLayout.setHgap(int hgap)</a></p>
+
+<p>For Vertical Spacing <strong>:</strong> <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/BorderLayout.html#getVgap%28%29">BorderLayout.getVgap()</a> and <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/BorderLayout.html#setVgap%28int%29">BorderLayout.setVgap()</a></p></li>
+</ul>
+
+<h2> 2.) FlowLayout :</h2>
+
+<ul>
+<li><strong>Overloaded Constructor :</strong> <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/FlowLayout.html#FlowLayout%28int,%20int,%20int%29">FlowLayout(int align, int hgap, int vgap)</a></li>
+<li><p><strong>Getter and setter methods</strong></p>
+
+<p>For Horizontal Spacing <strong>:</strong> <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/FlowLayout.html#getHgap%28%29">FlowLayout.getHgap()</a> and <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/FlowLayout.html#setHgap%28int%29">FlowLayout.setHgap(int hgap)</a></p>
+
+<p>For Vertical Spacing <strong>:</strong> <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/FlowLayout.html#getVgap()">FlowLayout.getVgap()</a> and <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/FlowLayout.html#setVgap(int)">FlowLayout.setVgap()</a></p></li>
+</ul>
+
+<h2> 3.) GridLayout :</h2>
+
+<ul>
+<li><strong>Overloaded Constructor :</strong> <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/GridLayout.html#GridLayout%28int,%20int,%20int,%20int%29">GridLayout(int rows, int columns, int hgap, int vgap)</a></li>
+<li><p><strong>Getter and setter methods</strong></p>
+
+<p>For Horizontal Spacing <strong>:</strong> <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/GridLayout.html#getHgap()">GridLayout.getHgap()</a> and <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/GridLayout.html#setHgap(int)">GridLayout.setHgap(int hgap)</a></p>
+
+<p>For Vertical Spacing <strong>:</strong> <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/GridLayout.html#getVgap()">GridLayout.getVgap()</a> and <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/GridLayout.html#setVgap(int)">GridLayout.setVgap()</a></p></li>
+</ul>
+
+<h2> 4.) GridBagLayout :</h2>
+
+<p><a href="http://docs.oracle.com/javase/7/docs/api/java/awt/GridBagConstraints.html#insets">GridBagConstraints.insets</a></p>
+
+<h2> 5.) CardLayout (<a href="http://docs.oracle.com/javase/7/docs/api/java/awt/GridLayout.html#setHgap(int)">example</a>) :</h2>
+
+<p><a href="http://docs.oracle.com/javase/7/docs/api/java/awt/GridLayout.html#getVgap()">CardLayout(int hGap, int vGap)</a></p>
+
+<h2>Example to display all constructors in action :</h2>
+
+<pre><code>import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class LayoutExample {
+
+    private final int hGap = 5;
+    private final int vGap = 5;
+
+    private String[] borderConstraints = {
+        BorderLayout.PAGE_START,
+        BorderLayout.LINE_START,
+        BorderLayout.CENTER,
+        BorderLayout.LINE_END,
+        BorderLayout.PAGE_END
+    };
+
+    private JButton[] buttons;
+
+    private GridBagConstraints gbc;
+
+    private JPanel borderPanel;
+    private JPanel flowPanel;
+    private JPanel gridPanel;
+    private JPanel gridBagPanel;
+    private JPanel cardPanel;
+
+    public LayoutExample() {
+        buttons = new JButton[16];
+        gbc = new GridBagConstraints();
+        gbc.anchor = GridBagConstraints.FIRST_LINE_START;   
+        gbc.insets = new Insets(hGap, vGap, hGap, vGap);        
+    }
+
+    private void displayGUI() {
+        JFrame frame = new JFrame("Layout Example");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        JPanel contentPane = new JPanel(
+                        new GridLayout(0, 1, hGap, vGap));
+        contentPane.setBorder(
+            BorderFactory.createEmptyBorder(hGap, vGap, hGap, vGap));
+        borderPanel = new JPanel(new BorderLayout(hGap, vGap));
+        borderPanel.setBorder(
+            BorderFactory.createTitledBorder("BorderLayout"));
+        borderPanel.setOpaque(true);
+        borderPanel.setBackground(Color.WHITE);
+        for (int i = 0; i &lt; 5; i++) {
+            buttons[i] = new JButton(borderConstraints[i]);
+            borderPanel.add(buttons[i], borderConstraints[i]);
+        }
+        contentPane.add(borderPanel);
+
+        flowPanel = new JPanel(new FlowLayout(
+                    FlowLayout.CENTER, hGap, vGap));
+        flowPanel.setBorder(
+            BorderFactory.createTitledBorder("FlowLayout"));
+        flowPanel.setOpaque(true);
+        flowPanel.setBackground(Color.WHITE);
+        for (int i = 5; i &lt; 8; i++) {
+            buttons[i] = new JButton(Integer.toString(i));
+            flowPanel.add(buttons[i]);
+        }
+        contentPane.add(flowPanel);
+
+        gridPanel = new JPanel(new GridLayout(2, 2, hGap, vGap));
+        gridPanel.setBorder(
+            BorderFactory.createTitledBorder("GridLayout"));
+        gridPanel.setOpaque(true);
+        gridPanel.setBackground(Color.WHITE);
+        for (int i = 8; i &lt; 12; i++) {
+            buttons[i] = new JButton(Integer.toString(i));
+            gridPanel.add(buttons[i]);
+        }
+        contentPane.add(gridPanel);
+
+        gridBagPanel = new JPanel(new GridBagLayout());
+        gridBagPanel.setBorder(
+            BorderFactory.createTitledBorder("GridBagLayout"));
+        gridBagPanel.setOpaque(true);
+        gridBagPanel.setBackground(Color.WHITE);
+        buttons[12] = new JButton(Integer.toString(12));
+        addComp(gridBagPanel, buttons[12], 0, 0, 1, 1
+                            , GridBagConstraints.BOTH, 0.33, 0.5);
+        buttons[13] = new JButton(Integer.toString(13));
+        addComp(gridBagPanel, buttons[13], 1, 0, 1, 1
+                            , GridBagConstraints.BOTH, 0.33, 0.5);
+        buttons[14] = new JButton(Integer.toString(14));
+        addComp(gridBagPanel, buttons[14], 0, 1, 2, 1
+                            , GridBagConstraints.BOTH, 0.66, 0.5);
+        buttons[15] = new JButton(Integer.toString(15));
+        addComp(gridBagPanel, buttons[15], 2, 0, 1, 2
+                            , GridBagConstraints.BOTH, 0.33, 1.0);
+        contentPane.add(gridBagPanel);
+
+        cardPanel = new JPanel(new CardLayout(hGap, vGap));
+        cardPanel.setBorder(
+            BorderFactory.createTitledBorder("CardLayout"));
+        cardPanel.setOpaque(true);
+        cardPanel.setBackground(Color.WHITE);
+        cardPanel.add(getPanel(Color.BLUE));
+        cardPanel.add(getPanel(Color.GREEN));
+        contentPane.add(cardPanel);
+
+        frame.setContentPane(contentPane);
+        frame.pack();
+        frame.setLocationByPlatform(true);
+        frame.setVisible(true);
+    }
+
+    private JPanel getPanel(Color bColor) {
+        JPanel panel = new JPanel(new FlowLayout(
+                    FlowLayout.CENTER, hGap, vGap));
+        panel.setOpaque(true);
+        panel.setBackground(bColor.darker().darker());
+        JButton swapperButton = new JButton("Next");
+        swapperButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                CardLayout cardLayout = (CardLayout) cardPanel.getLayout();
+                cardLayout.next(cardPanel);
+            }
+        });
+
+        panel.add(swapperButton);
+
+        return panel;
+    }
+
+    private void addComp(JPanel panel, JComponent comp
+                                , int x, int y, int gWidth
+                                    , int gHeight, int fill
+                                        , double weightx, double weighty) {
+        gbc.gridx = x;
+        gbc.gridy = y;
+        gbc.gridwidth = gWidth;
+        gbc.gridheight = gHeight;
+        gbc.fill = fill;
+        gbc.weightx = weightx;
+        gbc.weighty = weighty;      
+
+        panel.add(comp, gbc);
+    }
+
+    public static void main(String[] args) {
+        Runnable runnable = new Runnable(){
+            @Override
+            public void run() {
+                new LayoutExample().displayGUI();
+            }
+        };
+        EventQueue.invokeLater(runnable);
+    }
+}
+</code></pre>
+
+<h2>OUTPUT :</h2>
+
+<p><img src="https://i.stack.imgur.com/9mKG9.png" alt="LAYOUTIMAGE"></p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/17876938" title="short permalink to this answer" class="short-link" id="link-post-17876938">share</a><span class="lsep">|</span><a href="/posts/17876938/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/17876938/revisions" title="show all edits to this post">edited <span title="2013-09-08 16:20:57Z" class="relativetime">Sep 8 '13 at 16:20</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-07-26 08:48:57Z" class="relativetime">Jul 26 '13 at 8:48</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/1057230/nice-cow"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/XcxYu.png?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/1057230/nice-cow">nIcE cOw</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 21,345" dir="ltr">21.3k</span><span title="4 gold badges"><span class="badge1"></span><span class="badgecount">4</span></span><span title="29 silver badges"><span class="badge2"></span><span class="badgecount">29</span></span><span title="77 bronze badges"><span class="badge3"></span><span class="badgecount">77</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-17876938" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-26121754" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="warm">6</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">+1 I luuuuuv me some GridBagConstraints insets. We use GBL a lot, so I wrote some helper classes that do the dirty work for me so that the GBL code is quite terse and readable. Like the sample does here, I use a default Insets so that I don&#39;t have to type it in everytime, and the resultant look is a more &quot;relaxed&quot; layout.</span>
+                    &ndash;&nbsp;<a href="/users/1438660/splungebob"
+                       title="4,548 reputation"
+                       class="comment-user">splungebob</a>
+                <span class="comment-date" dir="ltr"><span title="2013-07-26 16:57:08Z" class="relativetime-clean">Jul 26 '13 at 16:57</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-17876938" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+<script>
+                    var ados = ados || {}; ados.run = ados.run || [];
+                    ados.run.push(function () { ados_add_placement(22,8277,"adzerk1449899852",4).setZone(44); });
+                </script>
+                <div class="everyonelovesstackoverflow" id="adzerk1449899852"></div>
+            <div id="dfp-mlb" class="dfpad"></div>
+  
+<a name="17874718"></a>
+<div id="answer-17874718" class="answer accepted-answer" data-answerid="17874718"  itemscope itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="17874718">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">50</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>There are a number of ways in a Swing GUI to provide a separation between components, and white space around components:</p>
+
+<ul>
+<li><code>JToolBar</code> has the methods <a href="http://docs.oracle.com/javase/8/docs/api/javax/swing/JToolBar.html#addSeparator--" rel="noreferrer"><code>addSeparator()</code></a> &amp; <a href="http://docs.oracle.com/javase/8/docs/api/javax/swing/JToolBar.html#addSeparator-java.awt.Dimension-" rel="noreferrer"><code>addSeparator(Dimension)</code></a>.</li>
+<li><code>JMenu</code> uses a spacing component better suited to menus, available through <a href="http://docs.oracle.com/javase/8/docs/api/javax/swing/JMenu.html#addSeparator--" rel="noreferrer"><code>addSeparator()</code></a>.  </li>
+</ul>
+
+<p>But more generally, look to:</p>
+
+<ul>
+<li>The spacing as can be defined in the layout constructors.</li>
+<li>Borders.  </li>
+</ul>
+
+<p>Here is an example of using the layout separator <code>hGap</code> &amp; <code>vGap</code> values &amp; borders (specifically an <code>EmptyBorder</code>) to provide 'white' (actually shown as 'red' to make it very obvious) space.  Adjust the spinners to see the result.</p>
+
+<p><img src="https://i.stack.imgur.com/lYyOZ.png" alt="With no GUI white space"></p>
+
+<p><img src="https://i.stack.imgur.com/NVtKI.png" alt="With GUI white space"></p>
+
+<pre><code>import java.awt.*;
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.event.*;
+
+public class WhiteSpace {
+
+    private JPanel gui = null;
+    private BorderLayout mainLayout;
+    private FlowLayout buttonLayout;
+    private EmptyBorder border;
+
+    public Container getGui() {
+        if (gui==null) {
+            mainLayout = new BorderLayout(0,0);
+            gui = new JPanel(mainLayout);
+            gui.setBackground(Color.RED);
+            border = new EmptyBorder(0,0,0,0);
+
+            JTree tree = new JTree();
+            tree.setVisibleRowCount(10);
+            for (int ii = tree.getRowCount(); ii&gt;-1; ii--) {
+                tree.expandRow(ii);
+            }
+            gui.add(new JScrollPane(
+                    tree, 
+                    JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+                    JScrollPane.HORIZONTAL_SCROLLBAR_NEVER), 
+                    BorderLayout.LINE_START);
+            gui.add(new JScrollPane(new JTextArea(10,30)));
+
+            buttonLayout = new FlowLayout(FlowLayout.CENTER,0,0);
+            JPanel buttonPanel = new JPanel(buttonLayout);
+            gui.add(buttonPanel, BorderLayout.PAGE_START);
+
+            buttonPanel.add(new JLabel("H Gap"));
+            final JSpinner hSpinner = 
+                    new JSpinner(new SpinnerNumberModel(0,0,15,1));
+            buttonPanel.add(hSpinner);
+
+            buttonPanel.add(new JLabel("V Gap"));
+            final JSpinner vSpinner = 
+                    new JSpinner(new SpinnerNumberModel(0,0,15,1));
+            buttonPanel.add(vSpinner);
+
+            buttonPanel.add(new JLabel("H Border"));
+            final JSpinner hBorderSpinner = 
+                    new JSpinner(new SpinnerNumberModel(0,0,15,1));
+            buttonPanel.add(hBorderSpinner);
+
+            buttonPanel.add(new JLabel("V Border"));
+            final JSpinner vBorderSpinner = 
+                    new JSpinner(new SpinnerNumberModel(0,0,15,1));
+            buttonPanel.add(vBorderSpinner);
+
+            ChangeListener changeListener = new ChangeListener() {
+
+                @Override
+                public void stateChanged(ChangeEvent e) {
+                    int hGap = ((Integer)hSpinner.getValue()).intValue();
+                    int vGap = ((Integer)vSpinner.getValue()).intValue();
+                    int hBorder = ((Integer)hBorderSpinner.getValue()).intValue();
+                    int vBorder = ((Integer)vBorderSpinner.getValue()).intValue();
+                    adjustWhiteSpace(hGap,vGap,hBorder,vBorder);
+                }
+            };
+
+            hSpinner.addChangeListener(changeListener);
+            vSpinner.addChangeListener(changeListener);
+            hBorderSpinner.addChangeListener(changeListener);
+            vBorderSpinner.addChangeListener(changeListener);
+        }
+
+        return gui;
+    }
+
+    private void adjustWhiteSpace(int hGap, int vGap, int hBorder, int vBorder) {
+        mainLayout.setHgap(hGap);
+        mainLayout.setVgap(vGap);
+        buttonLayout.setHgap(hGap);
+        gui.setBorder(new EmptyBorder(vBorder,hBorder,vBorder,hBorder));
+        Container c = gui.getTopLevelAncestor();
+        if (c instanceof Window) {
+            Window w = (Window)c;
+            w.pack();
+        }
+    }
+
+    public static void main(String[] args) {
+        Runnable r = new Runnable() {
+
+            @Override
+            public void run() {
+                WhiteSpace ws = new WhiteSpace();
+                // the GUI as seen by the user (without frame)
+                Container gui = ws.getGui();
+
+                JFrame f = new JFrame("White (OK Red) Space");
+                f.add(gui);
+                // Ensures JVM closes after frame(s) closed and
+                // all non-daemon threads are finished
+                f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                // See http://stackoverflow.com/a/7143398/418556 for demo.
+                f.setLocationByPlatform(true);
+
+                // ensures the frame is the minimum size it needs to be
+                // in order display the components within it
+                f.setResizable(false);
+                f.pack();
+                // should be done last, to avoid flickering, moving,
+                // resizing artifacts.
+                f.setVisible(true);
+            }
+        };
+        SwingUtilities.invokeLater(r);
+    }
+}
+</code></pre>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/17874718" title="short permalink to this answer" class="short-link" id="link-post-17874718">share</a><span class="lsep">|</span><a href="/posts/17874718/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/17874718/revisions" title="show all edits to this post">edited <span title="2015-07-05 20:19:08Z" class="relativetime">Jul 5 '15 at 20:19</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature owner">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-07-26 06:50:12Z" class="relativetime">Jul 26 '13 at 6:50</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/418556/andrew-thompson"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/yOfDr.png?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/418556/andrew-thompson">Andrew Thompson</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 145,141" dir="ltr">145k</span><span title="22 gold badges"><span class="badge1"></span><span class="badgecount">22</span></span><span title="145 silver badges"><span class="badge2"></span><span class="badgecount">145</span></span><span title="296 bronze badges"><span class="badge3"></span><span class="badgecount">296</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-17874718" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-26228680" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">The time I saw, my reputation has taken an upswing, I was more inclined to know, as to how exactly it works, hence I read <a href="http://stackoverflow.com/help/bounty">What is a bounty?</a>. While reading the document I came across <a href="http://blog.stackoverflow.com/2011/09/bounty-reasons-and-post-notices/">list of bounty reasons</a>. Since I was unaware, as to when you started one on this question, so was unable to understand the reason behind starting one bounty. If you may please, provide that part again, it will be of much help, for me to understand, what more, if possible, I can provide as an input to the</span>
+                    &ndash;&nbsp;<a href="/users/1057230/nice-cow"
+                       title="21,345 reputation"
+                       class="comment-user">nIcE cOw</a>
+                <span class="comment-date" dir="ltr"><span title="2013-07-30 13:20:02Z" class="relativetime-clean">Jul 30 '13 at 13:20</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-17874718" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="22525005"></a>
+<div id="answer-22525005" class="answer" data-answerid="22525005"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="22525005">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">15</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>When you use <code>BoxLayout</code>, <code>Box.createVerticalGlue()</code> method can help you to make some white space.</p>
+
+<p>Another method is <code>BorderFactory.createEmptyBorder(int top, int left, int bottom, int right)</code>. It can help you to make some white space around component.</p>
+
+<p>Thanks for Andrew Thompson's remind.I've revised BoxLayout in recent days and I     find that <code>Box.createVerticalGlue()</code> can add some white space depend on the panel's size and you can not set the explicit pixel value of the length of white space.But <code>Box.createVerticalStrut()</code> can do that.  Here is a MCTaRE and show the    effect of those two methods.</p>
+
+<p><img src="https://i.stack.imgur.com/qOIZ5.gif" alt="enter image description here"></p>
+
+<pre><code>import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.border.*;
+import javax.swing.event.*;
+
+public class WhiteSpace extends JFrame{
+    static WhiteSpace whiteSpace;
+    DemoPanel demoPanel;
+    boolean withGlue;
+    JSpinner spinner;
+
+    public WhiteSpace(){
+        initialWindow();
+        demoPanel = new DemoPanel();
+        ActionPanel actionPanel = new ActionPanel();
+
+        setLayout(new BorderLayout());
+
+        getContentPane().add(actionPanel,BorderLayout.NORTH);
+        getContentPane().add(demoPanel,BorderLayout.CENTER);
+            setVisible(true);
+    }
+
+    public void initialWindow(){
+        setSize(220, 300);
+        setTitle("White Space");
+        setResizable(false);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        //Show the window in the middle of the screen
+    }
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                whiteSpace = new WhiteSpace();
+            }
+        };
+        SwingUtilities.invokeLater(runnable);
+    }
+
+    class DemoPanel extends JPanel{
+        //Show the vertical white space between label1 and label2
+        JLabel label1;
+        JLabel label2;
+        public void initialDemoPanel(){
+            setBorder(BorderFactory.createTitledBorder(getBorder(), "DemoPanel", TitledBorder.LEADING, TitledBorder.TOP, new Font("Default",Font.PLAIN,10), Color.gray));
+            setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
+            label1 = new JLabel("This is first line");
+            label2 = new JLabel("This is second line");
+        }
+
+        public DemoPanel(){
+            initialDemoPanel();
+            add(label1);
+            if(withGlue){
+                add(Box.createVerticalGlue());
+            }
+            add(label2);
+        }
+
+        public DemoPanel(int strutValue){
+            initialDemoPanel();
+            add(label1);
+            add(Box.createVerticalStrut(strutValue));
+            add(label2);
+        }
+    }
+
+    class ActionPanel extends JPanel{
+        public ActionPanel(){
+            setBorder(BorderFactory.createTitledBorder(getBorder(), "ActionPanel", TitledBorder.LEADING, TitledBorder.TOP, new Font("Default",Font.PLAIN,10), Color.gray));
+
+            setLayout(new BoxLayout(this,BoxLayout.X_AXIS));
+            JRadioButton glueButton = new JRadioButton("With Glue");
+            glueButton.addActionListener(new glueButtonListener());
+            add(glueButton);
+
+            add(Box.createHorizontalStrut(10));
+            //To create horizontal white space
+            JLabel strutLabel = new JLabel("Strut Value");
+            add(strutLabel);
+            spinner = new JSpinner(new SpinnerNumberModel(0,0,50,1));
+            spinner.addChangeListener(new spinnerListener());
+            add(spinner);
+            //public SpinnerNumberModel(Number value,Comparable minimum,Comparable maximum,Number stepSize)
+        }
+    }
+
+    class glueButtonListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            spinner.setValue(new Integer(0));
+            withGlue = (withGlue == true ? false:true);
+            whiteSpace.getContentPane().remove(demoPanel);
+            demoPanel = new DemoPanel();
+            whiteSpace.getContentPane().add(demoPanel,BorderLayout.CENTER);
+            whiteSpace.getContentPane().validate();
+        }
+    }
+
+    class spinnerListener implements ChangeListener{
+
+        @Override
+        public void stateChanged(ChangeEvent e) {
+            int strutValue = (Integer) spinner.getValue();
+            whiteSpace.getContentPane().remove(demoPanel);
+            demoPanel = new DemoPanel(strutValue);
+            whiteSpace.getContentPane().add(demoPanel,BorderLayout.CENTER);
+            whiteSpace.getContentPane().validate();
+        }
+    }
+}
+</code></pre>
+
+<p><code>Box.createHorizontalGlue()</code> and <code>Box.createHorizontalStrut(int height)</code> can be used too. Besides, <code>Box.createRigidArea(Dimension d)</code> has the ability too create white space too.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/22525005" title="short permalink to this answer" class="short-link" id="link-post-22525005">share</a><span class="lsep">|</span><a href="/posts/22525005/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="/posts/22525005/revisions" title="show all edits to this post">edited <span title="2014-03-26 05:56:53Z" class="relativetime">Mar 26 '14 at 5:56</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/418556/andrew-thompson"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/yOfDr.png?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/418556/andrew-thompson">Andrew Thompson</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 145,141" dir="ltr">145k</span><span title="22 gold badges"><span class="badge1"></span><span class="badgecount">22</span></span><span title="145 silver badges"><span class="badge2"></span><span class="badgecount">145</span></span><span title="296 bronze badges"><span class="badge3"></span><span class="badgecount">296</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-03-20 06:23:45Z" class="relativetime">Mar 20 '14 at 6:23</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/3378204/gearon"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/RHdUr.jpg?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/3378204/gearon">Gearon</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,205</span><span title="7 silver badges"><span class="badge2"></span><span class="badgecount">7</span></span><span title="25 bronze badges"><span class="badge3"></span><span class="badgecount">25</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-22525005" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-22525005" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="24637165"></a>
+<div id="answer-24637165" class="answer" data-answerid="24637165"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="24637165">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">10</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p><code>MigLayout</code> has multiple ways of creating space. (A space is called a gap in this layout.)
+Gaps can be created at the highest level with layout constraints, it is possible to
+create gaps between rows and column and gaps can be also set between individual 
+components with component constraints. There are also specific gaps around the borders
+of a container called insets which have their own specific keyword to be set.</p>
+
+<p>The following example creates all these kinds of gaps:</p>
+
+<pre><code>package com.zetcode;
+
+import java.awt.EventQueue;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import net.miginfocom.swing.MigLayout;
+
+
+public class MigLayoutGaps2 extends JFrame {
+
+    public MigLayoutGaps2() {
+
+        initUI();
+
+        setTitle("Gaps");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+    }
+
+    private void initUI() {
+
+        JPanel base = new JPanel(new MigLayout("flowy, ins 30, gap 15"));
+        setContentPane(base);
+
+        JPanel pnl1 = new JPanel();
+        pnl1.setBorder(
+                BorderFactory.createTitledBorder("Grid gaps")
+        );
+
+        pnl1.setLayout(new MigLayout("gap 5 5, ins 10, wrap 3"));
+
+        pnl1.add(new JButton("1"));
+        pnl1.add(new JButton("2"));
+        pnl1.add(new JButton("3"));
+        pnl1.add(new JButton("4"));
+        pnl1.add(new JButton("5"));
+        pnl1.add(new JButton("6"));
+
+        JPanel pnl2 = new JPanel();
+        pnl2.setBorder(
+                BorderFactory.createTitledBorder("Column gaps")
+        );
+
+        pnl2.setLayout(new MigLayout("wrap 3", "[]10[]"));
+
+        JLabel lbl1 = new JLabel();
+        lbl1.setBorder(
+            BorderFactory.createEtchedBorder()
+        );
+
+        JLabel lbl2 = new JLabel();
+        lbl2.setBorder(
+            BorderFactory.createEtchedBorder()
+        );
+
+        JLabel lbl3 = new JLabel();
+        lbl3.setBorder(
+            BorderFactory.createEtchedBorder()
+        );        
+
+        pnl2.add(lbl1, "w 40, h 110");
+        pnl2.add(lbl2, "w 40, h 110");
+        pnl2.add(lbl3, "w 40, h 110");
+
+        JPanel pnl3 = new JPanel();
+        pnl3.setBorder(
+                BorderFactory.createTitledBorder("Row gaps")
+        );
+
+        pnl3.setLayout(new MigLayout("wrap", "", "[]15[]"));
+
+        JLabel lbl4 = new JLabel();
+        lbl4.setBorder(
+            BorderFactory.createEtchedBorder()
+        );
+
+        JLabel lbl5 = new JLabel();
+        lbl5.setBorder(
+            BorderFactory.createEtchedBorder()
+        );
+
+        JLabel lbl6 = new JLabel();
+        lbl6.setBorder(
+            BorderFactory.createEtchedBorder()
+        );        
+
+        pnl3.add(lbl4, "w 150, h 20");
+        pnl3.add(lbl5, "w 150, h 20");
+        pnl3.add(lbl6, "w 150, h 20");        
+
+        JPanel pnl4 = new JPanel();
+        pnl4.setBorder(
+                BorderFactory.createTitledBorder("Component gaps")
+        );
+
+        pnl4.setLayout(new MigLayout());
+
+        pnl4.add(new JLabel("Name:"), "gapright 5");
+        pnl4.add(new JTextField(10), "gapbottom 20, gaptop 20");
+
+        base.add(pnl1);
+        base.add(pnl2);
+        base.add(pnl3);
+        base.add(pnl4);
+
+        pack();
+    }
+
+    public static void main(String[] args) {
+
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                MigLayoutGaps2 ex = new MigLayoutGaps2();
+                ex.setVisible(true);
+            }
+        });
+    }
+}
+</code></pre>
+
+<p>We have four panels in the layout. Each of this panels has a <code>MigLayout</code> manager.</p>
+
+<pre><code>JPanel base = new JPanel(new MigLayout("flowy, ins 30, gap 15"));
+</code></pre>
+
+<p>This line creates container insets and vertical gaps between panels.</p>
+
+<pre><code>pnl1.setLayout(new MigLayout("gap 5 5, ins 10, wrap 3"));
+</code></pre>
+
+<p>Here we apply gaps for the whole grid structure and also set container gaps.</p>
+
+<pre><code>pnl2.setLayout(new MigLayout("wrap 3", "[]10[]"));
+</code></pre>
+
+<p>This line creates gaps between columns.</p>
+
+<pre><code>pnl3.setLayout(new MigLayout("wrap", "", "[]15[]"));
+</code></pre>
+
+<p>Row gaps are defined with this code.</p>
+
+<pre><code>pnl4.add(new JLabel("Name:"), "gapright 5");
+pnl4.add(new JTextField(10), "gapbottom 20, gaptop 20");
+</code></pre>
+
+<p>Finally, it is possible to create gaps between individual components.</p>
+
+<p><img src="https://i.stack.imgur.com/tfA8d.png" alt="Gaps"></p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/24637165" title="short permalink to this answer" class="short-link" id="link-post-24637165">share</a><span class="lsep">|</span><a href="/posts/24637165/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/24637165/revisions" title="show all edits to this post">edited <span title="2014-07-09 09:38:44Z" class="relativetime">Jul 9 '14 at 9:38</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-07-08 16:36:48Z" class="relativetime">Jul 8 '14 at 16:36</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/2008247/jan-bodnar"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/wis7M.jpg?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/2008247/jan-bodnar">Jan Bodnar</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">3,120</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="17 silver badges"><span class="badge2"></span><span class="badgecount">17</span></span><span title="33 bronze badges"><span class="badge3"></span><span class="badgecount">33</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-24637165" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-24637165" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="24596067"></a>
+<div id="answer-24596067" class="answer" data-answerid="24596067"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="24596067">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">5</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p><a href="http://www.jgoodies.com/freeware/libraries/forms/" rel="noreferrer">JGoodies <strong>FormLayout</strong>.</a>  </p>
+
+<p>Author Karsten Lentzsch has a collection of <a href="http://www.jgoodies.com/downloads/articles-and-presentations/" rel="noreferrer">presentations</a> on UI design.   In particular <a href="http://www.jgoodies.com/download/presentations/Swing%20with%20Style.pdf" rel="noreferrer">this PDF</a> speaks to the need for aesthetic whitespace.  Adding meaningful space while also paying attention to clutter separates the wheat from the chaff.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/24596067" title="short permalink to this answer" class="short-link" id="link-post-24596067">share</a><span class="lsep">|</span><a href="/posts/24596067/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-07-06 13:02:36Z" class="relativetime">Jul 6 '14 at 13:02</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/3236525/javajon"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/v5BbU.jpg?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/3236525/javajon">javajon</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">702</span><span title="6 silver badges"><span class="badge2"></span><span class="badgecount">6</span></span><span title="12 bronze badges"><span class="badge3"></span><span class="badgecount">12</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-24596067" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-24596067" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+                                    <a name='new-answer'></a>
+                        <form id="post-form" action="/questions/17874717/answer/submit" method="post"  class="post-form">
+                            <input type="hidden" id="post-id" value="17874717" />
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" />
+                            <input type="hidden" name="referrer" value="https://stackoverflow.com/questions/tagged/java?sort=frequent&amp;pageSize=15"/>
+                            <h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                StackExchange.prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;"> 
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="d431d2751f1d1bd16873fe8d68016c0e">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+
+                            <div style="position: relative;">
+                                
+                                            <div class="form-item dno new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="/users/login?ssrc=question_page&returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f17874717%2fproviding-white-space-in-a-swing-gui%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid" />
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false" />
+                    <input type="hidden" name="use-google" class="use-google" value="false" />
+                    <input type="button" class="submit-openid" value="Submit" style="display:none" />
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" />
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'https%3a%2f%2fstackoverflow.com%2fquestions%2f17874717%2fproviding-white-space-in-a-swing-gui%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" />
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+
+                            </div>
+           
+                                                            <div class="form-submit cbt">
+                                    <input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+                                    <a href="#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href='https://stackexchange.com/legal/privacy-policy' name='privacy' target='_blank'>privacy policy</a> and <a href='https://stackexchange.com/legal/terms-of-service' name='tos' target='_blank'>terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1" />                                </div>
+                        </form>
+
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Not the answer you&#39;re looking for?                            Browse other questions tagged <a href="/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="/questions/tagged/swing" class="post-tag" title="show questions tagged &#39;swing&#39;" rel="tag">swing</a> <a href="/questions/tagged/whitespace" class="post-tag" title="show questions tagged &#39;whitespace&#39;" rel="tag">whitespace</a> <a href="/questions/tagged/layout-manager" class="post-tag" title="show questions tagged &#39;layout-manager&#39;" rel="tag">layout-manager</a>  or <a href="/questions/ask">ask your own question</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tr>
+                            <td>
+                                <p class="label-key">asked</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2013-07-26 06:50:12Z"><b>4 years, 1 month ago</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">viewed</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>26,456 times</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">active</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="?lastactivity" class="lastactivity-link" title="2017-03-21 19:13:50Z">5 months ago</a></b></p>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+                        
+            <script>
+                    var ados = ados || {}; ados.run = ados.run || [];
+                    ados.run.push(function () { ados_add_placement(22,8277,"adzerk1096239259",[5,17,2221,1129,43]).setZone(45); });
+                </script>
+                <div class="everyonelovesstackoverflow" id="adzerk1096239259"></div>
+            <script>try{;window.clc=window.clc||{},window.clc.init=window.clc.init||function(a){var b=window,c=b.document;try{if('function'!=typeof[].indexOf||!window.addEventListener||!a.allowed)return;var d=new RegExp(a.allowed);if(!d.test(location.hostname))return;if(b.clc.options)for(var e in b.clc.options)a[e]=b.clc.options[e];b.clc.cmd='undefined'==typeof b.clc.cmd?[]:b.clc.cmd,b.clc.autoload=b.clc.autoload||function(){'function'==typeof b.clc.load?b.clc.load():b.clc.cmd.push(function(a){a.load()})};var f=a.wv;if(c.hidden&&f)return void c.addEventListener('visibilitychange',function b(){c.hidden||(window.clc.init(a),c.removeEventListener('visibilitychange',b))});b.clc.options=a,a.al&&b.clc.autoload();var g=c.createElement('script');g.async=!0,g.src=a.lib,c.body.appendChild(g)}catch(a){}},window.clc.loadDisplayAds=window.clc.loadDisplayAds||function(){function a(a){b.googletag=b.googletag||{},b.googletag.cmd=b.googletag.cmd||[],b.googletag.cmd.push(a)}var b=window,c={slots:{lb:[[728,90]],mlb:[[728,90]],sb:[[300,250],[300,600]]},ids:{"dfp-tlb":'lb',"dfp-mlb":'mlb',"dfp-tsb":'sb',"clc-tlb":'lb',"clc-mlb":'mlb',"clc-tsb":'sb'}},d=/^\/tags\//.test(location.pathname)||/^\/questions\/tagged\//.test(location.pathname)?'tag-pages':'question-pages',e=/^dev\./.test(location.hostname)?'test/'+location.hostname:location.hostname;return function(f){var g=(f&&0<f.length?f:Object.keys(c.ids)).map(function(a){return document.getElementById(a)}).filter(function(a){return!!a&&/^\s*$/.test(a.innerHTML)}).map(function(a){return a.id});if(0!==g.length){a(function(){var a=b.googletag;a.pubads().enableSingleRequest();var f=b.dfp_targeting||{};f&&Object.keys(f).forEach(function(b){a.pubads().setTargeting(b,f[b])});for(var h=0,i=g;h<i.length;h++){var j=i[h],k=c.ids[j],l=c.slots[k];a.defineSlot('/'+'248424177'+'/'+e+'/'+k+'/'+d,l,j).addService(a.pubads())}a.enableServices();for(var j,m=0,n=g;m<n.length;m++)j=n[m],a.display(j)});var h=document.createElement('script');h.async=!0,h.src='https://www.googletagservices.com/tag/js/gpt.js',document.body.appendChild(h)}}}(),window.clc.loadDfp=window.clc.loadDisplayAds,window.clc.init.call(null, {"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=8eb17d1d4f2b","u":"https://clc.stackoverflow.com/markup.js","wa":true,"kt":2000,"tto":true,"h":"clc.stackoverflow.com","allowed":"^(((talent\\.)?stackoverflow)|(blog\\.codinghorror)|(serverfault|askubuntu)|([^\\.]+\\.stackexchange))\\.com$","wv":true,"al":false,"fb":null});}catch(e){typeof console!=='undefined'&&typeof console.error==='function'&&console.error(e);}</script>
+            <script>
+                var dfp_targeting={Registered:['false'],'so-tag':['java','swing','whitespace','layout-manager'],Industry:['Academic']};
+            </script>
+            <div id="hireme"></div>
+            <script>try{window.clc_request='AhH6i2XS9NQIAAAAAB2_EAECAAAAAgAAAAA6AAAAfGphdmF8c3dpbmd8d2hpdGVzcGFjZXxsYXlvdXQtbWFuYWdlcnx4LWluZHVzdHJ5LWFjYWRlbWljfAD80NJLVU_tfUbV';typeof clc!=='undefined'&&typeof clc.autoload==='function'&&clc.autoload();}catch(e){typeof console!=='undefined'&&typeof console.error==='function'&&console.error(e);}</script>
+            <div id="dfp-tsb" class="dfpad"></div>
+                <style>.dfpad{position:absolute;height:1px;width:1px;opacity:0;top:0;left:0;pointer-events:none;}</style>
+<script>try{typeof clc!=='undefined'&&typeof clc.loadDfp==='function'&&clc.loadDfp();}catch(e){typeof console!=='undefined'&&typeof console.error==='function'&&console.error(e);}</script>
+            <div class="module" id="chat-feature">
+
+    <h4><a href="http://chat.stackoverflow.com" id="h-chat-link">Visit Chat</a></h4>
+    <div class="related" id="ad502-rooms"></div>
+    <script>
+    // <!--
+        StackExchange.ready(
+        function () {
+            var options = {
+                chatUrl: 'http://chat.stackoverflow.com',
+                reloadUrl: '/api/recent-chat',
+                preloadData: {"activeUsers":44,"activeRooms":25,"rooms":[{"name":"JavaScript","id":17,"lastPost":1504660702,"posts":4204071,"users":[{"name":"Félix Gagnon-Grenier","id":576767,"emailhash":"!https://i.stack.imgur.com/37i5y.jpg?s=128\u0026g=1","lastPost":1504660703},{"name":"Arrow","id":2203974,"emailhash":"!https://i.stack.imgur.com/NURaP.jpg?s=128\u0026g=1","lastPost":1504660579},{"name":"Luggage","id":956900,"emailhash":"4416acf0ee6259443ee3cca16d894d14","lastPost":1504660307},{"name":"hilli_micha","id":3453216,"emailhash":"!https://i.stack.imgur.com/tq5Wi.png?s=128\u0026g=1","lastPost":1504660259},{"name":"Sterling Archer","id":774078,"emailhash":"!https://i.stack.imgur.com/WvDon.jpg?s=128\u0026g=1","lastPost":1504660211},{"name":"ssube","id":129032,"emailhash":"e8bea8f9e6972dfd3113d67da68e6933","lastPost":1504659956},{"name":"Kendall Frey","id":785745,"emailhash":"f9fc3249a341a64ee2721637915cd301","lastPost":1504659498}],"messages":[{"date":1504660702,"user":"Félix Gagnon-Grenier","userid":576767}],"singleImage":false,"tags":["ecmascript","ecmascript-6","javascript","legal-advice","nodejs"]},{"name":"SO Close Vote Reviewers","id":41570,"lastPost":1504660734,"posts":754301,"users":[{"name":"Fred -ii-","id":1415724,"emailhash":"!https://i.stack.imgur.com/zErhj.jpg?s=128\u0026g=1","lastPost":1504659960},{"name":"David Rawson","id":5241933,"emailhash":"!https://lh5.googleusercontent.com/-av4jLxR15CE/AAAAAAAAAAI/AAAAAAAAAB8/rvFKZOYS7UE/photo.jpg?sz=128","lastPost":1504657674},{"name":"Nkosi","id":5233410,"emailhash":"!https://i.stack.imgur.com/HBKfc.png?s=128\u0026g=1","lastPost":1504657321},{"name":"Sotirios Delimanolis","id":438154,"emailhash":"!https://i.stack.imgur.com/5t1BN.png?s=128\u0026g=1","lastPost":1504656724},{"name":"Makyen","id":3773011,"emailhash":"268909707f084cf82523e616dd9df570","lastPost":1504655239},{"name":"SmokeDetector","id":3735529,"emailhash":"!https://i.stack.imgur.com/m9xyh.jpg?s=128\u0026g=1","lastPost":1504651325},{"name":"FireAlarm","id":6373379,"emailhash":"!https://i.stack.imgur.com/YQ7SJ.jpg?s=128\u0026g=1","lastPost":1504646008}],"messages":[{"date":1504660734,"user":"Sotirios Delimanolis","userid":438154}],"singleImage":false,"tags":["discussion","moderation","review"]}]} 
+            };
+
+            StackExchange.chatAd.init(options);
+        });
+    // -->
+    </script>
+
+</div>
+
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="/q/26209549" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="/questions/26209549/not-having-all-elements-touching-the-sides-of-the-jframe?noredirect=1" class="question-hyperlink">Not having all elements touching the sides of the JFrame</a>
+</div>
+<div class="spacer">
+	<a href="/q/31498398" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="/questions/31498398/padding-jtextfields-on-a-jpanel?noredirect=1" class="question-hyperlink">Padding JTextFields on a JPanel</a>
+</div>
+<div class="spacer">
+	<a href="/q/7143287" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted large">113</div>
+	</a>
+	<a href="/questions/7143287/how-to-best-position-swing-guis?noredirect=1" class="question-hyperlink">How to best position Swing GUIs?</a>
+</div>
+<div class="spacer">
+	<a href="/q/22737535" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">47</div>
+	</a>
+	<a href="/questions/22737535/swing-rendering-appears-broken-in-jdk-1-8-correct-in-jdk-1-7?noredirect=1" class="question-hyperlink">Swing rendering appears broken in JDK 1.8, correct in JDK 1.7</a>
+</div>
+<div class="spacer">
+	<a href="/q/20839177" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">7</div>
+	</a>
+	<a href="/questions/20839177/how-to-get-value-on-textfield-java-swing?noredirect=1" class="question-hyperlink">how to get value on TextField Java Swing</a>
+</div>
+<div class="spacer">
+	<a href="/q/10369982" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">6</div>
+	</a>
+	<a href="/questions/10369982/jbuttons-inside-jpanels-with-a-gridlayout-jframe?noredirect=1" class="question-hyperlink">JButtons inside JPanels with a GridLayout JFrame</a>
+</div>
+<div class="spacer">
+	<a href="/q/24009159" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="/questions/24009159/java-swing-opening-a-new-jpanel-from-a-jbutton-and-making-the-buttons-pretty?noredirect=1" class="question-hyperlink">Java Swing. Opening a new JPanel from a JButton and making the buttons pretty</a>
+</div>
+<div class="spacer">
+	<a href="/q/19510198" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="/questions/19510198/how-to-put-integer-value-in-jlabel?noredirect=1" class="question-hyperlink">How to put integer value in JLabel?</a>
+</div>
+<div class="spacer">
+	<a href="/q/10595677" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="/questions/10595677/changing-size-of-java-button-gridbaylayout?noredirect=1" class="question-hyperlink">Changing size of Java button GridBayLayout</a>
+</div>
+<div class="spacer">
+	<a href="/q/10701109" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">3</div>
+	</a>
+	<a href="/questions/10701109/i-need-a-basic-simple-java-layout-method?noredirect=1" class="question-hyperlink">I need a basic simple Java layout method</a>
+</div>					<div class="spacer more">
+				<a href="/questions/linked/17874717">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer"><a href="/q/7229226" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">384</div></a><a href="/questions/7229226/should-i-avoid-the-use-of-setpreferredmaximumminimumsize-methods-in-java-swi" class="question-hyperlink">Should I avoid the use of set(Preferred|Maximum|Minimum)Size methods in Java Swing?</a></div><div class="spacer"><a href="/q/14046837" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">4</div></a><a href="/questions/14046837/positioning-components-in-swing-guis" class="question-hyperlink">Positioning components in Swing GUIs</a></div><div class="spacer"><a href="/q/15363706" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">4</div></a><a href="/questions/15363706/how-to-program-this-gui-in-java-swing" class="question-hyperlink">How to program this GUI in Java Swing</a></div><div class="spacer"><a href="/q/18442305" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="/questions/18442305/prevent-vertical-spacing-when-resizing-a-java-gui" class="question-hyperlink">Prevent vertical spacing when resizing a Java GUI</a></div><div class="spacer"><a href="/q/20273656" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="/questions/20273656/java-swing-dynamic-list-that-fills-available-space" class="question-hyperlink">Java Swing - Dynamic List that Fills Available Space?</a></div><div class="spacer"><a href="/q/21142686" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">17</div></a><a href="/questions/21142686/making-a-robust-resizable-swing-chess-gui" class="question-hyperlink">Making a robust, resizable Swing Chess GUI</a></div><div class="spacer"><a href="/q/28227664" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">3</div></a><a href="/questions/28227664/swing-gui-in-java-different-elements-wont-layout-properly-for-me" class="question-hyperlink">Swing GUI in Java: Different elements won&#39;t layout properly for me</a></div><div class="spacer"><a href="/q/30642334" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">2</div></a><a href="/questions/30642334/java-swing-gridbaglayout-adding-buttons-without-space" class="question-hyperlink">Java Swing GridBagLayout - adding buttons without space</a></div><div class="spacer"><a href="/q/35410938" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">-3</div></a><a href="/questions/35410938/i-want-to-create-this-gui-layout-with-java-swing" class="question-hyperlink">I want to create this GUI Layout with java Swing</a></div><div class="spacer"><a href="/q/38038169" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">-3</div></a><a href="/questions/38038169/creating-a-gui-swing" class="question-hyperlink">Creating a GUI (Swing)</a></div>
+                    </div>
+                </div>
+
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot"
+           class="js-gps-track" 
+           data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li >
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="https://aviation.stackexchange.com/questions/43497/why-is-heraklion-airport-a-captains-only-airport" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is Heraklion airport a &#39;captains only&#39; airport?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/141725/make-an-alphabet-searchlight" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Make an alphabet searchlight!
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/91053/can-urine-be-used-for-radiation-shielding" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can urine be used for radiation shielding?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="https://codereview.stackexchange.com/questions/174797/simple-blackjack-game-in-console" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Simple Blackjack game in console
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-retrocomputing" title="Retrocomputing Stack Exchange"></div><a href="https://retrocomputing.stackexchange.com/questions/4647/core-memory-stability" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:648 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Core Memory Stability
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/95543/what-is-a-classic-paper-and-when-do-we-refer-to-a-work-as-a-classic-work" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is a &#39;classic paper&#39;, and when do we refer to a work as a &#39;classic work&#39;?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-blender" title="Blender Stack Exchange"></div><a href="https://blender.stackexchange.com/questions/89653/how-to-make-small-objects-emit-a-ton-of-light" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:502 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    how to make small objects emit a ton of light
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/90998/being-reborn-with-your-memories-knowledge-is-power-but-how-much" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Being reborn with your memories - Knowledge is power, but how much?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-outdoors" title="The Great Outdoors Stack Exchange"></div><a href="https://outdoors.stackexchange.com/questions/17068/is-belaying-a-lead-more-difficult-than-a-top-roped-climber" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:395 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is belaying a lead more difficult than a top roped climber
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="https://stackoverflow.com/questions/46054682/unintuitive-expression-evaluation-with-incrementation" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Unintuitive expression evaluation with incrementation
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-cs" title="Computer Science Stack Exchange"></div><a href="https://cs.stackexchange.com/questions/80892/union-of-r-e-and-non-r-e-language" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:419 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Union of R.E. and Non R.E. language
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-opensource" title="Open Source Stack Exchange"></div><a href="https://opensource.stackexchange.com/questions/5911/i-lost-the-source-code-for-programs-i-released-as-gpl-what-to-do" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:619 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    I lost the source code for programs I released as GPL. What to do?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="https://security.stackexchange.com/questions/168726/amazon-let-me-place-an-order-without-me-ever-being-asked-for-3-d-secure-password" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Amazon let me place an order without me ever being asked for 3-D secure password
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/90984/how-plausible-is-a-system-of-clans-of-pure-blood-wizards" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How plausible is a system of clans of pure-blood wizards?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-sharepoint" title="SharePoint Stack Exchange"></div><a href="https://sharepoint.stackexchange.com/questions/224999/why-is-my-rest-call-undefined" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:232 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is my REST call undefined?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/90854/why-would-fission-be-used-in-a-world-where-fusion-reactors-exist" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why would Fission be used in a world where Fusion reactors exist?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/141675/when-do-i-get-my-sandwich" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    When do I get my sandwich?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/168733/why-did-peter-parker-work-as-a-poor-photographer-given-that-he-was-a-top-science" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why did Peter Parker work as a poor photographer given that he was a top science student who could earn much more in Silicon Valley?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="https://physics.stackexchange.com/questions/355525/are-protons-and-neutrons-affected-by-the-pauli-exclusion-principle" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are protons and neutrons affected by the Pauli Exclusion Principle?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/106376/what-do-devils-eat-and-how-do-they-get-it" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What do Devils eat, and how do they get it?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="https://unix.stackexchange.com/questions/390522/systemd-convert-path-to-systemd-unit-name-format" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    systemd: convert path to systemd unit name format
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-law" title="Law Stack Exchange"></div><a href="https://law.stackexchange.com/questions/22444/what-are-the-implications-of-a-company-being-not-in-good-standing" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:617 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What are the implications of a company being &quot;not in good standing?&quot;
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-stats" title="Cross Validated"></div><a href="https://stats.stackexchange.com/questions/301484/biased-data-in-machine-learning" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Biased Data in Machine Learning
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="https://aviation.stackexchange.com/questions/43490/how-much-electrical-power-does-one-generator-produce-on-a-large-turbofan" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How much electrical power does one generator produce on a large turbofan?
+                </a>
+
+            </li>
+    </ul>
+
+        <a href="#" 
+           class="show-more js-show-more js-gps-track" 
+           data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+            more hot questions
+        </a>
+</div>
+        </div>
+    
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="/feeds/question/17874717" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>    </div>
+<script>
+StackExchange.ready(function(){$.get('/posts/17874717/ivc/1c84');});
+</script>
+<noscript>
+    <div><img src="/posts/17874717/ivc/1c84" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-java</div></div>
+
+
+        </div>
+    </div>
+
+    <footer id="footer" class="s-footer js-footer" role="contentinfo">
+        <div class="-container">
+            <div class="g-row js-sp-between">
+                    <div class="-logo">
+                        <a href="https://stackoverflow.com"><svg aria-hidden="true" class="svg-icon iconLogo" width="150" height="30" viewBox="0 0 150 30"><g><path d="M33.9 18.6l-1.7-.2c-1.3-.1-1.9-.6-1.9-1.6 0-1.1.8-1.8 2.4-1.8 1.1 0 2.1.3 2.8.8l1-1c-1-.8-2.3-1.1-3.8-1.1-2.3 0-3.9 1.2-3.9 3.1 0 1.8 1.1 2.7 3.2 2.9l1.8.2c1.2.1 1.8.6 1.8 1.6 0 1.3-1.1 1.9-2.8 1.9-1.3 0-2.5-.3-3.3-1.2l-1 1c1.2 1.1 2.6 1.5 4.4 1.5 2.6 0 4.3-1.2 4.3-3.2-.2-2-1.5-2.7-3.3-2.9zm13.3-4.8c-1.7 0-2.8.3-3.7 1.5l1 1c.6-.9 1.3-1.2 2.7-1.2 1.9 0 2.7.8 2.7 2.3v1h-3.2c-2.4 0-3.7 1.2-3.7 3.1 0 .8.3 1.6.8 2.2.7.7 1.5 1 3 1 1.4 0 2.2-.3 3.1-1.1v1h1.6v-7.2c-.1-2.4-1.5-3.6-4.3-3.6zm2.7 7c0 .9-.2 1.5-.5 1.8-.7.6-1.5.7-2.4.7-1.7 0-2.4-.6-2.4-1.8 0-1.2.8-1.9 2.4-1.9h3l-.1 1.2zm7.6-5.6c1 0 1.6.3 2.4 1.2l1-1c-1.1-1.2-2-1.6-3.5-1.6-2.7 0-4.7 1.8-4.7 5.5 0 3.6 2 5.5 4.7 5.5 1.5 0 2.4-.4 3.5-1.6l-1.1-1c-.8.9-1.4 1.2-2.4 1.2s-1.9-.4-2.5-1.2c-.5-.7-.7-1.5-.7-2.9 0-1.3.2-2.2.7-2.9.7-.8 1.6-1.2 2.6-1.2zm13.4-1.3H69l-4.8 4.7V9.1h-1.6v15.4h1.6v-3.9l1.9-1.9 3.6 5.8h1.9l-4.4-6.9 3.7-3.7zm7.3-.33c-1.6 0-2.7.6-3.4 1.4-1 1-1.3 2.3-1.3 4.3s.3 3.3 1.3 4.3c.7.7 1.8 1.4 3.4 1.4 1.6 0 2.8-.6 3.4-1.4 1-1 1.3-2.3 1.3-4.3s-.3-3.3-1.3-4.3c-.6-.8-1.7-1.4-3.4-1.4zm1.3 8.3c-.3.3-.7.5-1.3.5-.6 0-1-.2-1.3-.5-.6-.6-.6-1.6-.6-2.7 0-1.2.1-2.1.6-2.7.3-.3.7-.5 1.3-.5.6 0 1 .2 1.3.5.6.6.6 1.5.6 2.7.1 1.2 0 2.2-.6 2.7zm10.8-8.2l-2.2 6.9-2.3-6.9h-2.9l4.1 11.1h2.2l4.1-11.1h-3zm7.6-.1c-2.9 0-4.8 2-4.8 5.7 0 4.5 2.5 5.7 5.1 5.7 2 0 3.1-.6 4.2-1.7l-1.7-1.6c-.7.7-1.3 1-2.5 1-1.6 0-2.4-1-2.4-2.5h6.9v-1.2c0-3.2-1.7-5.4-4.8-5.4zm-2.1 4.6c0-.5.1-.8.3-1.2.3-.7.9-1.2 1.9-1.2.9 0 1.6.5 1.9 1.2.2.4.2.7.3 1.2h-4.4zm11-3.4v-1.1h-2.7v11.1h2.8v-6.7c0-1.4.9-2 1.8-2 .7 0 1 .2 1.5.7l2.1-2.1c-.8-.8-1.5-1-2.6-1-1.3-.1-2.3.4-2.9 1.1zm6.3-2.3v12.3h2.8v-8.8h2v-2.1h-2v-1.2c0-.6.3-1 1-1h1.1v-2.3h-1.6c-2.3 0-3.3 1.6-3.3 3.1zm16.2 1.1c-1.6 0-2.7.6-3.4 1.4-1 1-1.3 2.3-1.3 4.3s.3 3.3 1.3 4.3c.7.7 1.8 1.4 3.4 1.4 1.6 0 2.8-.6 3.4-1.4 1-1 1.3-2.3 1.3-4.3s-.3-3.3-1.3-4.3c-.6-.8-1.8-1.4-3.4-1.4zm1.3 8.3c-.3.3-.7.5-1.3.5-.6 0-1-.2-1.3-.5-.6-.6-.6-1.6-.6-2.7 0-1.2.1-2.1.6-2.7.3-.3.7-.5 1.3-.5.6 0 1 .2 1.3.5.6.6.6 1.5.6 2.7 0 1.2 0 2.2-.6 2.7zm16.5-8.2l-1.8 6.9-2.3-6.9h-2l-2.3 6.9-1.8-6.9H134l3.4 11.1h2.3l2.3-7 2.3 7h2.3l3.4-11.1h-2.9zm-25.1 7.7V9.27h-2.8v12.3c0 1.6 1 3.2 3.2 3.2h1.6v-2.3h-1c-.7 0-1-.4-1-1.1zM41.3 15.6l1.4-1.4h-3v-3.5h-1.6v11.1c0 1.6.9 2.9 2.7 2.9h1.1v-1.3h-.8c-1 0-1.5-.6-1.5-1.6v-6.1h1.7v-.1z" fill="#222426"/><path fill="#BCBBBB" d="M21 27v-8h3v11H0V19h3v8z"/><path d="M5.4 19.1l13.56 1.96.17-2.38-13.26-2.55-.47 2.97zm1.8-6.8l12 5.6 1.1-2.4-12-5.6-1.1 2.4zm3.4-5.9l10.2 8.5 1.7-2-10.2-8.5-1.7 2zM17.1.2L15 1.8l7.9 10.6 2.1-1.6L17.1.2zM5 25h14v-3H5v3z" fill="#F48024"/></g></svg></a>
+                    </div>
+                
+                    <nav class="-nav js-category _visible" data-name="default">
+                        <h5 class="-title"><a href="https://stackoverflow.com" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="/questions" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 16})">Questions</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Jobs</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs/directory/developer-jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 11})">Developer Jobs Directory</a></li>
+                                                            <li class="-item"><a href="https://stackoverflow.com/documentation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 18})">Documentation</a></li>
+                                                            <li class="-item"><a href="/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Help</a></li>
+                                <li class="-item"><a onclick='StackExchange.switchMobile("on")' class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Mobile</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="-nav js-category _visible" data-name="default">
+                        <h5 class="-title"><a href="https://www.stackoverflowbusiness.com/?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 19 })">Stack Overflow<br /> Business</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/talent?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 20 })">Talent</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/advertise?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 21 })">Ads</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/enterprise?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 22 })">Enterprise</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/insights?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 23 })">Insights</a></li>
+                        </ul>
+                    </nav>
+                <nav class="-nav js-category _visible" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Company</a></h5>
+                    <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">About</a></li>
+                                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Press</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 9 })" href="https://stackoverflow.com/company/work-here">Work Here</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackexchange.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackexchange.com/legal/privacy-policy">Privacy Policy</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://stackoverflow.com/company/contact">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="-network g-row">
+                    <a href="#" class="-back-trigger js-back"><svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"/></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <nav class="-nav js-category" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="//stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="//serverfault.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="//superuser.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="//webapps.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="//askubuntu.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="//webmasters.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="//gamedev.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//tex.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="//softwareengineering.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="//unix.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="//apple.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="//wordpress.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="//gis.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="//electronics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//android.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="//security.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="//dba.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="//drupal.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="//sharepoint.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="//ux.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="//mathematica.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//salesforce.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="//expressionengine.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine&#174; CMS">ExpressionEngine&#174; Answers</a></li>
+                <li class="-item"><a href="//blender.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="//networkengineering.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="//crypto.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="//codereview.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                <li class="-item"><a href="//magento.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//softwarerecs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="//dsp.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="//emacs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="//raspberrypi.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="//codegolf.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                <li class="-item"><a href="//ethereum.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="//datascience.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="//arduino.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (27)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="//photo.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="//scifi.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="//graphicdesign.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="//movies.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="//music.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="//worldbuilding.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="//cooking.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="//diy.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="//money.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="//academia.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="//law.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (17)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="//english.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="//skeptics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="//judaism.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="//travel.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="//christianity.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="//ell.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="//japanese.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="//gaming.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="//bicycles.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="//rpg.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="//anime.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="//puzzling.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                <li class="-item"><a href="//mechanics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (32)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="//mathoverflow.net" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="//math.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="//stats.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="//cstheory.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="//physics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="//chemistry.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientists, academics, teachers and students">Chemistry</a></li>
+                <li class="-item"><a href="//biology.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="//cs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="//philosophy.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="//meta.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="//stackapps.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+                <li class="-item"><a href="//area51.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                    </ul>
+    </nav>
+                <div class="-copyright text-right">
+                    <div class="g-column jc-sp-between">
+                        <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog?blb=1">Blog</a></li>
+                            <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link">Facebook</a></li>
+                            <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link">Twitter</a></li>
+                            <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link">LinkedIn</a></li>
+                        </ul>
+
+                        <div>
+                            <p>
+                                site design / logo &#169; 2017 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license" class="-link">cc by-sa 3.0</a>
+                                with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license" class="-link">attribution required</a>.
+                                <span id="svnrev">rev 2017.9.5.26948</span>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    </div>
+    </footer>
+
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled
+            <img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno">
+        </div>
+    </noscript>
+<script>var z=document.createElement("script");z.type="text/javascript",z.async=!0,z.src="https://static.adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+<script>
+var ados = ados || {};
+ados.run = ados.run || [];
+
+
+ados.run.push(function () {
+    setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+    ados_setKeywords('java,swing,whitespace,layout-manager,x-industry-academic');; ados_load();
+});   
+
+</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-5620270-1');
+                ga('create', 'UA-5620270-59', {name: 'pageData', sampleRate: 5 });
+                ga('set', 'dimension2', '|java|swing|whitespace|layout-manager|');
+                ga('pageData.set', 'dimension2', '|java|swing|whitespace|layout-manager|');
+                ga('send', 'pageview');
+                ga('pageData.send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+                <script>
+        var x1=0,x2=0;
+        $('body').on('mousewheel', function(e){ x1=x2; x2=e.originalEvent.wheelDelta; });
+        setInterval(function() { 
+            if(x1!=x2){ 
+                if(x2 > 0) {
+                    console.log('Scroll Up');
+                    //var data = "Scrolling Up";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Scroll Up"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                } 
+                else { 
+                    console.log('Scroll Down');
+                    //var data = "Scrolling Down";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Scroll Down"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                }
+            }
+        },500);
+    </script>
+    <script>
+        var y1=0,y2=0;
+        window.onmousemove = function(e) { y1=y2; y2=e.pageY; }
+        setInterval(function() { 
+            if(y1!=y2){ 
+                if(y2<y1){
+                    console.log('Mouse Up');
+                    //var data = "Mouse movement upward";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Mouse Up"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                } 
+                else { 
+                    console.log('Mouse Down');
+                    //var data = "Mouse movement downward";
+                    $.ajax({
+                        type: 'POST',
+                        url: '/jspost',
+                        data: '{"data":"Mouse Down"}',
+                        success: function(data) { console.log(data); },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                }
+            } 
+        },500);
+    </script>
+    <script>
+        $("button").mousedown( function(e) {
+        if(e.which) {
+            console.log(this.value+" Button Click");
+            //var data = this.value+" Button clicked";
+            $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Button Click"}',
+                success: function(data) { console.log(data); },
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        }
+        });
+        $("input").mousedown( function(e) {
+        if(e.which) {
+            console.log(this.value+" Button Click");
+            //var data = "Button";
+            /*$.ajax({
+                url:'/jspost',
+                type:'POST',
+                data:{dat,dat},
+                success: function(data) 
+                {console.log(data);
+                }
+            });*/
+            $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Button Click"}',
+                success: function(data) { console.log(data); },
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        }   
+        });
+        $("a").mousedown( function(e) {
+        if(e.which) {
+            console.log("Link Click");
+            //var data = "Link clicked";
+            $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Link Click"}',
+                success: function(data) { console.log(data); },
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        }
+        });
+        $("button").trigger("mousedown");
+    </script>
+    <script>
+        $('body').mouseup(function() {
+        console.log('Text Select');
+        //var data = "Text is selected";
+        $.ajax({
+                type: 'POST',
+                url: '/jspost',
+                data: '{"data":"Text Select"}',
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        console.log(getSelectedText());
+        });
+        function getSelectedText() {
+        if (window.getSelection) {
+            return window.getSelection().toString();
+        } else if (document.selection) {
+            return document.selection.createRange().text;
+        }
+        return '';
+        }
+    </script>
+    </body>
+</html>
